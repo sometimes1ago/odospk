@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/panel/common/configs/reset.css" />
+    <link rel="stylesheet" href="/panel/common/configs/font.css" />
+    <link rel="stylesheet" href="/panel/common/css/animations.css" />
+    <link rel="stylesheet" href="/panel/common/css/changing.min.css" />
+    <title>ODOSPK • Заявки</title>
+  </head>
+  <body class="page">
+    <aside class="menu">
+      <p class="menu-title"><span class="accenter">ODOSPK • </span>Admin panel</p>
+      <h3 class="menu-greetings">Добро пожаловать</h3>
+      <a href="/panel/users/" class="menu-user">
+        <img src="/panel/common/img/user-avatars/admin.png" alt="user-avatar" class="menu-user__img" />
+        <div class="menu-user__data">
+          <h6 class="menu-user__name">Валерия</h6>
+          <p class="menu-user__access">Полный доступ</p>
+        </div>
+      </a>
+      <ul class="menu-links">
+        <div class="menu-links__container">
+          <li class="menu-links__item">
+            <a href="/panel/requests/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 7.50001L10 1.66667L17.5 7.50001V16.6667C17.5 17.1087 17.3244 17.5326 17.0118 17.8452C16.6993 18.1577 16.2754 18.3333 15.8333 18.3333H4.16667C3.72464 18.3333 3.30072 18.1577 2.98816 17.8452C2.67559 17.5326 2.5 17.1087 2.5 16.6667V7.50001Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 18.3333V10H12.5V18.3333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Заявки</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/todo/notes/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6 9H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6 13.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.25 4.5H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.25 9H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.25 13.5H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <p class="menu-links__text">Заметки</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/statistics/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 16.3333V8" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 16.3333V3" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 16.3334V11.3334" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Статистика</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/changing/" class="menu-links__link menu-links__active">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.1667 2.5C14.3855 2.28113 14.6454 2.10752 14.9313 1.98906C15.2173 1.87061 15.5238 1.80965 15.8333 1.80965C16.1429 1.80965 16.4493 1.87061 16.7353 1.98906C17.0213 2.10752 17.2811 2.28113 17.5 2.5C17.7189 2.71887 17.8925 2.97871 18.0109 3.26468C18.1294 3.55064 18.1903 3.85714 18.1903 4.16667C18.1903 4.4762 18.1294 4.7827 18.0109 5.06866C17.8925 5.35463 17.7189 5.61447 17.5 5.83334L6.24999 17.0833L1.66666 18.3333L2.91666 13.75L14.1667 2.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Изменение</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/adding/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.6667 1.66667H5.00001C4.55798 1.66667 4.13406 1.84226 3.8215 2.15482C3.50894 2.46738 3.33334 2.89131 3.33334 3.33333V16.6667C3.33334 17.1087 3.50894 17.5326 3.8215 17.8452C4.13406 18.1577 4.55798 18.3333 5.00001 18.3333H15C15.442 18.3333 15.866 18.1577 16.1785 17.8452C16.4911 17.5326 16.6667 17.1087 16.6667 16.6667V6.66667L11.6667 1.66667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11.6667 1.66667V6.66667H16.6667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 15V10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 12.5H12.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Добавление</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/removing/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.66666 5V3.33333C6.66666 2.89131 6.84225 2.46738 7.15481 2.15482C7.46737 1.84226 7.8913 1.66667 8.33332 1.66667H11.6667C12.1087 1.66667 12.5326 1.84226 12.8452 2.15482C13.1577 2.46738 13.3333 2.89131 13.3333 3.33333V5M15.8333 5V16.6667C15.8333 17.1087 15.6577 17.5326 15.3452 17.8452C15.0326 18.1577 14.6087 18.3333 14.1667 18.3333H5.83332C5.3913 18.3333 4.96737 18.1577 4.65481 17.8452C4.34225 17.5326 4.16666 17.1087 4.16666 16.6667V5H15.8333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.33334 9.16667V14.1667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11.6667 9.16667V14.1667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Удаление</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/users/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_511_272)">
+                  <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16668C3.28262 12.5 2.43478 12.8512 1.80965 13.4763C1.18453 14.1014 0.833344 14.9493 0.833344 15.8333V17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M7.49999 9.16667C9.34094 9.16667 10.8333 7.67428 10.8333 5.83333C10.8333 3.99238 9.34094 2.5 7.49999 2.5C5.65904 2.5 4.16666 3.99238 4.16666 5.83333C4.16666 7.67428 5.65904 9.16667 7.49999 9.16667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M19.1667 17.5V15.8333C19.1661 15.0948 18.9203 14.3773 18.4678 13.7936C18.0153 13.2099 17.3818 12.793 16.6667 12.6083" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.3333 2.60834C14.0504 2.79192 14.6859 3.20892 15.1397 3.7936C15.5935 4.37827 15.8399 5.09736 15.8399 5.8375C15.8399 6.57765 15.5935 7.29674 15.1397 7.88141C14.6859 8.46609 14.0504 8.88309 13.3333 9.06667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_511_272">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="menu-links__text">Пользователи</p>
+            </a>
+          </li>
+        </div>
+        <li class="menu-links__item">
+          <a href="" class="menu-links__link">
+            <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M13.3333 14.1667L17.5 9.99999L13.3333 5.83333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17.5 10H7.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="menu-links__text">Выход</p>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <section class="changer">
+      <h2 class="changer-header">Изменение данных</h2>
+      <ul class="changer-list">
+        <li class="changer-item">
+          <form action="#" class="changer-form changer-program">
+            <h3 class="changer-form__header">Изменение программы</h3>
+            <p class="changer-form__subhead">Выберите программу, что заменить <br> и введите новое значение</p>
+            <ul class="selector__list">
+              <li class="selector__item">
+                <p class="selector__name">Выберите программу</p>
+                <div class="selector__select-wrap" data-index="0">
+                  <div class="selector__select">
+                    <p class="selector__value" data-program="name">Программа 1</p>
+                    <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        class="selector__path"
+                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                        fill="#252525"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="selector__options">
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-program="name">Программа 1</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-program="name">Программа 2</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-program="name">Программа 3</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-program="name">Программа 4</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-program="name">Программа 4</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-program="name">Программа 5</p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="selector__item">
+                <p class="selector__name">Свойство программы</p>
+                <div class="selector__select-wrap" data-index="1">
+                  <div class="selector__select">
+                    <p class="selector__value" data-property="name">Наименование</p>
+                    <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        class="selector__path"
+                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                        fill="#252525"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="selector__options">
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-programProp="name">Наименование</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-programProp="lenght">Срок обучения</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-programProp="type">Тип программы</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-programProp="document">Выдаваемый документ</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-programProp="skills">Чему научитесь</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-programProp="description">Описание</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-programProp="lenght">Срок обучения</p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <label for="programChangeInput" class="changer-form__label">Введите значение</label>
+            <input type="text" name="programChangeInput" id="programChangeInput" class="changer-form__input" required placeholder="Новое значение" />
+            <input type="submit" class="changer-form__btn" name="programChangeSender" value="Изменить">
+          </form>
+        </li>
+        <li class="changer-item">
+          <form action="#" class="changer-form changer-feedback">
+            <h3 class="changer-form__header">Отзывы на сайте</h3>
+            <p class="changer-form__subhead">Выберите отзыв, что заменить <br> и введите новое значение</p>
+            <ul class="selector__list">
+              <li class="selector__item">
+                <p class="selector__name">Выберите отзыв</p>
+                <div class="selector__select-wrap" data-index="2">
+                  <div class="selector__select">
+                    <p class="selector__value" data-feedback="name">Отзыв 1</p>
+                    <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        class="selector__path"
+                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                        fill="#252525"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="selector__options">
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedback="name">Отзыв 1</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedback="name">Отзыв 2</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedback="name">Отзыв 3</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedback="name">Отзыв 4</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedback="name">Отзыв 4</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedback="name">Отзыв 5</p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="selector__item">
+                <p class="selector__name">Свойство отзыва</p>
+                <div class="selector__select-wrap" data-index="3">
+                  <div class="selector__select">
+                    <p class="selector__value" data-feedbackProp="name">Автор</p>
+                    <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        class="selector__path"
+                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                        fill="#252525"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="selector__options">
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedbackProp="author">Автор</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedbackProp="photo">Фото</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-feedbackProp="text">Содержание</p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <label for="feedbackChangeInput" class="changer-form__label">Введите значение</label>
+            <input type="text" name="feedbackChangeInput" id="feedbackChangeInput" class="changer-form__input" required placeholder="Новое значение" />
+            <input type="submit" class="changer-form__btn" name="feedbackChangeSender" value="Изменить">
+          </form>
+        </li>
+        <li class="changer-item">
+          <form action="#" class="changer-form changer-user">
+            <h3 class="changer-form__header">Данные пользователя</h3>
+            <p class="changer-form__subhead">Выберите пользователя, что заменить и введите значение</p>
+            <ul class="selector__list">
+              <li class="selector__item">
+                <p class="selector__name">Выберите пользователя</p>
+                <div class="selector__select-wrap" data-index="4">
+                  <div class="selector__select">
+                    <p class="selector__value" data-user="name">Пользователь 1</p>
+                    <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        class="selector__path"
+                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                        fill="#252525"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="selector__options">
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-user="name">Пользователь 1</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-user="name">Пользователь 2</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-user="name">Пользователь 3</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-user="name">Пользователь 4</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-user="name">Пользователь 4</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-user="name">Пользователь 5</p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="selector__item">
+                <p class="selector__name">Свойство программы</p>
+                <div class="selector__select-wrap" data-index="5">
+                  <div class="selector__select">
+                    <p class="selector__value" data-userProp="name">Имя сотрудника</p>
+                    <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        class="selector__path"
+                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                        fill="#252525"
+                      />
+                    </svg>
+                  </div>
+                  <ul class="selector__options">
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-userProp="name">Имя сотрудника</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-userProp="login">Логин</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-userProp="password">Пароль</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-userProp="access">Уровень доступа</p>
+                    </li>
+                    <li class="selector__options_item">
+                      <p class="selector__options_value" data-userProp="photo">Фото пользователя</p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <label for="userChangeInput" class="changer-form__label">Введите значение</label>
+            <input type="text" name="userChangeInput" id="userChangeInput" class="changer-form__input" required placeholder="Новое значение" />
+            <input type="submit" class="changer-form__btn" name="userChangeSender" value="Изменить">
+          </form>
+        </li>
+      </ul>
+    </section>
+    <script src="/panel/common/scripts/custom-selector.js"></script>
+  </body>
+</html>

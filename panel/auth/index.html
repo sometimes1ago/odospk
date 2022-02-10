@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/panel/common/configs/reset.css" />
+    <link rel="stylesheet" href="/panel/common/configs/font.css" />
+    <link rel="stylesheet" href="/panel/common/css/auth.min.css" />
+    <title>ODOSPK • Авторизация</title>
+  </head>
+  <body>
+    <main class="page-content">
+      <form action="/beta/requests/" method="POST" class="auth-form">
+        <div class="auth-form__content">
+          <div class="auth-form__header">
+            <h1 class="auth-form__header-heading">Вход в систему</h1>
+            <p class="auth-form__header-description">
+              Авторизуйтесь чтобы получить доступ к панели администратора
+            </p>
+          </div>
+          <label for="loginInput" class="auth-form__label">Логин</label>
+          <div class="auth-form__custom-input">
+            <input
+              type="text"
+              name="loginInput"
+              id="loginInput"
+              class="auth-form__input auth-form__input-login"
+              required
+              placeholder="UserLogin"
+            />
+          </div>
+          <label for="passwordInput" class="auth-form__label">Пароль</label>
+          <div class="auth-form__custom-input" tabindex="0">
+            <input
+              type="password"
+              name="passwordInput"
+              id="passwordInput"
+              class="auth-form__input auth-form__input-pass"
+              required
+              placeholder="UserPassword"
+            />
+            <img
+              src="img/eye.svg"
+              alt="Show password icon"
+              class="auth-form__custom-input__icon"
+            />
+          </div>
+          <div class="auth-form__checkbox-container">
+            <input
+              type="checkbox"
+              class="auth-form__checkbox"
+              name="remember-me"
+              id="remember-me"
+              value="yes"
+            />
+            <label for="remember-me" class="auth-form__checkbox-label"
+              >Запомнить меня</label
+            >
+          </div>
+          <input
+            type="submit"
+            name="authSender"
+            value="Войти"
+            class="auth-form__sender"
+          />
+          <p class="auth-form__data-recover-link">Не можете войти?</p>
+        </div>
+      </form>
+    </main>
+    <div class="modal">
+      <form action="#" class="modal-window" method="POST">
+        <div class="modal-window__content">
+          <h3 class="modal-header">Помощь со входом</h3>
+          <p class="modal-description">Введите секретный ключ для показа данных пользователя</p>
+          <label for="secretKeyInput" class="modal-label">Секретный ключ</label>
+          <input
+            type="text"
+            name="secretKeyInput"
+            required
+            placeholder="abcde12345"
+            id="secretKeyInput"
+            class="modal-input" />
+          <input
+            type="submit"
+            class="modal-sender"
+            name="modal-sender"
+            value="Показать данные"
+          />
+          <p class="modal-closer">Отмена</p>
+        </div>
+      </form>
+    </div>
+    <script src="js/input-focuser.js"></script>
+    <script src="js/show-password.js"></script>
+    <script src="js/modal-open.js"></script>
+  </body>
+</html>

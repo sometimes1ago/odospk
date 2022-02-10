@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/panel/common/configs/reset.css" />
+    <link rel="stylesheet" href="/panel/common/configs/font.css" />
+    <link rel="stylesheet" href="/panel/common/css/animations.css" />
+    <link rel="stylesheet" href="/panel/common/css/users.min.css" />
+    <title>ODOSPK • Пользователи</title>
+  </head>
+  <body class="page">
+    <aside class="menu">
+      <p class="menu-title"><span class="accenter">ODOSPK • </span>Admin panel</p>
+      <h3 class="menu-greetings">Добро пожаловать</h3>
+      <a href="/panel/users/" class="menu-user">
+        <img src="/panel/common/img/user-avatars/admin.png" alt="user-avatar" class="menu-user__img" />
+        <div class="menu-user__data">
+          <h6 class="menu-user__name">Валерия</h6>
+          <p class="menu-user__access">Полный доступ</p>
+        </div>
+      </a>
+      <ul class="menu-links">
+        <div class="menu-links__container">
+          <li class="menu-links__item">
+            <a href="/panel/requests/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 7.50001L10 1.66667L17.5 7.50001V16.6667C17.5 17.1087 17.3244 17.5326 17.0118 17.8452C16.6993 18.1577 16.2754 18.3333 15.8333 18.3333H4.16667C3.72464 18.3333 3.30072 18.1577 2.98816 17.8452C2.67559 17.5326 2.5 17.1087 2.5 16.6667V7.50001Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 18.3333V10H12.5V18.3333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Заявки</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/todo/notes/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6 9H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6 13.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.25 4.5H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.25 9H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.25 13.5H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <p class="menu-links__text">Заметки</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/statistics/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 16.3333V8" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 16.3333V3" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 16.3334V11.3334" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Статистика</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/changing/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.1667 2.5C14.3855 2.28113 14.6454 2.10752 14.9313 1.98906C15.2173 1.87061 15.5238 1.80965 15.8333 1.80965C16.1429 1.80965 16.4493 1.87061 16.7353 1.98906C17.0213 2.10752 17.2811 2.28113 17.5 2.5C17.7189 2.71887 17.8925 2.97871 18.0109 3.26468C18.1294 3.55064 18.1903 3.85714 18.1903 4.16667C18.1903 4.4762 18.1294 4.7827 18.0109 5.06866C17.8925 5.35463 17.7189 5.61447 17.5 5.83334L6.24999 17.0833L1.66666 18.3333L2.91666 13.75L14.1667 2.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Изменение</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/adding/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.6667 1.66667H5.00001C4.55798 1.66667 4.13406 1.84226 3.8215 2.15482C3.50894 2.46738 3.33334 2.89131 3.33334 3.33333V16.6667C3.33334 17.1087 3.50894 17.5326 3.8215 17.8452C4.13406 18.1577 4.55798 18.3333 5.00001 18.3333H15C15.442 18.3333 15.866 18.1577 16.1785 17.8452C16.4911 17.5326 16.6667 17.1087 16.6667 16.6667V6.66667L11.6667 1.66667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11.6667 1.66667V6.66667H16.6667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 15V10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 12.5H12.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Добавление</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/removing/" class="menu-links__link">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.66666 5V3.33333C6.66666 2.89131 6.84225 2.46738 7.15481 2.15482C7.46737 1.84226 7.8913 1.66667 8.33332 1.66667H11.6667C12.1087 1.66667 12.5326 1.84226 12.8452 2.15482C13.1577 2.46738 13.3333 2.89131 13.3333 3.33333V5M15.8333 5V16.6667C15.8333 17.1087 15.6577 17.5326 15.3452 17.8452C15.0326 18.1577 14.6087 18.3333 14.1667 18.3333H5.83332C5.3913 18.3333 4.96737 18.1577 4.65481 17.8452C4.34225 17.5326 4.16666 17.1087 4.16666 16.6667V5H15.8333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.33334 9.16667V14.1667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M11.6667 9.16667V14.1667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <p class="menu-links__text">Удаление</p>
+            </a>
+          </li>
+          <li class="menu-links__item">
+            <a href="/panel/users/" class="menu-links__link menu-links__active">
+              <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_511_272)">
+                  <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16668C3.28262 12.5 2.43478 12.8512 1.80965 13.4763C1.18453 14.1014 0.833344 14.9493 0.833344 15.8333V17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M7.49999 9.16667C9.34094 9.16667 10.8333 7.67428 10.8333 5.83333C10.8333 3.99238 9.34094 2.5 7.49999 2.5C5.65904 2.5 4.16666 3.99238 4.16666 5.83333C4.16666 7.67428 5.65904 9.16667 7.49999 9.16667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M19.1667 17.5V15.8333C19.1661 15.0948 18.9203 14.3773 18.4678 13.7936C18.0153 13.2099 17.3818 12.793 16.6667 12.6083" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.3333 2.60834C14.0504 2.79192 14.6859 3.20892 15.1397 3.7936C15.5935 4.37827 15.8399 5.09736 15.8399 5.8375C15.8399 6.57765 15.5935 7.29674 15.1397 7.88141C14.6859 8.46609 14.0504 8.88309 13.3333 9.06667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_511_272">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="menu-links__text">Пользователи</p>
+            </a>
+          </li>
+        </div>
+        <li class="menu-links__item">
+          <a href="" class="menu-links__link">
+            <svg class="menu-links__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M13.3333 14.1667L17.5 9.99999L13.3333 5.83333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17.5 10H7.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="menu-links__text">Выход</p>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <section class="users">
+      <h2 class="users-header">Пользователи панели</h2>
+      <ul class="user-list">
+        <li class="user-item">
+          <div class="user-info">
+            <div class="user-avatar">
+              <img src="/panel/common/img/user-avatars/admin.png" alt="user-avatar" class="user-img">
+              <div class="user-online"></div>
+            </div>
+            <div class="user-data">
+              <h3 class="user-name">Валерия</h3>
+              <p class="user-access">Полный доступ</p>
+            </div>
+          </div>
+          <h3 class="user__activity-header">Дата последнего входа</h3>
+          <p class="user__activity-data">26.10.2021 в 12:43</p>
+          <input type="submit" class="user-btn" name="userActivity" value="История активности">
+        </li>
+        <a href="/panel/adding/" class="user-add user-item">
+          <svg xmlns="http://www.w3.org/2000/svg" class="user-add__icon" viewBox="0 0 88 88" fill="none">
+            <path d="M58.2914 55.2063C60.3711 54.0891 62.7515 53.4531 65.2867 53.4531H65.2953C65.5531 53.4531 65.6734 53.1438 65.4843 52.9719C62.8479 50.6058 59.8362 48.6948 56.5726 47.3172C56.5382 47.3 56.5039 47.2914 56.4695 47.2742C61.8062 43.3984 65.2781 37.0992 65.2781 29.9922C65.2781 18.2188 55.7562 8.67969 44.0086 8.67969C32.2609 8.67969 22.7476 18.2188 22.7476 29.9922C22.7476 37.0992 26.2195 43.3984 31.5648 47.2742C31.5304 47.2914 31.4961 47.3 31.4617 47.3172C27.6203 48.9414 24.1742 51.2703 21.2093 54.2438C18.2616 57.1861 15.9149 60.6742 14.3 64.5133C12.7111 68.2727 11.8536 72.3006 11.7734 76.3812C11.7711 76.473 11.7872 76.5642 11.8207 76.6496C11.8542 76.735 11.9045 76.8129 11.9686 76.8785C12.0327 76.9442 12.1092 76.9964 12.1938 77.032C12.2783 77.0676 12.3692 77.086 12.4609 77.0859H17.6086C17.9781 77.0859 18.2875 76.7852 18.2961 76.4156C18.4679 69.7812 21.1234 63.568 25.8242 58.8586C30.6797 53.9859 37.1422 51.3047 44.0172 51.3047C48.8898 51.3047 53.5648 52.6539 57.5953 55.1805C57.6988 55.2455 57.8177 55.2822 57.9399 55.2867C58.0621 55.2912 58.1833 55.2635 58.2914 55.2063ZM44.0172 44.7734C40.0812 44.7734 36.3773 43.2352 33.5843 40.4422C32.2102 39.0716 31.1208 37.4426 30.3789 35.6491C29.637 33.8556 29.2573 31.9331 29.2617 29.9922C29.2617 26.0477 30.8 22.3352 33.5843 19.5422C36.3687 16.7492 40.0726 15.2109 44.0172 15.2109C47.9617 15.2109 51.657 16.7492 54.45 19.5422C55.8242 20.9128 56.9136 22.5418 57.6554 24.3353C58.3973 26.1288 58.777 28.0513 58.7726 29.9922C58.7726 33.9367 57.2343 37.6492 54.45 40.4422C51.657 43.2352 47.9531 44.7734 44.0172 44.7734ZM75.625 65.2266H68.4062V58.0078C68.4062 57.6297 68.0968 57.3203 67.7187 57.3203H62.9062C62.5281 57.3203 62.2187 57.6297 62.2187 58.0078V65.2266H55C54.6218 65.2266 54.3125 65.5359 54.3125 65.9141V70.7266C54.3125 71.1047 54.6218 71.4141 55 71.4141H62.2187V78.6328C62.2187 79.0109 62.5281 79.3203 62.9062 79.3203H67.7187C68.0968 79.3203 68.4062 79.0109 68.4062 78.6328V71.4141H75.625C76.0031 71.4141 76.3125 71.1047 76.3125 70.7266V65.9141C76.3125 65.5359 76.0031 65.2266 75.625 65.2266Z" fill="#3B7FE4"/>
+          </svg>
+          <p class="user-add__text">Добавить <br> пользователя</p>
+        </a>
+      </ul>
+    </section>
+  </body>
+</html>

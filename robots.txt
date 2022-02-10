@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /auth.php
+Disallow: /db.php
+Disallow: /AddEdu.sql
+Disallow: /server-processing/ # запрещает ссылки из серверной обработки запросов
+Disallow: /scss/
+Disallow: /js/
+Disallow: /img/
+Disallow: /css/
+Disallow: /admin/
