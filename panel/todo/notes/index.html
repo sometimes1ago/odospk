@@ -200,11 +200,11 @@
             <p class="todo-menu__text">Корзина</p>
           </a>
         </li>
-        <li class="todo-item todo-item__notes">
+        <li class="todo-item todo-item__notes__full">
           <h3 class="todo-item__header">Список заметок</h3>
           <p class="todo-item__subhead">Все ваши заметки находятся здесь</p>
           <ul class="todo-list">
-            <li class="todo-list__item">
+            <li class="todo-list__item__input">
               <input type="text" name="noteInput" id="noteInput" class="todo-list__add-input" placeholder="Введите текст заметки" />
               <ul class="todo-list__add">
                 <li class="todo-list__add-control">
@@ -231,7 +231,7 @@
                 </li>
               </ul>
             </li>
-            <li class="todo-list__item todo-list__item-selected">Какая-то личная заметка пользователя</li>
+            <li class="todo-list__item">Какая-то личная заметка пользователя</li>
             <li class="todo-list__item">Какая-то личная заметка пользователя</li>
             <li class="todo-list__item">Какая-то личная заметка пользователя</li>
             <li class="todo-list__item">Какая-то личная заметка пользователя</li>
@@ -308,5 +308,6 @@
         </li>
       </ul>
     </section>
+    <script src="/panel/common/scripts/todoItem.js"></script>
   </body>
 </html>
