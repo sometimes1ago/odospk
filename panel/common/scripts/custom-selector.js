@@ -5,14 +5,12 @@ function selectsInit() {
     dropDownsItems = document.querySelectorAll(".selector__options_item"),
     selectedItem = document.querySelectorAll(".selector__value"),
     selectorItems = document.querySelectorAll(".selector__item");
-  // Listeners selects
   selects.forEach((select, i) => {
     select.addEventListener("click", function () {
       selectOpen(i);
     });
   });
 
-  // select Open
   function selectOpen(select) {
     dropDowns[select].classList.toggle("selector__options-active");
     selectorItems[select].classList.toggle("selector__item-active");
@@ -47,7 +45,7 @@ function selectsInit() {
   }
 
   SelectorValueLenChecker();
-  // update value
+  
   dropDownsItems.forEach((item, i) => {
     item.addEventListener("click", function () {
       let indexItem =

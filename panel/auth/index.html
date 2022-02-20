@@ -2,97 +2,113 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/panel/common/configs/reset.css" />
     <link rel="stylesheet" href="/panel/common/configs/font.css" />
+    <link rel="stylesheet" href="/panel/common/css/animations.css" />
     <link rel="stylesheet" href="/panel/common/css/auth.min.css" />
     <title>ODOSPK • Авторизация</title>
   </head>
-  <body>
-    <main class="page-content">
-      <form action="/beta/requests/" method="POST" class="auth-form">
-        <div class="auth-form__content">
-          <div class="auth-form__header">
-            <h1 class="auth-form__header-heading">Вход в систему</h1>
-            <p class="auth-form__header-description">
-              Авторизуйтесь чтобы получить доступ к панели администратора
-            </p>
+  <body class="page">
+    <form action="" class="auth" method="POST">
+      <h1 class="auth-header">Вход в систему</h1>
+      <p class="auth-subhead">
+        Авторизуйтесь чтобы получить <br />
+        доступ к панели администратора
+      </p>
+      <label for="login-input" class="auth-label">Логин</label>
+      <input type="text" name="login-input" id="login-input" class="auth-input" required placeholder="UserLogin" />
+      <label for="password-input" class="auth-label">Пароль</label>
+      <div class="auth__custom-input">
+        <input type="password" name="passwordInput" id="password-input" class="auth-input auth-input__pass" required placeholder="UserPassword" />
+        <svg class="auth__custom-input__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_262:1060)">
+            <path d="M0.833336 9.99992C0.833336 9.99992 4.16667 3.33325 10 3.33325C15.8333 3.33325 19.1667 9.99992 19.1667 9.99992C19.1667 9.99992 15.8333 16.6666 10 16.6666C4.16667 16.6666 0.833336 9.99992 0.833336 9.99992Z" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clipPath id="clip0_262:1060">
+              <rect width="20" height="20" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div class="auth-checkbox">
+        <input type="checkbox" class="auth-checkbox__item" name="auth-checkbox" id="auth-checkbox" value="yes" />
+        <label for="auth-checkbox" class="auth-label__checkbox">Запомнить меня</label>
+      </div>
+      <input type="submit" value="Войти" name="auth-btn" class="auth-btn" />
+      <a href="#" class="auth-recover">Не можете войти?</a>
+    </form>
+    <button class="settings">
+      <svg xmlns="http://www.w3.org/2000/svg" class="settings-icon" fill="none">
+        <path d="M19.82 2H4.18C2.97602 2 2 2.97602 2 4.18V19.82C2 21.024 2.97602 22 4.18 22H19.82C21.024 22 22 21.024 22 19.82V4.18C22 2.97602 21.024 2 19.82 2Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M7 2V22" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17 2V22" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2 12H22" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2 7H7" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2 17H7" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17 17H22" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17 7H22" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="filter"></div>
+    <div class="change change__out change__hidden">
+      <div class="change-content">
+        <svg xmlns="http://www.w3.org/2000/svg" class="change-closer" fill="none">
+          <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4.5 4.5L13.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="change-text">
+          <h2 class="change-header">Смена фонового изображения</h2>
+          <p class="change-subhead">Выберите новый фон из нашей <br> библиотеки изображений</p>
+          <div class="change-alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="change-alert__icon" viewBox="0 0 20 20" fill="none">
+              <path d="M10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M10 6.66675V10.0001" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M10 13.3333H10.0083" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="change-alert__text">Сохраняется до очистки кеша</p>
           </div>
-          <label for="loginInput" class="auth-form__label">Логин</label>
-          <div class="auth-form__custom-input">
-            <input
-              type="text"
-              name="loginInput"
-              id="loginInput"
-              class="auth-form__input auth-form__input-login"
-              required
-              placeholder="UserLogin"
-            />
-          </div>
-          <label for="passwordInput" class="auth-form__label">Пароль</label>
-          <div class="auth-form__custom-input" tabindex="0">
-            <input
-              type="password"
-              name="passwordInput"
-              id="passwordInput"
-              class="auth-form__input auth-form__input-pass"
-              required
-              placeholder="UserPassword"
-            />
-            <img
-              src="img/eye.svg"
-              alt="Show password icon"
-              class="auth-form__custom-input__icon"
-            />
-          </div>
-          <div class="auth-form__checkbox-container">
-            <input
-              type="checkbox"
-              class="auth-form__checkbox"
-              name="remember-me"
-              id="remember-me"
-              value="yes"
-            />
-            <label for="remember-me" class="auth-form__checkbox-label"
-              >Запомнить меня</label
-            >
-          </div>
-          <input
-            type="submit"
-            name="authSender"
-            value="Войти"
-            class="auth-form__sender"
-          />
-          <p class="auth-form__data-recover-link">Не можете войти?</p>
         </div>
-      </form>
-    </main>
-    <div class="modal">
-      <form action="#" class="modal-window" method="POST">
-        <div class="modal-window__content">
-          <h3 class="modal-header">Помощь со входом</h3>
-          <p class="modal-description">Введите секретный ключ для показа данных пользователя</p>
-          <label for="secretKeyInput" class="modal-label">Секретный ключ</label>
-          <input
-            type="text"
-            name="secretKeyInput"
-            required
-            placeholder="abcde12345"
-            id="secretKeyInput"
-            class="modal-input" />
-          <input
-            type="submit"
-            class="modal-sender"
-            name="modal-sender"
-            value="Показать данные"
-          />
-          <p class="modal-closer">Отмена</p>
+        <span class="change-separator"></span>
+        <div class="change-current">
+          <p class="change-current__text">Текущий</p>
+          <img src="/panel/auth/img/bg-lib/masked-bg1920.png" class="change-current__img" alt="" />
         </div>
-      </form>
+        <span class="change-separator"></span>
+        <div class="change-slider">
+          <div class="change-slider__btn-wrapper">
+            <button class="change-slider__btn change-slider__prev">
+              <svg xmlns="http://www.w3.org/2000/svg" class="change-slider__icon" viewBox="0 0 21 21" fill="none">
+                <path d="M13.125 15.75L7.875 10.5L13.125 5.25" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <ul class="change-slider__list">
+            <li class="change-slider__item">
+              <img src="/panel/auth/img/bg-lib/green-field.jpg" alt="green-field" class="change-slider__img" />
+            </li>
+            <li class="change-slider__item">
+              <img src="/panel/auth/img/bg-lib/purple-beach.png" alt="green-field" class="change-slider__img" />
+            </li>
+            <li class="change-slider__item">
+              <img src="/panel/auth/img/bg-lib/canyon.png" alt="green-field" class="change-slider__img" />
+            </li>
+            <li class="change-slider__item">
+              <img src="/panel/auth/img/bg-lib/yellow-fish.jpg" alt="green-field" class="change-slider__img" />
+            </li>
+          </ul>
+          <div class="change-slider__btn-wrapper">
+            <button class="change-slider__btn change-slider__next">
+              <svg xmlns="http://www.w3.org/2000/svg" class="change-slider__icon" viewBox="0 0 21 21" fill="none">
+                <path d="M13.125 15.75L7.875 10.5L13.125 5.25" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="js/input-focuser.js"></script>
-    <script src="js/show-password.js"></script>
-    <script src="js/modal-open.js"></script>
+    <script src="js/change-open.js"></script>
   </body>
 </html>
