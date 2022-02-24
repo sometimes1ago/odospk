@@ -25,7 +25,7 @@ function selectsInit() {
     }
 
     if (dropDowns[select].childElementCount > 2) {
-      dropDowns[select].style.height = "190px";
+      dropDowns[select].style.height = "175px";
     }
     setTimeout(function () {
       dropDowns[select].style.opacity = 1;

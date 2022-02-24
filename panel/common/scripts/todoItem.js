@@ -4,7 +4,7 @@ function todoListInit() {
   let asideMenu = document.querySelector(".todo-actions");
   let todoList = document.querySelector('.todo-item__notes__full');
 
-  listItems.forEach( (item,i) => {
+  listItems.forEach((item) => {
     item.addEventListener('click', () => {
       item.classList.toggle('todo-list__item-selected');
 
