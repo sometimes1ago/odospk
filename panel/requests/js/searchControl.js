@@ -1,13 +1,13 @@
-const searchContainer = document.querySelector('.queries-controls__search');
-const searchOpener = document.querySelector('.queries-controls__search-btn');
-const searchCloser = document.querySelector('.queries-controls__search-closer');
+const searchContainer = document.querySelector('.query-control__search');
+const searchOpener = document.querySelector('.query-control__search-btn');
+const searchCloser = document.querySelector('.query-control__search-closer');
 
 searchOpener.addEventListener('click', () => {
-    searchOpener.classList.toggle('queries-controls__search-btn__active');
-    searchContainer.classList.toggle('queries-controls__search__visible');
+    searchOpener.classList.toggle('query-control__search-btn__active');
+    searchContainer.classList.toggle('query-control__search__visible');
 });
 
 searchCloser.addEventListener('click', () => {
-    searchOpener.classList.toggle('queries-controls__search-btn__active');
-    searchContainer.classList.toggle('queries-controls__search__visible');
+    searchOpener.classList.toggle('query-control__search-btn__active');
+    searchContainer.classList.toggle('query-control__search__visible');
 });

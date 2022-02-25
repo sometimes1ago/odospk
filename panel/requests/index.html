@@ -207,29 +207,109 @@
               <li class="query-control">
                 <button class="query-control__btn date-control__opener">
                   <svg xmlns="http://www.w3.org/2000/svg" class="query-control__icon" viewBox="0 0 18 18" fill="none">
-                    <path d="M15.9075 11.9175C15.4304 13.0459 14.6841 14.0402 13.7339 14.8135C12.7837 15.5868 11.6586 16.1156 10.4568 16.3536C9.25508 16.5916 8.01331 16.5316 6.84011 16.1788C5.6669 15.8261 4.59797 15.1913 3.72676 14.33C2.85556 13.4687 2.20861 12.4071 1.84247 11.238C1.47634 10.0689 1.40217 8.82786 1.62645 7.62347C1.85072 6.41908 2.36662 5.28797 3.12903 4.32902C3.89144 3.37007 4.87716 2.61249 6 2.1225" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98491 1.5 9 1.5V9H16.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12 1.5V4.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6 1.5V4.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M2.25 7.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
                   <p class="query-control__text">25.02.2022</p><span>&nbsp;—&nbsp;</span><p class="query-control__text query-control__text__end-date">04.03.2022</p>
                 </button>
-                <form class="query-control__content query-control__date">
+                <form class="query-control__content query-control__date date-control">
                   <svg xmlns="http://www.w3.org/2000/svg" class="query-control__closer date-control__closer" viewBox="0 0 20 20" fill="none">
                     <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
                   <h3 class="query-control__header">Временной период</h3>
                   <p class="query-control__subhead">Выберите период вывода <br> данных о заявках</p>
+                  <h4 class="query-control__date-header">Выберите период</h4>
+                  <div class="query-control__date-container">
+                    <ul class="query-control__date-pills">
+                      <li class="query-control__date-pill query-control__date-pill__active" data-date-period="week">Неделя</li>
+                      <li class="query-control__date-pill" data-date-period="twoWeeks">Две недели</li>
+                      <li class="query-control__date-pill" data-date-period="month">Месяц</li>
+                      <li class="query-control__date-pill" data-date-period="threeMonths">Квартал</li>
+                      <li class="query-control__date-pill" data-date-period="halfYear">Полгода</li>
+                      <li class="query-control__date-pill" data-date-period="year">Год</li>
+                    </ul>
+                  </div>
+                  <label for="start-date" class="query-control__date-label">Начальная дата</label>
+                  <input type="date" class="query-control__date-input" name="start-date" id="start-date" value="2022-02-25">
+                  <label for="end-date" class="query-control__date-label">Начальная дата</label>
+                  <input type="date" class="query-control__date-input" name="end-date" id="end-date" value="2022-03-04">
+                  <input type="submit" class="query-control__send" value="Выбрать">
                 </form>
               </li>
-              <li class="query-control"></li>
+              <li class="query-control">
+                <button class="query-control__btn query-control__search-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="query-control__icon query-control__search-closer" viewBox="0 0 20 20" fill="none">
+                    <path d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17.5 17.5L13.875 13.875" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p class="query-control__text">Прямой поиск</p>
+                </button>
+                <form class="query-control__content  query-control__search">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="query-control__closer query-control__search-closer" viewBox="0 0 20 20" fill="none">
+                    <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <h3 class="query-control__header">Прямой поиск</h3>
+                  <p class="query-control__subhead">Выберите поле для поиска <br> и введите значение</p>
+                  <ul class="selector__list">
+                    <li class="selector__item">
+                      <p class="selector__name">Искать по:</p>
+                      <div class="selector__select-wrap" data-index="2">
+                        <div class="selector__select">
+                          <p class="selector__value" data-search-by="number">Номеру</p>
+                          <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              class="selector__path"
+                              d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                              2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                              fill="#252525"
+                            />
+                          </svg>
+                        </div>
+                        <ul class="selector__options">
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-search-by="number">Номеру</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-search-by="course">Курсу или программе</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-search-by="client">Фамилии и имени</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-search-by="phone">Телефону</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-search-by="status">Статусу</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  <label for="search-value" class="query-control__label">Введите значение</label>
+                  <input type="text" name="search-value" id="search-value" class="query-control__input" placeholder="Ищу что хочу">
+                  <input type="submit" class="query-control__send" value="Найти">
+                </form>
+              </li>
             </ul>
           </li>
-          <li class="queries-controls__item"></li>
+          <li class="queries-controls__item widgets">
+            <button class="widgets-open query-control__btn">
+              <svg xmlns="http://www.w3.org/2000/svg" class="query-control__icon widgets-icon" viewBox="0 0 22 22" fill="none">
+                <path d="M16.5 13.75L11 8.25L5.5 13.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="query-control__text">Показать виджет</p>
+            </button>
+          </li>
         </ul>
       </div>
     </section>
     <script src="/panel/common/scripts/custom-selector.js"></script>
     <script src="/panel/common/scripts/dateControl.js"></script>
     <script src="/panel/requests/js/sortControl.js"></script>
+    <script src="/panel/requests/js/searchControl.js"></script>
   </body>
 </html>
