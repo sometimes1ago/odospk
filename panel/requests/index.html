@@ -117,650 +117,119 @@
     </aside>
     <section class="queries">
       <h1 class="queries-header">Заявки на обучение</h1>
-      <section class="queries-content">
+      <div class="queries-content">
         <ul class="queries-controls">
           <li class="queries-controls__item">
-            <div class="queries-controls__containter">
-              <button class="queries-controls__btn queries-controls__sort-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" class="queries-controls__icon" viewBox="0 0 20 20" fill="none">
-                  <path d="M17.6749 13.2417C17.1448 14.4954 16.3156 15.6002 15.2598 16.4594C14.2041 17.3187 12.9539 17.9062 11.6186 18.1707C10.2833 18.4351 8.90361 18.3685 7.60005 17.9765C6.29649 17.5845 5.10878 16.8792 4.14078 15.9222C3.17277 14.9652 2.45394 13.7856 2.04712 12.4866C1.64031 11.1876 1.5579 9.80874 1.80709 8.47053C2.05629 7.13232 2.62951 5.87553 3.47663 4.81003C4.32376 3.74453 5.419 2.90277 6.6666 2.35834" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M18.3333 9.99999C18.3333 8.90564 18.1178 7.82201 17.699 6.81096C17.2802 5.79991 16.6664 4.88125 15.8926 4.10743C15.1187 3.33361 14.2001 2.71978 13.189 2.30099C12.178 1.8822 11.0943 1.66666 10 1.66666V9.99999H18.3333Z" stroke="#252525" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="queries-controls__text">Сортировка</p>
-              </button>
-              <div class="queries-controls__content queries-controls__sort">
-                <svg xmlns="http://www.w3.org/2000/svg" class="queries-controls__closer queries-controls__sort-closer" viewBox="0 0 20 20" fill="none">
-                  <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <h3 class="queries-controls__header">Сортировка данных</h3>
-                <p class="queries-controls__subhead">Быстрая сортировка по выбранным критериям</p>
-                <ul class="selector__list">
-                  <li class="selector__item">
-                    <p class="selector__name">Сортировать по:</p>
-                    <div class="selector__select-wrap" data-index="0">
-                      <div class="selector__select">
-                        <p class="selector__value" data-sortBy="number">Номеру</p>
-                        <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            class="selector__path"
-                            d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                            2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                            fill="#252525"
-                          />
-                        </svg>
-                      </div>
-                      <ul class="selector__options">
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" ddata-sortBy="number">Номеру</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-sortBy="course">Курсу или программе</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" ddata-sortBy="client">Фамилии и имени</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-sortBy="phone">Телефону</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" ddata-sortBy="date">Дате</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-sortBy="status">Статусу</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="selector__item">
-                    <p class="selector__name">Порядок по:</p>
-                    <div class="selector__select-wrap" data-index="1">
-                      <div class="selector__select">
-                        <p class="selector__value" data-orderBy="desc">Убыванию</p>
-                        <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            class="selector__path"
-                            d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                            2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                            fill="#252525"
-                          />
-                        </svg>
-                      </div>
-                      <ul class="selector__options">
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-orderBy="desc">Убыванию</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-orderBy="asc">Возрастанию</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-                <button class="queries-controls__event-btn" data-controlEvent="sort">Показать</button>
-              </div>
-            </div>
+            <ul class="queries-tabs">
+              <li class="queries-tab queries-tab__active">Обучение</li>
+              <li class="queries-tab">Звонки</li>
+            </ul>
           </li>
           <li class="queries-controls__item">
-            <div class="queries-controls__container">
-              <button class="queries-controls__btn queries-controls__date-btn">
-                <svg width="20" height="20" class="queries-controls__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.8333 3.33333H4.16667C3.24619 3.33333 2.5 4.07952 2.5 4.99999V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V4.99999C17.5 4.07952 16.7538 3.33333 15.8333 3.33333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M13.3334 1.66667V5.00001" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M6.66663 1.66667V5.00001" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M2.5 8.33333H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="queries-controls__text" data-startDate="02.01.2022">02.01.2022</p>
-                <span class="queries-controls__date-btn__splitter">&nbsp;—&nbsp;</span>
-                <p class="queries-controls__text" data-endDate="09.01.2022">09.01.2022</p>
-              </button>
-              <div class="queries-controls__content queries-controls__date">
-                <svg class="queries-controls__closer queries-controls__date-closer" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M4.5 4.5L13.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <h2 class="queries-controls__header">Временной период</h2>
-                <p class="queries-controls__subhead">Выберите период вывода данных о заявках</p>
-                <div class="queries-controls__date-pills">
-                  <h3 class="queries-controls__date-pills__header">Выберите промежуток</h3>
-                  <div class="queries-controls__date-pills__scroll-container">
-                    <ul class="queries-controls__date-pills__btns">
-                      <li class="queries-controls__date-pill queries-controls__date-pill__active" data-period="week">Неделя</li>
-                      <li class="queries-controls__date-pill" data-period="twoWeeks">Две недели</li>
-                      <li class="queries-controls__date-pill" data-period="month">Месяц</li>
-                      <li class="queries-controls__date-pill" data-period="threeMonths">Три месяца</li>
-                      <li class="queries-controls__date-pill" data-period="halfYear">Полгода</li>
-                      <li class="queries-controls__date-pill" data-period="year">Год</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="queries-controls__date-start">
-                  <label for="date-start" class="queries-controls__date-start__header">Начальная дата</label>
-                  <div class="queries-controls__date-start__container">
-                    <input type="date" name="date-start" value="2022-01-04" id="date-start" class="queries-controls__date-start__input" />
-                  </div>
-                </div>
-                <div class="queries-controls__date-end">
-                  <label for="date-end" class="queries-controls__date-end__header">Конечная дата</label>
-                  <div class="queries-controls__date-end__container">
-                    <input type="date" name="date-end" value="2022-01-11" id="date-end" class="queries-controls__date-end__input" />
-                  </div>
-                </div>
-                <button class="queries-controls__event-btn" data-controlEvent="datePick">Выбрать</button>
-              </div>
-            </div>
-          </li>
-          <li class="queries-controls__item">
-            <div class="queries-controls__container">
-              <button class="queries-controls__btn queries-controls__search-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" class="queries-controls__icon" viewBox="0 0 20 20" fill="none">
-                  <path d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M17.5 17.5L13.875 13.875" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <p class="queries-controls__text">Прямой поиск</p>
-              </button>
-              <div class="queries-controls__content queries-controls__search">
-                <svg xmlns="http://www.w3.org/2000/svg" class="queries-controls__closer queries-controls__search-closer" viewBox="0 0 20 20" fill="none">
-                  <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <h3 class="queries-controls__header">Прямой поиск</h3>
-                <p class="queries-controls__subhead">Выберите поле для поиска и введите значение</p>
-                <ul class="selector__list">
-                  <li class="selector__item">
-                    <p class="selector__name">Искать по:</p>
-                    <div class="selector__select-wrap" data-index="2">
-                      <div class="selector__select">
-                        <p class="selector__value" data-searchBy="number">Номеру</p>
-                        <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            class="selector__path"
-                            d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                            2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                            fill="#252525"
-                          />
-                        </svg>
+            <ul class="queries-controls__list">
+              <li class="query-control">
+                <button class="query-control__btn query-control__sort-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="query-control__icon" viewBox="0 0 18 18" fill="none">
+                    <path d="M15.9075 11.9175C15.4304 13.0459 14.6841 14.0402 13.7339 14.8135C12.7837 15.5868 11.6586 16.1156 10.4568 16.3536C9.25508 16.5916 8.01331 16.5316 6.84011 16.1788C5.6669 15.8261 4.59797 15.1913 3.72676 14.33C2.85556 13.4687 2.20861 12.4071 1.84247 11.238C1.47634 10.0689 1.40217 8.82786 1.62645 7.62347C1.85072 6.41908 2.36662 5.28797 3.12903 4.32902C3.89144 3.37007 4.87716 2.61249 6 2.1225" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98491 1.5 9 1.5V9H16.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p class="query-control__text">Сортировка</p>
+                </button>
+                <form class="query-control__content query-control__sort" method="GET">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="query-control__closer query-control__sort-closer" viewBox="0 0 20 20" fill="none">
+                    <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <h3 class="query-control__header">Сортировка данных</h3>
+                  <p class="query-control__subhead">Быстрая сортировка <br> по выбранным критериям</p>
+                  <ul class="selector__list">
+                    <li class="selector__item">
+                      <p class="selector__name">Сортировать по:</p>
+                      <div class="selector__select-wrap" data-index="0">
+                        <div class="selector__select">
+                          <p class="selector__value" data-sort-by="number">Номеру</p>
+                          <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              class="selector__path"
+                              d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                              2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                              fill="#252525"
+                            />
+                          </svg>
+                        </div>
+                        <ul class="selector__options">
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-sort-by="number">Номеру</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-sort-by="course">Курсу или программе</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-sort-by="client">Фамилии и имени</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-sort-by="phone">Телефону</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-sort-by="status">Статусу</p>
+                          </li>
+                        </ul>
                       </div>
-                      <ul class="selector__options">
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-searchBy="number">Номеру</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-searchBy="course">Курсу или программе</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-searchBy="client">Фамилии и имени</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-searchBy="phone">Телефону</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-searchBy="date">Дате</p>
-                        </li>
-                        <li class="selector__options_item">
-                          <p class="selector__options_value" data-searchBy="status">Статусу</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-                <label for="search-input" class="queries-controls__label">Введите значение</label>
-                <input type="text" name="searchInput" id="searchInput" class="queries-controls__input" required="" placeholder="Ищу что хочу" />
-                <button class="queries-controls__event-btn" data-controlEvent="search">Найти</button>
-              </div>
-            </div>
+                    </li>
+                    <li class="selector__item">
+                      <p class="selector__name">Порядок по:</p>
+                      <div class="selector__select-wrap" data-index="1">
+                        <div class="selector__select">
+                          <p class="selector__value" data-order-by="desc">Убыванию</p>
+                          <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              class="selector__path"
+                              d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
+                              2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
+                              fill="#252525"
+                            />
+                          </svg>
+                        </div>
+                        <ul class="selector__options">
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-order-by="desc">Убыванию</p>
+                          </li>
+                          <li class="selector__options_item">
+                            <p class="selector__options_value" data-order-by="asc">Возрастанию</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  <input type="submit" class="query-control__send" value="Показать">
+                </form>
+              </li>
+              <li class="query-control">
+                <button class="query-control__btn date-control__opener">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="query-control__icon" viewBox="0 0 18 18" fill="none">
+                    <path d="M15.9075 11.9175C15.4304 13.0459 14.6841 14.0402 13.7339 14.8135C12.7837 15.5868 11.6586 16.1156 10.4568 16.3536C9.25508 16.5916 8.01331 16.5316 6.84011 16.1788C5.6669 15.8261 4.59797 15.1913 3.72676 14.33C2.85556 13.4687 2.20861 12.4071 1.84247 11.238C1.47634 10.0689 1.40217 8.82786 1.62645 7.62347C1.85072 6.41908 2.36662 5.28797 3.12903 4.32902C3.89144 3.37007 4.87716 2.61249 6 2.1225" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98491 1.5 9 1.5V9H16.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p class="query-control__text">25.02.2022</p><span>&nbsp;—&nbsp;</span><p class="query-control__text query-control__text__end-date">04.03.2022</p>
+                </button>
+                <form class="query-control__content query-control__date">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="query-control__closer date-control__closer" viewBox="0 0 20 20" fill="none">
+                    <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <h3 class="query-control__header">Временной период</h3>
+                  <p class="query-control__subhead">Выберите период вывода <br> данных о заявках</p>
+                </form>
+              </li>
+              <li class="query-control"></li>
+            </ul>
           </li>
+          <li class="queries-controls__item"></li>
         </ul>
-        <div class="queries-controls__widgets">
-          <button class="queries-controls__btn widgets-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" class="queries-controls__icon" viewBox="0 0 22 22" fill="none">
-              <path d="M5.5 8.25L11 13.75L16.5 8.25" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <p class="queries-controls__text widgets-btn__text">Показать виджеты</p>
-          </button>
-          <div class="widgets">
-            <div class="widgets-todo widget">
-              <svg xmlns="http://www.w3.org/2000/svg" class="queries-controls__closer" viewBox="0 0 20 20" fill="none">
-                <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <h3 class="widgets-todo__header">Рабочие заметки</h3>
-              <p class="widgets-todo__subhead">ToDo лист, который может понадобиться в работе</p>
-              <ul class="todo__list">
-                <li class="todo__list-item">
-                  <button class="todo__list-item__btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="todo__list-item__icon" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="7" stroke="#252525" stroke-width="2" />
-                    </svg>
-                    <p class="todo__list-item__text">Просмотреть новые заявки</p>
-                  </button>
-                </li>
-                <li class="todo__list-item">
-                  <button class="todo__list-item__btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="todo__list-item__icon" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="7" stroke="#252525" stroke-width="2" />
-                    </svg>
-                    <p class="todo__list-item__text">Просмотреть новые заявки</p>
-                  </button>
-                </li>
-                <li class="todo__list-item">
-                  <button class="todo__list-item__btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="todo__list-item__icon" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="7" stroke="#252525" stroke-width="2" />
-                    </svg>
-                    <p class="todo__list-item__text">Просмотреть новые заявки</p>
-                  </button>
-                </li>
-                <li class="todo__list-item">
-                  <button class="todo__list-item__btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="todo__list-item__icon" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="7" stroke="#252525" stroke-width="2" />
-                    </svg>
-                    <p class="todo__list-item__text">Просмотреть новые заявки</p>
-                  </button>
-                </li>
-                <li class="todo__list-item">
-                  <button class="todo__list-item__btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="todo__list-item__icon" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="7" stroke="#252525" stroke-width="2" />
-                    </svg>
-                    <p class="todo__list-item__text">Просмотреть новые заявки</p>
-                  </button>
-                </li>
-                <li class="todo__list-item">
-                  <button class="todo__list-item__btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="todo__list-item__icon" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="7" stroke="#252525" stroke-width="2" />
-                    </svg>
-                    <p class="todo__list-item__text">Просмотреть новые заявки</p>
-                  </button>
-                </li>
-              </ul>
-              <div class="widgets-todo__gradient-hidder"></div>
-              <button class="widgets-todo__add-btn">Добавить заметку</button>
-            </div>
-            <div class="widgets-users widget">
-              <svg xmlns="http://www.w3.org/2000/svg" class="queries-controls__closer" viewBox="0 0 20 20" fill="none">
-                <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <h3 class="widgets-todo__header">Пользователи онлайн</h3>
-              <p class="widgets-todo__subhead">Пользователи, которые находятся сейчас в системе</p>
-              <ul class="users__list">
-                <li class="users__list-item">
-                  <div class="users__list-item__online">
-                    <img class="users__list-item__img" src="/panel/common/img/user-avatars/admin.png" alt="" />
-                    <div class="users__list-item__dot"></div>
-                  </div>
-                  <h5 class="users__list-item__user">Валерия</h5>
-                  <p class="users__list-item__access">Полный доступ</p>
-                </li>
-                <li class="users__list-item">
-                  <div class="users__list-item__online">
-                    <img class="users__list-item__img" src="/panel/common/img/user-avatars/admin.png" alt="" />
-                    <div class="users__list-item__dot"></div>
-                  </div>
-                  <h5 class="users__list-item__user">Валерия</h5>
-                  <p class="users__list-item__access">Полный доступ</p>
-                </li>
-                <li class="users__list-item">
-                  <div class="users__list-item__online">
-                    <img class="users__list-item__img" src="/panel/common/img/user-avatars/admin.png" alt="" />
-                    <div class="users__list-item__dot"></div>
-                  </div>
-                  <h5 class="users__list-item__user">Валерия</h5>
-                  <p class="users__list-item__access">Полный доступ</p>
-                </li>
-                <li class="users__list-item">
-                  <div class="users__list-item__online">
-                    <img class="users__list-item__img" src="/panel/common/img/user-avatars/admin.png" alt="" />
-                    <div class="users__list-item__dot"></div>
-                  </div>
-                  <h5 class="users__list-item__user">Валерия</h5>
-                  <p class="users__list-item__access">Полный доступ</p>
-                </li>
-                <li class="users__list-item">
-                  <div class="users__list-item__online">
-                    <img class="users__list-item__img" src="/panel/common/img/user-avatars/admin.png" alt="" />
-                    <div class="users__list-item__dot"></div>
-                  </div>
-                  <h5 class="users__list-item__user">Валерия</h5>
-                  <p class="users__list-item__access">Полный доступ</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <ul class="queries-rows">
-          <li class="row">
-            <ul class="row-cells">
-              <li class="row-cells__item req-number">
-                <img src="img/data__number-icon.svg" alt="num-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Номер</h3>
-                  <p class="row-cells__text-data__data">123456</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-course">
-                <img src="img/data__course-icon.svg" alt="course-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Курс или программа</h3>
-                  <p class="row-cells__text-data__data">Мобильная разработка</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-customer">
-                <img src="img/data__customer-icon.svg" alt="customer-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Фамилия и имя</h3>
-                  <p class="row-cells__text-data__data">Александр Чудаев</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-phone">
-                <img src="img/data__phone-icon.svg" alt="phone-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Телефон</h3>
-                  <p class="row-cells__text-data__data">+79999999999</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-date">
-                <img src="img/data__date-icon.svg" alt="date-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Дата заявки</h3>
-                  <p class="row-cells__text-data__data">77.77.7777</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-status">
-                <img src="img/data__status-icon.svg" alt="status-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Статус</h3>
-                  <p class="row-cells__text-data__data">Не обработан</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="row">
-            <ul class="row-cells">
-              <li class="row-cells__item req-number">
-                <img src="img/data__number-icon.svg" alt="num-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Номер</h3>
-                  <p class="row-cells__text-data__data">123456</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-course">
-                <img src="img/data__course-icon.svg" alt="course-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Курс или программа</h3>
-                  <p class="row-cells__text-data__data">Мобильная разработка</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-customer">
-                <img src="img/data__customer-icon.svg" alt="customer-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Фамилия и имя</h3>
-                  <p class="row-cells__text-data__data">Александр Чудаев</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-phone">
-                <img src="img/data__phone-icon.svg" alt="phone-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Телефон</h3>
-                  <p class="row-cells__text-data__data">+79999999999</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-date">
-                <img src="img/data__date-icon.svg" alt="date-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Дата заявки</h3>
-                  <p class="row-cells__text-data__data">77.77.7777</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-status">
-                <img src="img/data__status-icon.svg" alt="status-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Статус</h3>
-                  <p class="row-cells__text-data__data">Не обработан</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="row">
-            <ul class="row-cells">
-              <li class="row-cells__item req-number">
-                <img src="img/data__number-icon.svg" alt="num-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Номер</h3>
-                  <p class="row-cells__text-data__data">123456</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-course">
-                <img src="img/data__course-icon.svg" alt="course-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Курс или программа</h3>
-                  <p class="row-cells__text-data__data">Мобильная разработка</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-customer">
-                <img src="img/data__customer-icon.svg" alt="customer-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Фамилия и имя</h3>
-                  <p class="row-cells__text-data__data">Александр Чудаев</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-phone">
-                <img src="img/data__phone-icon.svg" alt="phone-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Телефон</h3>
-                  <p class="row-cells__text-data__data">+79999999999</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-date">
-                <img src="img/data__date-icon.svg" alt="date-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Дата заявки</h3>
-                  <p class="row-cells__text-data__data">77.77.7777</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-status">
-                <img src="img/data__status-icon.svg" alt="status-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Статус</h3>
-                  <p class="row-cells__text-data__data">Не обработан</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="row">
-            <ul class="row-cells">
-              <li class="row-cells__item req-number">
-                <img src="img/data__number-icon.svg" alt="num-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Номер</h3>
-                  <p class="row-cells__text-data__data">123456</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-course">
-                <img src="img/data__course-icon.svg" alt="course-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Курс или программа</h3>
-                  <p class="row-cells__text-data__data">Мобильная разработка</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-customer">
-                <img src="img/data__customer-icon.svg" alt="customer-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Фамилия и имя</h3>
-                  <p class="row-cells__text-data__data">Александр Чудаев</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-phone">
-                <img src="img/data__phone-icon.svg" alt="phone-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Телефон</h3>
-                  <p class="row-cells__text-data__data">+79999999999</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-date">
-                <img src="img/data__date-icon.svg" alt="date-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Дата заявки</h3>
-                  <p class="row-cells__text-data__data">77.77.7777</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-status">
-                <img src="img/data__status-icon.svg" alt="status-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Статус</h3>
-                  <p class="row-cells__text-data__data">Не обработан</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="row">
-            <ul class="row-cells">
-              <li class="row-cells__item req-number">
-                <img src="img/data__number-icon.svg" alt="num-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Номер</h3>
-                  <p class="row-cells__text-data__data">123456</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-course">
-                <img src="img/data__course-icon.svg" alt="course-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Курс или программа</h3>
-                  <p class="row-cells__text-data__data">Мобильная разработка</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-customer">
-                <img src="img/data__customer-icon.svg" alt="customer-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Фамилия и имя</h3>
-                  <p class="row-cells__text-data__data">Александр Чудаев</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-phone">
-                <img src="img/data__phone-icon.svg" alt="phone-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Телефон</h3>
-                  <p class="row-cells__text-data__data">+79999999999</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-date">
-                <img src="img/data__date-icon.svg" alt="date-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Дата заявки</h3>
-                  <p class="row-cells__text-data__data">77.77.7777</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-status">
-                <img src="img/data__status-icon.svg" alt="status-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Статус</h3>
-                  <p class="row-cells__text-data__data">Не обработан</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="row">
-            <ul class="row-cells">
-              <li class="row-cells__item req-number">
-                <img src="img/data__number-icon.svg" alt="num-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Номер</h3>
-                  <p class="row-cells__text-data__data">123456</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-course">
-                <img src="img/data__course-icon.svg" alt="course-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Курс или программа</h3>
-                  <p class="row-cells__text-data__data">Мобильная разработка</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-customer">
-                <img src="img/data__customer-icon.svg" alt="customer-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Фамилия и имя</h3>
-                  <p class="row-cells__text-data__data">Александр Чудаев</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-phone">
-                <img src="img/data__phone-icon.svg" alt="phone-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Телефон</h3>
-                  <p class="row-cells__text-data__data">+79999999999</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-date">
-                <img src="img/data__date-icon.svg" alt="date-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Дата заявки</h3>
-                  <p class="row-cells__text-data__data">77.77.7777</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-status">
-                <img src="img/data__status-icon.svg" alt="status-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Статус</h3>
-                  <p class="row-cells__text-data__data">Не обработан</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="row">
-            <ul class="row-cells">
-              <li class="row-cells__item req-number">
-                <img src="img/data__number-icon.svg" alt="num-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Номер</h3>
-                  <p class="row-cells__text-data__data">123456</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-course">
-                <img src="img/data__course-icon.svg" alt="course-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Курс или программа</h3>
-                  <p class="row-cells__text-data__data">Мобильная разработка</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-customer">
-                <img src="img/data__customer-icon.svg" alt="customer-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Фамилия и имя</h3>
-                  <p class="row-cells__text-data__data">Александр Чудаев</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-phone">
-                <img src="img/data__phone-icon.svg" alt="phone-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Телефон</h3>
-                  <p class="row-cells__text-data__data">+79999999999</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-date">
-                <img src="img/data__date-icon.svg" alt="date-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Дата заявки</h3>
-                  <p class="row-cells__text-data__data">77.77.7777</p>
-                </div>
-              </li>
-              <li class="row-cells__item req-status">
-                <img src="img/data__status-icon.svg" alt="status-icon" class="row-cells__img" />
-                <div class="row-cells__text-data">
-                  <h3 class="row-cells__text-data__header">Статус</h3>
-                  <p class="row-cells__text-data__data">Не обработан</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </section>
+      </div>
     </section>
     <script src="/panel/common/scripts/custom-selector.js"></script>
     <script src="/panel/common/scripts/dateControl.js"></script>
-    <script src="js/sortControl.js"></script>
-    <script src="js/searchControl.js"></script>
-    <script src="js/widgetsControl.js"></script>
+    <script src="/panel/requests/js/sortControl.js"></script>
   </body>
 </html>
