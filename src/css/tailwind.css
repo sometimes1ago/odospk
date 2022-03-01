@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: "Geometria";
+    font-weight: 500;
+    src: url("/src/font/Geometria-Medium.woff2") format("woff2"), url("/src/font/Geometria-Medium.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Geometria";
+    font-weight: bold;
+    src: url("/src/font/Geometria-Bold.woff2") format("woff2"), url("/src/font/Geometria-Bold.woff") format("woff");
+  }
+}
+
+@layer components {
+  .aside-menu-item {
+    @apply flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8;
+  }
+  .aside-menu-item__active {
+    @apply flex flex-row items-center p-12 cursor-pointer mb-4;
+  }
+  .aside-menu-item__active path {
+    @apply stroke-accent;
+  }
+  .aside-menu-item__active p {
+    @apply text-accent;
+  }
+  .active-icon path {
+    @apply stroke-accent;
+  }
+  .btn-primary {
+    @apply w-full p-16 xl:p-[19px] bg-accent cursor-pointer mt-24 xl:mt-32 text-main rounded-16 xl:rounded-20 text-14 xl:text-16;
+  }
+  .btn-primary:hover {
+    @apply shadow-btn;
+  }
+  .item-hover path {
+    @apply stroke-selected;
+  }
+  .item-hover p {
+    @apply text-selected;
+  }
+  .query-pill {
+    @apply flex items-center px-12 xl:px-16 py-8 xl:py-[10px] bg-add border border-hover rounded-12 xl:rounded-16 cursor-pointer;
+  }
+  .query-pill:hover {
+    @apply bg-selected text-main border-selected;
+  }
+  .query-pill:hover path {
+    @apply stroke-main;
+  }
+  .query-pill__content {
+    @apply absolute top-48 xl:top-52 bg-main;
+  }
+  .query-table__row {
+    @apply px-16 py-12 text-14 font-medium text-sec break-words leading-tight;
+  }
+  .component {
+    @apply rounded-20 xl:rounded-24 bg-main px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-hover;
+  }
+  .component-head {
+    @apply text-18 xl:text-20 font-bold;
+  }
+  .component-head__form {
+    @apply text-20 xl:text-24 font-bold;
+  }
+  .component-subhead {
+    @apply text-14 xl:text-16 text-sec mt-8 leading-tight;
+  }
+  .component-label {
+    @apply text-16 xl:text-18 mt-16 xl:mt-24 block;
+  }
+  .component-input {
+    @apply w-full text-14 px-12 py-[14.5px] xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-accent outline-2 cursor-pointer rounded-16 border-hover bg-add;
+  }
+  .component-textarea {
+    @apply w-full text-14 xl:text-16 p-12 h-[74px] xl:h-[106px] mt-12 xl:mt-16 border outline-2 resize-none no-scrollbar leading-tight border-hover outline-accent cursor-pointer rounded-16 bg-add;
+  }
+  .selector__active {
+    @apply z-10;
+  }
+  .selector__select {
+    @apply flex items-center justify-between py-16 xl:py-[18px] px-12 mt-12 bg-add border border-hover box-border rounded-16;
+  }
+  .selector__item-active {
+    @apply z-10;
+  }
+  .selector__options {
+    @apply w-full top-64 absolute right-0 mt-8 mx-auto mb-0 bg-main box-border shadow-selector rounded-16 p-12 text-14 opacity-0 hidden animate-fadeInDown overflow-auto;
+  }
+  .selector__options::-webkit-scrollbar {
+    @apply w-8;
+  }
+  .selector__options::-webkit-scrollbar-track {
+    @apply bg-main rounded-20;
+  }
+  .selector__options::-webkit-scrollbar-thumb {
+    @apply bg-selected rounded-20;
+  }
+  .selector__options-active {
+    @apply block opacity-100;
+  }
+  .selector__options_item {
+    @apply flex items-center justify-start w-full cursor-pointer rounded-12 xl:rounded-16 mb-4 xl:mb-8;
+  }
+  .selector__options_item:hover {
+    @apply bg-hover;
+  }
+  .selector__options_value {
+    @apply p-12 xl:p-16 text-14 xl:text-16 leading-tight break-words;
+  }
+  .sort-btn__active {
+    @apply bg-accent text-main;
+  }
+  .sort-btn__active path {
+    @apply stroke-main;
+  }
+  .sort-control {
+    @apply hidden;
+  }
+  .sort-control__visible {
+    @apply block animate-fadeInDown;
+  }
+  .search-control {
+    @apply hidden;
+  }
+  .search-control__visible {
+    @apply block animate-fadeInDown;
+  }
+  .search-btn__active {
+    @apply bg-accent text-main;
+  }
+  .search-btn__active path {
+    @apply stroke-main;
+  }
+  .date-control {
+    @apply hidden;
+  }
+  .date-control__visible {
+    @apply block animate-fadeInDown;
+  }
+  .date-btn__active {
+    @apply bg-accent text-main;
+  }
+  .date-btn__active path {
+    @apply stroke-main;
+  }
+  .date-pill {
+    @apply text-14 xl:text-16 py-8 px-16 rounded-12 mr-8 border border-stroke bg-add cursor-pointer;
+  }
+  .date-pill:last-child {
+    @apply mr-0;
+  }
+  .date-pill__active {
+    @apply bg-accent text-main border-accent;
+  }
+  .date-pill:hover {
+    @apply bg-selected border-selected text-main;
+  }
+  .date-input {
+    @apply p-[14px];
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    @apply w-0 h-0;
+  }
+  .no-scrollbar::-webkit-scrollbar-track {
+    @apply appearance-none;
+  }
+  .no-scrollbar::-webkit-scrollbar-thumb {
+    @apply appearance-none;
+  }
+  .widget-item {
+    @apply mb-8 px-12 text-14 break-words hover:bg-hover py-[10px] bg-add border-hover rounded-12 cursor-pointer;
+  }
+  .widget-item:last-child {
+    @apply mb-0;
+  }
+}
