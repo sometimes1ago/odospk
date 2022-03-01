@@ -10,6 +10,9 @@ module.exports = {
       animation: {
         'fadeInDown': 'fadeInDown 0.45s ease-in'
       },
+      brightness: {
+        '65': '.65'
+      },
       keyframes: {
         'fadeInDown': {
           '0%': {
@@ -89,5 +92,7 @@ module.exports = {
       xl: '1900px'
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }

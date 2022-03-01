@@ -72,7 +72,7 @@
             </a>
           </li>
           <li class="hover:item-hover">
-            <a href="/panel/removing/" class="aside-menu-item__active">
+            <a href="/panel/removing/" class="aside-menu-item">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M6.66666 5V3.33333C6.66666 2.89131 6.84225 2.46738 7.15481 2.15482C7.46737 1.84226 7.8913 1.66667 8.33332 1.66667H11.6667C12.1087 1.66667 12.5326 1.84226 12.8452 2.15482C13.1577 2.46738 13.3333 2.89131 13.3333 3.33333V5M15.8333 5V16.6667C15.8333 17.1087 15.6577 17.5326 15.3452 17.8452C15.0326 18.1577 14.6087 18.3333 14.1667 18.3333H5.83332C5.3913 18.3333 4.96737 18.1577 4.65481 17.8452C4.34225 17.5326 4.16666 17.1087 4.16666 16.6667V5H15.8333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -83,7 +83,7 @@
             </a>
           </li>
           <li class="hover:item-hover">
-            <a href="/panel/users/" class="aside-menu-item">
+            <a href="/panel/users/" class="aside-menu-item__active">
               <svg class="w-18 xl:w-24 h-18 xl:h-24 shrink-0" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16668C3.28262 12.5 2.43478 12.8512 1.80965 13.4763C1.18453 14.1014 0.833344 14.9493 0.833344 15.8333V17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M7.49999 9.16667C9.34094 9.16667 10.8333 7.67428 10.8333 5.83333C10.8333 3.99238 9.34094 2.5 7.49999 2.5C5.65904 2.5 4.16666 3.99238 4.16666 5.83333C4.16666 7.67428 5.65904 9.16667 7.49999 9.16667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -122,136 +122,32 @@
       </div>
     </aside>
     <main class="ml-24">
-      <h1 class="mt-16 xl:mt-20 text-32 xl:text-42 font-bold">Удаление данных</h1>
-      <ul class="flex flex-wrap mt-20 w-[996px] xl:w-[1395px]">
-        <li class="mr-24 w-[272px] xl:w-[297px]">
-          <form action="" class="component" method="POST">
-            <h2 class="component-head__form">Удаление заявки</h2>
-            <p class="component-subhead">Выберите заявку и нажмите <br> на кнопку “Удалить”</p>
-            <label for="queryNum" class="component-label">Номер заявки</label>
-            <input type="text" name="queryNum" id="queryNum" class="component-input" placeholder="123456789">
-            <input type="submit" name="remQuerySender" value="Удалить" class="btn-primary">
-          </form>
+      <h1 class="mt-16 xl:mt-20 text-32 xl:text-42 font-bold">Пользователи панели</h1>
+      <ul class="flex flex-wrap w-[1000px] xl:w-[1600px]">
+        <li class="component mt-24 mr-24">
+          <div class="flex items-center">
+            <div class="relative">
+              <img src="/src/img/avatars/admin.png" class="w-[70px] xl:w-[85px] h-[70px] xl:h-[85px]" alt="User avatar">
+              <div class="absolute bottom-0 right-0 p-[6px] xl:p-8 rounded-full border-[3px] xl:border-[5px] border-main bg-accent"></div>
+            </div>
+            <div class="ml-16">
+              <h3 class="text-18 xl:text-20">Валерия</h3>
+              <p class="text-14 xl:text-16 text-sec leading-tight mt-4 xl:mt-8">Полный доступ</p>
+            </div>
+          </div>
+          <h4 class="component-label">Время последнего входа</h4>
+          <p class="text-14 xl:text-16 text-sec mt-8">26.10.2021 в 12:43</p>
+          <button class="btn-primary">История активности</button>
         </li>
-        <li class="mr-24 w-[272px] xl:w-[297px]">
-          <form action="" class="component" method="POST">
-            <h2 class="component-head__form">Удаление программы</h2>
-            <p class="component-subhead">Выберите программу и нажмите <br> на кнопку “Удалить”</p>
-            <ul class="w-full flex flex-col">
-              <li class="selector__item flex flex-col mt-16 xl:mt-24">
-                <p class="text-16 xl:text-18">Выберите программу:</p>
-                <div class="selector__select-wrap relative w-full cursor-pointer" data-index="0">
-                  <div class="selector__select">
-                    <p class="selector__value mr-8 text-14 xl:text-16" data-program="number">Программа 1</p>
-                    <svg class="mt-[1px] w-[11px] h-[10px]" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                        fill="#252525"
-                      />
-                    </svg>
-                  </div>
-                  <ul class="selector__options">
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-program="number">Программа 1</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-program="number">Программа 2</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-program="number">Программа 3</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-program="number">Программа 4</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-program="number">Программа 5</p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-            <input type="submit" name="remProgSender" value="Удалить" class="btn-primary">
-          </form>
-        </li>
-        <li class="mr-24 w-[380px]">
-          <form action="" class="component" method="POST">
-            <h2 class="component-head__form">Удаление отзыва</h2>
-            <p class="component-subhead">Выберите отзыв и нажмите <br> на кнопку “Удалить”</p>
-            <ul class="w-full flex flex-col">
-              <li class="selector__item flex flex-col mt-16 xl:mt-24">
-                <p class="text-16 xl:text-18">Выберите отзыв:</p>
-                <div class="selector__select-wrap relative w-full cursor-pointer" data-index="1">
-                  <div class="selector__select">
-                    <p class="selector__value mr-8 text-14 xl:text-16" data-feedback="number">Отзыв 1</p>
-                    <svg class="mt-[1px] w-[11px] h-[10px]" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                        fill="#252525"
-                      />
-                    </svg>
-                  </div>
-                  <ul class="selector__options">
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-feedback="number">Отзыв 1</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-feedback="number">Отзыв 2</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-feedback="number">Отзыв 3</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-feedback="number">Отзыв 4</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-feedback="number">Отзыв 5</p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-            <input type="submit" name="remFeedSender" value="Удалить" class="btn-primary">
-          </form>
-        </li>
-        <li class="mr-24 mt-24 xl:mt-0">
-          <form action="" class="component" method="POST">
-            <h2 class="component-head__form">Удаление пользователя</h2>
-            <p class="component-subhead">Выберите пользователя и нажмите <br> на кнопку “Удалить”</p>
-            <ul class="w-full flex flex-col">
-              <li class="selector__item flex flex-col mt-16 xl:mt-24">
-                <p class="text-16 xl:text-18">Выберите пользователя:</p>
-                <div class="selector__select-wrap relative w-full cursor-pointer" data-index="4">
-                  <div class="selector__select">
-                    <p class="selector__value mr-8 text-14 xl:text-16" data-user="number">Пользователь 1</p>
-                    <svg class="mt-[1px] w-[11px] h-[10px]" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                        2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                        fill="#252525"
-                      />
-                    </svg>
-                  </div>
-                  <ul class="selector__options">
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-user="number">Пользователь 1</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-user="number">Пользователь 2</p>
-                    </li>
-                    <li class="selector__options_item">
-                      <p class="selector__options_value" data-user="number">Пользователь 3</p>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-            <input type="submit" name="remUserSender" value="Удалить" class="btn-primary">
-          </form>
+        <li>
+          <a href="/panel/adding/" class="component mt-24 mr-24 flex h-[222px] xl:h-[273px] flex-col justify-center items-center px-32 xl:px-48">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-[88px] h-[88px]" viewBox="0 0 88 88" fill="none">
+              <path d="M58.2916 55.2063C60.3713 54.0891 62.7518 53.4531 65.2869 53.4531H65.2955C65.5533 53.4531 65.6737 53.1438 65.4846 52.9719C62.8481 50.6058 59.8365 48.6948 56.5729 47.3172C56.5385 47.3 56.5041 47.2914 56.4697 47.2742C61.8065 43.3984 65.2783 37.0992 65.2783 29.9922C65.2783 18.2188 55.7565 8.67969 44.0088 8.67969C32.2612 8.67969 22.7479 18.2188 22.7479 29.9922C22.7479 37.0992 26.2197 43.3984 31.5651 47.2742C31.5307 47.2914 31.4963 47.3 31.4619 47.3172C27.6205 48.9414 24.1744 51.2703 21.2096 54.2438C18.2619 57.1861 15.9151 60.6742 14.3002 64.5133C12.7113 68.2727 11.8538 72.3006 11.7737 76.3812C11.7714 76.473 11.7874 76.5642 11.821 76.6496C11.8545 76.735 11.9048 76.8129 11.9688 76.8785C12.0329 76.9442 12.1095 76.9964 12.194 77.032C12.2786 77.0676 12.3694 77.086 12.4612 77.0859H17.6088C17.9783 77.0859 18.2877 76.7852 18.2963 76.4156C18.4682 69.7812 21.1237 63.568 25.8244 58.8586C30.6799 53.9859 37.1424 51.3047 44.0174 51.3047C48.8901 51.3047 53.5651 52.6539 57.5955 55.1805C57.6991 55.2455 57.8179 55.2822 57.9401 55.2867C58.0623 55.2912 58.1836 55.2635 58.2916 55.2063ZM44.0174 44.7734C40.0815 44.7734 36.3776 43.2352 33.5846 40.4422C32.2104 39.0716 31.121 37.4426 30.3791 35.6491C29.6372 33.8556 29.2576 31.9331 29.2619 29.9922C29.2619 26.0477 30.8002 22.3352 33.5846 19.5422C36.369 16.7492 40.0729 15.2109 44.0174 15.2109C47.9619 15.2109 51.6572 16.7492 54.4502 19.5422C55.8244 20.9128 56.9138 22.5418 57.6557 24.3353C58.3976 26.1288 58.7773 28.0513 58.7729 29.9922C58.7729 33.9367 57.2346 37.6492 54.4502 40.4422C51.6572 43.2352 47.9533 44.7734 44.0174 44.7734ZM75.6252 65.2266H68.4065V58.0078C68.4065 57.6297 68.0971 57.3203 67.719 57.3203H62.9065C62.5283 57.3203 62.219 57.6297 62.219 58.0078V65.2266H55.0002C54.6221 65.2266 54.3127 65.5359 54.3127 65.9141V70.7266C54.3127 71.1047 54.6221 71.4141 55.0002 71.4141H62.219V78.6328C62.219 79.0109 62.5283 79.3203 62.9065 79.3203H67.719C68.0971 79.3203 68.4065 79.0109 68.4065 78.6328V71.4141H75.6252C76.0033 71.4141 76.3127 71.1047 76.3127 70.7266V65.9141C76.3127 65.5359 76.0033 65.2266 75.6252 65.2266Z" fill="#3B7FE4"/>
+            </svg>
+            <p class="text-16 leading-tight text-center mt-12 text-accent font-bold">Добавить <br> пользователя</p>
+          </a>
         </li>
       </ul>
     </main>
-    <script src="/src/js/selector.js"></script>
   </body>
 </html>

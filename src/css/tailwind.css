@@ -30,6 +30,18 @@
   .active-icon path {
     @apply stroke-accent;
   }
+  .auth-slider {
+    @apply flex ml-16;
+  }
+  .auth-slider__item {
+    @apply mr-12 xl:mr-16;
+  }
+  .auth-slider__item:last-child {
+    @apply mr-0;
+  }
+  .auth-slider__img {
+    @apply w-[160px] xl:w-[180px] h-[100px] xl:h-[120px] rounded-16 xl:rounded-20;
+  }
   .btn-primary {
     @apply w-full p-16 xl:p-[19px] bg-accent cursor-pointer mt-24 xl:mt-32 text-main rounded-16 xl:rounded-20 text-14 xl:text-16;
   }
@@ -71,6 +83,9 @@
   }
   .component-label {
     @apply text-16 xl:text-18 mt-16 xl:mt-24 block;
+  }
+  .component-label__checkbox {
+    @apply text-14 cursor-pointer inline-block relative pl-24 mr-0;
   }
   .component-input {
     @apply w-full text-14 px-12 py-[14.5px] xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-accent outline-2 cursor-pointer rounded-16 border-hover bg-add;

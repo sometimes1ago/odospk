@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <title>ODOSPK • Вход</title>
+</head>
+<body class="flex relative items-center justify-center">
+  <img src="/src/img/bg/green-field.jpg" alt="" class="w-screen h-screen">
+  <div class="absolute w-screen h-screen backdrop-brightness-65"></div>
+  <form action="" class="component flex flex-col items-center absolute shadow-selector">
+    <h1 class="component-head__form">Вход в систему</h1>
+    <p class="component-subhead">Авторизуйтесь чтобы получить <br> доступ к панели администратора</p>
+    <label for="login" class="component-label">Ваш логин</label>
+    <input type="text" name="login" id="login" class="component-input text-14 py-[11px]" placeholder="UserLogin" required>
+    <label for="password" class="component-label">Ваш пароль</label>
+    <div class="w-full mt-12 h-48 bg-add border-hover rounded-16 flex items-center relative cursor-pointer">
+      <input type="password" name="password" id="password" class="text-14 p-12 bg-add border-none rounded-16 focus:outline-none" placeholder="UserPassword">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-20 xl:w-24 h-20 xl:h-24 absolute right-12" viewBox="0 0 20 20" fill="none">
+        <path d="M0.833252 9.99992C0.833252 9.99992 4.16658 3.33325 9.99992 3.33325C15.8333 3.33325 19.1666 9.99992 19.1666 9.99992C19.1666 9.99992 15.8333 16.6666 9.99992 16.6666C4.16658 16.6666 0.833252 9.99992 0.833252 9.99992Z" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#858585" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="flex items-center mt-12">
+      <input type="checkbox" name="rememberMe" id="rememberMe" class="form-checkbox rounded-[5px] border-primary border-2 checked">
+      <label for="rememberMe" class="text-14 ml-8 text-primary accent-accent">Запомнить меня</label>
+    </div>
+    <input type="submit" class="btn-primary p-[13.5px]" name="authSender" value="Войти">
+    <a href="#" class="mt-16 text-14 text-sec">Не можете войти?</a>
+  </form>
+  <button class="dock-opener absolute bottom-16 right-16 p-[10px] rounded-12 bg-main">
+    <svg class="w-24 h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.1667 2.5C14.3855 2.28113 14.6454 2.10752 14.9313 1.98906C15.2173 1.87061 15.5238 1.80965 15.8333 1.80965C16.1429 1.80965 16.4493 1.87061 16.7353 1.98906C17.0213 2.10752 17.2811 2.28113 17.5 2.5C17.7189 2.71887 17.8925 2.97871 18.0109 3.26468C18.1294 3.55064 18.1903 3.85714 18.1903 4.16667C18.1903 4.4762 18.1294 4.7827 18.0109 5.06866C17.8925 5.35463 17.7189 5.61447 17.5 5.83334L6.24999 17.0833L1.66666 18.3333L2.91666 13.75L14.1667 2.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+  <div class="filter hidden w-screen h-screen absolute backdrop-brightness-65"></div>
+  <div class="bottom-dock hidden flex items-center absolute bottom-24 rounded-24 px-16 py-12 xl:py-16 w-[1306px] xl:w-[1471px] bg-main">
+    <svg xmlns="http://www.w3.org/2000/svg" class="dock-closer w-20 h-20 absolute top-12 right-12 cursor-pointer" viewBox="0 0 18 18" fill="none">
+      <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4.5 4.5L13.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="relative">
+      <h2 class="text-18 xl:text-20">Смена фонового изображения</h2>
+      <p class="text-14 xl:text-16 text-sec mt-4 xl:mt-8 leading-tight">Выберите новый фон из нашей <br> библиотеки изображений</p>
+      <div class="flex items-center mt-18 xl:mt-[28px]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-20 xl:w-24 h-20 xl:h-24" viewBox="0 0 20 20" fill="none">
+          <path d="M10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 6.66675V10.0001" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 13.3333H10.0083" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="text-14 xl:text-16 ml-8">Сохраняется до очистки кеша</p>
+      </div>
+    </div>
+    <span class="h-[93px] w-[3px] rounded-8 bg-hover block ml-16 xl:ml-24"></span>
+    <div class="flex flex-col items-center relative ml-12 xl:ml-16 cursor-pointer">
+      <img src="/src/img/bg/green-field.jpg" class="w-[160px] xl:w-[180px] h-[100px] xl:h-[120px] rounded-16 xl:rounded-20" alt="Current bg img">
+      <p class="absolute top-4 xl:top-4 px-12 xl:px-16 py-[5px] xl:py-[7px] text-12 xl:text-14 rounded-12 xl:rounded-16 bg-add/70">Текущий</p>
+    </div>
+    <span class="h-[93px] w-[3px] rounded-8 bg-hover block ml-16"></span>
+    <button class="flex justify-center items-center bg-accent rounded-full p-[6px] xl:p-4 ml-12 xl:ml-16">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-20 xl:w-24 h-20 xl:h-24" viewBox="0 0 20 20" fill="none">
+        <path d="M12.5 15L7.5 10L12.5 5" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <ul class="auth-slider">
+      <li class="auth-slider__item cursor-pointer">
+        <img src="/src/img/bg/sunset-city.jpg" class="auth-slider__img" alt="sunset-city">
+      </li>
+      <li class="auth-slider__item cursor-pointer">
+        <img src="/src/img/bg/purple-beach.png" class="auth-slider__img" alt="purple-beach">
+      </li>
+      <li class="auth-slider__item cursor-pointer">
+        <img src="/src/img/bg/warm-wind.jpg" class="auth-slider__img" alt="warm-wind">
+      </li>
+      <li class="auth-slider__item cursor-pointer">
+        <img src="/src/img/bg/yellow-fish.jpg" class="auth-slider__img" alt="yellow-fish">
+      </li>
+    </ul>
+    <button class="flex justify-center items-center bg-accent rounded-full p-[6px] ml-12 xl:ml-16 rotate-180">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20" viewBox="0 0 20 20" fill="none">
+        <path d="M12.5 15L7.5 10L12.5 5" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  <script src="js/dock.js"></script>
+</body>
+</html>
