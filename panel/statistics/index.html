@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="/src/css/style.css" />
     <title>ODOSPK • Статистика</title>
   </head>
-  <body class="flex flex-row bg-add leading-none text-primary">
-    <aside class="rounded-r-20 xl:rounded-r-24 h-screen w-[190px] xl:w-[234px] pt-12 xl:pt-16 pr-16 xl:pr-20 pb-12 xl:pb-16 bg-main shadow-menu-lg">
-      <p class="text-14 xl:text-16 ml-12 xl:ml-16"><span class="text-accent font-bold">ODOSPK • </span> Admin Panel</p>
+  <body class="flex flex-row bg-light-600 leading-none text-primary">
+    <aside class="rounded-r-20 xl:rounded-r-24 h-screen w-[190px] xl:w-[234px] pt-12 xl:pt-16 pr-16 xl:pr-20 pb-12 xl:pb-16 bg-light-400 shadow-menu-lg">
+      <p class="text-14 xl:text-16 ml-12 xl:ml-16"><span class="text-brand-900 font-bold">ODOSPK • </span> Admin Panel</p>
       <h2 class="text-16 xl:text-20 ml-12 xl:ml-16 mt-24 xl:mt-32">Добро пожаловать</h2>
       <a class="flex flex-row items-center ml-12 xl:ml-16 mt-12 xl:mt-20" href="/panel/cabinet/">
         <img src="/src/img/avatars/admin.png" class="w-[55px] xl:w-[70px] h-[55px] xl:h-[70px]" alt="Authorized user" />
         <div class="ml-16">
           <h3 class="text-16 xl:text-18">Валерия</h3>
-          <p class="text-14 xl:text-16 text-sec leading-tight mt-4 xl:mt-[6px]">Полный доступ</p>
+          <p class="text-14 xl:text-16 text-text-800 leading-tight mt-4 xl:mt-[6px]">Полный доступ</p>
         </div>
       </a>
       <div class="flex flex-col h-[520px] xl:h-[755px] justify-between">
         <ul class="mt-8">
           <li>
-            <a href="/panel/queries/" class="aside-menu-item">
+            <a href="/panel/queries/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 7.50001L10 1.66667L17.5 7.50001V16.6667C17.5 17.1087 17.3244 17.5326 17.0118 17.8452C16.6993 18.1577 16.2754 18.3333 15.8333 18.3333H4.16667C3.72464 18.3333 3.30072 18.1577 2.98816 17.8452C2.67559 17.5326 2.5 17.1087 2.5 16.6667V7.50001Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M7.5 18.3333V10H12.5V18.3333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -29,8 +29,8 @@
               <p class="ml-8 text-14 xl:text-18">Заявки</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/todo/notes" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/todo/notes" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer ">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 4.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M6 9H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -42,9 +42,9 @@
               <p class="ml-8 text-14 xl:text-18">Заметки</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/statistics/" class="aside-menu-item__active">
-              <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/statistics/" class="link__active flex flex-row items-center p-12 xl:p-16 cursor-pointer">
+              <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 16.3333V8" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M10 16.3333V3" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M4 16.3334V11.3334" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
@@ -52,16 +52,16 @@
               <p class="ml-8 text-14 xl:text-18">Статистика</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/changing/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/changing/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.1667 2.5C14.3855 2.28113 14.6454 2.10752 14.9313 1.98906C15.2173 1.87061 15.5238 1.80965 15.8333 1.80965C16.1429 1.80965 16.4493 1.87061 16.7353 1.98906C17.0213 2.10752 17.2811 2.28113 17.5 2.5C17.7189 2.71887 17.8925 2.97871 18.0109 3.26468C18.1294 3.55064 18.1903 3.85714 18.1903 4.16667C18.1903 4.4762 18.1294 4.7827 18.0109 5.06866C17.8925 5.35463 17.7189 5.61447 17.5 5.83334L6.24999 17.0833L1.66666 18.3333L2.91666 13.75L14.1667 2.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-14 xl:text-18">Изменение</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/adding/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/adding/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.6667 1.66667H5.00001C4.55798 1.66667 4.13406 1.84226 3.8215 2.15482C3.50894 2.46738 3.33334 2.89131 3.33334 3.33333V16.6667C3.33334 17.1087 3.50894 17.5326 3.8215 17.8452C4.13406 18.1577 4.55798 18.3333 5.00001 18.3333H15C15.442 18.3333 15.866 18.1577 16.1785 17.8452C16.4911 17.5326 16.6667 17.1087 16.6667 16.6667V6.66667L11.6667 1.66667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M11.6667 1.66667V6.66667H16.6667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -71,8 +71,8 @@
               <p class="ml-8 text-14 xl:text-18">Добавление</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/removing/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/removing/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M6.66666 5V3.33333C6.66666 2.89131 6.84225 2.46738 7.15481 2.15482C7.46737 1.84226 7.8913 1.66667 8.33332 1.66667H11.6667C12.1087 1.66667 12.5326 1.84226 12.8452 2.15482C13.1577 2.46738 13.3333 2.89131 13.3333 3.33333V5M15.8333 5V16.6667C15.8333 17.1087 15.6577 17.5326 15.3452 17.8452C15.0326 18.1577 14.6087 18.3333 14.1667 18.3333H5.83332C5.3913 18.3333 4.96737 18.1577 4.65481 17.8452C4.34225 17.5326 4.16666 17.1087 4.16666 16.6667V5H15.8333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -82,19 +82,19 @@
               <p class="ml-8 text-14 xl:text-18">Удаление</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/users/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8 last:mb-0">
+            <a href="/panel/users/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg class="w-18 xl:w-24 h-18 xl:h-24 shrink-0" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16668C3.28262 12.5 2.43478 12.8512 1.80965 13.4763C1.18453 14.1014 0.833344 14.9493 0.833344 15.8333V17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M7.49999 9.16667C9.34094 9.16667 10.8333 7.67428 10.8333 5.83333C10.8333 3.99238 9.34094 2.5 7.49999 2.5C5.65904 2.5 4.16666 3.99238 4.16666 5.83333C4.16666 7.67428 5.65904 9.16667 7.49999 9.16667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M19.1667 17.5V15.8333C19.1661 15.0948 18.9203 14.3773 18.4678 13.7936C18.0153 13.2099 17.3818 12.793 16.6667 12.6083" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M13.3333 2.60834C14.0504 2.79192 14.6859 3.20892 15.1397 3.7936C15.5935 4.37827 15.8399 5.09736 15.8399 5.8375C15.8399 6.57765 15.5935 7.29674 15.1397 7.88141C14.6859 8.46609 14.0504 8.88309 13.3333 9.06667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M7.49999 9.16667C9.34094 9.16667 10.8333 7.67428 10.8333 5.83333C10.8333 3.99238 9.34094 2.5 7.49999 2.5C5.65904 2.5 4.16666 3.99238 4.16666 5.83333C4.16666 7.67428 5.65904 9.16667 7.49999 9.16667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M19.1667 17.5V15.8333C19.1661 15.0948 18.9203 14.3773 18.4678 13.7936C18.0153 13.2099 17.3818 12.793 16.6667 12.6083" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.3333 2.60834C14.0504 2.79192 14.6859 3.20892 15.1397 3.7936C15.5935 4.37827 15.8399 5.09736 15.8399 5.8375C15.8399 6.57765 15.5935 7.29674 15.1397 7.88141C14.6859 8.46609 14.0504 8.88309 13.3333 9.06667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-14 xl:text-18 shrink-1">Пользователи</p>
             </a>
           </li>
-          <li class="hover:item-hover last-mb-0">
-            <a href="/panel/settings/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8 last:mb-0">
+            <a href="/panel/settings/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 18 18" fill="none">
                 <path d="M9 11.25C10.2426 11.25 11.25 10.2426 11.25 9C11.25 7.75736 10.2426 6.75 9 6.75C7.75736 6.75 6.75 7.75736 6.75 9C6.75 10.2426 7.75736 11.25 9 11.25Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path
@@ -109,8 +109,8 @@
             </a>
           </li>
         </ul>
-        <div class="hover:item-hover">
-          <a href="/panel/settings/" class="flex flex-row items-center p-12 aside-menu-item">
+        <div>
+          <a href="/panel/settings/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8">
             <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M13.3333 14.1667L17.5 9.99999L13.3333 5.83333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -137,17 +137,17 @@
             <span>&nbsp;—&nbsp;</span>
             <p class="text-16 xl:text-18">6.03.2022</p>
           </button>
-          <form action="" class="component date-control query-pill__content w-[235px] xl:w-[269px]">
+          <form action="" class="form date-control absolute top-48 w-[235px] xl:w-[269px]">
             <svg xmlns="http://www.w3.org/2000/svg" class="date-closer w-18 h-18 absolute top-12 xl:top-16 right-12 xl:right-16 cursor-pointer" viewBox="0 0 20 20" fill="none">
               <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
-            <h3 class="component-head">Временной период</h3>
-            <p class="component-subhead">
+            <h3 class="form-head">Временной период</h3>
+            <p class="form-subhead">
               Выберите период вывода <br />
               данных о заявках
             </p>
-            <h4 class="component-label">Выберите период</h4>
+            <h4 class="form-label">Выберите период</h4>
             <div class="overflow-x-scroll no-scrollbar">
               <ul class="flex items-center overflow-x-auto mt-12 w-[620px]">
                 <li class="date-pill date-pill__active">Неделя</li>
@@ -158,60 +158,59 @@
                 <li class="date-pill">Год</li>
               </ul>
             </div>
-            <label for="startDate" class="component-label">Начальная дата</label>
-            <input type="date" name="startDate" id="startDate" class="date-input component-input" value="2020-02-27" />
-            <label for="endDate" class="component-label">Конечная дата</label>
-            <input type="date" name="endDate" id="endDate" class="date-input component-input" value="2020-03-06" />
+            <label for="startDate" class="form-label">Начальная дата</label>
+            <input type="date" name="startDate" id="startDate" class="date-input input" value="2020-02-27" />
+            <label for="endDate" class="form-label">Конечная дата</label>
+            <input type="date" name="endDate" id="endDate" class="date-input input" value="2020-03-06" />
             <input type="submit" value="Показать" class="btn-primary" />
           </form>
         </div>
       </div>
       <ul class="flex flex-wrap ml-24 w-[1135px] xl:w-[1185px]">
-        <li class="p-12 component w-[234px] xl:w-[272px] mt-24 mr-24">
-          <h2 class="component-head">Посетители</h2>
-          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-accent">1245</p>
-          <p class="text-[13px] xl:text-14 mt-12 text-sec leading-tight">
+        <li class="w-[234px] xl:w-[272px] mt-24 mr-24 rounded-16 xl:rounded-20 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800">
+          <h2 class="text-18 xl:text-20 font-bold">Посетители</h2>
+          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-brand-900">1245</p>
+          <p class="text-[13px] xl:text-14 mt-12 text-text-800  leading-tight">
             Общее количество посетителей <br />
             за выбранный период
           </p>
         </li>
-        <li class="p-12 component mt-24 mr-24 w-[234px] xl:w-[272px]">
-          <h2 class="component-head">Новые посетители</h2>
-          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-accent">489</p>
-          <p class="text-[13px] xl:text-14 mt-12 text-sec leading-tight">
+        <li class="w-[234px] xl:w-[272px] mt-24 mr-24 rounded-16 xl:rounded-20 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800">
+          <h2 class="text-18 xl:text-20 font-bold">Новые посетители</h2>
+          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-brand-900">489</p>
+          <p class="text-[13px] xl:text-14 mt-12 text-text-800  leading-tight">
             Количество новых посетителей <br />
             за выбранный период
           </p>
         </li>
-        <li class="p-12 component mt-24 w-[251px] xl:w-[272px] mr-24">
-          <h2 class="component-head">Популярная платформа</h2>
-          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-accent">Android 10</p>
-          <p class="text-[13px] xl:text-14 mt-12 text-sec leading-tight">
+        <li class="w-[251px] xl:w-[272px] mt-24 mr-24 rounded-16 xl:rounded-20 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800">
+          <h2 class="text-18 xl:text-20 font-bold">Популярная платформа</h2>
+          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-brand-900">Android 10</p>
+          <p class="text-[13px] xl:text-14 mt-12 text-text-800 leading-tight">
             Самая популярная операционная <br />
             система пользователей
           </p>
         </li>
-        <li class="p-12 component w-[251px] xl:w-[272px] mt-24 mr-24">
-          <h2 class="component-head">Источник трафика</h2>
-          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-accent">VK.com</p>
-          <p class="text-[13px] xl:text-14 mt-12 text-sec leading-tight">
+        <li class="w-[251px] xl:w-[272px] mt-24 mr-24 rounded-16 xl:rounded-20 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800">
+          <h2 class="text-18 xl:text-20 font-bold">Источник трафика</h2>
+          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-brand-900">VK.com</p>
+          <p class="text-[13px] xl:text-14 mt-12 text-text-800  leading-tight">
             Ресурс с которого приходит <br />
             наибольшее количество трафика
           </p>
         </li>
-        
-        <li class="p-12 component w-[234px] xl:w-[272px] mt-24 mr-24">
-          <h2 class="component-head">Браузер</h2>
-          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-accent">Chrome</p>
-          <p class="text-[13px] xl:text-14 mt-12 text-sec leading-tight">
+        <li class="w-[234px] xl:w-[272px] mt-24 mr-24 rounded-16 xl:rounded-20 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800">
+          <h2 class="text-18 xl:text-20 font-bold">Браузер</h2>
+          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-brand-900">Chrome</p>
+          <p class="text-[13px] xl:text-14 mt-12 text-text-800  leading-tight">
             Самый популярный браузер  <br />
             посетителей сайта
           </p>
         </li>
-        <li class="p-12 component w-[234px] xl:w-[272px] mt-24 mr-24">
-          <h2 class="component-head">Время на сайте</h2>
-          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-accent">3:24 мин</p>
-          <p class="text-[13px] xl:text-14 mt-12 text-sec leading-tight">
+        <li class="w-[234px] xl:w-[272px] mt-24 mr-24 rounded-16 xl:rounded-20 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800">
+          <h2 class="text-18 xl:text-20 font-bold">Время на сайте</h2>
+          <p class="mt-36 xl:mt-38 text-36 xl:text-42 text-brand-900">3:24 мин</p>
+          <p class="text-[13px] xl:text-14 mt-12 text-text-800  leading-tight">
             Среднее время, которое  <br />
             пользователей на сайте
           </p>

@@ -1,0 +1,1 @@
+let browserWidth=window.matchMedia("(min-width: 1300px)");if(browserWidth.matches){let e=document.querySelector(".course-description"),t=document.querySelector(".courses-list");new ResizeObserver((e=>{for(let r of e)t.style.height=r.target.clientHeight+"px"})).observe(e)}

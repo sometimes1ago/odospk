@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="/src/css/style.css" />
     <title>ODOSPK • Заявки</title>
   </head>
-  <body class="flex flex-row bg-add leading-none text-primary">
-    <aside class="rounded-r-20 xl:rounded-r-24 h-screen w-[190px] xl:w-[234px] pt-12 xl:pt-16 pr-16 xl:pr-20 pb-12 xl:pb-16 bg-main shadow-menu-lg">
+  <body class="flex flex-row bg-light-600 leading-none text-text-900">
+    <aside class="rounded-r-20 xl:rounded-r-24 h-screen w-[190px] xl:w-[234px] pt-12 xl:pt-16 pr-16 xl:pr-20 pb-12 xl:pb-16 bg-light-400 shadow-menu-lg">
       <p class="text-14 xl:text-16 ml-12 xl:ml-16"><span class="text-accent font-bold">ODOSPK • </span> Admin Panel</p>
       <h2 class="text-16 xl:text-20 ml-12 xl:ml-16 mt-24 xl:mt-32">Добро пожаловать</h2>
       <a class="flex flex-row items-center ml-12 xl:ml-16 mt-12 xl:mt-20" href="/panel/cabinet/">
         <img src="/src/img/avatars/admin.png" class="w-[55px] xl:w-[70px] h-[55px] xl:h-[70px]" alt="Authorized user" />
         <div class="ml-16">
           <h3 class="text-16 xl:text-18">Валерия</h3>
-          <p class="text-14 xl:text-16 text-sec leading-tight mt-4 xl:mt-[6px]">Полный доступ</p>
+          <p class="text-14 xl:text-16 text-text-800 leading-tight mt-4 xl:mt-[6px]">Полный доступ</p>
         </div>
       </a>
       <div class="flex flex-col h-[520px] xl:h-[755px] justify-between">
         <ul class="mt-8">
           <li>
-            <a href="/panel/queries/" class="aside-menu-item__active">
+            <a href="/panel/queries/" class="link__active flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 7.50001L10 1.66667L17.5 7.50001V16.6667C17.5 17.1087 17.3244 17.5326 17.0118 17.8452C16.6993 18.1577 16.2754 18.3333 15.8333 18.3333H4.16667C3.72464 18.3333 3.30072 18.1577 2.98816 17.8452C2.67559 17.5326 2.5 17.1087 2.5 16.6667V7.50001Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M7.5 18.3333V10H12.5V18.3333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -29,8 +29,8 @@
               <p class="ml-8 text-14 xl:text-18">Заявки</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/todo/notes" class="aside-menu-item ">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/todo/notes" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer ">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 4.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M6 9H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -42,9 +42,9 @@
               <p class="ml-8 text-14 xl:text-18">Заметки</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/statistics/" class="aside-menu-item">
-              <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/statistics/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
+              <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 16.3333V8" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M10 16.3333V3" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M4 16.3334V11.3334" stroke="#252525" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
@@ -52,16 +52,16 @@
               <p class="ml-8 text-14 xl:text-18">Статистика</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/changing/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/changing/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.1667 2.5C14.3855 2.28113 14.6454 2.10752 14.9313 1.98906C15.2173 1.87061 15.5238 1.80965 15.8333 1.80965C16.1429 1.80965 16.4493 1.87061 16.7353 1.98906C17.0213 2.10752 17.2811 2.28113 17.5 2.5C17.7189 2.71887 17.8925 2.97871 18.0109 3.26468C18.1294 3.55064 18.1903 3.85714 18.1903 4.16667C18.1903 4.4762 18.1294 4.7827 18.0109 5.06866C17.8925 5.35463 17.7189 5.61447 17.5 5.83334L6.24999 17.0833L1.66666 18.3333L2.91666 13.75L14.1667 2.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-14 xl:text-18">Изменение</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/adding/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/adding/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.6667 1.66667H5.00001C4.55798 1.66667 4.13406 1.84226 3.8215 2.15482C3.50894 2.46738 3.33334 2.89131 3.33334 3.33333V16.6667C3.33334 17.1087 3.50894 17.5326 3.8215 17.8452C4.13406 18.1577 4.55798 18.3333 5.00001 18.3333H15C15.442 18.3333 15.866 18.1577 16.1785 17.8452C16.4911 17.5326 16.6667 17.1087 16.6667 16.6667V6.66667L11.6667 1.66667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M11.6667 1.66667V6.66667H16.6667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -71,8 +71,8 @@
               <p class="ml-8 text-14 xl:text-18">Добавление</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/removing/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8">
+            <a href="/panel/removing/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M6.66666 5V3.33333C6.66666 2.89131 6.84225 2.46738 7.15481 2.15482C7.46737 1.84226 7.8913 1.66667 8.33332 1.66667H11.6667C12.1087 1.66667 12.5326 1.84226 12.8452 2.15482C13.1577 2.46738 13.3333 2.89131 13.3333 3.33333V5M15.8333 5V16.6667C15.8333 17.1087 15.6577 17.5326 15.3452 17.8452C15.0326 18.1577 14.6087 18.3333 14.1667 18.3333H5.83332C5.3913 18.3333 4.96737 18.1577 4.65481 17.8452C4.34225 17.5326 4.16666 17.1087 4.16666 16.6667V5H15.8333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -82,8 +82,8 @@
               <p class="ml-8 text-14 xl:text-18">Удаление</p>
             </a>
           </li>
-          <li class="hover:item-hover">
-            <a href="/panel/users/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8 last:mb-0">
+            <a href="/panel/users/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg class="w-18 xl:w-24 h-18 xl:h-24 shrink-0" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16668C3.28262 12.5 2.43478 12.8512 1.80965 13.4763C1.18453 14.1014 0.833344 14.9493 0.833344 15.8333V17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M7.49999 9.16667C9.34094 9.16667 10.8333 7.67428 10.8333 5.83333C10.8333 3.99238 9.34094 2.5 7.49999 2.5C5.65904 2.5 4.16666 3.99238 4.16666 5.83333C4.16666 7.67428 5.65904 9.16667 7.49999 9.16667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -93,8 +93,8 @@
               <p class="ml-8 text-14 xl:text-18 shrink-1">Пользователи</p>
             </a>
           </li>
-          <li class="hover:item-hover last-mb-0">
-            <a href="/panel/settings/" class="aside-menu-item">
+          <li class="mb-4 xl:mb-8 last:mb-0">
+            <a href="/panel/settings/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 18 18" fill="none">
                 <path d="M9 11.25C10.2426 11.25 11.25 10.2426 11.25 9C11.25 7.75736 10.2426 6.75 9 6.75C7.75736 6.75 6.75 7.75736 6.75 9C6.75 10.2426 7.75736 11.25 9 11.25Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path
@@ -109,8 +109,8 @@
             </a>
           </li>
         </ul>
-        <div class="hover:item-hover">
-          <a href="/panel/settings/" class="flex flex-row items-center p-12 aside-menu-item">
+        <div>
+          <a href="/panel/settings/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8">
             <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M13.3333 14.1667L17.5 9.99999L13.3333 5.83333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -123,118 +123,42 @@
     </aside>
     <section>
       <h1 class="text-32 ml-24 mt-16 font-bold">Заявки</h1>
-      <div class="flex flex-col relative items-center mx-24 my-16 p-12 bg-main rounded-20 w-[1096px] h-[575px]">
+      <div class="flex flex-col relative items-center mx-24 my-16 p-12 bg-light-400 rounded-20 w-[1096px] h-[575px]">
         <ul class="flex items-center justify-between w-full">
           <li>
             <ul class="flex items-center">
-              <li class="query-pill px-12 py-8 bg-accent border-accent rounded-12 text-main cursor-pointer mr-16">Обучение</li>
-              <li class="query-pill hover:bg-selected hover:text-main hover:border-selected">Звонки</li>
+              <li class="query-mode query-mode__active">Обучение</li>
+              <li class="query-mode">Звонки</li>
+              <li class="query-mode">Архив</li>
             </ul>
           </li>
           <li>
             <ul class="flex items-center">
-              <li class="relative mr-16">
-                <button class="sort-btn query-pill">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" viewBox="0 0 18 18" fill="none">
-                    <path d="M15.9075 11.9175C15.4304 13.0459 14.6841 14.0402 13.7339 14.8135C12.7837 15.5868 11.6586 16.1156 10.4568 16.3536C9.25508 16.5916 8.01331 16.5316 6.84011 16.1788C5.6669 15.8261 4.59797 15.1913 3.72676 14.33C2.85556 13.4687 2.20861 12.4071 1.84247 11.238C1.47634 10.0689 1.40217 8.82786 1.62645 7.62347C1.85072 6.41908 2.36662 5.28797 3.12903 4.32902C3.89144 3.37007 4.87716 2.61249 6 2.1225" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98491 1.5 9 1.5V9H16.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <li class="relative">
+                <button class="date-btn">
+                  <svg class="w-18 h-18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 1.5V4.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 1.5V4.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.25 7.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <p class="ml-8">Сортировка</p>
+                  <div class="flex items-center ml-8">
+                    <p class="text-16">15.03.2022</p>
+                    <span>&nbsp;—&nbsp;</span>
+                    <p class="text-16">22.03.2022</p>
+                  </div>
                 </button>
-                <form class="sort-control component query-pill__content w-[238px]" method="GET">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="sort-closer w-18 h-18 absolute top-12 right-12 cursor-pointer" viewBox="0 0 20 20" fill="none">
-                    <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <h3 class="component-head">Сортировка данных</h3>
-                  <p class="component-subhead">
-                    Быстрая сортировка <br />
-                    по выбранным критериям
-                  </p>
-                  <ul class="w-full flex flex-col">
-                    <li class="selector__item flex flex-col mt-16">
-                      <p class="font-16">Сортировать по:</p>
-                      <div class="selector__select-wrap relative w-full cursor-pointer" data-index="0">
-                        <div class="selector__select">
-                          <p class="selector__value mr-8 text-14" data-sort-by="number">Номеру</p>
-                          <svg class="mt-[1px]" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                              2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                              fill="#252525"
-                            />
-                          </svg>
-                        </div>
-                        <ul class="selector__options">
-                          <li class="selector__options_item">
-                            <p class="selector__options_value" data-sort-by="number">Номеру</p>
-                          </li>
-                          <li class="selector__options_item">
-                            <p class="selector__options_value" data-sort-by="course">Курсу или программе</p>
-                          </li>
-                          <li class="selector__options_item">
-                            <p class="selector__options_value" data-sort-by="client">Фамилии и имени</p>
-                          </li>
-                          <li class="selector__options_item">
-                            <p class="selector__options_value" data-sort-by="phone">Телефону</p>
-                          </li>
-                          <li class="selector__options_item">
-                            <p class="selector__options_value" data-sort-by="status">Статусу</p>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="selector__item flex flex-col mt-16">
-                      <p class="font-16">Порядок по:</p>
-                      <div class="selector__select-wrap relative w-full cursor-pointer" data-index="1">
-                        <div class="selector__select">
-                          <p class="selector__value mr-8 text-14" data-order-by="desc">Убыванию</p>
-                          <svg class="selector__arrow" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              class="selector__path"
-                              d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                              2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                              fill="#252525"
-                            />
-                          </svg>
-                        </div>
-                        <ul class="selector__options">
-                          <li class="selector__options_item">
-                            <p class="selector__options_value" data-order-by="desc">Убыванию</p>
-                          </li>
-                          <li class="selector__options_item">
-                            <p class="selector__options_value" data-order-by="asc">Возрастанию</p>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                  <input type="submit" class="btn-primary" value="Показать" />
-                </form>
-              </li>
-              <li class="relative mr-16">
-                <button class="date-btn query-pill">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" viewBox="0 0 18 18" fill="none">
-                    <path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 1.5V4.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M6 1.5V4.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M2.25 7.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <p class="ml-8">27.02.2022</p>
-                  <span>&nbsp;—&nbsp;</span>
-                  <p>6.03.2022</p>
-                </button>
-                <form action="" class="component date-control query-pill__content w-[235px]">
+                <form action="" class="form date-control absolute w-[235px] top-48">
                   <svg xmlns="http://www.w3.org/2000/svg" class="date-closer w-18 h-18 absolute top-12 right-12 cursor-pointer" viewBox="0 0 20 20" fill="none">
                     <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
-                  <h3 class="component-head">Временной период</h3>
-                  <p class="component-subhead">
+                  <h3 class="form-head">Временной период</h3>
+                  <p class="form-subhead">
                     Выберите период вывода <br />
                     данных о заявках
                   </p>
-                  <h4 class="component-label">Выберите период</h4>
+                  <h4 class="form-label">Выберите период</h4>
                   <div class="overflow-x-scroll no-scrollbar">
                     <ul class="flex items-center overflow-x-auto mt-12 w-[570px]">
                       <li class="date-pill date-pill__active">Неделя</li>
@@ -245,35 +169,35 @@
                       <li class="date-pill">Год</li>
                     </ul>
                   </div>
-                  <label for="startDate" class="component-label">Начальная дата</label>
-                  <input type="date" name="startDate" id="startDate" class="date-input component-input" value="2020-02-27" />
-                  <label for="endDate" class="component-label">Конечная дата</label>
-                  <input type="date" name="endDate" id="endDate" class="date-input component-input" value="2020-03-06" />
+                  <label for="startDate" class="form-label">Начальная дата</label>
+                  <input type="date" name="startDate" id="startDate" class="date-input input" value="2020-02-27" />
+                  <label for="endDate" class="form-label">Конечная дата</label>
+                  <input type="date" name="endDate" id="endDate" class="date-input input" value="2020-03-06" />
                   <input type="submit" value="Показать" class="btn-primary" />
                 </form>
               </li>
-              <li class="relative">
-                <button class="search-btn query-pill">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" viewBox="0 0 20 20" fill="none">
-                    <path d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.5 17.5L13.875 13.875" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <p class="ml-8">Прямой поиск</p>
+              <li class="relative ml-16">
+                <button class="search-btn">
+                  <svg class="w-18 h-18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.75 15.75L12.4875 12.4875" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  <p class="text-16 ml-8">Прямой поиск</p>
                 </button>
-                <form action="" class="component search-control query-pill__content w-[233px]">
+                <form action="" class="form search-control w-[233px] absolute top-48">
                   <svg xmlns="http://www.w3.org/2000/svg" class="search-closer w-18 h-18 absolute top-12 right-12 cursor-pointer" viewBox="0 0 20 20" fill="none">
                     <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
-                  <h3 class="component-head">Прямой поиск</h3>
-                  <p class="component-subhead">
+                  <h3 class="form-head">Прямой поиск</h3>
+                  <p class="form-subhead">
                     Выберите поле для поиска <br />
                     и введите значение
                   </p>
                   <ul class="w-full flex flex-col">
                     <li class="selector__item flex flex-col mt-16">
                       <p class="font-16">Поиск по:</p>
-                      <div class="selector__select-wrap relative w-full cursor-pointer" data-index="2">
+                      <div class="selector__select-wrap relative w-full cursor-pointer" data-index="0">
                         <div class="selector__select">
                           <p class="selector__value mr-8 text-14" data-search-by="number">Номеру</p>
                           <svg class="mt-[1px]" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -304,31 +228,31 @@
                       </div>
                     </li>
                   </ul>
-                  <label for="search-value" class="component-label">Введите значение</label>
-                  <input type="text" name="search-value" id="search-value" class="component-input p-[14px]" placeholder="Ищу что хочу" />
+                  <label for="search-value" class="form-label">Введите значение</label>
+                  <input type="text" name="search-value" id="search-value" class="input" placeholder="Ищу что хочу" />
                   <input type="submit" value="Найти" class="btn-primary" />
                 </form>
               </li>
             </ul>
           </li>
-          <li class="relative">
-            <button class="query-pill">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 rotate-180" viewBox="0 0 22 22" fill="none">
-                <path d="M16.5 13.75L11 8.25L5.5 13.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <li class="relative widget">
+            <button class="widget-btn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <p class="ml-8">Показать заметки</p>
+              <p class="text-16 ml-8">Показать заметки</p>
             </button>
-            <form action="" class="todo-control component w-[287px] h-[504px] z-10 query-pill__content right-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="todo-closer w-18 h-18 absolute top-12 right-12 cursor-pointer" viewBox="0 0 20 20" fill="none">
+            <form action="" class="widget-control form w-[287px] h-[504px] z-10 absolute top-48 right-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="widget-closer w-18 h-18 absolute top-12 right-12 cursor-pointer" viewBox="0 0 20 20" fill="none">
                 <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
-              <h3 class="component-head">Рабочие заметки</h3>
-              <p class="component-subhead">
+              <h3 class="form-head">Рабочие заметки</h3>
+              <p class="form-subhead">
                 ToDo лист, который может <br />
                 понадобиться в работе
               </p>
-              <ul class="w-full overflow-y-scroll no-scrollbar mt-16 h-[335px]">
+              <ul class="widget-list">
                 <li class="widget-item">Заметка пользователя</li>
                 <li class="widget-item">Заметка пользователя</li>
                 <li class="widget-item">Заметка пользователя</li>
@@ -341,14 +265,14 @@
                 <li class="widget-item">Заметка пользователя</li>
                 <li class="widget-item">Заметка пользователя</li>
               </ul>
-              <textarea name="todo-input" class="hidden w-full mt-12 h-[338px] text-14 p-12 resize-none bg-add rounded-16 outline-2 outline-accent" placeholder="Введите текст заметки"></textarea>
+              <textarea name="widget-input" class="widget-input hidden absolute bottom-[78px] ring-0 border border-light-800 w-[86%] mt-12 h-[338px] text-14 p-12 resize-none bg-light-600 rounded-12 xl:rounded-16 outline-2 outline-brand-900" placeholder="Введите текст заметки"></textarea>
               <button class="btn-primary mt-16">Добавить заметку</button>
             </form>
           </li>
         </ul>
         <div>
-          <ul class="flex mt-16 border-collapse">
-            <li class="flex items-center pl-16 pr-[48px] rounded-l-12 py-[10px] border-2 border-hover">
+          <ul class="flex mt-16 border-collapse w">
+            <li class="sort-control flex items-center pl-16 pr-[48px] hover:pr-[6px] rounded-l-12 py-[10px] border-2 border-light-800 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20" viewBox="0 0 20 20" fill="none">
                 <path d="M3.33331 7.5H16.6666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M3.33331 12.5H16.6666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -356,22 +280,34 @@
                 <path d="M13.3334 2.5L11.6667 17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-16">Номер</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow w-20 h-20 ml-24 hidden" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4.16667V15.8333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.8333 10L9.99999 15.8333L4.16666 10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </li>
-            <li class="flex items-center pl-16 pr-[48px] py-[10px] border-t-2 border-b-2 border-r-2 border-hover">
+            <li class="sort-control flex items-center pl-16 pr-[48px] hover:pr-[6px] py-[10px] border-t-2 border-b-2 border-r-2 border-light-800 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20" viewBox="0 0 20 20" fill="none">
                 <path d="M3.33334 16.25C3.33334 15.6975 3.55284 15.1676 3.94354 14.7769C4.33424 14.3862 4.86414 14.1667 5.41668 14.1667H16.6667" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M5.41668 1.66667H16.6667V18.3333H5.41668C4.86414 18.3333 4.33424 18.1138 3.94354 17.7231C3.55284 17.3324 3.33334 16.8025 3.33334 16.25V3.75001C3.33334 3.19747 3.55284 2.66757 3.94354 2.27687C4.33424 1.88617 4.86414 1.66667 5.41668 1.66667V1.66667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-16">Курс или программа</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow w-20 h-20 ml-24 hidden" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4.16667V15.8333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.8333 10L9.99999 15.8333L4.16666 10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </li>
-            <li class="flex items-center pl-16 pr-[48px] py-[10px] border-t-2 border-b-2 border-r-2 border-hover">
+            <li class="sort-control flex items-center pl-16 pr-[48px] hover:pr-[6px] py-[10px] border-t-2 border-b-2 border-r-2 border-light-800 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20" viewBox="0 0 20 20" fill="none">
                 <path d="M16.6667 17.5V15.8333C16.6667 14.9493 16.3155 14.1014 15.6903 13.4763C15.0652 12.8512 14.2174 12.5 13.3333 12.5H6.66666C5.78261 12.5 4.93476 12.8512 4.30964 13.4763C3.68452 14.1014 3.33333 14.9493 3.33333 15.8333V17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M10 9.16667C11.841 9.16667 13.3333 7.67428 13.3333 5.83333C13.3333 3.99238 11.841 2.5 10 2.5C8.15906 2.5 6.66667 3.99238 6.66667 5.83333C6.66667 7.67428 8.15906 9.16667 10 9.16667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-16">Фамилия и имя</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow w-20 h-20 ml-24 hidden" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4.16667V15.8333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.8333 10L9.99999 15.8333L4.16666 10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </li>
-            <li class="flex items-center pl-16 pr-[48px] py-[10px] border-t-2 border-b-2 border-r-2 border-hover">
+            <li class="sort-control flex items-center pl-16 pr-[48px] hover:pr-[6px] py-[10px] border-t-2 border-b-2 border-r-2 border-light-800 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M18.3333 14.1V16.6C18.3343 16.8321 18.2867 17.0618 18.1938 17.2745C18.1008 17.4871 17.9644 17.678 17.7934 17.8349C17.6224 17.9918 17.4205 18.1112 17.2006 18.1856C16.9808 18.2599 16.7478 18.2876 16.5167 18.2667C13.9524 17.988 11.4892 17.1118 9.32501 15.7083C7.31153 14.4289 5.60446 12.7218 4.32501 10.7083C2.91666 8.53433 2.04021 6.05916 1.76668 3.48333C1.74585 3.25288 1.77324 3.02063 1.8471 2.80135C1.92095 2.58207 2.03965 2.38057 2.19565 2.20968C2.35165 2.03879 2.54152 1.90225 2.75317 1.80876C2.96483 1.71527 3.19363 1.66688 3.42501 1.66666H5.92501C6.32943 1.66268 6.7215 1.80589 7.02815 2.0696C7.33479 2.33332 7.53508 2.69953 7.59168 3.09999C7.6972 3.90005 7.89289 4.6856 8.17501 5.44166C8.28713 5.73993 8.3114 6.06409 8.24493 6.37573C8.17847 6.68737 8.02406 6.97342 7.80001 7.2L6.74168 8.25833C7.92797 10.3446 9.65539 12.072 11.7417 13.2583L12.8 12.2C13.0266 11.9759 13.3126 11.8215 13.6243 11.7551C13.9359 11.6886 14.2601 11.7129 14.5583 11.825C15.3144 12.1071 16.1 12.3028 16.9 12.4083C17.3048 12.4654 17.6745 12.6693 17.9388 12.9812C18.2031 13.2931 18.3435 13.6913 18.3333 14.1Z"
@@ -382,8 +318,12 @@
                 />
               </svg>
               <p class="ml-8 text-16">Телефон</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow w-20 h-20 ml-24 hidden" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4.16667V15.8333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.8333 10L9.99999 15.8333L4.16666 10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </li>
-            <li class="flex items-center pl-16 pr-[48px] py-[10px] border-t-2 border-b-2 border-r-2 border-hover">
+            <li class="sort-control flex items-center pl-16 pr-[48px] hover:pr-[6px] py-[10px] border-t-2 border-b-2 border-r-2 border-light-800 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20" viewBox="0 0 20 20" fill="none">
                 <path d="M15.8333 3.33333H4.16667C3.24619 3.33333 2.5 4.07952 2.5 4.99999V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V4.99999C17.5 4.07952 16.7538 3.33333 15.8333 3.33333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M13.3333 1.66667V5.00001" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -391,16 +331,24 @@
                 <path d="M2.5 8.33333H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-16">Дата</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow w-20 h-20 ml-24 hidden" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4.16667V15.8333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.8333 10L9.99999 15.8333L4.16666 10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </li>
-            <li class="flex items-center pl-16 pr-[48px] py-[10px] rounded-r-12 border-t-2 border-b-2 border-r-2 border-hover">
+            <li class="sort-control flex items-center pl-16 pr-[48px] hover:pr-[6px] py-[10px] rounded-r-12 border-t-2 border-b-2 border-r-2 border-light-800 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20" viewBox="0 0 20 20" fill="none">
                 <path d="M10.8333 1.66667L2.5 11.6667H10L9.16667 18.3333L17.5 8.33334H10L10.8333 1.66667Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <p class="ml-8 text-16">Статус</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow w-20 h-20 ml-24 hidden" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4.16667V15.8333" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.8333 10L9.99999 15.8333L4.16666 10" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </li>
           </ul>
           <ul class="mt-12 lg:max-h-[440px] overflow-y-scroll no-scrollbar">
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -410,7 +358,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -420,7 +368,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -430,7 +378,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -440,7 +388,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -450,7 +398,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -460,7 +408,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -470,7 +418,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -480,7 +428,7 @@
                 <li class="lg:w-[147px] lg:max-w-[147px] query-table__row">Не обработан</li>
               </ul>
             </li>
-            <li class="mb-12 bg-add rounded-12">
+            <li class="mb-12 bg-light-600 border border-light-800 rounded-12">
               <ul class="flex">
                 <li class="lg:w-[149px] lg:max-w-[149px] query-table__row">123456</li>
                 <li class="lg:w-[260px] lg:max-w-[260px] query-table__row">Мобильная разработка</li>
@@ -492,13 +440,14 @@
             </li>
           </ul>
         </div>
-        <div class="absolute left-0 bottom-0 rounded-b-16 w-[1096px] h-[120px] bg-gradient-to-t from-main"></div>
-        <button class="bg-accent hover:shadow-btn absolute bottom-24 text-14 rounded-16 text-main px-24 py-[14px]">Показать еще</button>
+        <div class="absolute left-0 bottom-0 rounded-b-16 w-[1096px] h-[120px] bg-gradient-to-t from-light-400"></div>
+        <button class="load-more bg-brand-900 hover:shadow-btn absolute bottom-24 text-14 rounded-12 xl:rounded-16 text-light-400 px-24 py-[14px]">Показать еще</button>
       </div>
     </section>
     <script src="/src/js/selector.js"></script>
     <script src="/src/js/dateControl.js"></script>
-    <script src="/panel/queries/js/sortControl.js"></script>
-    <script src="/panel/queries/js/searchControl.js"></script>
+    <script src="js/sortControl.js"></script>
+    <script src="js/searchControl.js"></script>
+    <script src="js/widgetControl.js"></script>
   </body>
 </html>
