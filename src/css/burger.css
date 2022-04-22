@@ -1,0 +1,113 @@
+.burger {
+  display: none;
+}
+
+.burger__active {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+  position: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fafafa;
+}
+
+.burger-control {
+  width: 36px;
+  height: 20px;
+}
+
+.burger-control span {
+  left: 0;
+  top: 7px;
+  width: 24px;
+  height: 3px;
+  position: absolute;
+  border-radius: 100px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: #252525;
+}
+
+.burger-control::before {
+  left: 0;
+  width: 36px;
+  height: 3px;
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: #252525;
+}
+
+.burger-control::after {
+  left: 0;
+  top: 14px;
+  content: "";
+  width: 28px;
+  height: 3px;
+  position: absolute;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: #252525;
+}
+
+.burger-control__active span {
+  left: 0;
+  top: 7px;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-radius: 100px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: #252525;
+}
+
+.burger-control__active::before {
+  top: 8px;
+  width: 24px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.burger-control__active::after {
+  top: 8px;
+  width: 24px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.burger-filter__active {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.5;
+}
+
+.burger-opener {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.burger-opener__active {
+  position: fixed;
+}
+
+.locked {
+  overflow-y: hidden;
+}

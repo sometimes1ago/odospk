@@ -244,13 +244,13 @@
     @apply z-10;
   }
   .selector__select {
-    @apply flex items-center justify-between py-16 xl:py-[18px] lg:px-12 mdx:px-16 mt-12 mdx:mt-16 bg-light-600 border border-light-800 box-border rounded-12 xl:rounded-16;
+    @apply flex items-center justify-between py-16 xl:py-[18px] lg:px-12 mdx:px-16 mt-12 mdx:mt-16 bg-light-600 border border-light-800 box-border rounded-12 xl:rounded-16 dark:bg-dark-700 dark:border-0;
   }
   .selector__item-active {
     @apply z-10;
   }
   .selector__options {
-    @apply w-full lg:top-64 mdx:top-[82px] mt-8 mdx:mt-12 mx-auto mb-0 p-12 text-14 mdx:text-18 xl:text-20 absolute right-0 bg-light-400 box-border shadow-selector rounded-12 xl:rounded-16  opacity-0 hidden animate-fadeInDown overflow-auto;
+    @apply w-full lg:top-64 mdx:top-[82px] mt-8 mx-auto mb-0 p-12 text-14 mdx:text-18 xl:text-20 absolute right-0 bg-light-400 box-border shadow-selector rounded-12 xl:rounded-16 opacity-0 hidden animate-fadeInDown overflow-auto dark:bg-dark-700;
   }
   .selector__options::-webkit-scrollbar {
     @apply w-8;
@@ -265,13 +265,13 @@
     @apply block opacity-100;
   }
   .selector__options_item {
-    @apply flex items-center justify-start w-full cursor-pointer rounded-10 xl:rounded-12 mb-4 xl:mb-8;
+    @apply flex items-center justify-start w-full cursor-pointer rounded-8 xl:rounded-12 mb-4 xl:mb-8;
   }
   .selector__options_item:hover {
-    @apply bg-light-700;
+    @apply bg-light-700 dark:bg-text-800;
   }
   .selector__options_value {
-    @apply p-12 xl:p-16 text-14 xl:text-16 leading-tight break-words;
+    @apply p-12 xl:p-16 text-14 xl:text-16 leading-tight break-words dark:text-light-400;
   }
   .course-item {
     @apply lg:mb-8 xl:mb-12 lg:px-16 lg:py-[15px] mdx:py-16 xl:py-20 lg:text-18 mdx:text-20 bg-light-500 rounded-12 mdx:rounded-16 border border-light-900 dark:border-0 dark:bg-dark-700 dark:text-light-600 cursor-pointer;
@@ -280,10 +280,19 @@
     @apply bg-light-700 border-2 border-brand-900 text-brand-900 dark:bg-dark-800 dark:text-brand-900 dark:border-brand-900 dark:border-2;
   }
   .course-item:hover {
-    @apply bg-light-700 border-brand-900;
+    @apply border-brand-900;
   }
   .gradient-hidder__courses {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(22.26%, #EAEAEA), color-stop(50.39%, rgba(234, 234, 234, 0.772527)), color-stop(77.14%, rgba(234, 234, 234, 0.387984)), to(rgba(234, 234, 234, 0)));
     background: linear-gradient(0deg, #EAEAEA 22.26%, rgba(234, 234, 234, 0.772527) 50.39%, rgba(234, 234, 234, 0.387984) 77.14%, rgba(234, 234, 234, 0) 100%);
+  }
+  .dark-mode__enable-btn {
+    @apply flex items-center lg:-ml-4 lg:p-[6px] lg:pt-4 hover:bg-brand-700 hover:rounded-8 cursor-pointer;
+  }
+  .dark-mode__enable-btn:hover path {
+    @apply fill-text-900;
+  }
+  .dark-mode__enable-btn:hover p {
+    @apply text-text-900;
   }
 }

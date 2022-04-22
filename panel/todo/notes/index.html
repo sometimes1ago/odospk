@@ -93,7 +93,7 @@
               <p class="ml-8 text-14 xl:text-18 shrink-1">Пользователи</p>
             </a>
           </li>
-          <li class="mb-4 xl:mb-8 last:mb-0">
+          <!-- <li class="mb-4 xl:mb-8 last:mb-0">
             <a href="/panel/settings/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 18 18" fill="none">
                 <path d="M9 11.25C10.2426 11.25 11.25 10.2426 11.25 9C11.25 7.75736 10.2426 6.75 9 6.75C7.75736 6.75 6.75 7.75736 6.75 9C6.75 10.2426 7.75736 11.25 9 11.25Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -107,7 +107,7 @@
               </svg>
               <p class="ml-8 text-14 xl:text-18">Настройки</p>
             </a>
-          </li>
+          </li> -->
         </ul>
         <div>
           <a href="/panel/settings/" class="link flex flex-row items-center p-12 xl:p-16 cursor-pointer mb-4 xl:mb-8">
@@ -121,24 +121,24 @@
         </div>
       </div>
     </aside>
-    <mail class="ml-24 w-[1135px] xl:w-[1620px]">
+    <main class="ml-24 w-[1135px] xl:w-[1620px]">
       <h1 class="text-32 xl:text-42 mt-16 xl:mt-20 font-bold">Ваши заметки</h1>
       <ul class="flex mt-20 xl:mt-24 h-[565px] xl:h-[819px]">
         <li class="bg-main w-[176px] xl:w-[216px] py-12 xl:py-16 h-full rounded-20 xl:rounded-24 shadow-query-control">
           <h2 class="text-18 xl:text-24 font-bold ml-12 xl:ml-16">Сегодня</h2>
           <p class="text-14 xl:text-18 text-sec ml-12 xl:ml-16 mt-8">2 марта 2022</p>
           <h3 class="text-16 xl:text-20 font-bold mt-20 xl:mt-24 ml-12 xl:ml-16">Меню</h3>
-          <ul class="mt-8 xl:mt-12">
-            <li class="mb-4 xl:mb-8 last:mb-0">
-              <a href="/panel/todo/notes" class="todo-menu__link todo-menu__link-active">
+          <ul class="mt-8 xl:mt-12 ml-8">
+            <li class="mb-8">
+              <a href="/panel/todo/notes" class="todo-menu__link todo-menu__link-active flex p-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none">
                   <path d="M14.25 15.75L9 12L3.75 15.75V3.75C3.75 3.35218 3.90804 2.97064 4.18934 2.68934C4.47064 2.40804 4.85218 2.25 5.25 2.25H12.75C13.1478 2.25 13.5294 2.40804 13.8107 2.68934C14.092 2.97064 14.25 3.35218 14.25 3.75V15.75Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <p class="text-14 xl:text-18 ml-8">Заметки</p>
               </a>
             </li>
-            <li class="mb-4 xl:mb-8 last:mb-0">
-              <a href="/panel/todo/tasks/" class="todo-menu__link">
+            <li class="mb-8">
+              <a href="/panel/todo/tasks/" class="todo-menu__link flex p-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none">
                   <path d="M15 5.25H3C2.17157 5.25 1.5 5.92157 1.5 6.75V14.25C1.5 15.0784 2.17157 15.75 3 15.75H15C15.8284 15.75 16.5 15.0784 16.5 14.25V6.75C16.5 5.92157 15.8284 5.25 15 5.25Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12 15.75V3.75C12 3.35218 11.842 2.97064 11.5607 2.68934C11.2794 2.40804 10.8978 2.25 10.5 2.25H7.5C7.10218 2.25 6.72064 2.40804 6.43934 2.68934C6.15804 2.97064 6 3.35218 6 3.75V15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -146,8 +146,8 @@
                 <p class="text-14 xl:text-18 ml-8">Задачи</p>
               </a>
             </li>
-            <li class="mb-4 xl:mb-8 last:mb-0">
-              <a href="/panel/todo/events" class="todo-menu__link">
+            <li class="mb-8 last:mb-0">
+              <a href="/panel/todo/events" class="todo-menu__link flex p-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" viewBox="0 0 18 18" fill="none">
                   <path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12 1.5V4.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -202,7 +202,7 @@
             </li>
           </ul>
           <button class="btn-primary w-[151px] xl:w-[181px] ml-12 xl:ml-16 mt-16">Создать список</button>
-          <a href="/panel/todo/trash" class="todo-menu__link mt-[96px] xl:mt-[192px]">
+          <a href="/panel/todo/trash" class="todo-menu__link mt-[105px] xl:mt-[192px] flex ml-8 p-4">
             <svg class="w-18 xl:w-24 h-18 xl:h-24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M6.66666 5V3.33333C6.66666 2.89131 6.84225 2.46738 7.15481 2.15482C7.46737 1.84226 7.8913 1.66667 8.33332 1.66667H11.6667C12.1087 1.66667 12.5326 1.84226 12.8452 2.15482C13.1577 2.46738 13.3333 2.89131 13.3333 3.33333V5M15.8333 5V16.6667C15.8333 17.1087 15.6577 17.5326 15.3452 17.8452C15.0326 18.1577 14.6087 18.3333 14.1667 18.3333H5.83332C5.3913 18.3333 4.96737 18.1577 4.65481 17.8452C4.34225 17.5326 4.16666 17.1087 4.16666 16.6667V5H15.8333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -306,7 +306,7 @@
           </ul>
         </li>
       </ul>
-    </mail>
+    </main>
     <script src="/src/js/todoMenu.js"></script>
     <script src="/src/js/addControl.js"></script>
   </body>

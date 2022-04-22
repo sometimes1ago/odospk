@@ -34,6 +34,7 @@ module.exports = {
         'call-btn': '0px 8px 24px rgba(79, 82, 255, 0.28)',
         'cta-btn': '0px 12px 32px rgba(79, 82, 255, 0.48)',
         'slider': '0px 16px 64px rgba(22, 20, 20, 0.12)',
+        'map': '0px 0px 24px rgba(0, 0, 0, 0.06)',
       },
       fontFamily: {
         sans: ['Geometria', 'sans-serif'],
@@ -65,12 +66,14 @@ module.exports = {
         '18': '18px',
         '20': '20px',
         '24': '24px',
+        '28': '28px',
         '32': '32px',
         '36': '36px',
         '42': '42px',
         '48': '48px',
         '52': '52px',
-        '64': '64px'
+        '56': '56px',
+        '64': '64px',
       },
       letterSpacing: {
         tight: '-0.02em'
@@ -128,13 +131,21 @@ module.exports = {
       }
     },
     screens: {
+      //Android
       ad: '340px',
+      //Iphone
       ph: '410px',
+      //Tablets
       tb: '740px',
+      //Big tablets
       bt: '1000px',
+      //Laptops
       lg: '1300px',
+      //Laptops extra
       lgx: '1400px',
+      //Medium extra
       mdx: '1580px',
+      //Extra large
       xl: '1900px',
     }
   },
