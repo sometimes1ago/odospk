@@ -4,140 +4,21 @@
 @layer base {
   @font-face {
     font-family: "Geometria";
+    src: url("../font/Geometria-Regular.woff2") format("woff2"), url("../font/Geometria.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Geometria";
     font-weight: 500;
-    src: url("/src/font/Geometria-Medium.woff2") format("woff2"), url("/src/font/Geometria-Medium.woff") format("woff");
+    src: url("../font/Geometria-Medium.woff2") format("woff2"), url("../font/Geometria-Medium.woff") format("woff");
   }
   @font-face {
     font-family: "Geometria";
     font-weight: bold;
-    src: url("/src/font/Geometria-Bold.woff2") format("woff2"), url("/src/font/Geometria-Bold.woff") format("woff");
+    src: url("../font/Geometria-Bold.woff2") format("woff2"), url("../font/Geometria-Bold.woff") format("woff");
   }
 }
 
-@layer components {
-  .add-control__active {
-    @apply bg-accent px-[6px] rounded-full;
-  }
-  .add-control__active p {
-    @apply text-main;
-  }
-  .add-control__active path {
-    @apply stroke-main;
-  }
-  .active-icon path {
-    @apply stroke-accent;
-  }
-  .auth-slider {
-    @apply flex ml-16;
-  }
-  .auth-slider__item {
-    @apply mr-12 xl:mr-16;
-  }
-  .auth-slider__item:last-child {
-    @apply mr-0;
-  }
-  .auth-slider__img {
-    @apply w-[160px] xl:w-[180px] h-[100px] xl:h-[120px] rounded-16 xl:rounded-20;
-  }
-  .query-mode {
-    @apply mr-12 xl:mr-16 last:mr-0 px-12 py-[7px] rounded-10 bg-light-600 border border-light-800 hover:bg-brand-800 hover:text-light-400 hover:border-selected cursor-pointer;
-  }
-  .query-mode__active {
-    @apply px-12 py-8 bg-brand-900 border-brand-900 rounded-10 text-light-400 cursor-pointer;
-  }
-  .query-mode:hover {
-    @apply bg-brand-800 text-light-400 border-brand-800;
-  }
-  .query-mode:hover path {
-    @apply stroke-main;
-  }
-  .query-table__row {
-    @apply px-16 py-12 text-14 font-medium text-text-800 break-words leading-tight cursor-pointer;
-  }
-  .component {
-    @apply rounded-20 xl:rounded-24 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800;
-  }
-  .component-head {
-    @apply text-18 xl:text-20 font-bold;
-  }
-  .component-head__form {
-    @apply text-20 xl:text-24 font-bold;
-  }
-  .component-subhead {
-    @apply text-14 xl:text-16 text-text-800 mt-8 leading-tight;
-  }
-  .component-label {
-    @apply text-16 xl:text-18 mt-16 xl:mt-24 block;
-  }
-  .component-label__checkbox {
-    @apply text-14 cursor-pointer inline-block relative pl-24 mr-0;
-  }
-  .component-input {
-    @apply w-full text-14 px-12 py-[11px] xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 cursor-pointer rounded-16 border-light-600 bg-light-400;
-  }
-  .component-textarea {
-    @apply w-full text-14 xl:text-16 p-12 h-[74px] xl:h-[106px] mt-12 xl:mt-16 border outline-2 resize-none no-scrollbar leading-tight border-light-800 outline-brand-900 cursor-pointer rounded-16 bg-light-600;
-  }
-  .sort-control:hover .arrow {
-    @apply block;
-  }
-  .search-control {
-    @apply hidden;
-  }
-  .search-control__visible {
-    @apply block animate-fadeInDown;
-  }
-  .search-btn {
-    @apply flex items-center px-16 py-[6px] rounded-10 bg-light-600 border border-light-800;
-  }
-  .search-btn__active {
-    @apply bg-brand-900 text-light-400 border-brand-900;
-  }
-  .search-btn__active path {
-    @apply stroke-light-400;
-  }
-  .search-btn:hover {
-    @apply bg-brand-800 border-brand-800 text-light-400;
-  }
-  .search-btn:hover path {
-    @apply stroke-light-400;
-  }
-  .date-control {
-    @apply hidden;
-  }
-  .date-control__visible {
-    @apply block animate-fadeInDown;
-  }
-  .date-btn {
-    @apply flex items-center px-16 py-[6px] rounded-10 bg-light-600 border border-light-800;
-  }
-  .date-btn__active {
-    @apply bg-brand-900 text-light-400 border-brand-900;
-  }
-  .date-btn__active path {
-    @apply stroke-light-400;
-  }
-  .date-btn:hover {
-    @apply bg-brand-800 border-brand-800 text-light-400;
-  }
-  .date-btn:hover path {
-    @apply stroke-light-400;
-  }
-  .date-pill {
-    @apply text-14 xl:text-16 py-8 px-16 rounded-8 mr-8 border border-light-800 bg-light-600 cursor-pointer last:mr-0;
-  }
-  .date-pill:last-child {
-    @apply mr-0;
-  }
-  .date-pill__active {
-    @apply bg-accent text-main border-accent;
-  }
-  .date-pill:hover {
-    @apply bg-selected border-selected text-main;
-  }
-  .date-input {
-    @apply p-[14px];
-  }
+@layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     @apply w-0 h-0;
   }
@@ -147,152 +28,43 @@
   .no-scrollbar::-webkit-scrollbar-thumb {
     @apply appearance-none;
   }
-  .todo-action:hover path {
-    @apply stroke-selected;
+}
+
+@layer components {
+  .courses__item {
+    @apply ad:mb-8 ad:mr-8 md:mb-12 ad:px-12 lg:px-16 ad:py-[15px] md:py-16 xl:py-20 ad:text-16 lg:text-18 md:text-20 bg-light-500 ad:rounded-8 tb:rounded-12 md:rounded-16 border border-light-900 dark:border-0 dark:bg-dark-700 dark:text-light-600 cursor-pointer;
   }
-  .todo-action:hover p {
-    @apply text-selected;
-  }
-  .todo-actions {
-    @apply hidden;
-  }
-  .todo-actions__visible {
-    @apply block;
-  }
-  .todo-note {
-    @apply text-14 p-12 bg-add border border-hover mb-8 last:mb-0 rounded-12 cursor-pointer;
-  }
-  .todo-note__selected {
-    @apply bg-[#B7CCEC] border-[#B7CCEC];
-  }
-  .todo-list__opened {
-    @apply w-[718px];
-  }
-  .todo-list__default {
-    @apply w-full;
-  }
-  .widget-btn {
-    @apply flex items-center px-16 py-[6px] rounded-10 bg-light-600 border border-light-800;
-  }
-  .widget-btn__active {
-    @apply bg-brand-900 border-brand-900 text-light-400;
-  }
-  .widget-btn__active path {
-    @apply stroke-light-400;
-  }
-  .widget-control {
-    @apply hidden;
-  }
-  .widget-control__visible {
-    @apply block animate-fadeInDown;
-  }
-  .widget-item {
-    @apply w-[97%] mb-8 last:mb-0 px-12 text-14 break-words hover:bg-light-800 py-[10px] bg-light-600 border-light-800 rounded-10 xl:rounded-12 cursor-pointer;
-  }
-  .widget-list {
-    @apply w-full overflow-y-scroll  mt-16 h-[335px];
-  }
-  .widget-list::-webkit-scrollbar {
-    @apply w-8 ml-4;
-  }
-  .widget-list::-webkit-scrollbar-track {
-    @apply bg-main rounded-20;
-  }
-  .widget-list::-webkit-scrollbar-thumb {
-    @apply bg-selected rounded-20;
-  }
-  .link__active path {
-    @apply stroke-brand-900;
-  }
-  .link__active p {
-    @apply text-brand-900;
-  }
-  .link:hover path {
-    @apply stroke-brand-800;
-  }
-  .link:hover p {
-    @apply text-brand-800;
-  }
-  .form {
-    @apply rounded-16 xl:rounded-20 bg-light-400 px-12 xl:px-16 pt-12 xl:pt-16 pb-16 xl:pb-20 shadow-query-control border-light-800;
-  }
-  .form-head {
-    @apply text-18 xl:text-20 font-bold;
-  }
-  .form-head__big {
-    @apply text-20 xl:text-24 font-bold;
-  }
-  .form-subhead {
-    @apply text-14 xl:text-16 text-text-800 mt-8 leading-tight;
-  }
-  .form-label {
-    @apply text-16 xl:text-18 mt-16 xl:mt-24 block;
-  }
-  .input {
-    @apply w-full text-14 px-12 py-[11px] xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-12 xl:rounded-16 border-light-800 bg-light-600;
-  }
-  .textarea {
-    @apply w-full text-14 xl:text-16 p-12 h-[74px] xl:h-[106px] mt-12 xl:mt-16 border outline-2 resize-none no-scrollbar leading-tight border-light-900 outline-brand-900 rounded-16 bg-light-600;
-  }
-  .btn-primary {
-    @apply w-full p-16 xl:p-[19px] bg-brand-900 cursor-pointer mt-24 xl:mt-32 text-light-400 rounded-12 xl:rounded-16 text-14 xl:text-16;
-  }
-  .btn-primary:hover {
-    @apply shadow-btn;
-  }
-  .selector__active {
-    @apply z-10;
-  }
-  .selector__select {
-    @apply flex items-center justify-between py-16 xl:py-[18px] lg:px-12 mdx:px-16 mt-12 mdx:mt-16 bg-light-600 border border-light-800 box-border rounded-12 xl:rounded-16 dark:bg-dark-700 dark:border-0;
-  }
-  .selector__item-active {
-    @apply z-10;
-  }
-  .selector__options {
-    @apply w-full lg:top-64 mdx:top-[82px] mt-8 mx-auto mb-0 p-12 text-14 mdx:text-18 xl:text-20 absolute right-0 bg-light-400 box-border shadow-selector rounded-12 xl:rounded-16 opacity-0 hidden animate-fadeInDown overflow-auto dark:bg-dark-700;
-  }
-  .selector__options::-webkit-scrollbar {
-    @apply w-8;
-  }
-  .selector__options::-webkit-scrollbar-track {
-    @apply bg-main rounded-20;
-  }
-  .selector__options::-webkit-scrollbar-thumb {
-    @apply bg-selected rounded-20;
-  }
-  .selector__options-active {
-    @apply block opacity-100;
-  }
-  .selector__options_item {
-    @apply flex items-center justify-start w-full cursor-pointer rounded-8 xl:rounded-12 mb-4 xl:mb-8;
-  }
-  .selector__options_item:hover {
-    @apply bg-light-700 dark:bg-text-800;
-  }
-  .selector__options_value {
-    @apply p-12 xl:p-16 text-14 xl:text-16 leading-tight break-words dark:text-light-400;
-  }
-  .course-item {
-    @apply lg:mb-8 xl:mb-12 lg:px-16 lg:py-[15px] mdx:py-16 xl:py-20 lg:text-18 mdx:text-20 bg-light-500 rounded-12 mdx:rounded-16 border border-light-900 dark:border-0 dark:bg-dark-700 dark:text-light-600 cursor-pointer;
-  }
-  .course-item__active {
+  .courses__item-active {
     @apply bg-light-700 border-2 border-brand-900 text-brand-900 dark:bg-dark-800 dark:text-brand-900 dark:border-brand-900 dark:border-2;
   }
-  .course-item:hover {
+  .courses__item:hover {
     @apply border-brand-900;
   }
-  .gradient-hidder__courses {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(22.26%, #EAEAEA), color-stop(50.39%, rgba(234, 234, 234, 0.772527)), color-stop(77.14%, rgba(234, 234, 234, 0.387984)), to(rgba(234, 234, 234, 0)));
-    background: linear-gradient(0deg, #EAEAEA 22.26%, rgba(234, 234, 234, 0.772527) 50.39%, rgba(234, 234, 234, 0.387984) 77.14%, rgba(234, 234, 234, 0) 100%);
+  .courses__initial-visible {
+    @apply block;
   }
-  .dark-mode__enable-btn {
-    @apply flex items-center lg:-ml-4 lg:p-[6px] lg:pt-4 hover:bg-brand-700 hover:rounded-8 cursor-pointer;
+  .courses__initial-hidden {
+    @apply hidden;
   }
-  .dark-mode__enable-btn:hover path {
-    @apply fill-text-900;
+  .courses__requesting-visible {
+    @apply block;
   }
-  .dark-mode__enable-btn:hover p {
-    @apply text-text-900;
+  .courses__requesting-hidden {
+    @apply hidden;
+  }
+  .courses__succeded-visible {
+    @apply block;
+  }
+  .courses__succeded-hidden {
+    @apply hidden;
+  }
+  .courses__list::-webkit-scrollbar {
+    @apply w-8;
+  }
+  .courses__list::-webkit-scrollbar-track {
+    @apply rounded-16 bg-light-400;
+  }
+  .courses__list::-webkit-scrollbar-thumb {
+    @apply h-12 border-2 border-light-400 rounded-16 bg-brand-900;
   }
 }

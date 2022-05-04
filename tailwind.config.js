@@ -76,10 +76,10 @@ module.exports = {
         '64': '64px',
       },
       letterSpacing: {
-        tight: '-0.02em'
+        headers: '-0.02em'
       },
       lineHeight: {
-        tighter: '1.4em'
+        text: '1.4em'
       },
       borderRadius: {
         '8': '8px',
@@ -94,21 +94,8 @@ module.exports = {
       }
     },
     colors: {
-      'accent': '#4F52FF',
-      'selected': '#5E89E3',
-      'stroke': '#E6E6E6',
-      'hover': '#EAEAEA',
-      'main': '#FEFEFE',
-      'land': '#FAFAFA',
-      'add': '#F3F3F3',
-      'primary': '#252525',
-      'imp': '#505050',
-      'sec': '#606060',
-      'success': '#27AE60',
-      'error': '#FB7474',
-      /*New color system */
       'brand': {
-        '900': '#4F52FF',
+        '900': '#375DE1',
         '800': '#5E89E3',
         '700': '#BDD0FB',
       },
@@ -120,7 +107,7 @@ module.exports = {
         '500': '#FAFAFA',
         '400': '#FEFEFE',
       },
-      'text': {
+      'black': {
         '900': '#252525',
         '800': '#606060'
       },
@@ -128,25 +115,19 @@ module.exports = {
         '900': '#100F0F',
         '800': '#181717',
         '700': '#202020',
+      },
+      'state': {
+        'success': '#27AE60',
+        'error': '#FB7474',
       }
     },
     screens: {
-      //Android
       ad: '340px',
-      //Iphone
       ph: '410px',
-      //Tablets
-      tb: '740px',
-      //Big tablets
-      bt: '1000px',
-      //Laptops
-      lg: '1300px',
-      //Laptops extra
-      lgx: '1400px',
-      //Medium extra
-      mdx: '1580px',
-      //Extra large
-      xl: '1900px',
+      tb: '620px',
+      lg: '1200px',
+      md: '1460px',
+      xl: '1780px',
     }
   },
   plugins: [

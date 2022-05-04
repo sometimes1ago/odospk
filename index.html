@@ -1,485 +1,450 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/css/style.css">
-  <link rel="stylesheet" href="src/css/slick.css">
-  <link rel="stylesheet" href="src/css/burger.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/app.css">
   <title>Отделение дополнительного образования</title>
 </head>
-<body class="w-full flex flex-col justify-center items-center relative bg-light-500 text-text-900 leading-none dark:bg-dark-900 dark:text-light-900">
-  <header id="main" class="w-full flex flex-col items-center relative ad:px-16 bt:px-24 lg:px-32 overflow-x-hidden overflow-y-hidden ad:h-fit lg:h-[677px] mdx:h-[712px] xl:h-[969px]">
-    <nav class="w-full relative flex items-center justify-between mt-16">
-      <div class="burger-opener">
-        <div class="burger-control relative">
-          <span></span>
-        </div>
-        <p class="ml-8 text-14">Меню</p>
-      </div>
-      <button class="lg:px-24 lg:py-[17px] text-14 font-bold text-brand-900 border-2 border-brand-900 hover:bg-brand-900 hover:text-light-400 hover:shadow-btn rounded-12 mdx:rounded-16">Обратный звонок</button>
-    </nav>
-    <div class="burger-filter"></div>
-    <div class="burger">
-      <ul class="flex px-36 py-24 bg-light-600 rounded-24">
-        <li>
-          <h2 class="text-28 font-bold">Навигация</h2>
-          <ul class="mt-16 -ml-[10px]">
-            <li class="burger-item w-fit p-[10px] mb-4 last:b-0 hover:outline hover:outline-2 hover:outline-text-900 hover:rounded-10">
-              <a href="#main">
-                <h3 class="text-24">главная</h3>
-                <p class="mt-8 text-16 text-text-800">начало вашего пути</p>
+<body class="w-full flex flex-col items-center relative bg-light-500 text-black-900 font-medium leading-none dark:bg-dark-900 dark:text-light-900">
+  <header id="head" class="w-full relative ad:mb-36 tb:mb-[60px] lg:mb-48 md:mb-56 xl:mb-[80px]">
+    <div class="menu__button">
+      <span class="menu__lines"></span>
+      <p class="menu__name">Меню</p>
+    </div>
+    <div id="menu" class="menu">
+      <ul class="menu__content">
+        <li class="menu__content-col menu__nav">
+          <h2 class="menu__content-header menu__nav-header">Навигация</h3>
+          <ul class="menu__list-links">
+            <li class="menu__link-item">
+              <a href="#head" class="menu__link">
+                <h4 class="menu__link-header">главная</h4>
+                <p class="menu__link-description">начало вашего пути</p>
               </a>
             </li>
-            <li class="burger-item w-fit p-[10px] mb-4 last:b-0 hover:outline hover:outline-2 hover:outline-text-900 hover:rounded-10">
-              <a href="#about">
-                <h3 class="text-24">о нас</h3>
-                <p class="mt-8 text-16 text-text-800">кто мы и чем занимаемся</p>
+            <li class="menu__link-item">
+              <a href="#about" class="menu__link">
+                <h4 class="menu__link-header">о нас</h4>
+                <p class="menu__link-description">кто мы и чем занимаемся</p>
               </a>
             </li>
-            <li class="burger-item w-fit p-[10px] mb-4 last:b-0 hover:outline hover:outline-2 hover:outline-text-900 hover:rounded-10">
-              <a href="#courses">
-                <h3 class="text-24">курсы</h3>
-                <p class="mt-8 text-16 text-text-800">то, ради чего вы здесь</p>
+            <li class="menu__link-item">
+              <a href="#cources" class="menu__link">
+                <h4 class="menu__link-header">курсы</h4>
+                <p class="menu__link-description">то, ради чего Вы здесь</p>
               </a>
             </li>
-            <li class="burger-item w-fit p-[10px] mb-4 last:b-0 hover:outline hover:outline-2 hover:outline-text-900 hover:rounded-10">
-              <a href="#feedbacks">
-                <h3 class="text-24">отзывы</h3>
-                <p class="mt-8 text-16 text-text-800">впечатления наших учеников</p>
+            <li class="menu__link-item">
+              <a href="#feedbacks" class="menu__link">
+                <h4 class="menu__link-header">отзывы</h4>
+                <p class="menu__link-description">впечатления наших учеников</p>
+              </a>
+            </li>
+            <li class="menu__link-item">
+              <a href="#contacts" class="menu__link">
+                <h4 class="menu__link-header">контакты</h4>
+                <p class="menu__link-description">пароли и явки для связи</p>
               </a>
             </li>
           </ul>
-          <h2 class="mt-28 text-28 font-bold">Социальные сети</h2>
-          <ul class="mt-16 flex">
-            <li>
-              <a href="https://vk.com/odospk">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28" viewBox="0 0 28 28" fill="none">
-                  <path d="M18.297 0H9.7019C1.8584 0 -0.000976562 1.85938 -0.000976562 9.70287V18.298C-0.000976562 26.1415 1.8584 28.0009 9.7019 28.0009H18.297C26.1405 28.0009 27.9999 26.1415 27.9999 18.298V9.70287C27.9999 1.85938 26.1221 0 18.297 0ZM22.6038 19.9745H20.5711C19.8011 19.9745 19.564 19.3637 18.1789 17.9602C16.9758 16.7939 16.4429 16.639 16.1463 16.639C15.7271 16.639 15.6081 16.7571 15.6081 17.332V19.1686C15.6081 19.6612 15.4533 19.957 14.1495 19.957C11.9935 19.957 9.60127 18.6532 7.9239 16.2242C5.39427 12.6647 4.70215 9.99862 4.70215 9.44737C4.70215 9.15075 4.82027 8.87337 5.3899 8.87337H7.4269C7.94227 8.87337 8.13827 9.1105 8.33865 9.66175C9.34577 12.5694 11.0231 15.1165 11.7153 15.1165C11.9708 15.1165 12.0889 14.9984 12.0889 14.3465V11.3435C12.011 9.95837 11.2821 9.83937 11.2821 9.34762C11.2821 9.1105 11.4781 8.87337 11.7923 8.87337H14.9956C15.4288 8.87337 15.588 9.1105 15.588 9.62062V13.6719C15.588 14.1094 15.784 14.2643 15.9021 14.2643C16.1576 14.2643 16.3764 14.1094 16.8498 13.6351C18.3128 11.9945 19.361 9.46488 19.361 9.46488C19.4975 9.16825 19.7346 8.89088 20.25 8.89088H22.287C22.8978 8.89088 23.0343 9.205 22.8978 9.6425C22.6423 10.8273 20.1494 14.3456 20.1494 14.3456C19.935 14.7009 19.8528 14.8557 20.1494 15.2521C20.3681 15.5487 21.0795 16.1639 21.5529 16.7151C22.4235 17.7039 23.0929 18.5334 23.2714 19.1074C23.4718 19.677 23.176 19.9736 22.6011 19.9736L22.6038 19.9745Z" fill="#252525"/>
+          <h2 class="menu__content-header menu__socials">Социальные сети</h2>
+          <ul class="menu__list-socials">
+            <li class="menu__socials-item">
+              <a href="https://vk.com/odospk" class="menu__socials-link">
+                <svg xmlns="http://www.w3.org/2000/svg" class="menu__socials-icon" viewBox="0 0 28 28" fill="none">
+                  <path d="M18.297 0H9.7019C1.8584 0 -0.000976562 1.85938 -0.000976562 9.70288V18.298C-0.000976562 26.1415 1.8584 28.0009 9.7019 28.0009H18.297C26.1405 28.0009 27.9999 26.1415 27.9999 18.298V9.70288C27.9999 1.85938 26.1221 0 18.297 0ZM22.6038 19.9745H20.5711C19.8011 19.9745 19.564 19.3637 18.1789 17.9602C16.9758 16.7939 16.4429 16.639 16.1463 16.639C15.7271 16.639 15.6081 16.7571 15.6081 17.332V19.1686C15.6081 19.6612 15.4533 19.957 14.1495 19.957C11.9935 19.957 9.60127 18.6532 7.9239 16.2243C5.39427 12.6648 4.70215 9.99862 4.70215 9.44738C4.70215 9.15075 4.82027 8.87337 5.3899 8.87337H7.4269C7.94227 8.87337 8.13827 9.1105 8.33865 9.66175C9.34577 12.5694 11.0231 15.1165 11.7153 15.1165C11.9708 15.1165 12.0889 14.9984 12.0889 14.3465V11.3435C12.011 9.95837 11.2821 9.83937 11.2821 9.34762C11.2821 9.1105 11.4781 8.87337 11.7923 8.87337H14.9956C15.4288 8.87337 15.588 9.1105 15.588 9.62062V13.6719C15.588 14.1094 15.784 14.2642 15.9021 14.2642C16.1576 14.2642 16.3764 14.1094 16.8498 13.6351C18.3128 11.9945 19.361 9.46488 19.361 9.46488C19.4975 9.16825 19.7346 8.89087 20.25 8.89087H22.287C22.8978 8.89087 23.0343 9.205 22.8978 9.6425C22.6423 10.8273 20.1494 14.3456 20.1494 14.3456C19.935 14.7009 19.8528 14.8558 20.1494 15.2521C20.3681 15.5487 21.0795 16.1639 21.5529 16.7151C22.4235 17.7039 23.0929 18.5334 23.2714 19.1074C23.4718 19.677 23.176 19.9736 22.6011 19.9736L22.6038 19.9745Z" fill="#252525"/>
                 </svg>
               </a>
             </li>
-            <li class="ml-16">
-              <a href="https://ok.ru/otdeldopol">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28 rounded-8" viewBox="0 0 28 28" fill="none">
-                  <path d="M11.5125 9.06875C11.5125 7.6875 12.6313 6.56875 14 6.56875C15.3687 6.56875 16.4875 7.6875 16.4875 9.06875C16.4875 10.4438 15.3687 11.5562 14 11.5562C12.6313 11.5562 11.5125 10.4375 11.5125 9.06875V9.06875ZM28 3V25C28 26.6562 26.6562 28 25 28H3C1.34375 28 0 26.6562 0 25V3C0 1.34375 1.34375 0 3 0H25C26.6562 0 28 1.34375 28 3ZM8.93125 9.06875C8.93125 11.8563 11.2062 14.125 14 14.125C16.7938 14.125 19.0688 11.8625 19.0688 9.06875C19.0688 6.26875 16.7938 4 14 4C11.2062 4 8.93125 6.2625 8.93125 9.06875ZM19.8375 14.7375C19.55 14.1687 18.7562 13.6875 17.7062 14.5125C17.7062 14.5125 16.2875 15.6375 14 15.6375C11.7125 15.6375 10.2937 14.5125 10.2937 14.5125C9.24375 13.6875 8.45 14.1687 8.1625 14.7375C7.66875 15.7437 8.23125 16.2187 9.5 17.05C10.5812 17.7437 12.075 18 13.0375 18.1L12.2312 18.9062C11.0937 20.0312 10.0125 21.125 9.25 21.8875C8.15 22.9875 9.91875 24.75 11.025 23.675L14.0063 20.6812C15.1438 21.8187 16.2375 22.9125 16.9875 23.675C18.0875 24.75 19.8625 23.0063 18.775 21.8875L15.7937 18.9062L14.9812 18.1C15.95 18 17.425 17.7312 18.4937 17.05C19.7687 16.2187 20.325 15.7375 19.8375 14.7375Z" fill="#252525"/>
+            <li class="menu__socials-item">
+              <a href="https://ok.ru/otdeldopol" class="menu__socials-link">
+                <svg xmlns="http://www.w3.org/2000/svg" class="menu__socials-icon" viewBox="0 0 28 28" fill="none">
+                  <path d="M11.5125 9.06875C11.5125 7.6875 12.6313 6.56875 14 6.56875C15.3687 6.56875 16.4875 7.6875 16.4875 9.06875C16.4875 10.4438 15.3687 11.5562 14 11.5562C12.6313 11.5562 11.5125 10.4375 11.5125 9.06875ZM28 3V25C28 26.6562 26.6562 28 25 28H3C1.34375 28 0 26.6562 0 25V3C0 1.34375 1.34375 0 3 0H25C26.6562 0 28 1.34375 28 3ZM8.93125 9.06875C8.93125 11.8563 11.2063 14.125 14 14.125C16.7938 14.125 19.0688 11.8625 19.0688 9.06875C19.0688 6.26875 16.7938 4 14 4C11.2063 4 8.93125 6.2625 8.93125 9.06875ZM19.8375 14.7375C19.55 14.1687 18.7562 13.6875 17.7062 14.5125C17.7062 14.5125 16.2875 15.6375 14 15.6375C11.7125 15.6375 10.2937 14.5125 10.2937 14.5125C9.24375 13.6875 8.45 14.1687 8.1625 14.7375C7.66875 15.7437 8.23125 16.2188 9.5 17.05C10.5813 17.7437 12.075 18 13.0375 18.1L12.2312 18.9062C11.0938 20.0312 10.0125 21.125 9.25 21.8875C8.15 22.9875 9.91875 24.75 11.025 23.675L14.0063 20.6812C15.1438 21.8188 16.2375 22.9125 16.9875 23.675C18.0875 24.75 19.8625 23.0063 18.775 21.8875L15.7937 18.9062L14.9812 18.1C15.95 18 17.425 17.7312 18.4937 17.05C19.7687 16.2188 20.325 15.7375 19.8375 14.7375Z" fill="#252525"/>
                 </svg>
               </a>
             </li>
-            <li class="ml-16">
-              <a href="https://api.whatsapp.com/send/?phone=79039274044&text&app_absent=0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28 rounded-8" viewBox="0 0 28 28" fill="none">
-                  <path d="M14 5.675C9.45625 5.675 5.7625 9.36875 5.75625 13.9125C5.75625 15.4688 6.19375 16.9875 7.01875 18.2938L7.2125 18.6063L6.38125 21.6437L9.5 20.825L9.8 21.0063C11.0625 21.7563 12.5125 22.1562 13.9937 22.1562H14C18.5375 22.1562 22.3312 18.4625 22.3312 13.9187C22.3312 11.7187 21.3813 9.65 19.825 8.09375C18.2625 6.53125 16.2 5.675 14 5.675ZM18.8438 17.45C18.6375 18.0313 17.65 18.5562 17.175 18.625C16.3875 18.7437 15.775 18.6813 14.2063 18.0063C11.725 16.9313 10.1 14.4312 9.975 14.2687C9.85 14.1062 8.9625 12.925 8.9625 11.7063C8.9625 10.4875 9.6 9.8875 9.83125 9.6375C10.0563 9.3875 10.325 9.325 10.4937 9.325C10.6562 9.325 10.825 9.325 10.9688 9.33125C11.1188 9.3375 11.325 9.275 11.525 9.75625C11.7312 10.25 12.225 11.4688 12.2875 11.5938C12.35 11.7188 12.3937 11.8625 12.3062 12.025C11.8312 12.975 11.325 12.9375 11.5813 13.375C12.5375 15.0187 13.4937 15.5875 14.95 16.3188C15.2 16.4438 15.3438 16.425 15.4875 16.2563C15.6313 16.0938 16.1062 15.5313 16.2687 15.2875C16.4312 15.0375 16.6 15.0813 16.825 15.1625C17.05 15.2438 18.2687 15.8438 18.5187 15.9688C18.7687 16.0938 18.9312 16.1563 18.9937 16.2563C19.05 16.375 19.05 16.875 18.8438 17.45V17.45ZM25 0H3C1.34375 0 0 1.34375 0 3V25C0 26.6562 1.34375 28 3 28H25C26.6562 28 28 26.6562 28 25V3C28 1.34375 26.6562 0 25 0ZM13.9937 23.825C12.3312 23.825 10.7 23.4062 9.25625 22.6187L4 24L5.40625 18.8625C4.5375 17.3625 4.08125 15.6562 4.08125 13.9062C4.0875 8.44375 8.53125 4 13.9937 4C16.6437 4 19.1313 5.03125 21.0063 6.90625C22.875 8.78125 24 11.2687 24 13.9187C24 19.3812 19.4562 23.825 13.9937 23.825Z" fill="#252525"/>
+            <li class="menu__socials-item">
+              <a href="https://wa.me/79039274044" class="menu__socials-link">
+                <svg xmlns="http://www.w3.org/2000/svg" class="menu__socials-icon" viewBox="0 0 28 28" fill="none">
+                  <path d="M14 5.675C9.45625 5.675 5.7625 9.36875 5.75625 13.9125C5.75625 15.4688 6.19375 16.9875 7.01875 18.2938L7.2125 18.6063L6.38125 21.6437L9.5 20.825L9.8 21.0063C11.0625 21.7563 12.5125 22.1562 13.9937 22.1562H14C18.5375 22.1562 22.3312 18.4625 22.3312 13.9187C22.3312 11.7188 21.3813 9.65 19.825 8.09375C18.2625 6.53125 16.2 5.675 14 5.675ZM18.8438 17.45C18.6375 18.0312 17.65 18.5562 17.175 18.625C16.3875 18.7437 15.775 18.6812 14.2063 18.0063C11.725 16.9312 10.1 14.4312 9.975 14.2687C9.85 14.1062 8.9625 12.925 8.9625 11.7063C8.9625 10.4875 9.6 9.8875 9.83125 9.6375C10.0563 9.3875 10.325 9.325 10.4937 9.325C10.6562 9.325 10.825 9.325 10.9688 9.33125C11.1187 9.3375 11.325 9.275 11.525 9.75625C11.7312 10.25 12.225 11.4688 12.2875 11.5938C12.35 11.7188 12.3937 11.8625 12.3062 12.025C11.8312 12.975 11.325 12.9375 11.5813 13.375C12.5375 15.0188 13.4937 15.5875 14.95 16.3188C15.2 16.4438 15.3438 16.425 15.4875 16.2563C15.6313 16.0938 16.1062 15.5312 16.2687 15.2875C16.4312 15.0375 16.6 15.0813 16.825 15.1625C17.05 15.2438 18.2687 15.8438 18.5187 15.9688C18.7687 16.0938 18.9312 16.1562 18.9937 16.2563C19.05 16.375 19.05 16.875 18.8438 17.45ZM25 0H3C1.34375 0 0 1.34375 0 3V25C0 26.6562 1.34375 28 3 28H25C26.6562 28 28 26.6562 28 25V3C28 1.34375 26.6562 0 25 0ZM13.9937 23.825C12.3312 23.825 10.7 23.4062 9.25625 22.6187L4 24L5.40625 18.8625C4.5375 17.3625 4.08125 15.6562 4.08125 13.9062C4.0875 8.44375 8.53125 4 13.9937 4C16.6437 4 19.1313 5.03125 21.0063 6.90625C22.875 8.78125 24 11.2687 24 13.9187C24 19.3813 19.4562 23.825 13.9937 23.825Z" fill="#252525"/>
                 </svg>
               </a>
             </li>
           </ul>
         </li>
-        <li class="ml-[296px]">
-          <h2 class="text-28 font-bold">Наши контакты</h2>
-          <iframe class="lg:w-[578px] lg:h-[256px] lg:mt-32 border border-light-900 rounded-24" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aaffdf134588f4f17bc68ba6e62806797ee2d56eb6d5e20b04c5d759c750403c8&amp;source=constructor" width="656" height="450" loading="lazy" frameborder="0"></iframe>
-          <ul class="flex lg:mt-36">
-            <li>
-              <h3 class="text-18">Адрес</h3>
-              <p class="mt-8 text-14 text-text-800 leading-tight">
-                Омск, ул. Добролюбова, <br>
+        <li class="menu__content-col menu__map">
+          <h2 class="menu__content-header menu__map-header">Наши контакты</h2>
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aaffdf134588f4f17bc68ba6e62806797ee2d56eb6d5e20b04c5d759c750403c8&amp;source=constructor" width="578" height="289" loading="lazy" frameborder="1" class="menu__map-frame"></iframe>
+          <ul class="menu__list-contacts">
+            <li class="menu__contacts-item">
+              <h3 class="menu__contacts-header">Адрес</h3>
+              <p class="menu__contacts-description">Омск, ул. Добролюбова, <br>
                 д.15, кабинет №77
               </p>
             </li>
-            <li class="ml-64">
-              <h3 class="text-18">Телефоны</h3>
-              <p class="mt-8 text-14 text-text-800 leading-tight">
-                +7 (903) 927-40-44 <br>
+            <li class="menu__contacts-item">
+              <h3 class="menu__contacts-header">Телефоны</h3>
+              <p class="menu__contacts-description">+7 (903) 927-40-44 <br>
                 +7 (3812) 35-67-04
               </p>
             </li>
-            <li class="ml-64">
-              <h3 class="text-18">Часы работы</h3>
-              <p class="mt-8 text-14 text-text-800 leading-tight">
-                В будние дни с 8:30 <br>
+            <li class="menu__contacts-item">
+              <h3 class="menu__contacts-header">Часы работы</h3>
+              <p class="menu__contacts-description">В будние дни с 8:30 <br>
                 до 17:00
               </p>
             </li>
           </ul>
         </li>
+        <li class="menu__content-col menu__help">
+          <h2 class="menu__content-header menu__help-header">Нужна наша помощь?</h2>
+          <p class="menu__help-subhead">Оставьте заявку на обратный звонок. Мы свяжемся с вами в ближайшее время</p>
+          <form action="/help-request" class="menu__help-form" method="POST">
+            <ul class="menu__help-inputs">
+              <li>
+                <label for="customerName" class="menu__help-label">Ваше имя и фамилия</label>
+                <input type="text" name="customerName" id="customerName" class="menu__help-input border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="Иван Иванов" required>
+              </li>
+              <li class="menu__help-item">
+                <label for="customerPhone" class="menu__help-label">Ваш телефон</label>
+                <input type="tel" name="customerPhone" id="customerPhone" class="menu__help-input border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="+7 923 900 90 90" required>
+              </li>
+            </ul>
+            <div class="menu__help-checkbox">
+              <input type="checkbox" name="remember-me" id="remember-me" class="shrink-0 rounded-[5px] form-checkbox w-[18px] h-[18px] border-black-900 border-2" checked required>
+              <label for="remember-me" class="text-14 ml-8 text-black-900 shrink-1 leading-tight">Я согласен(а) на обработку моих личных данных</label>
+            </div>
+            <input class="menu__help-sender w-full mt-32 text-14 text-light-400 bg-brand-900 py-[17px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendHelpRequest" value="Позвоните мне">
+            <button class="menu__help-modal-start w-full mt-32 text-14 text-light-400 bg-brand-900 py-[17px] rounded-8 cursor-pointer hover:shadow-btn">Заказать звонок</button>
+          </form>
+        </li>
       </ul>
     </div>
-    <div class="w-full lg:mt-48 mdx:mt-12 xl:mt-[52px] ad:flex ad:self-center ad:flex-col lg:flex-row items-center lg:justify-between">
-      <div class="ad:order-2 lg:order-1 lg:w-[498px] mdx:w-[592px] xl:w-[750px] pl-32 xl:pl-[48px]">
-        <h1 class="lg:text-52 mdx:text-64 xl:text-82 leading-none font-bold -tracking-wide dark:text-light-400">Отделение <br> дополнительного <br> образования</h1>
-        <p class="lg:mt-20 mdx:mt-32 lg:text-18 mdx:text-20 xl:text-22 xl:w-[573px] text-text-800 leading-tighter dark:text-light-800">Мы приглашаем всех желающих пройти обучение на наших курсах и программах профессиональной подготовки, по окончании которых вы получите подтверждающий сертификат</p>
-        <button class="px-24 py-20 lg:mt-32 lg:text-16 mdx:mt-48 rounded-16 mdx:rounded-16 bg-brand-900 text-light-400 hover:shadow-btn">Смотреть курсы и программы</button>
+    <div class="menu__overlay"></div>
+    <div class="w-full ad:flex ad:flex-col lg:flex-row tb:items-center lg:justify-between ad:mt-[80px] md:mt-[100px] xl:mt-[128px]">
+      <div class="ad:mt-12 ph:w-[390px] tb:w-[470px] lg:w-[498px] md:w-[592px] xl:w-[750px] flex flex-col tb:items-center lg:items-start ad:order-2 lg:order-1 ad:px-16 tb:px-0 lg:pl-32 xl:pl-48">
+        <h1 class="ad:text-32 ph:text-36 tb:text-52 tb:text-center lg:text-left md:text-64 xl:text-82 leading-none font-bold -tracking-wide dark:text-light-400">Отделение <br> дополнительного <br> образования</h1>
+        <p class="ad:mt-16 tb:mt-24 md:mt-32 ad:text-16 ph:text-18 tb:text-center lg:text-left md:text-20 xl:text-22 xl:w-[573px] text-black-800 leading-tight dark:text-light-800">Мы приглашаем всех желающих пройти обучение на наших курсах и программах профессиональной подготовки, по окончании которых вы получите подтверждающий сертификат</p>
+        <button class="ad:w-[290px] tb:w-[320px] px-24 py-20 ad:mt-24 ph:mt-36 tb:text-18 lg:text-16 md:mt-48 rounded-16 md:rounded-16 bg-brand-900 text-light-400 hover:shadow-btn font-bold">Смотреть курсы и программы</button>
       </div>
-      <img src="/src/img/landing/illustrations/offer-img.png" class="ad:order-1 lg:order-2 bt:w-[976px] bt:h-[694px] lg:w-[764px] lg:h-[521px] mdx:w-[889px] mdx:h-[606px] xl:w-[1041px] xl:h-[710px] dark:brightness-90" alt="Offer img">
+      <img src="/src/img/landing/illustrations/offer-img.png" class="ad:order-1 lg:order-2 ad:w-full ad:h-[280px] ph:w-[380px] ph:h-[310px] tb:w-[700px] tb:h-[500px] lg:w-3/5 lg:h-2/5 md:w-[890px] md:h-[600px] xl:w-[1040px] xl:h-[710px] dark:brightness-90" alt="Offer img">
     </div>
   </header>
-  <section id="about" class="ad:px-16 bt:px-24 lg:px-32 lg:mt-24 lg:mb-48 mdx:mt-32 mdx:mb-[56px] xl:mb-[80px] flex lg:flex-col lg:items-center lg:justify-center">
-    <h2 class="lg:mt-48 lg:text-36 mdx:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Кто мы и чем занимаемся</h2>
-    <p class="lg:mt-12 mdx:mt-16 lg:w-[730px] mdx:w-[812px] xl:w-[900px] text-18 mdx:text-20 xl:text-22 text-text-800 text-center leading-tighter dark:text-light-900">Мы распологаем большим выбором программ обучения, среди которых обязательно найдется нужная именно Вам! Все программы реализуются в нашем колледже под руководством наставников с многолетним опытом работы</p>
-    <div class="gallery-slider lg:mt-48 mdx:mt-56 xl:mt-64 bg-light-500 lg:rounded-32 mdx:rounded-36 xl:rounded-48 shadow-slider">
-      <img class="gallery-slider__item dark:brightness-90" src="src/img/landing/gallery/gallery-img.png" alt="Gallery Slider Item" loading="lazy">
-      <img class="gallery-slider__item dark:brightness-90" src="src/img/landing/gallery/gallery-img.png" alt="Gallery Slider Item" loading="lazy">
+  <section id="about" class="w-full ad:px-16 lg:px-32 ad:mt-36 ad:mb-36 tb:mt-[60px] tb:mb-[60px] lg:mt-48 lg:mb-48 md:mt-56 md:mb-56 xl:mb-[80px] flex flex-col items-center justify-center">
+    <h2 class="ad:text-left ad:self-start tb:self-center tb:text-center ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Кто мы и чем занимаемся</h2>
+    <p class="ad:text-left tb:text-center tb:w-[625px] lg:w-[730px] md:w-[812px] xl:w-[900px] ad:mt-12 md:mt-16 ad:text-16 tb:text-18 md:text-20 xl:text-22 text-black-800 text-center leading-tight dark:text-light-900">Мы распологаем большим выбором программ обучения, среди которых обязательно найдется нужная именно Вам! Все программы реализуются в нашем колледже под руководством наставников с многолетним опытом работы</p>
+    <div class="gallery-slider ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64 bg-light-500 shadow-slider">
+      <img class="gallery-slider__item dark:brightness-90" src="/src/img/landing/gallery/gallery-img.png" alt="Gallery Slider Item" loading="lazy">
+      <img class="gallery-slider__item dark:brightness-90" src="/src/img/landing/gallery/gallery-img.png" alt="Gallery Slider Item" loading="lazy">
     </div>
-    <ul class="flex lg:mt-64 mdx:mt-[76px]">
-      <li class="flex flex-col">
-        <div class="flex items-center">
-          <img src="src/img/landing/illustrations/simple.svg" class="lg:w-[148px] xl:w-[164px] lg:h-[148px] xl:h-[164px] dark:brightness-90" alt="Simplicity" loading="lazy">
-          <div class="lg:ml-32">
-            <h3 class="lg:text-24 mdx:text-28 font-bold tracking-tight dark:text-light-400">Простота</h3>
-            <p class="lg:mt-8 xl:mt-12 lg:w-[340px] mdx:w-[382px] xl:w-[425px] lg:text-16 mdx:text-18 xl:text-20 text-text-800 leading-tighter dark:text-light-900">Наши программы созданы таким образом, чтобы не вызывать затруднений у ученикови быть им интересными</p>
+    <ul class="tb:w-5/6 lg:w-11/12 md:w-5/6 flex tb:justify-between ad:flex-col tb:flex-row ad:mt-[120px] tb:mt-[86px] lg:mt-64 md:mt-[76px]">
+      <li class="tb:w-1/2 xl:w-5/12 tb:mr-48 flex flex-col">
+        <div class="flex ad:flex-col ad:items-start lg:flex-row">
+          <img src="/src/img/landing/illustrations/simple.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Simplicity" loading="lazy">
+          <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 xl:w-[425px] lg:ml-32 ad:mt-24">
+            <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Простота</h3>
+            <p class="ad:mt-8 xl:mt-12 lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-900">Наши программы созданы таким образом, чтобы не вызывать затруднений у ученикови быть им интересными</p>
           </div>
         </div>
-        <div class="lg:mt-[84px] mdx:mt-[96px] flex items-center">
-          <img src="src/img/landing/illustrations/quality.svg" class="lg:w-[148px] xl:w-[164px] lg:h-[148px] xl:h-[164px] dark:brightness-90" alt="Quality" loading="lazy">
-          <div class="lg:ml-32">
-            <h3 class="lg:text-24 mdx:text-28 font-bold tracking-tight dark:text-light-400">Качество</h3>
-            <p class="lg:mt-8 xl:mt-12 lg:w-[324px] mdx:w-[363px] xl:w-[400px] lg:text-16 mdx:text-18 xl:text-20 text-text-800 leading-tighter dark:text-light-800">Все наши образовательные программы проверены временем и отзывами 
+        <div class="ad:mt-48 tb:mt-64 lg:mt-[84px] md:mt-[96px] flex ad:flex-col ad:items-start lg:flex-row">
+          <img src="/src/img/landing/illustrations/quality.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Quality" loading="lazy">
+          <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 xl:w-[400px] lg:ml-32 ad:mt-24">
+            <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Качество</h3>
+            <p class="ad:mt-8 xl:mt-12 lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Все наши образовательные программы проверены временем и отзывами 
               о высоком качестве наших методик 
               и подходов обучения слушателей</p>
           </div>
         </div>
       </li>
-      <li class="flex flex-col lg:ml-[103px] mdx:ml-[249px] xl:ml-[308px]">
-        <div class="flex items-center">
-          <img src="src/img/landing/illustrations/price.svg" class="lg:w-[148px] xl:w-[164px] lg:h-[148px] xl:h-[164px] dark:brightness-90" alt="Cost" loading="lazy">
-          <div class="lg:ml-32">
-            <h3 class="lg:text-24 mdx:text-28 font-bold tracking-tight dark:text-light-400">Стоимость</h3>
-            <p class="lg:mt-8 xl:mt-12 lg:w-[290px] mdx:w-[330px] xl:w-[366px] lg:text-16 mdx:text-18 xl:text-20 text-text-800 leading-tighter dark:text-light-800">Для вашего удобства, реализуемые нами программы отличаются возможностью оплаты обучения 
-              <br> в рассрочку</p>
+      <li class="tb:w-1/2 xl:w-5/12 flex flex-col ad:mt-48 tb:mt-0">
+        <div class="flex ad:flex-col ad:items-start lg:flex-row">
+          <img src="/src/img/landing/illustrations/price.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Cost" loading="lazy">
+          <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 lg:ml-32 ad:mt-24">
+            <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Стоимость</h3>
+            <p class="ad:mt-8 xl:mt-12 xl:w-[366px] lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Для вашего удобства, реализуемые нами программы отличаются возможностью оплаты обучения в рассрочку</p>
           </div>
         </div>
-        <div class="lg:mt-[84px]  flex items-center">
-          <img src="src/img/landing/illustrations/proff.svg" class="lg:w-[148px] xl:w-[164px] lg:h-[148px] xl:h-[164px] dark:brightness-90" alt="Professionality" loading="lazy">
-          <div class="lg:ml-32">
-            <h3 class="lg:text-24 mdx:text-28 font-bold tracking-tight dark:text-light-400">Профессионализм</h3>
-            <p class="lg:mt-8 xl:mt-12 lg:w-[322px] mdx:w-[360px] xl:w-[412px] lg:text-16 mdx:text-18 xl:text-20 text-text-800 leading-tighter dark:text-light-800">Опыт наших преподавателей позволит вам стать  специалистом по выбранной программе обучения или курсу по вашему запросу</p>
+        <div class="ad:mt-48 tb:mt-64 lg:mt-[84px] flex ad:flex-col ad:items-start lg:flex-row">
+          <img src="/src/img/landing/illustrations/proff.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Professionality" loading="lazy">
+          <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 lg:ml-32 ad:mt-24">
+            <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Профессионализм</h3>
+            <p class="ad:mt-8 xl:mt-12 xl:w-[412px] lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Опыт наших преподавателей позволит вам стать  специалистом по выбранной программе обучения или курсу по вашему запросу</p>
           </div>
         </div>
       </li>
     </ul>
   </section>
-  <section id="courses" class="ad:px-16 bt:px-24 lg:px-32 lg:mt-48 lg:mb-48 mdx:mt-48 mdx:mb-[56px] xl:mt-[80px] xl:mb-[80px] flex lg:flex-col lg:items-center lg:justify-center">
-    <h2 class="lg:mt-48 lg:text-36 mdx:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Наши курсы и программы</h2>
-    <p class="lg:mt-12 mdx:mt-16 lg:w-[617px] mdx:w-[689px] xl:w-[755px] text-18 mdx:text-20 xl:text-22 text-text-800 text-center leading-tighter dark:text-light-800">Список наших программ обучения, по которым вы можете получить дополнительное образование, профессиональную подготовку 
+  <section id="courses" class="ad:px-16 ad:mt-36 ad:mb-36 lg:px-32 tb:mt-48 tb:mb-48 md:mt-56 lg:mb-48 md:mb-56 xl:mt-[80px] xl:mb-[80px] ad:flex ad:flex-col ad:items-start ad:justify-start tb:items-center tb:justify-center">
+    <h2 class="ad:mt-36 tb:mt-48 ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Наши курсы и программы</h2>
+    <p class="ad:w-11/12 tb:w-3/4 lg:w-[617px] md:w-[689px] xl:w-[755px] ad:mt-12 md:mt-16 text-18 md:text-20 xl:text-22 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Список наших программ обучения, по которым вы можете получить дополнительное образование, профессиональную подготовку 
       или повысить квалификацию</p>
-    <div class="w-full lg:mt-48 lg:p-16 mdx:p-20 bg-light-700 lg:rounded-28 mdx:rounded-32 dark:bg-dark-800">
-      <div class="w-full flex items-center justify-between">
+    <div class="w-full ad:mt-24 tb:mt-48 ad:p-12 tb:p-16 md:p-20 bg-light-700 ad:rounded-12 tb:rounded-16 lg:rounded-24 md:rounded-32 dark:bg-dark-800">
+      <div class="w-full flex ad:flex-col lg:flex-row ad:flex-start lg:items-center justify-between">
         <div>
-          <h3 class="lg:block lg:text-24 mdx:text-32 font-bold dark:text-light-400 tracking-tight">Отфильтровано с заботой</h3>
-          <p class="lg:mt-8 lg:text-16 mdx:text-20 leading-tighter tracking-tight text-text-800 dark:text-light-800">Специально для Вас фильтры с быстрой <br> выборкой курсов и программ</p>
+          <h3 class="ad:block ad:text-20 tb:text-24 md:text-32 font-bold dark:text-light-400 tracking-tight">Отфильтровано с заботой</h3>
+          <p class="ad:mt-8 ad:text-16 md:text-20 leading-tight tracking-tight text-black-800 dark:text-light-800">Специально для Вас фильтры с быстрой <br> выборкой курсов и программ</p>
         </div>
-        <ul class="flex items-center">
-          <li class="selector__item flex flex-col lg:mr-24 mdx:mr-36">
-            <p class="lg:text-18 font-bold mdx:text-24 dark:text-light-400">Срок обучения:</p>
-            <div class="selector__select-wrap relative lg:w-[193px] mdx:w-[228px] cursor-pointer" data-index="0">
-              <div class="selector__select py-[15px] mdx:py-[18px] xl:py-[22px] bg-light-500 border border-light-800">
-                <p class="selector__value lg:text-16 mdx:text-18 dark:text-light-400" data-educationLenght="any">Любой</p>
-                <svg class="mt-[1px] w-[11px] h-[10px]" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path class="dark:fill-light-400"
-                    d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                    2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                    fill="#252525"
-                  />
+        <div class="dropdowns ad:w-full lg:w-fit md:w-1/2 flex ad:flex-col ad:items-start ad:justify-start tb:flex-row tb:items-center tb:justify-between ad:mt-16 lg:mt-0">
+          <div class="dropdown__container ad:w-full lg:w-[200px] md:w-full flex flex-col items-start mr-24">
+            <label class="dropdown__label mb-12 text-18 font-bold" data-dropdownIndex="0">Срок обучения</label>
+            <div class="dropdown dropdown__light" data-index="0">
+              <div class="dropdown__btn">
+                <p class="dropdown__btn-text" data-dropdownValue="Любой">Любой</p>
+                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                 </svg>
               </div>
-              <ul class="selector__options">
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="any">Любой</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="1">1 месяц</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="2">2 месяца</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="3">3 месяца</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="4">4 месяца</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="5">5 месяцев</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="6">Полгода</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-educationLenght="12">Год</p>
-                </li>
+              <ul class="dropdown__options">
+                <li class="dropdown__option">Любая</li>
+                <li class="dropdown__option">1 месяц</li>
+                <li class="dropdown__option">2 месяца</li>
+                <li class="dropdown__option">3 месяца</li>
+                <li class="dropdown__option">4 месяца</li>
+                <li class="dropdown__option">5 месяца</li>
+                <li class="dropdown__option">Полгода</li>
+                <li class="dropdown__option">Год</li>
               </ul>
             </div>
-          </li>
-          <li class="selector__item flex flex-col lg:mr-24 mdx:mr-36">
-            <p class="text-18 font-bold mdx:text-24 dark:text-light-400">Выдаваемый документ:</p>
-            <div class="selector__select-wrap relative lg:w-[213px] mdx:w-[283px] cursor-pointer" data-index="1">
-              <div class="selector__select py-[15px] mdx:py-[18px] xl:py-[22px] bg-light-500 border border-light-800">
-                <p class="selector__value lg:text-16 mdx:text-18 dark:text-light-400" data-diplomaType="any">Любой</p>
-                <svg class="mt-[1px] w-[11px] h-[10px]" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path class="dark:fill-light-400"
-                    d="M7.16448 8.00143C6.37292 9.18965 4.62708 9.18966 3.83552 8.00143L1.07583 3.85883C0.190385
-                    2.52968 1.14323 0.75 2.74031 0.75L8.25969 0.75C9.85677 0.75 10.8096 2.52968 9.92417 3.85883L7.16448 8.00143Z"
-                    fill="#252525"
-                  />
+          </div>
+          <div class="dropdown__container ad:w-full ad:mt-16 tb:mt-0 lg:w-[215px] md:w-full flex flex-col items-start mr-24">
+            <label class="dropdown__label mb-12 text-18 font-bold" data-dropdownIndex="1">Выдаваемый документ</label>
+            <div class="dropdown dropdown__light" data-index="1">
+              <div class="dropdown__btn">
+                <p class="dropdown__btn-text" data-dropdownValue="Любой">Любой</p>
+                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                 </svg>
               </div>
-              <ul class="selector__options">
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-diplomaType="any">Любой</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-diplomaType="certificate">Сертификат</p>
-                </li>
-                <li class="selector__options_item">
-                  <p class="selector__options_value" data-diplomaType="diploma">Свидетельство</p>
-                </li>
+              <ul class="dropdown__options">
+                <li class="dropdown__option">Любой</li>
+                <li class="dropdown__option">Сертификат</li>
+                <li class="dropdown__option">Свидетельство</li>
               </ul>
             </div>
-          </li>
-          <li class="flex flex-col">
-            <label class="lg:text-18 mdx:text-24 font-bold dark:text-light-400" for="priceInput">Стоимость до:</label>
-            <input class="input lg:text-16 mdx:text-18 lg:w-[193px] mdx:w-[228px] py-[11px] mdx:py-[18px] xl:py-[20px] bg-light-500 border-light-800 dark:bg-dark-700 dark:text-light-800 dark:border-none" type="text" placeholder="10000 ₽" maxlength="6">
-          </li>
-        </ul>
+          </div>
+          <div class="filter__input ad:w-full lg:w-[200px] md:w-full ad:mt-16 tb:mt-0 flex flex-col items-start ">
+            <label for="clientName" class="lg:text-18 mb-12 font-bold">Стоимость</label>
+            <input type="text" id="clientName" class="w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000">
+          </div>
+        </div>
       </div>
-      <div class="w-full lg:mt-36 flex lg:items-start lg:justify-between relative">
-        <div class="courses-list relative ad:w-full lg:w-1/2 lg:mr-24 overflow-y-scroll no-scrollbar">
-          <h4 class="lg:text-20 mdx:text-24 font-bold dark:text-light-400 tracking-tight">Курсы</h4>
-          <ul class="w-full lg:mt-12 mdx:mt-16">
-            <li class="course-item">1С Предприятие 8.2, 8.3</li>
-            <li class="course-item__active course-item">Комбинированный маникюр и дизайн ногтей</li>
-            <li class="course-item">Оформление и окрашивание бровей</li>
-            <li class="course-item">Раскрой и пошив одежды</li>
-            <li class="course-item">Художественная сварка</li>
-            <li class="course-item">Цифровая фотография</li>
+      <div class="w-full ad:flex ad:flex-col lg:flex-row lg:items-start lg:justify-between lg:mt-36">
+        <div class="courses__list ad:w-full ad:mt-24 lg:mt-0 ad:order-2 lg:order-1 lg:w-1/2 lg:mr-24 overflow-y-scroll">
+          <h4 class="ad:text-20 tb:mt-0 md:text-24 font-bold dark:text-light-400 tracking-tight">Курсы</h4>
+          <ul class="w-full ad:mt-12 md:mt-16">
+            <li class="courses__item">1С Предприятие 8.2, 8.3</li>
+            <li class="courses__item-active courses__item">Комбинированный маникюр и дизайн ногтей</li>
+            <li class="courses__item">Оформление и окрашивание бровей</li>
+            <li class="courses__item">Раскрой и пошив одежды</li>
+            <li class="courses__item">Художественная сварка</li>
+            <li class="courses__item">Цифровая фотография</li>
           </ul>
-          <h4 class="lg:mt-24 lg:text-20 mdx:text-24 font-bold dark:text-light-400 tracking-tight">Профессиональная подготовка</h4>
-          <ul class="courses w-full lg:mt-12 mdx:mt-16">
-            <li class="course-item">Помощник машиниста электропоезда</li>
-            <li class="course-item">Проводник пассажирского вагона</li>
-            <li class="course-item">Сварщик ручной дуговой сварки плавящимся электродом</li>
-            <li class="course-item">Художественная сварка</li>
-            <li class="course-item">Цифровая фотография</li>
+          <h4 class="ad:mt-24 ad:text-20 md:text-24 font-bold dark:text-light-400 tracking-tight">Профессиональная подготовка</h4>
+          <ul class="courses w-full ad:mt-12 md:mt-16">
+            <li class="courses__item">Помощник машиниста электропоезда</li>
+            <li class="courses__item">Проводник пассажирского вагона</li>
+            <li class="courses__item">Сварщик ручной дуговой сварки плавящимся электродом</li>
+            <li class="courses__item">Художественная сварка</li>
+            <li class="courses__item">Цифровая фотография</li>
           </ul>
         </div>
-        <div class="gradient-hidder__courses w-1/2 lg:h-64 absolute left-0 bottom-0"></div>
-        <div class="course-description lg:w-1/2 lg:p-16 mdx:p-20 xl:p-24 bg-light-500 rounded-20 mdx:rounded-24 xl:rounded-28 border border-light-900 dark:bg-dark-700 dark:border-none">
-          <h3 class="lg:text-32 mdx:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400">Комбинированный маникюр и дизайн ногтей</h3>
-          <div class="course-initial lg:pr-36 mdx:pr-[84px] xl:pr-[120px]">
-            <ul class="text-content lg:mt-24 mdx:mt-32 xl:mt-36">
-              <li class="lg:text-18 mdx:text-20 xl:text-22 text-text-800 leading-tighter dark:text-light-800">
-                <span class="lg:text-20 mdx:text-24 xl:text-28 text-text-900 font-bold leading-none dark:text-light-400">Срок обучения: </span>
+        <div class="courses__description ad:w-full ad:mt-24 tb:mt-36 lg:mt-0 lg:w-1/2 ad:order-1 lg:order-2 ad:p-12 tb:p-16 md:p-20 xl:p-24 bg-light-500 rounded-20 md:rounded-24 xl:rounded-28 border border-light-900 dark:bg-dark-700 dark:border-none">
+          <h3 class="courses__name ad:text-28 ph:text-32 md:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400" data-courseName="Комбинированный маникюр и дизайн ногтей">Комбинированный маникюр и дизайн ногтей</h3>
+          <div class="courses__initial courses__initial-visible lg:pr-36 md:pr-[84px] xl:pr-[120px]">
+            <ul class="text-content ad:mt-24 md:mt-32 xl:mt-36">
+              <li class="lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Срок обучения: </span>
                 32 академ. часа (1 месяц)
               </li>
-              <li class="lg:mt-16 mdx:mt-20 xl:mt-24 lg:text-18 mdx:text-20 xl:text-22 text-text-800 leading-tighter dark:text-light-800">
-                <span class="lg:text-20 mdx:text-24 xl:text-28 text-text-900 font-bold leading-none dark:text-light-400">Выдаваемый документ: </span>
+              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Выдаваемый документ: </span>
                 Сертификат
               </li>
-              <li class="lg:mt-16 mdx:mt-20 xl:mt-24 lg:text-18 mdx:text-20 xl:text-22 text-text-800 leading-tighter dark:text-light-800">
-                <span class="lg:text-20 mdx:text-24 xl:text-28 text-text-900 font-bold leading-none dark:text-light-400">Чему научитесь: </span>
+              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Чему научитесь: </span>
                 Выполнять комбинированный маникюр, техникам нанесения гель-лака, современным дизайнам ногтей
               </li>
-              <li class="lg:mt-16 mdx:mt-20 xl:mt-24 lg:text-18 mdx:text-20 xl:text-22 text-text-800 leading-tighter dark:text-light-800">
-                <span class="lg:text-20 mdx:text-24 xl:text-28 text-text-900 font-bold leading-none dark:text-light-400">Описание: </span>
+              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Описание: </span>
                 Программа позволит вам освоить комбинированный маникюр, сочетающий техники обрезного и аппаратного маникюра, работу по нанесению гель-лака, создание разных видов дизайна ногтей, методикам укрепления натуральных ногтей, приобретете навык умело фотографировать свои работы и др
               </li>
-              <li class="lg:mt-16 mdx:mt-20 xl:mt-24 lg:text-18 mdx:text-20 xl:text-22 text-text-800 leading-tighter dark:text-light-800">
-                <span class="lg:text-20 mdx:text-24 xl:text-28 text-text-900 font-bold leading-none dark:text-light-400">Стоимость: </span>
+              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Стоимость: </span>
                 5000 ₽
               </li>
             </ul>
-            <button class="lg:w-[206px] mdx:w-[255px] mt-24 mdx:mt-32 xl:mt-36 text-16 mdx:text-18 p-16 mdx:p-[23px] bg-brand-900 text-light-400 rounded-12 xl:rounded-16 cursor-pointer hover:shadow-btn">Записаться на курс</button>
+            <button class="ad:w-full lg:w-[206px] md:w-[255px] mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 rounded-12 xl:rounded-16 cursor-pointer hover:shadow-btn">Записаться на курс</button>
           </div>
-          <div class="course-ordering lg:w-[304px] hidden">
+          <div class="courses__requesting courses__requesting-hidden lg:w-2/3">
             <h3 class="lg:text-24 lg:mt-20 font-bold dark:text-light-400">Запись на курс</h3>
-            <p class="lg:text-16 lg:mt-8 leading-tighter text-text-800">Заполните все необходимые поля и отправьте заявку чтобы записаться на выбранный курс</p>
-            <form action="" class="w-full lg:mt-20">
+            <p class="lg:text-16 lg:mt-8 leading-tight text-black-800">Заполните все необходимые поля и отправьте заявку чтобы записаться на выбранный курс</p>
+            <form action="courses/requesting/{course-id}" class="w-full lg:mt-20">
               <label for="clientName" class="lg:text-18 font-bold">Ваше имя и фамилия</label>
-              <input type="text" id="clientName" class="input" placeholder="Иван Иванов" required>
+              <input type="text" id="clientName" class="w-full text-14 px-12 py-[12.5px] leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 placeholder:text-black-800" placeholder="Иван Иванов" required>
               <label for="clientPhone" class="lg:text-18 lg:mt-24 block font-bold">Ваш телефон</label>
-              <input type="text" id="clientPhone" class="input" placeholder="+7 900 900 90 90" required>
+              <input type="text" id="clientPhone" class="w-full text-14 px-12 py-[12.5px] leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700" placeholder="+7 900 900 90 90" required>
               <div class="flex items-start lg:mt-16">
                 <input type="checkbox" name="agreement" id="agreement" class="form-checkbox lg:mt-[3px] lg:rounded-[4px] border-text-900 border-2" checked required>
-                <label for="agreement" class="lg:ml-8 lg:text-16 leading-tighter text-text-900 accent-brand-900">Я согласен на обработку моих личных данных</label>
+                <label for="agreement" class="lg:ml-8 lg:text-16 leading-tight text-black-900 accent-brand-900">Я согласен на обработку моих личных данных</label>
               </div>
-              <div class="flex mt-24 mdx:mt-32 xl:mt-36">
-                <button type="submit" class="lg:w-[206px] mdx:w-[255px] text-16 mdx:text-18 p-16 mdx:p-[23px] bg-brand-900 text-light-400 rounded-12 xl:rounded-16 cursor-pointer hover:shadow-btn">Записаться</button>
-                <button class="cancelOrdering text-16 lg:ml-12 mdx:text-18 p-16 mdx:p-[23px] font-bold" >Отмена</button>
+              <div class="flex mt-24 md:mt-32 xl:mt-36">
+                <button type="submit" class="lg:w-[206px] md:w-[255px] text-16 md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 rounded-12 xl:rounded-16 cursor-pointer hover:shadow-btn">Записаться</button>
+                <button class="cancelOrdering text-16 lg:ml-12 md:text-18 p-16 md:p-[23px] font-bold" >Отмена</button>
               </div>
-              <p class="lg:mt-16 lg:text-12 text-text-800 leading-tighter">Все передаваемые вами данные <br> защищены по ФЗ № 152</p>
+              <p class="lg:mt-16 lg:text-12 text-black-800 leading-tight">Все передаваемые вами данные защищены по ФЗ № 152</p>
             </form>
           </div>
-          <div class="course-ordering__succeed hidden">
-            <img class="lg:w-[265px] mdx:w-[290px] xl:w-[320px] lg:h-[265px] mdx:h-[290px] xl:h-[320px] lg:mt-48 mdx:mt-[56px] xl:mt-64 dark:brightness-90" src="/src/img/landing/illustrations/order-success.svg" alt="Order success">
+          <div class="courses__succeded courses__succeded-hidden">
+            <img class="lg:w-[265px] md:w-[290px] xl:w-[320px] lg:h-[265px] md:h-[290px] xl:h-[320px] lg:mt-48 md:mt-[56px] xl:mt-64 dark:brightness-90" src="/src/img/landing/illustrations/order-success.svg" alt="Order success">
             <div class="lg:mt-32">
-              <h4 class="lg:text-24 mdx:text-28 xl:text-32 font-bold text-text-900 dark:text-light-400">Вы успешно записались!</h4>
-              <p class="lg:mt-8 mdx:mt-12 lg:text-16 mdx:text-18 xl:text-20 text-text-800 leading-tighter dark:text-light-800">Скоро мы свяжемся с вами по  указанному <br> телефону и обсудим детали</p>
+              <h4 class="lg:text-24 md:text-28 xl:text-32 font-bold text-black-900 dark:text-light-400">Вы успешно записались!</h4>
+              <p class="lg:mt-8 md:mt-12 lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Скоро мы свяжемся с вами по  указанному <br> телефону и обсудим детали</p>
             </div>
-            <button class="btn-primary lg:w-[206px] lg:mt-24 mdx:mt-[28px] xl:mt-36 lg:py-16 mdx:py-[20px] mdx:text-16">Спасибо!</button>
-          </div>
-          <div class="course-ordering__error hidden">
-            <img class="lg:w-[265px] mdx:w-[290px] xl:w-[320px] lg:h-[265px] mdx:h-[290px] xl:h-[320px] lg:mt-48 mdx:mt-[56px] xl:mt-64 dark:brightness-90" src="/src/img/landing/illustrations/order-error.svg" alt="Order success">
-            <div class="lg:mt-32">
-              <h4 class="lg:text-24 mdx:text-28 xl:text-32 font-bold text-text-900 dark:text-light-400">Ой! Что-то пошло не так</h4>
-              <p class="lg:mt-8 mdx:mt-12 lg:text-16 mdx:text-18 xl:text-20 text-text-800 leading-tighter dark:text-light-800">Повторите попытку или сообщите нам об этом</p>
-            </div>
-            <button class="btn-primary lg:w-[206px] lg:mt-24 mdx:mt-[28px] xl:mt-36 lg:py-16 mdx:py-[20px] mdx:text-16">Сообщить</button>
+            <button class="btn-primary lg:w-[206px] lg:mt-24 md:mt-[28px] xl:mt-36 lg:py-16 md:py-[20px] md:text-16">Спасибо!</button>
           </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-full flex lg:items-center lg:justify-between lg:mt-36 mdx:mt-48 lg:p-24 xl:px-32 xl:py-36 lg:rounded-28 mdx:rounded-32 bg-brand-900 dark:bg-dark-800">
-      <div class="lg:w-[350px] mdx:w-[390px] xl:w-[436px]">
-        <h4 class="lg:text-24 xl:text-32 text-light-400 font-bold dark:text-light-400">Не можете выбрать курс?</h4>
-        <p class="lg:mt-12 lg:text-16 mdx:text-18 xl:text-20 leading-tighter text-light-400 dark:text-light-800">Оставьте заявку на обратный звонок. <br> 
+    <div class="w-full flex ad:flex-col lg:flex-row lg:items-start lg:justify-between ad:mt-36 md:mt-48 ad:p-16 lg:p-24 xl:px-32 xl:py-36 ad:rounded-12 lg:rounded-16 md:rounded-32 bg-brand-900 dark:bg-dark-800">
+      <div class="lg:w-[350px] md:w-[390px] xl:w-[436px]">
+        <h4 class="ad:text-20 tb:text-24 xl:text-32 text-light-400 font-bold dark:text-light-400">Не можете выбрать курс?</h4>
+        <p class="ad:mt-8 lg:mt-12 lg:text-16 md:text-18 xl:text-20 font-light leading-tight text-light-400 dark:text-light-800">Оставьте заявку на обратный звонок. <br> 
           Мы свяжемся с вами в ближайшее время 
           и поможем в выборе курса или программы</p>
       </div>
-      <form action="" method="post">
-        <ul class="flex lg:items-center">
-          <li class="lg:w-[240px] lg:mr-32 xl:mr-36 flex flex-col">
-            <label class="lg:text-18 xl:text-22 text-light-400" for="helperClientName">Ваше имя и фамилия</label>
-            <input class="lg:mt-12 xl:mt-16 lg:px-12 mdx:px-16 lg:py-[10px] mdx:py-[14px] lg:text-16  bg-brand-900 text-light-400  border-2 border-light-400 focus:border-light-400 lg:rounded-10 mdx:rounded-16 placeholder:text-light-900 dark:bg-dark-800" type="text" name="helperClientName" id="helperClientName" placeholder="Иван Иванов" required>
+      <form action="" method="post" class="lg:w-2/3 md:w-1/2">
+        <ul class="flex ad:flex-col lg:flex-row ad:items-start lg:items-center ad:mt-24 lg:mt-0">
+          <li class="ad:w-full lg:mr-32 xl:mr-36 flex flex-col">
+            <label class="ad:text-18 xl:text-22 text-light-400" for="helperClientName">Ваше имя и фамилия</label>
+            <input class="ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-[14px] lg:text-16  bg-brand-900 text-light-400  border-2 border-light-400 focus:border-light-400 ad:rounded-8 lg:rounded-12 md:rounded-16 placeholder:text-light-900 dark:bg-dark-800" type="text" name="helperClientName" id="helperClientName" placeholder="Иван Иванов" required>
           </li>
-          <li class="lg:w-[240px] lg:mr-32 xl:mr-36 flex flex-col">
-            <label class="lg:text-18 xl:text-22 text-light-400" for="helperClientPhone">Ваш телефон</label>
-            <input class="lg:mt-12 xl:mt-16 lg:px-12 mdx:px-16 lg:py-[10px] mdx:py-[14px]  bg-brand-900 text-light-400 border-2 border-light-400 focus:border-light-400 lg:rounded-10 mdx:rounded-16 placeholder:text-light-900 dark:bg-dark-800" type="tel" name="helperClientPhone" id="helperClientPhone" placeholder="+7 900 900 90 90" required>
+          <li class="ad:w-full ad:mt-16 lg:mt-0 lg:mr-32 xl:mr-36 flex flex-col">
+            <label class="ad:text-18 xl:text-22 text-light-400" for="helperClientPhone">Ваш телефон</label>
+            <input class="ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-[14px]  bg-brand-900 text-light-400 border-2 border-light-400 focus:border-light-400 ad:rounded-8 lg:rounded-12 md:rounded-16 placeholder:text-light-900 dark:bg-dark-800" type="tel" name="helperClientPhone" id="helperClientPhone" placeholder="+7 900 900 90 90" required>
           </li>
-          <li class="self-end">
-            <button class="lg:px-24 mdx:px-32 lg:py-16 mdx:py-20 bg-light-400 text-text-900 lg:rounded-10 mdx:rounded-16 hover:bg-brand-900 hover:outline hover:outline-2 hover:outline-light-400 hover:text-light-400 dark:bg-brand-900 dark:text-light-400 dark:hover:shadow-btn dark:hover:outline-none" type="submit">Позвоните мне</button>
+          <li class="ad:w-full ad:self-start lg:self-end ad:mt-24">
+            <button class="ad:w-full ad:px-16 lg:px-24 md:px-32 ad:py-16 md:py-20 bg-light-400 text-black-900 ad:rounded-8 lg:rounded-12 md:rounded-16 hover:bg-brand-900 lg:hover:outline lg:hover:outline-2 lg:hover:outline-light-400 lg:hover:text-light-400 dark:bg-brand-900 dark:text-light-400 dark:hover:shadow-btn dark:hover:outline-none font-bold" type="submit">Позвоните мне</button>
           </li>
         </ul>
-        <div class="flex lg:items-center xl:items-start lg:mt-12 mdx:mt-16">
-          <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-20 lg:h-20" viewBox="0 0 20 20" fill="none">
+        <div class="flex ad:items-center xl:items-start ad:mt-16 md:mt-16">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ad:w-24 ad:h-24 shrink-0" viewBox="0 0 24 24" fill="none">
             <path d="M9.99996 18.3334C14.6023 18.3334 18.3333 14.6025 18.3333 10.0001C18.3333 5.39771 14.6023 1.66675 9.99996 1.66675C5.39759 1.66675 1.66663 5.39771 1.66663 10.0001C1.66663 14.6025 5.39759 18.3334 9.99996 18.3334Z" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10 6.66675V10.0001" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10 13.3333H10.0083" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <p class="lg:ml-8 mdx:ml-12 lg:text-14 xl:text-16 text-light-400 xl:leading-tight tracking-wide">Отправляя данную форму вы автоматически согласны на обработку <br class="hidden xl:inline-block"> персональных данных</p>
+          <p class="shrink-1 ad:ml-8 md:ml-12 ad:text-14 xl:text-16 text-light-400 xl:leading-tight tracking-wide">Отправляя данную форму вы автоматически согласны на обработку <br class="hidden xl:inline-block"> персональных данных</p>
         </div>
       </form>
     </div>
   </section>
-  <section id="feedbacks" class="ad:px-16 bt:px-24 lg:px-32 lg:mt-48 lg:mb-48 mdx:mt-48 mdx:mb-[56px] xl:mt-[80px] xl:mb-[80px] flex lg:flex-col lg:items-center lg:justify-center">
-    <h2 class="lg:mt-48 lg:text-36 mdx:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Что говорят о нас ученики</h2>
-    <p class="lg:mt-12 mdx:mt-16 lg:w-[518px] mdx:w-[582px] xl:w-[673px] text-18 mdx:text-20 xl:text-22 text-text-800 text-center leading-tighter dark:text-light-900">Прочтите отзывы тех, кто прошел обучение и поделился своими впечатлениями о наших курсах и программах</p>
-    <ul class="feedbacks-slider lg:mt-48 mdx:mt-[56px] xl:mt-64">
-      <li class="feedbacks-slider__item flex lg:items-center lg:p-36 bg-light-700 lg:rounded-28 mdx:rounded-32 dark:bg-dark-800">
-        <img class="lg:w-[156px] xl:w-[180px] lg:h-[156px] xl:h-[180px]" src="/src/img/landing/feedbacks/feedback-author.png" alt="Feedback Author" loading="lazy">
-        <div class="lg:ml-24">
-          <h3 class="lg:text-24 mdx:text-28 xl:text-32 font-bold dark:text-light-400">Саша Малышева</h3>
-          <p class="lg:mt-8 mdx:mt-12 lg:text-16 mdx:text-18 xl:text-20 leading-tighter text-text-800 dark:text-light-800">Я прошла обучение по курсу “1С: Управление торговлей “ и “1С: Предприятие. Спасибо за такой полезный и насыщенный курс. Помимо знаний я получила огромный заряд энегрии и стимул к дальнейшему обучению!</p>
+  <section id="feedbacks" class="ad:px-16 ad:mt-36 ad:mb-[80px] tb:mb-[60px] lg:mb-0 lg:px-32 tb:mt-48 md:mt-48 md:mb-56 xl:mt-[80px] xl:mb-[80px] ad:flex ad:flex-col ad:items-start ad:justify-start tb:items-center tb:justify-center">
+    <h2 class="ad:mt-36 tb:mt-48 ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Что говорят о нас ученики</h2>
+    <p class="ad:w-11/12 tb:w-3/4 lg:w-[520px] md:w-[625px] xl:w-[630px] ad:mt-12 md:mt-16 text-18 md:text-20 xl:text-22 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Прочтите отзывы тех, кто прошел обучение и поделился своими впечатлениями о наших курсах и программах</p>
+    <ul class="feedbacks-slider self-center block ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64">
+      <li class="feedbacks-slider__item flex ad:flex-col tb:flex-row ad:flex-start tb:items-center ad:p-24 lg:p-32 bg-light-700 rounded-16">
+        <img class="ad:w-40 ad:h:40" src="/src/img/landing/feedbacks/feedback-author.png" alt="feedback-author">
+        <div class="tb:ml-24 md:ml-32">
+          <h3 class="ad:text-24 ad:mt-36 tb:mt-0 font-bold">Саша Малышева</h3>
+          <p class="mt-8 ad:text-16 leading-tight text-black-800">Я прошла обучение по курсу “1С: Управление торговлей “ и “1С: Предприятие. Спасибо за такой полезный и насыщенный курс. Помимо знаний я получила огромный заряд энегрии и стимул к дальнейшему обучению!</p>
         </div>
       </li>
-      <li class="feedbacks-slider__item flex lg:items-center lg:p-36 bg-light-700 lg:rounded-28 mdx:rounded-32 dark:bg-dark-800">
-        <img class="lg:w-[156px] xl:w-[180px] lg:h-[156px] xl:h-[180px]" src="/src/img/landing/feedbacks/feedback-author.png" alt="Feedback Author" loading="lazy">
-        <div class="lg:ml-24">
-          <h3 class="lg:text-24 mdx:text-28 xl:text-32 font-bold dark:text-light-400">Саша Малышева</h3>
-          <p class="lg:mt-8 mdx:mt-12 lg:text-16 mdx:text-18 xl:text-20 leading-tighter text-text-800 dark:text-light-800">Я прошла обучение по курсу “1С: Управление торговлей “ и “1С: Предприятие. Спасибо за такой полезный и насыщенный курс. Помимо знаний я получила огромный заряд энегрии и стимул к дальнейшему обучению!</p>
+      <li class="feedbacks-slider__item flex ad:flex-col tb:flex-row ad:flex-start tb:items-center ad:p-24 lg:p-32 bg-light-700 rounded-16">
+        <img class="ad:w-40 ad:h:40" src="/src/img/landing/feedbacks/feedback-author.png" alt="feedback-author">
+        <div class="tb:ml-24 md:ml-32">
+          <h3 class="ad:text-24 ad:mt-36 tb:mt-0 font-bold">Саша Малышева</h3>
+          <p class="mt-8 ad:text-16 leading-tight text-black-800">Я прошла обучение по курсу “1С: Управление торговлей “ и “1С: Предприятие. Спасибо за такой полезный и насыщенный курс. Помимо знаний я получила огромный заряд энегрии и стимул к дальнейшему обучению!</p>
         </div>
       </li>
     </ul>
   </section>
-  <footer class="w-full flex items-start flex-wrap relative lg:px-32 lg:pt-24 mdx:pt-[28px] xl:pt-36 lg:pb-32 bg-[#151515] lg:rounded-t-32 mdx:rounded-t-36 xl:rounded-t-48">
-    <a class="flex items-center" href="https://spk-55.ru">
-      <img class="lg:w-[56px] lg:h-[56px] xl:w-64 xl:h-64" src="/src/img/landing/logo.svg" alt="SPK Logo">
-      <p class="lg:ml-16 lg:text-16 mdx:text-18 xl:text-22 text-light-400">Сибирский <br> профессиональный <br> колледж </p>
+  <section id="contacts" class="w-full ad:px-16 ad:mt-36 tb:mt-48 flex ad:flex-col ad:items-start ad:justify-start tb:items-center tb:justify-center lg:hidden">
+    <h2 class="ad:mt-36 tb:mt-48 ad:text-28 tb:text-36 font-bold tracking-tight dark:text-light-400">Где мы находимся</h2>
+    <p class="ad:w-11/12 tb:w-3/4 ad:mt-12 text-18 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Наш адрес, карта, часы работы, почта и телефон - все самое необходимое, чтобы нас найти</p>
+    <div class="w-full ad:mt-36 tb:mt-48 ad:p-16 bg-light-700 ad:rounded-12 tb:rounded-16">
+      <h3 class="text-24 font-bold">Наши контакты</h3>
+      <p class="text-18 mt-8 leading-tight text-black-800">Мы всегда рады Вам! Звоните, пишите или заходите в гости</p>
+      <ul class="ad:mt-24 flex ad:items-start ad:flex-col tb:flex-row tb:justify-between">
+        <li class="ad:w-full tb:w-1/3 flex items-start mr-24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 shrink-0" viewBox="0 0 24 24" fill="none">
+            <path d="M21.5 10.6364C21.5 14.1507 19.1232 17.6203 16.4286 20.3707C15.1151 21.7113 13.7962 22.81 12.8036 23.5743C12.501 23.8073 12.2299 24.0083 12 24.1747C11.7701 24.0083 11.499 23.8073 11.1964 23.5743C10.2038 22.81 8.88489 21.7113 7.57145 20.3707C4.87676 17.6203 2.5 14.1507 2.5 10.6364C2.5 8.22983 3.4882 5.91124 5.26451 4.19365C7.04253 2.47441 9.46448 1.5 12 1.5C14.5355 1.5 16.9575 2.47441 18.7355 4.19365C20.5118 5.91124 21.5 8.22983 21.5 10.6364Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="ad:ml-8">
+            <h4 class="text-20">Адрес</h4>
+            <p class="ad:mt-8 text-16 leading-tight text-black-800">Омск, ул. Добролюбова, д.15, кабинет №77</p>
+          </div>
+        </li>
+        <li class="ad:w-full ad:mt-24 tb:w-1/3 flex items-start mr-24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 shrink-0" viewBox="0 0 24 24" fill="none">
+            <path d="M21.9994 17.9738V20.9846C22.0005 21.2642 21.9432 21.5408 21.831 21.7969C21.7188 22.053 21.5542 22.2829 21.3478 22.4719C21.1415 22.6608 20.8978 22.8047 20.6325 22.8942C20.3672 22.9838 20.0861 23.017 19.8072 22.9919C16.7128 22.6563 13.7404 21.601 11.1289 19.9108C8.69922 18.3699 6.63926 16.3141 5.09534 13.8892C3.39586 11.271 2.33824 8.29008 2.00816 5.18795C1.98303 4.91042 2.01608 4.63071 2.1052 4.36663C2.19432 4.10254 2.33757 3.85987 2.52581 3.65407C2.71405 3.44826 2.94317 3.28383 3.19858 3.17123C3.45398 3.05864 3.73008 3.00036 4.0093 3.0001H7.02608C7.5141 2.9953 7.98722 3.16778 8.35725 3.48537C8.72727 3.80297 8.96896 4.24401 9.03727 4.72629C9.1646 5.68982 9.40074 6.63587 9.74118 7.54641C9.87648 7.90563 9.90576 8.29602 9.82556 8.67133C9.74536 9.04665 9.55903 9.39115 9.28867 9.66402L8.01156 10.9386C9.44308 13.4512 11.5276 15.5315 14.0451 16.9602L15.3222 15.6856C15.5956 15.4158 15.9408 15.2298 16.3169 15.1498C16.6929 15.0698 17.0841 15.099 17.444 15.234C18.3564 15.5738 19.3043 15.8095 20.2698 15.9365C20.7582 16.0053 21.2044 16.2509 21.5233 16.6265C21.8422 17.0021 22.0116 17.4817 21.9994 17.9738Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="ad:ml-8">
+            <h4 class="text-20">Телефоны</h4>
+            <p class="ad:mt-8 text-16 leading-tight text-black-800">+7 (903) 927-40-44 <br> +7 (3812) 35-67-04</p>
+          </div>
+        </li>
+        <li class="ad:w-full ad:mt-24 tb:w-1/3 flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg"class="w-24 h-24 shrink-0" viewBox="0 0 24 24" fill="none">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 7V13L15 15" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="ad:ml-8">
+            <h4 class="text-20">Часы работы</h4>
+            <p class="ad:mt-8 text-16 leading-tight text-black-800">В будние дни с 8:30 до 17:00</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <iframe class="ad:w-full ad:h-[480px] ad:mt-32 ad:rounded-12 tb:rounded-16 shadow-slider" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aaffdf134588f4f17bc68ba6e62806797ee2d56eb6d5e20b04c5d759c750403c8&amp;source=constructor" loading="lazy" frameborder="1"></iframe>
+  </section>
+  <footer class="w-full ad:p-16 tb:p-24 lg:p-36 lg:pb-48 flex flex-wrap ad:flex-col ad:flex-start lg:flex-row lg:item-center lg:justify-between bg-[#151515] ad:mt-[72px] tb:mt-[120px] lg:mt-[96px] md:mt-[112px] xl:mt-[160px] ad:rounded-t-16 tb:rounded-t-24 lg:rounded-t-36">
+    <a class="flex items-center ad:mb-32 lg:mb-0" href="https://spk-55.ru/">
+      <img class="ad:w-56 ad:h-56 md:w-64 md:h-64" src="/src/img/landing/icons/logo.png" alt="spk logo">
+      <p class="ad:ml-16 md:ml-24 ad:text-16 md:text-18 text-light-400">Сибирский <br> профессиональный <br> колледж</p>
     </a>
-    <nav class="lg:ml-[199px] mdx:ml-[260px] xl:ml-[312px]">
-      <h4 class="lg:text-18 mdx:text-20 xl:text-24 text-light-400 font-bold">Навигация</h4>
-      <ul class="flex lg:mt-12 mdx:mt-16 lg:ml-[-6px] mdx:-ml-8">
-        <li class="lg:mr-16 mdx:mr-20 xl:mr-24">
-          <a class="lg:p-[6px] mdx:p-8 lg:text-14 mdx:text-16 xl:text-18 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8 cursor-pointer" href="#main">Главная</a>
-        </li>
-        <li class="lg:mr-16 mdx:mr-20 xl:mr-24">
-          <a class="lg:p-[6px] mdx:p-8 lg:text-14 mdx:text-16 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8 cursor-pointer" href="#about">О нас</a>
-        </li>
-        <li class="lg:mr-16 mdx:mr-20 xl:mr-24">
-          <a class="lg:p-[6px] mdx:p-8 lg:text-14 mdx:text-16 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8 cursor-pointer" href="#courses">Курсы</a>
-        </li>
-        <li class="lg:mr-16 mdx:mr-20 xl:mr-24">
-          <a class="lg:p-[6px] mdx:p-8 lg:text-14 mdx:text-16 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8 cursor-pointer" href="#feedbacks">Отзывы</a>
-        </li>
-        <li class="lg:mr-16 mdx:mr-20 xl:mr-24">
-          <a class="lg:p-[6px] mdx:p-8 lg:text-14 mdx:text-16 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8 cursor-pointer" href="#contacts">Контакты</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="lg:ml-[165px] xl:ml-[320px]">
-      <h4 class="lg:text-18 mdx:text-20 xl:text-24 text-light-400 font-bold">Остались вопросы?</h4>
-      <p class="callOrderLink lg:mt-12 mdx:mt-16 xl:text-18 lg:ml-[-6px] mdx:-ml-8 lg:p-[6px] mdx:p-8 lg:text-14 mdx:text-16 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8 cursor-pointer">Обсудить по телефону</p>
-    </div>
-    <div class="lg:mt-[28px] mdx:mt-48 xl:mt-52 xl:text-24">
-      <h4 class="lg:text-18 mdx:text-20 xl:text-24 text-light-400 font-bold">Важное</h4>
-      <div class="lg:mt-12 mdx:mt-16 lg:ml-[-6px] mdx:-ml-8">
-        <a class="lg:p-[6px] mdx:p-8 lg:text-14 mdx:text-16 xl:text-18 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8 cursor-pointer" href="#" download="/src/landing/privacy_policy.docx">Политика приватности</a>
-      </div>
-    </div>
-    <div class="lg:ml-[260px] mdx:ml-[314px] xl:ml-[390px] lg:mt-[28px] mdx:mt-48 xl:mt-52">
-      <h4 class="lg:text-18 mdx:text-20 xl:text-24 text-light-400 font-bold">Оформление</h4>
-      <div class="darkModeEnableBtn dark-mode__enable-btn flex items-center lg:mt-[10px] mdx:mt-[10px] lg:p-[4px] hover:bg-brand-700 hover:rounded-8 cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-16 mdx:w-18 lg:h-16 mdx:h-18" viewBox="0 0 16 16" fill="none">
-          <path d="M14.0001 8.52667C13.8952 9.66147 13.4693 10.7429 12.7722 11.6445C12.0751 12.5461 11.1357 13.2305 10.0639 13.6177C8.992 14.0049 7.83205 14.0787 6.71972 13.8307C5.6074 13.5827 4.58872 13.023 3.78287 12.2172C2.97703 11.4113 2.41735 10.3927 2.16933 9.28033C1.92131 8.16801 1.9952 7.00806 2.38236 5.9362C2.76953 4.86434 3.45394 3.92491 4.35553 3.22784C5.25712 2.53076 6.33859 2.10487 7.47339 2C6.809 2.89884 6.48929 4.0063 6.57241 5.12094C6.65553 6.23559 7.13596 7.28337 7.92632 8.07373C8.71668 8.86409 9.76447 9.34452 10.8791 9.42765C11.9938 9.51077 13.1012 9.19106 14.0001 8.52667V8.52667Z" fill="#FEFEFE"/>
-        </svg>
-        <p class="lg:ml-8 lg:p-[4px] lg:text-14 mdx:text-16 xl:text-18 inline-block text-light-400 hover:text-text-900 hover:bg-brand-700 hover:rounded-8">Включить темный режим</p>
-      </div>
-    </div>
-    <div class="lg:ml-[355px] mdx:ml-[410px] xl:ml-[558px] lg:mt-[28px] mdx:mt-48 xl:mt-52">
-      <h4 class="lg:text-18 mdx:text-20 xl:text-24 text-light-400 font-bold">Наши соц. сети</h4>
-      <ul class="flex lg:mt-12 mdx:mt-16">
-        <li class="lg:mr-16">
-          <a class="inline-block" href="https://vk.com/odospk" target="_blank">
-            <img class="lg:w-20 mdx:w-24 lg:h-20 mdx:h-24" src="/src/img/landing/icons/cib_vk.svg" alt="Vk group">
-          </a>
-        </li>
-        <li>
-          <a class="inline-block" href="https://ok.ru/otdeldopol" target="_blank">
-            <img class="lg:w-20 mdx:w-24 lg:h-20 mdx:h-24" src="/src/img/landing/icons/fa_odnoklassniki-square.svg" alt="Ok group">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="scrollTopBtn lg:w-48 xl:w-[56px] lg:h-48 xl:h-[56px] fixed flex items-center justify-center bottom-32 right-32 bg-brand-900 hover:shadow-btn rounded-full cursor-pointer">
-      <a href="#main">
-        <svg xmlns="http://www.w3.org/2000/svg" class="lg:w-24 xl:w-[28px] lg:h-24 xl:h-[28px]" viewBox="0 0 24 24" fill="none">
-          <path d="M12 19V5" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M5 12L12 5L19 12" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+    <ul class="flex ad:items-start ad:flex-col tb:flex-row tb:items-center ad:-ml-16 tb:mb-24 lg:ml-0 lg:mb-0">
+      <li class="ad:mb-12 tb:mb-0 py-8 px-16 mr-24 lg:hover:bg-brand-900 cursor-pointer rounded-8 lg:hover:shadow-btn">
+        <a href="#head" class="text-16 md:text-18 text-light-400">Главная</a>
+      </li>
+      <li class="ad:mb-12 tb:mb-0 py-8 px-16 mr-24 lg:hover:bg-brand-900 cursor-pointer rounded-8 lg:hover:shadow-btn">
+        <a href="#about" class="text-16 md:text-18 text-light-400">О нас</a>
+      </li>
+      <li class="ad:mb-12 tb:mb-0 py-8 px-16 mr-24 lg:hover:bg-brand-900 cursor-pointer rounded-8 lg:hover:shadow-btn">
+        <a href="#courses" class="text-16 md:text-18 text-light-400">Курсы</a>
+      </li>
+      <li class="ad:mb-12 tb:mb-0 py-8 px-16 mr-24 lg:hover:bg-brand-900 cursor-pointer rounded-8 lg:hover:shadow-btn">
+        <a href="#feedbacks" class="text-16 md:text-18 text-light-400">Отзывы</a>
+      </li>
+      <li class="lg:hidden ad:mb-12 tb:mb-0 text-16 py-8 px-16 text-light-400 cursor-pointer rounded-8 lg:hover:shadow-btn">
+        <a href="#contacts" class="text-16 md:text-18 text-light-400">Контакты</a>
+      </li>
+    </ul>
+    <div class="enable-darkmode__btn ad:-ml-16 ad:mt-16 tb:mt-0 lg:ml-0 flex ad:self-start lg:self-center items-center cursor-pointer h-36 px-12 lg:hover:bg-brand-900 ad:rounded-8 lg:hover:shadow-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 shrink-0" viewBox="0 0 16 16" fill="none">
+        <path d="M14.0001 8.52667C13.8952 9.66147 13.4693 10.7429 12.7722 11.6445C12.0751 12.5461 11.1357 13.2305 10.0639 13.6177C8.992 14.0049 7.83205 14.0787 6.71972 13.8307C5.6074 13.5827 4.58872 13.023 3.78287 12.2172C2.97703 11.4113 2.41735 10.3927 2.16933 9.28033C1.92131 8.16801 1.9952 7.00806 2.38236 5.9362C2.76953 4.86434 3.45394 3.92491 4.35553 3.22784C5.25712 2.53076 6.33859 2.10487 7.47339 2C6.809 2.89884 6.48929 4.0063 6.57241 5.12094C6.65553 6.23559 7.13596 7.28337 7.92632 8.07373C8.71668 8.86409 9.76447 9.34452 10.8791 9.42765C11.9938 9.51077 13.1012 9.19106 14.0001 8.52667Z" fill="#FEFEFE"/>
+      </svg>
+      <p class="ml-8 md:ml-12 text-16 md:text-18 text-light-400">Включить темный режим</p>
     </div>
   </footer>
-  <div class="w-full flex justify-center bg-[#101010] lg:py-20 mdx:py-24">
-    <p class="text-12 mdx:text-14 text-light-400">Собственность организации БПОУ ОО “Сибирский профессиональный колледж”. Копирование запрещено. Copyright © 2022. Illustraions by @vectorjuice on freepik.com</p>
+  <div class="tb:w-full flex items-center justify-center py-16 bg-[#101010]">
+    <p class="ad:text-12 ad:text-center text-light-400 leading-tight">Собственность организации БПОУ ОО “Сибирский профессиональный колледж”. Копирование запрещено. Copyright © 2022. Illustraions by @vectorjuice on freepik.com</p>
   </div>
-  <div class="page-filter hidden w-full h-full bg-[#101010] opacity-50 z-10 absolute top-0 left-0"></div>
-  <div class="lg:w-[330px] hidden fixed z-20 top-[72px] lg:p-16 lg:rounded-16 bg-light-400">
-    <div class="relative">
-      <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 lg:w-20 lg:h-20 cursor-pointer" viewBox="0 0 20 20" fill="none">
-        <path d="M15 5L5 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M5 5L15 15" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <h3 class="lg:text-24 font-bold">Нужна наша помощь?</h3>
-      <p class="lg:text-16 leading-tighter text-text-800 lg:mt-8">
-        Мы свяжемся с вами в ближайшее время и поможем в выборе курса или программы
-      </p>
-    </div>
-  </div>
-  <script src="src/js/jquery.js"></script>
-  <script src="src/js/script-slick.js"></script>
-  <script src="src/js/slick.min.js"></script>
-  <script src="src/js/selector.js"></script>
-  <script src="src/js/burger.js"></script>
-  <script>
-    /* Courses section height resizer */
-    let browserWidth = window.matchMedia("(min-width: 1300px)");
-    if (browserWidth.matches) {
-      let e = document.querySelector(".course-description"),
-        t = document.querySelector(".courses-list");
-      new ResizeObserver((e) => {
-        for (let r of e) t.style.height = r.target.clientHeight + "px";
-      }).observe(e);
-    }
-  </script>
+  <a class="fixed bottom-36 right-32 rounded-full lg:hover:shadow-btn" href="#head">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <path d="M0 24C0 10.7452 10.7452 0 24 0V0C37.2548 0 48 10.7452 48 24V24C48 37.2548 37.2548 48 24 48V48C10.7452 48 0 37.2548 0 24V24Z" fill="#375DE1"/>
+      <path d="M24 31V17" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 24L24 17L31 24" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <script src="/src/js/jquery.min.js"></script>
+  <script src="/src/js/burger.js"></script>
+  <script src="/src/js/scriptSlick.js"></script>
+  <script src="/src/js/heightCorrection.js"></script>
+  <script src="/src/js/slick.min.js"></script>
+  <script src="/src/js/dropdown.js"></script>
 </body>
 </html>

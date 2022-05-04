@@ -1,22 +1,43 @@
-let burgerOpener = document.querySelector(".burger-opener");
-let burgerControl = document.querySelector(".burger-control");
-let burgerContent = document.querySelector(".burger");
-let burgerLinks = document.querySelectorAll(".burger-item");
-let burgerFilter = document.querySelector('.burger-filter');
-let body = document.getElementsByTagName('body')[0];
+function startMenu() {
+  let menu = $('.menu');
+  let lines = $('.menu__lines');
+  let button = $('.menu__button');
+  let overlay = $('.menu__overlay');
+  let links = $('.menu__link-item');
 
-burgerOpener.addEventListener("click", () => {
-  burgerControl.classList.toggle("burger-control__active");
-  burgerContent.classList.toggle("burger__active");
-  burgerFilter.classList.toggle('burger-filter__active');
-  body.classList.toggle('locked');
-});
-
-burgerLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    burgerControl.classList.toggle("burger-control__active");
-    burgerContent.classList.toggle("burger__active");
-    burgerFilter.classList.toggle('burger-filter__active');
-    body.classList.toggle('locked');
+  button.bind('click', () => {
+    lines.toggleClass('menu__lines-active');
+    menu.toggleClass('menu__active');
+    overlay.toggleClass('menu__overlay-active');
+    button.toggleClass('menu__button-active');
+    toggleBody(menu);
   });
-});
+
+  overlay.bind('click', () => {
+    lines.toggleClass('menu__lines-active');
+    menu.toggleClass('menu__active');
+    overlay.toggleClass('menu__overlay-active');
+    button.toggleClass('menu__button-active');
+    toggleBody(menu);
+  });
+
+  $.each(links, (index, link) => {
+    $(link).bind('click', [], () => {
+      lines.toggleClass('menu__lines-active');
+      menu.toggleClass('menu__active');
+      overlay.toggleClass('menu__overlay-active');
+      button.toggleClass('menu__button-active');
+      toggleBody(menu);
+    });
+  });
+
+  function toggleBody(selector) {
+    if ($(selector).hasClass('menu__active')) {
+      $('body').css('overflow-y', 'hidden');
+    } else {
+      $('body').css('overflow-y', 'visible');
+    }
+  }
+}
+
+startMenu();
