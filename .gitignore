@@ -3,6 +3,6 @@ package-lock.json
 package.json
 scss
 panel
-js/dateControl.js
-js/addControl.js
-js/todoMenu.js
+src/js/dateControl.js
+src/js/addControl.js
+src/js/todoMenu.js
