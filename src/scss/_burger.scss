@@ -199,6 +199,73 @@
   }
 }
 
+.dark {
+  .menu {
+    &__active {
+      background-color: #100F0F;
+    }
+    &__button {
+      border: 1px solid #375DE1;
+      background-color: #375DE1;
+      &-active {
+        .menu__lines {
+          background-color: transparent;
+        }
+      }
+    }
+    &__contacts {
+      &-header {
+        color: #FAFAFA;
+      }
+      &-description {
+        color: #CDCDCD;
+      }
+    }
+    &__content {
+      background-color: #181717;
+      &-header {
+        color: #FAFAFA;
+      }
+    }
+    &__help {
+      &-input {
+        border: 1px solid #202020;
+        background-color: #202020;
+      }
+      &-subhead {
+        color: #CDCDCD;
+      }
+      &-label {
+        color: #FAFAFA;
+      }
+    }
+    &__name {
+      color: #FAFAFA;
+    }
+    &__lines, &__lines::before, &__lines::after {
+      background-color: #FAFAFA;
+    }
+    &__link {
+      &-header {
+        color: #FAFAFA;
+      }
+      &-description {
+        color: #CDCDCD;
+      }
+      &-item:hover {
+        outline-color: #FAFAFA;
+      }
+    }
+    &__socials {
+      &-icon {
+        path {
+          fill: #FAFAFA;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1220px) {
   .menu {
     display: none;
