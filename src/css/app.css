@@ -311,6 +311,142 @@
   }
 }
 
+@media screen and (min-width: 1681px) {
+  .menu__contacts-header {
+    font-size: 24px;
+  }
+  .menu__contacts-description {
+    margin-top: 12px;
+    color: #606060;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .menu__content {
+    padding: 36px;
+    margin-top: 36px;
+    border-radius: 32px;
+  }
+  .menu__content-header {
+    font-size: 32px;
+  }
+  .menu__help {
+    width: 356px;
+  }
+  .menu__help-form {
+    margin-top: 36px;
+  }
+  .menu__help-subhead {
+    margin-top: 24px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .menu__help-label {
+    font-size: 24px;
+  }
+  .menu__help-sender {
+    margin-top: 36px;
+  }
+  .menu__list-contacts {
+    margin-top: 45px;
+  }
+  .menu__list-links {
+    margin-top: 20px;
+  }
+  .menu__link-header {
+    font-size: 28px;
+  }
+  .menu__link-description {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+  .menu__link-item {
+    margin-bottom: 24px;
+  }
+  .menu__map-frame {
+    width: 790px;
+    height: 420px;
+    margin-top: 32px;
+  }
+  .menu__socials {
+    margin-top: 80px;
+  }
+  .menu__socials-item {
+    margin-right: 24px;
+  }
+}
+
+@media screen and (min-width: 1490px) and (max-width: 1680px) {
+  .menu__contacts-header {
+    font-size: 20px;
+  }
+  .menu__contacts-description {
+    margin-top: 8px;
+    color: #606060;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .menu__content {
+    padding: 28px;
+    margin-top: 36px;
+    border-radius: 24px;
+  }
+  .menu__content-header {
+    font-size: 28px;
+  }
+  .menu__help {
+    width: 316px;
+  }
+  .menu__help-checkbox {
+    margin-top: 24px;
+  }
+  .menu__help-form {
+    margin-top: 28px;
+  }
+  .menu__help-subhead {
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .menu__help-label {
+    font-size: 20px;
+  }
+  .menu__help-input {
+    margin-top: 16px;
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+  .menu__help-sender {
+    margin-top: 32px;
+  }
+  .menu__list-contacts {
+    margin-top: 45px;
+  }
+  .menu__list-links {
+    margin-top: 18px;
+    margin-left: -10px;
+  }
+  .menu__link-header {
+    font-size: 24px;
+  }
+  .menu__link-description {
+    font-size: 18px;
+  }
+  .menu__link-item {
+    margin-bottom: 24px;
+  }
+  .menu__map-frame {
+    width: 704px;
+    height: 342px;
+    margin-top: 24px;
+  }
+  .menu__socials {
+    margin-top: 36px;
+  }
+  .menu__socials-item {
+    margin-right: 24px;
+  }
+}
+
 @media screen and (max-width: 620px) {
   .menu__active {
     width: 298px;

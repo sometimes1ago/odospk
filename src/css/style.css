@@ -980,10 +980,6 @@ select {
   margin-top: 105px;
 }
 
-.mr-12 {
-  margin-right: 12px;
-}
-
 .block {
   display: block;
 }
@@ -1020,8 +1016,8 @@ select {
   height: 24px;
 }
 
-.h-48 {
-  height: 48px;
+.h-36 {
+  height: 36px;
 }
 
 .h-screen {
@@ -1046,6 +1042,10 @@ select {
 
 .h-\[98px\] {
   height: 98px;
+}
+
+.h-48 {
+  height: 48px;
 }
 
 .h-20 {
@@ -1110,14 +1110,6 @@ select {
 
 .h-\[390px\] {
   height: 390px;
-}
-
-.h-32 {
-  height: 32px;
-}
-
-.h-36 {
-  height: 36px;
 }
 
 .w-full {
@@ -1325,10 +1317,6 @@ select {
   justify-content: space-between;
 }
 
-.self-end {
-  align-self: flex-end;
-}
-
 .self-center {
   align-self: center;
 }
@@ -1353,6 +1341,10 @@ select {
   overflow-wrap: break-word;
 }
 
+.rounded-\[5px\] {
+  border-radius: 5px;
+}
+
 .rounded-8 {
   border-radius: 8px;
 }
@@ -1373,21 +1365,8 @@ select {
   border-radius: 9999px;
 }
 
-.rounded-\[5px\] {
-  border-radius: 5px;
-}
-
 .rounded-24 {
   border-radius: 24px;
-}
-
-.rounded-\[6px\] {
-  border-radius: 6px;
-}
-
-.rounded-t-36 {
-  border-top-left-radius: 36px;
-  border-top-right-radius: 36px;
 }
 
 .rounded-r-20 {
@@ -1526,10 +1505,6 @@ select {
   padding: 4px;
 }
 
-.p-8 {
-  padding: 8px;
-}
-
 .py-\[17px\] {
   padding-top: 17px;
   padding-bottom: 17px;
@@ -1560,14 +1535,19 @@ select {
   padding-bottom: 12.5px;
 }
 
-.py-16 {
-  padding-top: 16px;
-  padding-bottom: 16px;
+.py-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .px-16 {
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.py-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .py-12 {
@@ -1618,11 +1598,6 @@ select {
 .py-\[6px\] {
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.py-8 {
-  padding-top: 8px;
-  padding-bottom: 8px;
 }
 
 .pt-12 {
@@ -1773,12 +1748,6 @@ select {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-btn {
-  --tw-shadow:  0px 4px 16px rgba(51, 112, 202, 0.48);
-  --tw-shadow-colored: 0px 4px 16px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .outline-2 {
   outline-width: 2px;
 }
@@ -1888,10 +1857,6 @@ select {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.focus\:border-0:focus {
-  border-width: 0px;
-}
-
 .focus\:border-light-400:focus {
   --tw-border-opacity: 1;
   border-color: rgb(254 254 254 / var(--tw-border-opacity));
@@ -1902,29 +1867,15 @@ select {
   outline-offset: 2px;
 }
 
-.focus\:outline-2:focus {
-  outline-width: 2px;
-}
-
-.focus\:outline-brand-900:focus {
-  outline-color: #375DE1;
+.focus\:ring-1:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus\:ring-0:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus\:ring-1:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
@@ -2037,40 +1988,32 @@ select {
     margin-left: 8px;
   }
 
-  .ad\:mt-\[72px\] {
-    margin-top: 72px;
-  }
-
-  .ad\:ml-16 {
-    margin-left: 16px;
-  }
-
-  .ad\:-mr-24 {
-    margin-right: -24px;
-  }
-
-  .ad\:-ml-24 {
-    margin-left: -24px;
-  }
-
-  .ad\:-ml-16 {
-    margin-left: -16px;
-  }
-
-  .ad\:mb-32 {
-    margin-bottom: 32px;
+  .ad\:mb-\[80px\] {
+    margin-bottom: 80px;
   }
 
   .ad\:mt-32 {
     margin-top: 32px;
   }
 
-  .ad\:mb-12 {
-    margin-bottom: 12px;
+  .ad\:mt-\[72px\] {
+    margin-top: 72px;
   }
 
-  .ad\:mb-\[80px\] {
-    margin-bottom: 80px;
+  .ad\:mb-32 {
+    margin-bottom: 32px;
+  }
+
+  .ad\:ml-16 {
+    margin-left: 16px;
+  }
+
+  .ad\:-ml-16 {
+    margin-left: -16px;
+  }
+
+  .ad\:mb-12 {
+    margin-bottom: 12px;
   }
 
   .ad\:block {
@@ -2155,10 +2098,6 @@ select {
 
   .ad\:rounded-8 {
     border-radius: 8px;
-  }
-
-  .ad\:rounded-16 {
-    border-radius: 16px;
   }
 
   .ad\:rounded-t-16 {
@@ -2313,20 +2252,8 @@ select {
     margin-left: 24px;
   }
 
-  .tb\:mt-32 {
-    margin-top: 32px;
-  }
-
   .tb\:mt-\[120px\] {
     margin-top: 120px;
-  }
-
-  .tb\:mb-12 {
-    margin-bottom: 12px;
-  }
-
-  .tb\:mb-32 {
-    margin-bottom: 32px;
   }
 
   .tb\:mb-24 {
@@ -2403,10 +2330,6 @@ select {
 
   .tb\:rounded-16 {
     border-radius: 16px;
-  }
-
-  .tb\:rounded-24 {
-    border-radius: 24px;
   }
 
   .tb\:rounded-t-24 {
@@ -2529,20 +2452,12 @@ select {
     margin-right: 32px;
   }
 
-  .lg\:mt-\[96px\] {
-    margin-top: 96px;
-  }
-
-  .lg\:ml-16 {
-    margin-left: 16px;
-  }
-
-  .lg\:mb-12 {
-    margin-bottom: 12px;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:mt-\[96px\] {
+    margin-top: 96px;
   }
 
   .lg\:ml-0 {
@@ -2563,10 +2478,6 @@ select {
 
   .lg\:h-\[265px\] {
     height: 265px;
-  }
-
-  .lg\:h-56 {
-    height: 56px;
   }
 
   .lg\:max-h-\[440px\] {
@@ -2633,10 +2544,6 @@ select {
 
   .lg\:w-\[520px\] {
     width: 520px;
-  }
-
-  .lg\:w-56 {
-    width: 56px;
   }
 
   .lg\:w-\[149px\] {
@@ -2725,10 +2632,6 @@ select {
 
   .lg\:rounded-12 {
     border-radius: 12px;
-  }
-
-  .lg\:rounded-8 {
-    border-radius: 8px;
   }
 
   .lg\:rounded-t-36 {
@@ -2838,6 +2741,14 @@ select {
     margin-bottom: 56px;
   }
 
+  .md\:ml-16 {
+    margin-left: 16px;
+  }
+
+  .md\:mt-8 {
+    margin-top: 8px;
+  }
+
   .md\:mt-\[100px\] {
     margin-top: 100px;
   }
@@ -2886,16 +2797,16 @@ select {
     margin-left: 12px;
   }
 
+  .md\:ml-32 {
+    margin-left: 32px;
+  }
+
   .md\:mt-\[112px\] {
     margin-top: 112px;
   }
 
   .md\:ml-24 {
     margin-left: 24px;
-  }
-
-  .md\:ml-32 {
-    margin-left: 32px;
   }
 
   .md\:h-\[600px\] {
@@ -2978,6 +2889,11 @@ select {
     padding: 23px;
   }
 
+  .md\:py-\[19px\] {
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+
   .md\:py-\[20px\] {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -3005,6 +2921,10 @@ select {
 
   .md\:pr-\[84px\] {
     padding-right: 84px;
+  }
+
+  .md\:text-16 {
+    font-size: 16px;
   }
 
   .md\:text-64 {
@@ -3037,10 +2957,6 @@ select {
 
   .md\:text-36 {
     font-size: 36px;
-  }
-
-  .md\:text-16 {
-    font-size: 16px;
   }
 }
 
@@ -3446,6 +3362,10 @@ select {
     padding-bottom: 20px;
   }
 
+  .xl\:text-18 {
+    font-size: 18px;
+  }
+
   .xl\:text-82 {
     font-size: 82px;
   }
@@ -3476,10 +3396,6 @@ select {
 
   .xl\:text-32 {
     font-size: 32px;
-  }
-
-  .xl\:text-18 {
-    font-size: 18px;
   }
 
   .xl\:text-42 {
