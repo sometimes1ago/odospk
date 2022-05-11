@@ -1,33 +1,44 @@
 function darkmodeInitialize() {
-  const ntfContainer = document.querySelector('.darkmode__ntf');
-  const thxBtn = document.querySelector('.darkmode__ntf-thanks');
-  const btn = document.querySelector(".enable-darkmode__btn");
-  const html = document.querySelector('.html');
-  const currentTime = new Date().getHours();
-  const currentTheme = localStorage.getItem("theme");
+  const page = document.querySelector('.html'),
+    darkmodeBtn = document.querySelector('.darkmode__checkbox'),
+    darkmodeNtf = document.querySelector('.darkmode__ntf'),
+    acceptBtn = document.querySelector('.darkmode__ntf-accept'),
+    declineBtn = document.querySelector('.darkmode__ntf-decline');
   
-  if (currentTheme == "dark") {
-    html.classList.add("dark");
-  }
-
-  if (localStorage.getItem("theme") == "light") {
-    if (currentTime >= 20 || currentTime <= 8) {
-      localStorage.setItem("theme", "dark");
+  darkmodeBtn.addEventListener('change', () => {
+    if (darkmodeBtn.checked) {
+      page.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else { 
+      page.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-  }
-
-  thxBtn.addEventListener('click', () => {
-    ntfContainer.style.display = 'none';
   });
 
-  btn.addEventListener("click", function() {
-    html.classList.toggle("dark");
-    
-    if (html.classList.contains("dark")) {
-      theme = "dark";
-    }
-    localStorage.setItem("theme", theme);
+  acceptBtn.addEventListener('click', () => {
+    darkmodeNtf.style.display = 'none';
+    localStorage.setItem('isDarkmodeAccepted', 'True');
   });
+
+  declineBtn.addEventListener('click', () => {
+    darkmodeNtf.style.display = 'none';
+    page.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+    darkmodeBtn.checked = false;
+  });
+
+  if (localStorage.getItem('theme') == 'dark') {
+    page.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+    darkmodeBtn.checked = true;
+  } else {
+    page.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  }
+
+  if (localStorage.getItem('isDarkmodeAccepted') == 'True') {
+    darkmodeNtf.style.display = 'none';
+  }
 }
 
 darkmodeInitialize();

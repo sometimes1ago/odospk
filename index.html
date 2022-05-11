@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="stylesheet" href="/src/css/toggle-switchy.css">
   <title>Отделение дополнительного образования</title>
 </head>
 <body class="w-full flex flex-col items-center relative bg-light-500 text-black-900 font-medium leading-none dark:bg-dark-900 dark:text-light-900">
@@ -13,6 +14,18 @@
     <div class="menu__button">
       <span class="menu__lines"></span>
       <p class="menu__name">Меню</p>
+    </div>
+    <div class="theme__switcher fixed p-8 top-16 ad:right-16 lg:right-32 flex items-center bg-light-700 rounded-8 border border-light-900 dark:bg-dark-700 dark:border-dark-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 mr-12 ad:block tb:hidden" viewBox="0 0 24 24" fill="none">
+        <path class="dark:stroke-light-400 dark:fill-light-400" d="M21 13.5C21 15 20.2039 16.1144 19.1582 17.4668C18.1126 18.8192 16.7035 19.8458 15.0957 20.4265C13.4879 21.0073 11.748 21.1181 10.0795 20.7461C8.41101 20.3741 6.88299 19.5345 5.67422 18.3258C4.46545 17.117 3.62593 15.589 3.2539 13.9205C2.88187 12.252 2.99271 10.5121 3.57345 8.9043C4.1542 7.29651 5.18082 5.88737 6.53321 4.84175C7.88559 3.79614 9.50779 3.15731 11.21 3C10.2134 4.34827 9.73384 6.00945 9.85852 7.68141C9.98321 9.35338 10.7039 10.9251 11.8894 12.1106C13.0749 13.2961 14.6466 14.0168 16.3186 14.1415C17.9905 14.2662 17 14.1415 19.1582 13.9205L21 13.5Z" fill="#252525" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="ad:hidden tb:block text-16 mr-12 dark:text-light-400">Ночной режим</p>
+      <label class="darkmode__toggle toggle-switchy" for="darkmode__btn" data-size="sm" data-style="rounded" data-text="false">
+        <input class="darkmode__checkbox" type="checkbox" id="darkmode__btn">
+        <span class="toggle">
+          <span class="switch"></span>
+        </span>
+      </label>
     </div>
     <div id="menu" class="menu">
       <ul class="menu__content">
@@ -32,7 +45,7 @@
               </a>
             </li>
             <li class="menu__link-item">
-              <a href="#cources" class="menu__link">
+              <a href="#courses" class="menu__link">
                 <h4 class="menu__link-header">курсы</h4>
                 <p class="menu__link-description">то, ради чего Вы здесь</p>
               </a>
@@ -115,10 +128,10 @@
             </ul>
             <div class="menu__help-checkbox">
               <input type="checkbox" name="remember-me" id="remember-me" class="shrink-0 rounded-[5px] form-checkbox w-[18px] h-[18px] border-black-900 border-2" checked required>
-              <label for="remember-me" class="text-14 md:text-16 ml-8 md:ml-16 md:mt-8 text-black-900 shrink-1 leading-tight dark:text-light-900">Я согласен(а) на обработку моих личных данных</label>
+              <label for="remember-me" class="text-14 md:text-16 ml-8 md:ml-16 md:mt-8 text-black-900 shrink-1 leading-tight dark:text-light-400">Я согласен(а) на обработку моих личных данных</label>
             </div>
-            <input class="menu__help-sender w-full text-14 lg:mt-28 md:mt-36 md:text-16 xl:text-18 text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendHelpRequest" value="Позвоните мне">
-            <button class="menu__help-modal-start w-full mt-32 text-14 font-bold text-light-400 bg-brand-900 py-[17px] rounded-8 cursor-pointer hover:shadow-btn">Заказать звонок</button>
+            <input class="menu__help-sender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendHelpRequest" value="Позвоните мне">
+            <button class="menu__help-modal-start w-full ad:mt-24 text-14 font-bold text-light-400 bg-brand-900 py-[17px] rounded-8 cursor-pointer hover:shadow-btn">Заказать звонок</button>
           </form>
         </li>
       </ul>
@@ -128,7 +141,7 @@
       <div class="ad:mt-12 ph:w-[390px] tb:w-[470px] lg:w-[498px] md:w-[592px] xl:w-[750px] flex flex-col tb:items-center lg:items-start ad:order-2 lg:order-1 ad:px-16 tb:px-0 lg:pl-32 xl:pl-48">
         <h1 class="ad:text-32 ph:text-36 tb:text-52 tb:text-center lg:text-left md:text-64 xl:text-82 leading-none font-bold -tracking-wide dark:text-light-400">Отделение <br> дополнительного <br> образования</h1>
         <p class="ad:mt-16 tb:mt-24 md:mt-32 ad:text-16 ph:text-18 tb:text-center lg:text-left md:text-20 xl:text-22 xl:w-[573px] text-black-800 leading-tight dark:text-light-800">Мы приглашаем всех желающих пройти обучение на наших курсах и программах профессиональной подготовки, по окончании которых вы получите подтверждающий сертификат</p>
-        <button class="ad:w-[290px] tb:w-[320px] px-24 py-20 ad:mt-24 ph:mt-36 tb:text-18 lg:text-16 md:mt-48 rounded-16 md:rounded-16 bg-brand-900 text-light-400 hover:shadow-btn font-bold">Смотреть курсы и программы</button>
+        <a href="#courses" class="block w-fit px-24 py-20 ad:mt-24 ph:mt-36 tb:text-18 lg:text-16 md:mt-48 ad:rounded-8 lg:rounded-12 md:rounded-16 bg-brand-900 text-light-400 hover:shadow-btn font-bold">Смотреть курсы и программы</a>
       </div>
       <img src="/src/img/landing/illustrations/offer-img.png" class="ad:order-1 lg:order-2 ad:w-full ad:h-[280px] ph:w-[380px] ph:h-[310px] tb:w-[700px] tb:h-[500px] lg:w-3/5 lg:h-2/5 md:w-[890px] md:h-[600px] xl:w-[1040px] xl:h-[710px] dark:brightness-90" alt="Offer img">
     </div>
@@ -187,17 +200,17 @@
           <h3 class="ad:block ad:text-20 tb:text-24 md:text-32 font-bold dark:text-light-400 tracking-tight">Отфильтровано с заботой</h3>
           <p class="ad:mt-8 ad:text-16 md:text-20 leading-tight tracking-tight text-black-800 dark:text-light-800">Специально для Вас фильтры с быстрой <br> выборкой курсов и программ</p>
         </div>
-        <div class="dropdowns ad:w-full lg:w-fit md:w-1/2 flex ad:flex-col ad:items-start ad:justify-start tb:flex-row tb:items-center tb:justify-between ad:mt-16 lg:mt-0">
+        <div class="dropdowns ad:w-full lg:w-fit md:w-1/2 flex ad:flex-col ad:items-start ad:justify-start tb:flex-row tb:items-center tb:justify-between ad:mt-24 lg:mt-0">
           <div class="dropdown__container ad:w-full lg:w-[200px] md:w-full flex flex-col items-start mr-24">
-            <label class="dropdown__label mb-12 text-18 font-bold dark:text-light-400" data-dropdownIndex="0">Срок обучения</label>
-            <div class="dropdown dropdown__light" data-index="0">
+            <label class="dropdown__label mb-12 ad:text-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="0">Срок обучения</label>
+            <div class="dropdown dropdown__light z-[11]" data-index="0">
               <div class="dropdown__btn">
                 <p class="dropdown__btn-text" data-dropdownValue="Любой">Любой</p>
                 <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                   <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                 </svg>
               </div>
-              <ul class="dropdown__options">
+              <ul class="dropdown__options ">
                 <li class="dropdown__option">Любая</li>
                 <li class="dropdown__option">1 месяц</li>
                 <li class="dropdown__option">2 месяца</li>
@@ -210,8 +223,8 @@
             </div>
           </div>
           <div class="dropdown__container ad:w-full ad:mt-16 tb:mt-0 lg:w-[215px] md:w-full flex flex-col items-start mr-24">
-            <label class="dropdown__label mb-12 text-18 font-bold dark:text-light-400" data-dropdownIndex="1">Выдаваемый документ</label>
-            <div class="dropdown dropdown__light" data-index="1">
+            <label class="dropdown__label mb-12 ad:text-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="1">Выдаваемый документ</label>
+            <div class="dropdown dropdown__light z-10" data-index="1">
               <div class="dropdown__btn">
                 <p class="dropdown__btn-text" data-dropdownValue="Любой">Любой</p>
                 <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -226,8 +239,8 @@
             </div>
           </div>
           <div class="filter__input ad:w-full lg:w-[200px] md:w-full ad:mt-16 tb:mt-0 flex flex-col items-start ">
-            <label for="clientName" class="lg:text-18 mb-12 font-bold dark:text-light-400">Стоимость</label>
-            <input type="text" id="clientName" class="w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-12 border-light-900 bg-light-400 placeholder:text-black-800 dark:placeholder:text-light-900 dark:text-light-400 dark:bg-dark-700 dark:border-dark-700" placeholder="1000">
+            <label for="filterPrice" class="lg:text-18 mb-12 font-bold dark:text-light-400">Стоимость</label>
+            <input type="text" id="filterPrice" class="w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800 dark:placeholder:text-light-900 dark:text-light-400 dark:bg-dark-700 dark:border-dark-700" placeholder="1000">
           </div>
         </div>
       </div>
@@ -251,7 +264,7 @@
             <li class="courses__item">Цифровая фотография</li>
           </ul>
         </div>
-        <div class="courses__description ad:w-full ad:mt-24 tb:mt-36 lg:mt-0 lg:w-1/2 ad:order-1 lg:order-2 ad:p-12 tb:p-16 md:p-20 xl:p-24 bg-light-500 rounded-20 md:rounded-24 xl:rounded-28 border border-light-900 dark:bg-dark-700 dark:border-none">
+        <div class="courses__description ad:w-full ad:mt-24 tb:mt-36 lg:mt-0 lg:w-1/2 ad:order-1 lg:order-2 ad:p-12 tb:p-16 md:p-20 xl:p-24 bg-light-500 ad:rounded-12 lg:rounded-20 md:rounded-24 xl:rounded-28 border border-light-900 dark:bg-dark-700 dark:border-none">
           <h3 class="courses__name ad:text-28 ph:text-32 md:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400" data-courseName="Комбинированный маникюр и дизайн ногтей">Комбинированный маникюр и дизайн ногтей</h3>
           <div class="courses__initial courses__initial-visible lg:pr-36 md:pr-[84px] xl:pr-[120px]">
             <ul class="text-content ad:mt-24 md:mt-32 xl:mt-36">
@@ -276,34 +289,34 @@
                 5000 ₽
               </li>
             </ul>
-            <button class="ad:w-full lg:w-[206px] md:w-[255px] mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 rounded-12 xl:rounded-16 cursor-pointer hover:shadow-btn">Записаться на курс</button>
+            <button class="courseOrderBtn ad:w-full lg:w-[206px] md:w-[255px] mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 ad:rounded-8 lg:rounded-12 xl:rounded-16 cursor-pointer lg:hover:shadow-btn">Записаться на курс</button>
           </div>
-          <div class="courses__requesting courses__requesting-hidden lg:w-2/3">
-            <h3 class="lg:text-24 lg:mt-20 font-bold dark:text-light-400">Запись на курс</h3>
-            <p class="lg:text-16 lg:mt-8 leading-tight text-black-800">Заполните все необходимые поля и отправьте заявку чтобы записаться на выбранный курс</p>
-            <form action="courses/requesting/{course-id}" class="w-full lg:mt-20">
-              <label for="clientName" class="lg:text-18 font-bold">Ваше имя и фамилия</label>
-              <input type="text" id="clientName" class="w-full text-14 px-12 py-[12.5px] leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 placeholder:text-black-800" placeholder="Иван Иванов" required>
-              <label for="clientPhone" class="lg:text-18 lg:mt-24 block font-bold">Ваш телефон</label>
-              <input type="text" id="clientPhone" class="w-full text-14 px-12 py-[12.5px] leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700" placeholder="+7 900 900 90 90" required>
-              <div class="flex items-start lg:mt-16">
+          <div class="courses__requesting lg:w-2/3">
+            <h3 class="ad:text-20 tb:text-24 ad:mt-16 lg:mt-20 font-bold dark:text-light-400">Запись на курс</h3>
+            <p class="ad:text-14 lg:text-16 ad:mt-8 tb:mt-12 lg:mt-8 md:mt-12 leading-tight text-black-800 dark:text-light-900">Заполните все необходимые поля и отправьте заявку чтобы записаться на выбранный курс</p>
+            <form action="" class="w-full ad:mt-16 tb:mt-24 lg:mt-20">
+              <label for="clientName" class="ad:text-16 lg:text-18 font-bold dark:text-light-400">Ваше имя и фамилия</label>
+              <input type="text" id="clientName" class="w-full ad:text-16 md:text-18 px-12 py-[12.5px] font-medium leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 dark:text-light-900 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" placeholder="Иван Иванов" required>
+              <label for="clientPhone" class="ad:text-16 lg:text-18 ad:mt-16 tb:mt-24 block font-bold dark:text-light-400">Ваш телефон</label>
+              <input type="text" id="clientPhone" class="w-full ad:text-16 md:text-18 px-12 py-[12.5px] font-medium leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 dark:text-light-900 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" placeholder="+7 900 900 90 90" required>
+              <div class="flex items-start ad:mt-16">
                 <input type="checkbox" name="agreement" id="agreement" class="form-checkbox lg:mt-[3px] lg:rounded-[4px] border-text-900 border-2" checked required>
-                <label for="agreement" class="lg:ml-8 lg:text-16 leading-tight text-black-900 accent-brand-900">Я согласен на обработку моих личных данных</label>
+                <label for="agreement" class="ad:ml-8 lg:text-16 leading-tight text-black-900 accent-brand-900 dark:text-light-400">Я согласен на обработку моих личных данных</label>
               </div>
-              <div class="flex mt-24 md:mt-32 xl:mt-36">
-                <button type="submit" class="lg:w-[206px] md:w-[255px] text-16 md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 rounded-12 xl:rounded-16 cursor-pointer hover:shadow-btn">Записаться</button>
-                <button class="cancelOrdering text-16 lg:ml-12 md:text-18 p-16 md:p-[23px] font-bold" >Отмена</button>
+              <div class="flex ad:flex-col lg:flex-row ad:items-center mt-24 md:mt-32 xl:mt-36">
+                <button type="submit" class="sendOrderBtn ad:w-full text-16 font-medium md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 ad:rounded-8 lg:rounded-12 md:rounded-16 cursor-pointer hover:shadow-btn">Записаться</button>
+                <button class="cancelOrderBtn ad:w-full text-16 ad:ml-0 ad:mt-12 lg:mt-0 lg:ml-12 md:text-18 p-16 md:p-[23px] font-bold ad:rounded-8 lg:rounded-12 md:rounded-16 cursor-pointer dark:text-light-400 bg-light-700 dark:bg-dark-800">Отмена</button>
               </div>
-              <p class="lg:mt-16 lg:text-12 text-black-800 leading-tight">Все передаваемые вами данные защищены по ФЗ № 152</p>
+              <p class="ad:mt-16 lg:text-12 text-black-800 leading-tight dark:text-light-400">Все передаваемые вами данные защищены по ФЗ № 152</p>
             </form>
           </div>
-          <div class="courses__succeded courses__succeded-hidden">
-            <img class="lg:w-[265px] md:w-[290px] xl:w-[320px] lg:h-[265px] md:h-[290px] xl:h-[320px] lg:mt-48 md:mt-[56px] xl:mt-64 dark:brightness-90" src="/src/img/landing/illustrations/order-success.svg" alt="Order success">
-            <div class="lg:mt-32">
-              <h4 class="lg:text-24 md:text-28 xl:text-32 font-bold text-black-900 dark:text-light-400">Вы успешно записались!</h4>
-              <p class="lg:mt-8 md:mt-12 lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Скоро мы свяжемся с вами по  указанному <br> телефону и обсудим детали</p>
+          <div class="courses__succeded">
+            <img class="ad:w-[180px] ad:h-[180px] tb:w-[265px] md:w-[290px] xl:w-[320px] tb:h-[265px] md:h-[290px] xl:h-[320px] ad:mt-32 lg:mt-48 md:mt-[56px] xl:mt-64 dark:brightness-90" src="/src/img/landing/illustrations/order-success.svg" alt="Order success">
+            <div class="ad:mt-24 lg:mt-32">
+              <h4 class="ad:text-20 tb:text-24 md:text-28 xl:text-32 font-bold text-black-900 dark:text-light-400">Вы успешно записались!</h4>
+              <p class="ad:mt-8 md:mt-12 ad:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Скоро мы свяжемся с вами по  указанному <br> телефону и обсудим детали</p>
             </div>
-            <button class="btn-primary lg:w-[206px] lg:mt-24 md:mt-[28px] xl:mt-36 lg:py-16 md:py-[20px] md:text-16">Спасибо!</button>
+            <button class="ad:w-full lg:w-[206px] md:w-[255px] mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 ad:rounded-8 lg:rounded-12 xl:rounded-16 cursor-pointer lg:hover:shadow-btn">Спасибо!</button>
           </div>
           </div>
         </div>
@@ -319,11 +332,11 @@
       <form action="" method="post" class="lg:w-2/3 md:w-1/2">
         <ul class="flex ad:flex-col lg:flex-row ad:items-start lg:items-center ad:mt-24 lg:mt-0">
           <li class="ad:w-full lg:mr-32 xl:mr-36 flex flex-col">
-            <label class="ad:text-18 xl:text-22 text-light-400" for="helperClientName">Ваше имя и фамилия</label>
+            <label class="ad:text-16 lg:text-18 xl:text-22 text-light-400" for="helperClientName">Ваше имя и фамилия</label>
             <input class="ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-[14px] lg:text-16  bg-brand-900 text-light-400  border-2 border-light-400 focus:border-light-400 ad:rounded-8 lg:rounded-12 md:rounded-16 placeholder:text-light-900 dark:bg-dark-800" type="text" name="helperClientName" id="helperClientName" placeholder="Иван Иванов" required>
           </li>
           <li class="ad:w-full ad:mt-16 lg:mt-0 lg:mr-32 xl:mr-36 flex flex-col">
-            <label class="ad:text-18 xl:text-22 text-light-400" for="helperClientPhone">Ваш телефон</label>
+            <label class="ad:text-16 lg:text-18 xl:text-22 text-light-400" for="helperClientPhone">Ваш телефон</label>
             <input class="ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-[14px]  bg-brand-900 text-light-400 border-2 border-light-400 focus:border-light-400 ad:rounded-8 lg:rounded-12 md:rounded-16 placeholder:text-light-900 dark:bg-dark-800" type="tel" name="helperClientPhone" id="helperClientPhone" placeholder="+7 900 900 90 90" required>
           </li>
           <li class="ad:w-full ad:self-start lg:self-end ad:mt-24">
@@ -366,35 +379,35 @@
     <p class="ad:w-11/12 tb:w-3/4 ad:mt-12 text-18 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Наш адрес, карта, часы работы, почта и телефон - все самое необходимое, чтобы нас найти</p>
     <div class="w-full ad:mt-36 tb:mt-48 ad:p-16 bg-light-700 ad:rounded-12 tb:rounded-16 dark:bg-dark-800">
       <h3 class="text-24 font-bold dark:text-light-400">Наши контакты</h3>
-      <p class="text-18 mt-8 leading-tight text-black-800 dark:text-light-900">Мы всегда рады Вам! Звоните, пишите или заходите в гости</p>
+      <p class="ad:text-16 lg:text-18 mt-8 leading-tight text-black-800 dark:text-light-900">Мы всегда рады Вам! Звоните, пишите или заходите в гости</p>
       <ul class="ad:mt-24 flex ad:items-start ad:flex-col tb:flex-row tb:justify-between">
         <li class="ad:w-full tb:w-1/3 flex items-start mr-24">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-[26px] shrink-0" viewBox="0 0 24 26" fill="none">
-            <path d="M21.5 10.6364C21.5 14.1507 19.1232 17.6203 16.4286 20.3707C15.1151 21.7113 13.7962 22.81 12.8036 23.5743C12.501 23.8073 12.2299 24.0083 12 24.1747C11.7701 24.0083 11.499 23.8073 11.1964 23.5743C10.2038 22.81 8.88489 21.7113 7.57145 20.3707C4.87676 17.6203 2.5 14.1507 2.5 10.6364C2.5 8.22983 3.4882 5.91124 5.26451 4.19365C7.04253 2.47441 9.46448 1.5 12 1.5C14.5355 1.5 16.9575 2.47441 18.7355 4.19365C20.5118 5.91124 21.5 8.22983 21.5 10.6364Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="dark:stroke-light-400" d="M21.5 10.6364C21.5 14.1507 19.1232 17.6203 16.4286 20.3707C15.1151 21.7113 13.7962 22.81 12.8036 23.5743C12.501 23.8073 12.2299 24.0083 12 24.1747C11.7701 24.0083 11.499 23.8073 11.1964 23.5743C10.2038 22.81 8.88489 21.7113 7.57145 20.3707C4.87676 17.6203 2.5 14.1507 2.5 10.6364C2.5 8.22983 3.4882 5.91124 5.26451 4.19365C7.04253 2.47441 9.46448 1.5 12 1.5C14.5355 1.5 16.9575 2.47441 18.7355 4.19365C20.5118 5.91124 21.5 8.22983 21.5 10.6364Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="dark:stroke-light-400" d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="ad:ml-8">
-            <h4 class="text-20">Адрес</h4>
-            <p class="ad:mt-8 text-16 leading-tight text-black-800">Омск, ул. Добролюбова, д.15, кабинет №77</p>
+            <h4 class="text-20 dark:text-light-400">Адрес</h4>
+            <p class="ad:mt-8 text-16 leading-tight text-black-800 dark:text-light-900">Омск, ул. Добролюбова, д.15, кабинет №77</p>
           </div>
         </li>
         <li class="ad:w-full ad:mt-24 tb:w-1/3 flex items-start mr-24">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 shrink-0" viewBox="0 0 24 24" fill="none">
-            <path d="M21.9994 17.9738V20.9846C22.0005 21.2642 21.9432 21.5408 21.831 21.7969C21.7188 22.053 21.5542 22.2829 21.3478 22.4719C21.1415 22.6608 20.8978 22.8047 20.6325 22.8942C20.3672 22.9838 20.0861 23.017 19.8072 22.9919C16.7128 22.6563 13.7404 21.601 11.1289 19.9108C8.69922 18.3699 6.63926 16.3141 5.09534 13.8892C3.39586 11.271 2.33824 8.29008 2.00816 5.18795C1.98303 4.91042 2.01608 4.63071 2.1052 4.36663C2.19432 4.10254 2.33757 3.85987 2.52581 3.65407C2.71405 3.44826 2.94317 3.28383 3.19858 3.17123C3.45398 3.05864 3.73008 3.00036 4.0093 3.0001H7.02608C7.5141 2.9953 7.98722 3.16778 8.35725 3.48537C8.72727 3.80297 8.96896 4.24401 9.03727 4.72629C9.1646 5.68982 9.40074 6.63587 9.74118 7.54641C9.87648 7.90563 9.90576 8.29602 9.82556 8.67133C9.74536 9.04665 9.55903 9.39115 9.28867 9.66402L8.01156 10.9386C9.44308 13.4512 11.5276 15.5315 14.0451 16.9602L15.3222 15.6856C15.5956 15.4158 15.9408 15.2298 16.3169 15.1498C16.6929 15.0698 17.0841 15.099 17.444 15.234C18.3564 15.5738 19.3043 15.8095 20.2698 15.9365C20.7582 16.0053 21.2044 16.2509 21.5233 16.6265C21.8422 17.0021 22.0116 17.4817 21.9994 17.9738Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="dark:stroke-light-400" d="M21.9994 17.9738V20.9846C22.0005 21.2642 21.9432 21.5408 21.831 21.7969C21.7188 22.053 21.5542 22.2829 21.3478 22.4719C21.1415 22.6608 20.8978 22.8047 20.6325 22.8942C20.3672 22.9838 20.0861 23.017 19.8072 22.9919C16.7128 22.6563 13.7404 21.601 11.1289 19.9108C8.69922 18.3699 6.63926 16.3141 5.09534 13.8892C3.39586 11.271 2.33824 8.29008 2.00816 5.18795C1.98303 4.91042 2.01608 4.63071 2.1052 4.36663C2.19432 4.10254 2.33757 3.85987 2.52581 3.65407C2.71405 3.44826 2.94317 3.28383 3.19858 3.17123C3.45398 3.05864 3.73008 3.00036 4.0093 3.0001H7.02608C7.5141 2.9953 7.98722 3.16778 8.35725 3.48537C8.72727 3.80297 8.96896 4.24401 9.03727 4.72629C9.1646 5.68982 9.40074 6.63587 9.74118 7.54641C9.87648 7.90563 9.90576 8.29602 9.82556 8.67133C9.74536 9.04665 9.55903 9.39115 9.28867 9.66402L8.01156 10.9386C9.44308 13.4512 11.5276 15.5315 14.0451 16.9602L15.3222 15.6856C15.5956 15.4158 15.9408 15.2298 16.3169 15.1498C16.6929 15.0698 17.0841 15.099 17.444 15.234C18.3564 15.5738 19.3043 15.8095 20.2698 15.9365C20.7582 16.0053 21.2044 16.2509 21.5233 16.6265C21.8422 17.0021 22.0116 17.4817 21.9994 17.9738Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="ad:ml-8">
-            <h4 class="text-20">Телефоны</h4>
-            <p class="ad:mt-8 text-16 leading-tight text-black-800">+7 (903) 927-40-44 <br> +7 (3812) 35-67-04</p>
+            <h4 class="text-20 dark:text-light-400">Телефоны</h4>
+            <p class="ad:mt-8 text-16 leading-tight text-black-800 dark:text-light-900">+7 (903) 927-40-44 <br> +7 (3812) 35-67-04</p>
           </div>
         </li>
         <li class="ad:w-full ad:mt-24 tb:w-1/3 flex items-start">
           <svg xmlns="http://www.w3.org/2000/svg"class="w-24 h-24 shrink-0" viewBox="0 0 24 24" fill="none">
-            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M11 7V13L15 15" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="dark:stroke-light-400" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="dark:stroke-light-400" d="M11 7V13L15 15" stroke="#252525" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="ad:ml-8">
-            <h4 class="text-20">Часы работы</h4>
-            <p class="ad:mt-8 text-16 leading-tight text-black-800">В будние дни с 8:30 до 17:00</p>
+            <h4 class="text-20 dark:text-light-400">Часы работы</h4>
+            <p class="ad:mt-8 text-16 leading-tight text-black-800 dark:text-light-900">В будние дни с 8:30 до 17:00</p>
           </div>
         </li>
       </ul>
@@ -423,11 +436,8 @@
         <a href="#contacts" class="text-16 md:text-18 text-light-400">Контакты</a>
       </li>
     </ul>
-    <div class="enable-darkmode__btn ad:-ml-16 ad:mt-16 tb:mt-0 lg:ml-0 flex ad:self-start lg:self-center items-center cursor-pointer h-36 px-12 lg:hover:bg-brand-900 ad:rounded-8 lg:hover:shadow-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 shrink-0" viewBox="0 0 16 16" fill="none">
-        <path d="M14.0001 8.52667C13.8952 9.66147 13.4693 10.7429 12.7722 11.6445C12.0751 12.5461 11.1357 13.2305 10.0639 13.6177C8.992 14.0049 7.83205 14.0787 6.71972 13.8307C5.6074 13.5827 4.58872 13.023 3.78287 12.2172C2.97703 11.4113 2.41735 10.3927 2.16933 9.28033C1.92131 8.16801 1.9952 7.00806 2.38236 5.9362C2.76953 4.86434 3.45394 3.92491 4.35553 3.22784C5.25712 2.53076 6.33859 2.10487 7.47339 2C6.809 2.89884 6.48929 4.0063 6.57241 5.12094C6.65553 6.23559 7.13596 7.28337 7.92632 8.07373C8.71668 8.86409 9.76447 9.34452 10.8791 9.42765C11.9938 9.51077 13.1012 9.19106 14.0001 8.52667Z" fill="#FEFEFE"/>
-      </svg>
-      <p class="ml-8 md:ml-12 text-16 md:text-18 text-light-400">Включить темный режим</p>
+    <div class="call-order__modal-btn ad:-ml-16 ad:mt-16 tb:mt-0 lg:ml-0 flex ad:self-start lg:self-center items-center cursor-pointer h-36 px-12 lg:hover:bg-brand-900 ad:rounded-8 lg:hover:shadow-btn">
+      <p class="text-16 md:text-18 text-light-400">Обратный звонок</p>
     </div>
   </footer>
   <div class="tb:w-full flex items-center justify-center py-16 bg-[#101010]">
@@ -440,12 +450,12 @@
       <path d="M17 24L24 17L31 24" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
-  <div class="darkmode__ntf lg:p-16 dark:bg-dark-800 rounded-16">
-    <h3 class="lg:text-20 text-light-400">Включен <span class="text-20 text-brand-900">ночной режим</span></h3>
-    <p class="lg:w-[290px] text-14 lg:mt-8 text-light-700 leading-tight">Ваши глаза под надежной защитой. Выбирайте наши курсы и изучайте информацию с комфортом для зрения</p>
+  <div class="darkmode__ntf fixed tb:right-32 tb:bottom-32 tb:p-24 lg:p-16 md:p-20 dark:bg-dark-800 rounded-16 z-[12]">
+    <h3 class="ad:text-20 lg:text-20 tb:text-24 md:text-24 text-light-400">Включен <span class="ad:text-20 lg:text-20 tb:text-24 md:text-24 text-brand-900">ночной режим</span></h3>
+    <p class="ad:w-full tb:w-[290px] ad:text-14 md:text-16 lg:mt-8 text-light-700 leading-tight">Ваши глаза под надежной защитой. Выбирайте наши курсы и изучайте информацию с комфортом для зрения</p>
     <div class="flex items-center mt-16">
-      <button class="darkmode__ntf-thanks lg:mr-16 py-[14px] px-[50px] text-14 text-light-400 font-bold bg-brand-900 rounded-8 lg:hover:shadow-btn">Спасибо</button>
-      <button class="darkmode__ntf-disable py-[14px] px-16 text-light-400 text-14 font-bold bg-dark-800">Отключить</button>
+      <button class="darkmode__ntf-accept lg:mr-16 py-[14px] px-[50px] text-14 text-light-400 font-bold bg-brand-900 rounded-8 lg:hover:shadow-btn">Спасибо</button>
+      <button class="darkmode__ntf-decline py-[14px] px-16 text-light-400 text-14 font-bold bg-dark-800">Отключить</button>
     </div>
   </div>
   <script src="/src/js/jquery.min.js"></script>
@@ -455,5 +465,6 @@
   <script src="/src/js/slick.min.js"></script>
   <script src="/src/js/dropdown.js"></script>
   <script src="/src/js/darkmode.js"></script>
+  <script src="/src/js/ajax/courseOrdering.js"></script>
 </body>
 </html>

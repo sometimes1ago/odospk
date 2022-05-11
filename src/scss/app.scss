@@ -3,3 +3,12 @@
 @import './gallery';
 @import './feedbacks';
 @import './darkmode';
+
+.theme {
+  &__switcher {
+    z-index: 20;
+    &-menu__opened {
+      z-index: 1 !important;
+    }
+  }
+}

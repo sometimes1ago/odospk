@@ -141,6 +141,9 @@
 
 @media screen and (max-width: 1024px) {
   .dropdown {
+    &__btn {
+      border-radius: 8px;
+    }
     &__light {
       .dropdown__btn:hover {
         background-color: #FEFEFE;
@@ -163,6 +166,7 @@
 @media screen and (min-width: 1580px) {
   .dropdown {
     &__btn {
+      border-radius: 16px;
       padding: 17px 12px;
       &-text {
         font-size: 16px;

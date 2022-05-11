@@ -45,27 +45,21 @@
       }
     }
     &__initial {
+      @apply hidden;
       &-visible {
         @apply block;
-      }
-      &-hidden {
-        @apply hidden;
       }
     }
     &__requesting {
+      @apply hidden;
       &-visible {
         @apply block;
-      }
-      &-hidden {
-        @apply hidden;
       }
     }
     &__succeded {
+      @apply hidden;
       &-visible {
         @apply block;
-      }
-      &-hidden {
-        @apply hidden;
       }
     }
     &__list {

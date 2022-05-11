@@ -32,14 +32,6 @@ function dropdownInitizaize() {
     let activeOptions = dropdown.querySelectorAll('.dropdown__option');
     let activeOptionsContainer = dropdown.querySelector('.dropdown__options');
 
-    if (activeDropdowns.length > 1) {
-      let activeDropdownsCount = activeDropdowns.length - 1;
-
-      for (let i = 0; i < activeDropdowns.length; i++) {
-        activeDropdowns[activeDropdownsCount - i].style.zIndex = 10 + i;
-      }
-    }
-    
     if (activeOptions.length > 3) {
       activeOptionsContainer.style.height = "160px";
     }
