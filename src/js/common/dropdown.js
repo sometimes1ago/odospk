@@ -28,7 +28,6 @@ function dropdownInitizaize() {
 
   function openDropdown(dropdown) {
     dropdown.classList.toggle('dropdown__active');
-    const activeDropdowns = document.querySelectorAll(".dropdown__active");
     let activeOptions = dropdown.querySelectorAll('.dropdown__option');
     let activeOptionsContainer = dropdown.querySelector('.dropdown__options');
 
@@ -52,7 +51,7 @@ function dropdownInitizaize() {
     option.addEventListener('click', () => {
       let currentDropdown = option.parentElement.parentElement.getAttribute("data-index");
       dropdownsValues[currentDropdown].textContent = option.textContent.trim();
-      dropdownsValues[currentDropdown].setAttribute('dropdownvalue', option.textContent.trim());
+      dropdownsValues[currentDropdown].dataset.dropdownvalue = option.textContent.trim();
       dropdownValueTrimmer();
     })
   });

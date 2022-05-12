@@ -4,6 +4,7 @@ module.exports = {
     "./*.{html,js}",
     "./src/**/*.{html,js}",
     "./panel/**/*.{html,js}",
+    "./admin/**/*.{html,js}",
 
   ],
   theme: {
@@ -27,14 +28,11 @@ module.exports = {
         }
       },
       boxShadow: {
-        'menu-lg': '4px 0px 24px rgba(39, 40, 45, 0.08)',
-        'query-control': '0px 4px 16px rgba(39, 40, 45, 0.08)',
-        'selector': '0px 0px 30px rgba(37, 37, 37, 0.16)',
         'btn': ' 0px 4px 16px rgba(51, 112, 202, 0.48)',
-        'call-btn': '0px 8px 24px rgba(79, 82, 255, 0.28)',
         'cta-btn': '0px 12px 32px rgba(79, 82, 255, 0.48)',
         'slider': '0px 16px 64px rgba(22, 20, 20, 0.12)',
         'map': '0px 0px 24px rgba(0, 0, 0, 0.06)',
+        'section': '0px 0px 36px rgba(39, 40, 45, 0.08)',
       },
       fontFamily: {
         sans: ['Geometria', 'sans-serif'],
@@ -82,6 +80,7 @@ module.exports = {
         text: '1.4em'
       },
       borderRadius: {
+        '4': '4px',
         '8': '8px',
         '10': '10px',
         '12': '12px',

@@ -69,6 +69,9 @@
       margin-bottom: 0;
     }
   }
+  &__label {
+    display: block;
+  }
   &__light {
     .dropdown__btn {
       background-color: #FEFEFE;

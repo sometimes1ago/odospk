@@ -3,12 +3,34 @@
 @import './gallery';
 @import './feedbacks';
 @import './darkmode';
+@import './auth';
+@import './aside';
 
 .theme {
   &__switcher {
     z-index: 20;
     &-menu__opened {
       z-index: 1 !important;
+    }
+  }
+}
+
+.data {
+  &__pill {
+    padding: 9px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 16px;
+    font-size: 14px;
+    background-color: #f3f3f3;
+    border: 1px solid #cdcdcd;
+    &-active {
+      color: #fefefe;
+      border-color: #375DE1;
+      background-color: #375DE1;
+    }
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
