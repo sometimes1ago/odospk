@@ -169,7 +169,7 @@
             <input type="text" id="changeProgramValue" class="changeProgramValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000">
             <div class="dropdown dropdown__prog-diploma-type dropdown__light z-[9]" data-index="2">
               <div class="dropdown__btn">
-                <p class="dropdown__btn-text dropdown__program-diploma-type__value" data-dropdownValue="Любой">Сертификат</p>
+                <p class="dropdown__btn-text dropdown__program-diploma-type__value" data-dropdownValue="Сертификат">Сертификат</p>
                 <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                   <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                 </svg>
@@ -187,15 +187,94 @@
                 </svg>
               </div>
               <ul class="dropdown__options">
-                <li class="dropdown__option">Курс</li>
-                <li class="dropdown__option">Профессиональная подготовка</li>
+                <li class="dropdown__option courseTypeOption">Курс</li>
+                <li class="dropdown__option courseTypeOption">Профессиональная подготовка</li>
               </ul>
             </div>
-            <input class="changeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendHelpRequest" value="Позвоните мне">
+            <input class="changeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeProgSend" value="Изменить">
           </form>
         </li>
-        <li class="mr-24 last:mr-0"></li>
-        <li class="mr-24 last:mr-0"></li>
+        <li class="mr-24 last:mr-0">
+          <form action="" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
+            <h2 class="lg:text-20 md:text-24 font-bold">Изменение отзыва</h2>
+            <p class="lg:mt-8 lg:text-16 md:text-18 leading-tight text-black-800">Выберите отзыв, что заменить <br> и введите новое значение</p>
+            <label class="dropdown__label mb-12 mt-24 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="4">Выберите отзыв</label>
+            <div class="dropdown dropdown__light z-[11]" data-index="4">
+              <div class="dropdown__btn">
+                <p class="dropdown__btn-text dropdown__changeFeedbackValue" data-dropdownValue="Отзыв 1">Отзыв 1</p>
+                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
+                </svg>
+              </div>
+              <ul class="dropdown__options">
+                <li class="dropdown__option">Отзыв 1</li>
+                <li class="dropdown__option">Отзыв 2</li>
+                <li class="dropdown__option">Отзыв 3</li>
+                <li class="dropdown__option">Отзыв 4</li>
+                <li class="dropdown__option">Отзыв 5</li>
+                <li class="dropdown__option">Отзыв 6</li>
+              </ul>
+            </div>
+            <label class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="5">Свойство отзыва</label>
+            <div class="dropdown dropdown__light z-10" data-index="5">
+              <div class="dropdown__btn">
+                <p class="dropdown__btn-text dropdown__changeFeedbackProp" data-dropdownValue="Автор отзыва">Автор отзыва</p>
+                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
+                </svg>
+              </div>
+              <ul class="dropdown__options">
+                <li class="dropdown__option">Автор отзыва</li>
+                <li class="dropdown__option">Содержание отзыва</li>
+              </ul>
+            </div>
+            <label for="changFeedbackValue" class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
+            <input type="text" id="changFeedbackValue" class="changFeedbackValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
+            <input class="changeFeedbackSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeFeedbackSend" value="Изменить">
+          </form>
+        </li>
+        <li class="mr-24 last:mr-0">
+          <form action="" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
+            <h2 class="lg:text-20 md:text-24 font-bold">Данные пользователя</h2>
+            <p class="lg:mt-8 lg:text-16 md:text-18 leading-tight text-black-800">Выберите пользователя, что <br> заменить и введите новое значение</p>
+            <label class="dropdown__label mb-12 mt-24 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="6">Выберите пользователя</label>
+            <div class="dropdown dropdown__light z-[11]" data-index="6">
+              <div class="dropdown__btn">
+                <p class="dropdown__btn-text dropdown__changeUserValue" data-dropdownValue="Пользователь 1">Пользователь 1</p>
+                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
+                </svg>
+              </div>
+              <ul class="dropdown__options">
+                <li class="dropdown__option">Пользователь 1</li>
+                <li class="dropdown__option">Пользователь 2</li>
+                <li class="dropdown__option">Пользователь 3</li>
+                <li class="dropdown__option">Пользователь 4</li>
+                <li class="dropdown__option">Пользователь 5</li>
+                <li class="dropdown__option">Пользователь 6</li>
+              </ul>
+            </div>
+            <label class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="7">Свойство пользователя</label>
+            <div class="dropdown dropdown__light z-10" data-index="7">
+              <div class="dropdown__btn">
+                <p class="dropdown__btn-text dropdown__changeUserProp" data-dropdownValue="Имя">Имя</p>
+                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
+                </svg>
+              </div>
+              <ul class="dropdown__options">
+                <li class="dropdown__option changeUserPropOption">Имя</li>
+                <li class="dropdown__option changeUserPropOption">Логин</li>
+                <li class="dropdown__option changeUserPropOption">Пароль</li>
+                <li class="dropdown__option changeUserPropOption">Фото</li>
+                <li class="dropdown__option changeUserPropOption">Уровень доступа</li>
+              </ul>
+            </div>
+            <label for="changeUserValue" class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
+            <input type="text" id="changeUserValue" class="changeUserValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
+            <input class="changeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeUserSend" value="Изменить">
+          </form>
+        </li>
       </ul>
     </div>
   </section>
