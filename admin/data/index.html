@@ -165,7 +165,7 @@
                 <li class="dropdown__option changeProgPropOption">Тип программы</li>
               </ul>
             </div>
-            <label for="changeProgramValue" class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
+            <label for="changeProgramValue" class="block mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
             <input type="text" id="changeProgramValue" class="changeProgramValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000">
             <div class="dropdown dropdown__prog-diploma-type dropdown__light z-[9]" data-index="2">
               <div class="dropdown__btn">
@@ -175,8 +175,8 @@
                 </svg>
               </div>
               <ul class="dropdown__options">
-                <li class="dropdown__option">Сертификат</li>
-                <li class="dropdown__option">Свидетельство</li>
+                <li class="dropdown__option courseDiplomaTypeOption">Сертификат</li>
+                <li class="dropdown__option courseDiplomaTypeOption">Свидетельство</li>
               </ul>
             </div>
             <div class="dropdown dropdown__prog-course-type dropdown__light z-[9]" data-index="3">
@@ -207,12 +207,12 @@
                 </svg>
               </div>
               <ul class="dropdown__options">
-                <li class="dropdown__option">Отзыв 1</li>
-                <li class="dropdown__option">Отзыв 2</li>
-                <li class="dropdown__option">Отзыв 3</li>
-                <li class="dropdown__option">Отзыв 4</li>
-                <li class="dropdown__option">Отзыв 5</li>
-                <li class="dropdown__option">Отзыв 6</li>
+                <li class="dropdown__option changeFeedbackOption">Отзыв 1</li>
+                <li class="dropdown__option changeFeedbackOption">Отзыв 2</li>
+                <li class="dropdown__option changeFeedbackOption">Отзыв 3</li>
+                <li class="dropdown__option changeFeedbackOption">Отзыв 4</li>
+                <li class="dropdown__option changeFeedbackOption">Отзыв 5</li>
+                <li class="dropdown__option changeFeedbackOption">Отзыв 6</li>
               </ul>
             </div>
             <label class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="5">Свойство отзыва</label>
@@ -224,11 +224,11 @@
                 </svg>
               </div>
               <ul class="dropdown__options">
-                <li class="dropdown__option">Автор отзыва</li>
-                <li class="dropdown__option">Содержание отзыва</li>
+                <li class="dropdown__option changeFeedbackPropOption">Автор отзыва</li>
+                <li class="dropdown__option changeFeedbackPropOption">Содержание отзыва</li>
               </ul>
             </div>
-            <label for="changFeedbackValue" class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
+            <label for="changFeedbackValue" class="block mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
             <input type="text" id="changFeedbackValue" class="changFeedbackValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
             <input class="changeFeedbackSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeFeedbackSend" value="Изменить">
           </form>
@@ -270,8 +270,23 @@
                 <li class="dropdown__option changeUserPropOption">Уровень доступа</li>
               </ul>
             </div>
-            <label for="changeUserValue" class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
+            <label for="changeUserValue" class="block mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
             <input type="text" id="changeUserValue" class="changeUserValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
+            <label for="changeUserPhoto" class="changeUserPhotoLabel block w-full text-14 text-black-800 bg-light-400 px-16 py-16 border border-light-900 rounded-12">Выберите файл</label>
+            <input type="file" name="changeUserPhoto" id="changeUserPhoto" class="sr-only">
+            <div class="dropdown dropdown__changeUserAccess dropdown__light z-10" data-index="8">
+              <div class="dropdown__btn">
+                <p class="dropdown__btn-text dropdown__changeUserAccessValue" data-dropdownValue="Оператор">Оператор</p>
+                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
+                </svg>
+              </div>
+              <ul class="dropdown__options">
+                <li class="dropdown__option accessLevelOption">Оператор</li>
+                <li class="dropdown__option accessLevelOption">Контент менеджер</li>
+                <li class="dropdown__option accessLevelOption">Администратор</li>
+              </ul>
+            </div>
             <input class="changeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeUserSend" value="Изменить">
           </form>
         </li>
@@ -280,6 +295,7 @@
   </section>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/common/dropdown.js"></script>
-  <script src="/src/js/ajax/changeProgram.js"></script>
+  <script src="/src/js/ajax/admin/changeProgram.js"></script>
+  <script src="/src/js/ajax/admin/changeFeedback.js"></script>
 </body>
 </html>

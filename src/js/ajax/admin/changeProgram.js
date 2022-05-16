@@ -11,7 +11,9 @@ let changeProgDropdownValue = document.querySelector('.dropdown__changeProgValue
   //Program selected diploma type value
   changeProgDiplomaTypeValue = document.querySelector('.dropdown__program-diploma-type__value').dataset.dropdownvalue;
 
-  courseTypeOptions = document.querySelectorAll('.courseTypeOption');
+  courseTypeOptions = document.querySelectorAll('.courseTypeOption'),
+  
+  courseDiplomaOptions = document.querySelectorAll('.courseDiplomaTypeOption');
 
 //Program diploma type dropdown 
 const changeProgDiplomaType = document.querySelector('.dropdown__prog-diploma-type'),
@@ -20,9 +22,15 @@ const changeProgDiplomaType = document.querySelector('.dropdown__prog-diploma-ty
   //Program course type dropdown
   changePropCourseType = document.querySelector('.dropdown__prog-course-type');
 
+let changeProgDataToSend = [
+  changeProgDropdownValue,
+  changePropPropDropdownValue,
+  changeProgInputValue.value
+];
+
 /* On change value into input data grabbing */
 changeProgInputValue.onchange = () => {
-  let changeDataToSend = [
+  changeProgDataToSend = [
     changeProgDropdownValue,
     changePropPropDropdownValue,
     changeProgInputValue.value
@@ -44,8 +52,8 @@ changeProgPropOptions.forEach((changeProgPropOption) => {
       changePropCourseType.style.display = 'block';
       changeProgDiplomaType.style.display = 'none';
 
-      /* Initial data grabbing */
-      let changeDataToSend = [
+      /* Initial data grabbing on prog prop change*/
+      changeProgDataToSend = [
         changeProgDropdownValue,
         changePropPropDropdownValue,
         changeProgCourseTypeValue
@@ -56,23 +64,47 @@ changeProgPropOptions.forEach((changeProgPropOption) => {
           changeProgCourseTypeValue = courseTypeOption.textContent;
 
           /* OnChange dropdown data grabbing */
-          let changeDataToSend = [
+          changeProgDataToSend = [
             changeProgDropdownValue,
             changePropPropDropdownValue,
             changeProgCourseTypeValue
           ];
         });
       });
-
-      
     } else if (changePropPropDropdownValue == 'Выдаваемый документ') {
       changeProgInputValue.style.display = 'none';
       changeProgDiplomaType.style.display = 'block';
       changePropCourseType.style.display = 'none';
+
+      /* Initial data grabbing on prog prop change*/
+      changeProgDataToSend = [
+        changeProgDropdownValue,
+        changePropPropDropdownValue,
+        changeProgDiplomaTypeValue
+      ];
+
+      courseDiplomaOptions.forEach((courseDiplomaOption) => {
+        courseDiplomaOption.addEventListener('click', () => {
+          changeProgDiplomaTypeValue = courseDiplomaOption.textContent;
+
+          changeProgDataToSend = [
+            changeProgDropdownValue,
+            changePropPropDropdownValue,
+            changeProgDiplomaTypeValue
+          ];
+        });
+      });
+
     } else {
       changeProgDiplomaType.style.display = 'none';
       changePropCourseType.style.display = 'none';
       changeProgInputValue.style.display = 'block';
+
+      changeProgDataToSend = [
+        changeProgDropdownValue,
+        changePropPropDropdownValue,
+        changeProgInputValue.value
+      ];
     }
   });
 });
