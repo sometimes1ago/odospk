@@ -25,7 +25,7 @@
     align-items: center;
     padding: 16px 12px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 8px;
     justify-content: space-between;
     &-text {
       font-size: 14px;
@@ -169,7 +169,7 @@
 @media screen and (min-width: 1580px) {
   .dropdown {
     &__btn {
-      border-radius: 16px;
+      border-radius: 12px;
       padding: 17px 12px;
       &-text {
         font-size: 16px;

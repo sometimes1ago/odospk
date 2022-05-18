@@ -121,9 +121,15 @@
     <h1 class="text-32 font-bold">Управление данными</h1>
     <div class="h-[92%] mt-16 p-16 rounded-16 bg-light-400 shadow-section">
       <ul class="flex items-center">
-        <li class="data__pill data__pill-active">Изменение</li>
-        <li class="data__pill">Добавление</li>
-        <li class="data__pill">Удаление</li>
+        <li class="mr-16 last:mr-0">
+          <a class="data__pill data__pill-active" href="/admin/data/change/">Изменить</a>
+        </li>
+        <li class="mr-16 last:mr-0">
+          <a class="data__pill" href="/admin/data/add/">Добавить</a>
+        </li>
+        <li class="mr-16 last:mr-0">
+          <a class="data__pill" href="/admin/data/remove/">Удалить</a>
+        </li>
       </ul>
       <ul class="flex items-start mt-24">
         <li class="mr-24 last:mr-0">
@@ -246,12 +252,12 @@
                 </svg>
               </div>
               <ul class="dropdown__options">
-                <li class="dropdown__option">Пользователь 1</li>
-                <li class="dropdown__option">Пользователь 2</li>
-                <li class="dropdown__option">Пользователь 3</li>
-                <li class="dropdown__option">Пользователь 4</li>
-                <li class="dropdown__option">Пользователь 5</li>
-                <li class="dropdown__option">Пользователь 6</li>
+                <li class="dropdown__option changeUserOption">Пользователь 1</li>
+                <li class="dropdown__option changeUserOption">Пользователь 2</li>
+                <li class="dropdown__option changeUserOption">Пользователь 3</li>
+                <li class="dropdown__option changeUserOption">Пользователь 4</li>
+                <li class="dropdown__option changeUserOption">Пользователь 5</li>
+                <li class="dropdown__option changeUserOption">Пользователь 6</li>
               </ul>
             </div>
             <label class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="7">Свойство пользователя</label>
@@ -266,14 +272,11 @@
                 <li class="dropdown__option changeUserPropOption">Имя</li>
                 <li class="dropdown__option changeUserPropOption">Логин</li>
                 <li class="dropdown__option changeUserPropOption">Пароль</li>
-                <li class="dropdown__option changeUserPropOption">Фото</li>
                 <li class="dropdown__option changeUserPropOption">Уровень доступа</li>
               </ul>
             </div>
             <label for="changeUserValue" class="block mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
             <input type="text" id="changeUserValue" class="changeUserValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
-            <label for="changeUserPhoto" class="changeUserPhotoLabel block w-full text-14 text-black-800 bg-light-400 px-16 py-16 border border-light-900 rounded-12">Выберите файл</label>
-            <input type="file" name="changeUserPhoto" id="changeUserPhoto" class="sr-only">
             <div class="dropdown dropdown__changeUserAccess dropdown__light z-10" data-index="8">
               <div class="dropdown__btn">
                 <p class="dropdown__btn-text dropdown__changeUserAccessValue" data-dropdownValue="Оператор">Оператор</p>
@@ -295,7 +298,8 @@
   </section>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/common/dropdown.js"></script>
-  <script src="/src/js/ajax/admin/changeProgram.js"></script>
-  <script src="/src/js/ajax/admin/changeFeedback.js"></script>
+  <script src="/src/js/ajax/admin/data/changeProgram.js"></script>
+  <script src="/src/js/ajax/admin/data/changeFeedback.js"></script>
+  <script src="/src/js/ajax/admin/data/changeUser.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
 @import './darkmode';
 @import './auth';
 @import './aside';
+@import './add';
 
 .theme {
   &__switcher {
@@ -17,6 +18,7 @@
 
 .data {
   &__pill {
+    display: block;
     padding: 9px 16px;
     border-radius: 8px;
     cursor: pointer;
@@ -24,6 +26,11 @@
     font-size: 14px;
     background-color: #f3f3f3;
     border: 1px solid #cdcdcd;
+    &:hover {
+      background-color: #5E89E3;
+      border-color: #5E89E3;
+      color: #fefefe;
+    }
     &-active {
       color: #fefefe;
       border-color: #375DE1;

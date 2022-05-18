@@ -1,11 +1,11 @@
 let changeUser = document.querySelector('.dropdown__changeUserValue').dataset.dropdownvalue,
   changeUserProp = document.querySelector('.dropdown__changeUserProp').dataset.dropdownvalue,
-  changeUserAccessValue = document.querySelector('.dropdown__changeUserAccessValue').dataset.dropdownvalue;
+  changeUserAccessValue = document.querySelector('.dropdown__changeUserAccessValue').dataset.dropdownvalue,
   changeUserPropOptions = document.querySelectorAll('.changeUserPropOption'),
-  changeUserAccessLevels = document.querySelectorAll('.accessLevelOption');
+  changeUserAccessLevels = document.querySelectorAll('.accessLevelOption'),
+  changeUserOptions = document.querySelectorAll('.changeUserOption');
 
-const changeUserPhoto = document.querySelector('.changeUserPhoto'),
-  changeUserAccess = document.querySelector('.dropdown__changeUserAccess'),
+const changeUserAccess = document.querySelector('.dropdown__changeUserAccess'),
   changeUserInput = document.querySelector('.changeUserValue');
 
 let changeUserDataToSend = [
@@ -22,23 +22,24 @@ changeUserInput.onchange = () => {
   ];
 }
 
+changeUserOptions.forEach((changeUserOption) => {
+  changeUserOption.addEventListener('click', () => {
+    changeUser = changeUserOption.textContent;
+
+    changeUserDataToSend = [
+      changeUser,
+      changeUserProp,
+      changeUserInput.value
+    ];
+
+  });
+});
+
 changeUserPropOptions.forEach((changeUserPropOption) => {
   changeUserPropOption.addEventListener('click', () => {
     changeUserProp = changeUserPropOption.textContent;
 
-    if (changeUserProp == 'Фото') {
-      changeUserPhoto.style.display = 'block';
-      changeUserAccess.style.display = 'none';
-      changeUserInput.style.display = 'none';
-
-      changeUserDataToSend = [
-        changeUser,
-        changeUserProp,
-        changeUserPhoto
-      ];
-
-    } else if (changeUserProp == 'Уровень доступа') {
-      changeUserPhoto.style.display = 'none';
+    if (changeUserProp == 'Уровень доступа') {
       changeUserAccess.style.display = 'block';
       changeUserInput.style.display = 'none';
 
@@ -57,11 +58,22 @@ changeUserPropOptions.forEach((changeUserPropOption) => {
             changeUserProp,
             changeUserAccessValue
           ];
+
         });
       });
+    } else {
+      changeUserAccess.style.display = 'none';
+      changeUserInput.style.display = 'block';
     }
   });
 });
+
+if (changeUserProp != 'Уровень доступа') {
+  changeUserInput.style.display = 'block';
+  changeUserAccess.style.display = 'none';
+}
+
+
 
 
 
