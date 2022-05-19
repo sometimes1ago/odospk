@@ -87,7 +87,7 @@
         </a>
       </li>
       <li class="aside__links-item aside__links-item__active">
-        <a href="/admin/data/" class="aside__link">
+        <a href="/admin/data/change/" class="aside__link">
           <svg class="aside__link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
             <path d="M9 6C12.7279 6 15.75 4.99264 15.75 3.75C15.75 2.50736 12.7279 1.5 9 1.5C5.27208 1.5 2.25 2.50736 2.25 3.75C2.25 4.99264 5.27208 6 9 6Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M15.75 9C15.75 10.245 12.75 11.25 9 11.25C5.25 11.25 2.25 10.245 2.25 9" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -133,9 +133,9 @@
       </ul>
       <ul class="add__slider mt-16 md:mt-24">
         <li class="add__slider-item w-full h-full">
-          <form action="" class="w-full h-full p-16 md:p-24 bg-light-600 border border-light-900 rounded-12" method="POST">
+          <form action="" class="w-full h-full p-12 md:p-24 bg-light-600 border border-light-900 rounded-12" method="POST">
             <h2 class="text-20 font-bold">Добавление программы</h2>
-            <p class="mt-8 md:mt-12 text-14 md:text-16 text-black-800 leading-tight">Заполните все поля, чтобы добавить <br> новую программу на сайт</p>
+            <p class="mt-8 md:mt-12 text-16 md:text-16 text-black-800 leading-tight">Заполните все поля, чтобы добавить <br> новую программу на сайт</p>
             <ul class="w-full mt-24 ">
               <li class="mb-16">
                 <ul class="flex justify-between">
@@ -164,7 +164,7 @@
                   </li>
                   <li class="w-full mr-16 last:mr-0">
                     <label class="dropdown__label mb-12 lg:text-16 font-bold dark:text-light-400" data-dropdownIndex="1">Выдаваемый документ</label>
-                    <div class="dropdown dropdown__light z-10" data-index="1">
+                    <div class="dropdown dropdown__light z-[9]" data-index="1">
                       <div class="dropdown__btn">
                         <p class="dropdown__btn-text dropdown__addProgDiplomaType" data-dropdownValue="Сертификат">Сертификат</p>
                         <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -188,7 +188,7 @@
                 </div>
                 <div class="w-1/4">
                   <label class="dropdown__label mb-12 lg:text-16 font-bold dark:text-light-400" data-dropdownIndex="2">Срок обучения (мес)</label>
-                  <div class="dropdown dropdown__light z-10" data-index="2">
+                  <div class="dropdown dropdown__light z-[8]" data-index="2">
                     <div class="dropdown__btn">
                       <p class="dropdown__btn-text dropdown__addProgLength" data-dropdownValue="Месяц">Месяц</p>
                       <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -204,23 +204,58 @@
                       <li class="dropdown__option addProgLengthOption">5 месяцев</li>
                     </ul>
                   </div>
-                  <label for="addProdPrice" class="block lg:mt-42 text-16 md:text-18 font-bold">Стоимость</label>
+                  <label for="addProdPrice" class="block lg:mt-16 text-16 md:text-18 font-bold">Стоимость</label>
                   <input type="text" id="addProdPrice" class="addProdPrice w-full mt-12 text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000 ₽" required>
-                  <input class="addNewProdSender w-full text-14 mt-16 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" name="addNewProd" type="submit" value="Добавить">
+                  <input class="w-full text-14 mt-42 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" name="addNewProd" type="submit" value="Добавить">
                 </div>
               </li>
             </ul>
           </form>
         </li>
         <li class="add__slider-item w-full flex">
-          <form action="" class="w-1/2 bg-light-600 border border-light-900 rounded-12 mr-24" method="POST">
-            
+          <form action="" class="w-full p-12 bg-light-600 border border-light-900 rounded-12 mr-24" method="POST">
+            <h2 class="text-20 font-bold">Добавление отзыва</h2>
+            <p class="mt-8 md:mt-12 text-16 text-black-800 leading-tight">Заполните все поля, чтобы добавить <br> новый отзыв на сайт</p>
+            <label for="addFeedbackName" class="block mt-24 text-16 md:text-18 font-bold">Автор отзыва</label>
+            <input type="text" name="addFeedbackName" id="addFeedbackName" class="w-full mt-12 text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Фамилия Имя" required>
+            <label for="addFeedbackContent" class="block mt-16 text-16 md:text-18 font-bold">Содержание отзыва</label>
+            <textarea class="w-full lg:h-[100px] lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addFeedbackContent" id="addFeedbackContent" placeholder="Впечатление слушателя" required></textarea>
+            <input class="w-full text-14 mt-16 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" name="addNewFeedbackSender" type="submit" value="Добавить">
           </form>
-          <form action="" class="w-1/2 bg-light-600 border border-light-900 rounded-12" method="POST">
-            
+          <form action="" class="w-full h-fit p-12 bg-light-600 border border-light-900 rounded-12" method="POST">
+            <h2 class="text-20 font-bold">Добавление пользователя</h2>
+            <p class="mt-8 md:mt-12 text-16 text-black-800 leading-tight">Заполните все поля, чтобы добавить <br> новый отзыв на сайт</p>
+            <ul class="flex mt-24">
+              <li class="w-full mr-24">
+                <label for="addUserName" class="text-16 md:text-18 font-bold">Имя сотрудника</label>
+                <input type="text" name="addUserName" id="addUserName" class="w-full mt-12 text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Иван" required>
+                <label for="addUserLogin" class="block mt-16 text-16 md:text-18 font-bold">Логин</label>
+                <input type="text" name="addUserLogin" id="addUserLogin" class="w-full mt-12 text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Userlogin" required>
+                <label for="addUserPassword" class="block mt-16 text-16 md:text-18 font-bold">Пароль</label>
+                <input type="text" name="addUserPassword" id="addUserPassword" class="w-full mt-12 text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Userpassword" required>
+              </li>
+              <li class="w-full">
+                <label class="dropdown__label mb-12 lg:text-16 font-bold dark:text-light-400" data-dropdownIndex="3">Уровень доступа</label>
+                <div class="dropdown dropdown__light z-10" data-index="3">
+                  <div class="dropdown__btn">
+                    <p class="dropdown__btn-text dropdown__addUserAccess" data-dropdownValue="Оператор">Оператор</p>
+                    <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
+                    </svg>
+                  </div>
+                  <ul class="dropdown__options">
+                    <li class="dropdown__option addUserAccessOption">Оператор</li>
+                    <li class="dropdown__option addUserAccessOption">Контент менеджер</li>
+                    <li class="dropdown__option addUserAccessOption">Администратор</li>
+                  </ul>
+                </div>
+                <label for="addUserEmail" class="block mt-16 text-16 md:text-18 font-bold">Эл. почта</label>
+                <input type="text" name="addUserEmail" id="addUserEmail" class="w-full mt-12 text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="example@mail.ru" required>
+                <input class="w-full text-14 mt-[44px] md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" name="addNewUserSender" type="submit" value="Добавить">
+              </li>
+            </ul>
           </form>
         </li>
-        <li class="add__slider-item"></li>
       </ul>
     </div>
   </section>

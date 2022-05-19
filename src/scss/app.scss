@@ -6,6 +6,45 @@
 @import './auth';
 @import './aside';
 @import './add';
+@import './controls';
+
+.archive {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #cdcdcd;
+  background-color: #f3f3f3;
+  &:hover {
+    border-color: #5E89E3;
+    background-color: #5E89E3;
+    .archive__text {
+      color: #fefefe;
+    }
+    svg path {
+      stroke: #fefefe;
+    }
+  }
+}
+
+.trash {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #cdcdcd;
+  background-color: #f3f3f3;
+  &:hover {
+    border-color: #5E89E3;
+    background-color: #5E89E3;
+    .trash__text {
+      color: #fefefe;
+    }
+    svg path {
+      stroke: #fefefe;
+    }
+  }
+}
 
 .theme {
   &__switcher {

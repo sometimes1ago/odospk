@@ -5,6 +5,24 @@
     .dropdown {
       &__options {
         display: block;
+        width: 100%;
+        padding: 8px;
+        position: absolute;
+        top: 60px;
+        overflow-y: scroll;
+        border-radius: 12px;
+        box-shadow: 0px 8px 24px rgba(39, 40, 45, 0.12);
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+          border-radius: 16px;
+          background-color: #FEFEFE;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 16px;
+          background-color: #5E89E3;
+        }
       }
       &__btn {
         border: 1px solid #375DE1 !important;
@@ -38,24 +56,6 @@
   }
   &__options {
     display: none;
-    width: 100%;
-    padding: 8px;
-    position: absolute;
-    top: 60px;
-    overflow-y: scroll;
-    border-radius: 12px;
-    box-shadow: 0px 8px 24px rgba(39, 40, 45, 0.12);
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-      border-radius: 16px;
-      background-color: #FEFEFE;
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 16px;
-      background-color: #5E89E3;
-    }
   }
   &__option {
     padding: 12px;

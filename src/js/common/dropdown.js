@@ -28,11 +28,13 @@ function dropdownInitizaize() {
 
   function openDropdown(dropdown) {
     dropdown.classList.toggle('dropdown__active');
-    let activeOptions = dropdown.querySelectorAll('.dropdown__option');
     let activeOptionsContainer = dropdown.querySelector('.dropdown__options');
 
-    if (activeOptions.length > 3) {
+    if (activeOptionsContainer.children.length > 3) {
       activeOptionsContainer.style.height = "160px";
+      activeOptionsContainer.classList.remove('no-scrollbar');
+    } else {
+      activeOptionsContainer.classList.add('no-scrollbar');
     }
     
   }
