@@ -3,4 +3,4 @@ const dateControl = document.querySelector('.date'),
 
 dateBtn.addEventListener('click', () => {
   dateControl.classList.toggle('date__active');
-})
+});

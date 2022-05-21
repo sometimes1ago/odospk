@@ -31,6 +31,18 @@
       @apply w-0 h-0 appearance-none;
     }
   }
+
+  .scrollbar {
+    &::-webkit-scrollbar {
+      @apply w-8;
+    }
+    &::-webkit-scrollbar-track {
+      @apply rounded-16 bg-light-400;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-16 bg-brand-900;
+    }
+  }
 }
 
 @layer components {
