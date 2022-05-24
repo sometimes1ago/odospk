@@ -1,6 +1,5 @@
 const initialState = document.querySelector('.courses__initial'),
   orderingState = document.querySelector('.courses__requesting'),
-  succededState = document.querySelector('.courses__succeded'),
   startOrderBtn = document.querySelector('.courseOrderBtn'),
   cancelOrderBtn = document.querySelector('.cancelOrderBtn'),
   proceedOrderBtn = document.querySelector('.sendOrderBtn');

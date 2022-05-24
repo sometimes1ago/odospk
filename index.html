@@ -457,21 +457,52 @@
       <path d="M17 24L24 17L31 24" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
-  <div class="darkmode__ntf fixed tb:right-32 tb:bottom-32 tb:p-24 lg:p-16 md:p-20 dark:bg-dark-800 rounded-16 z-[12]">
-    <h3 class="ad:text-20 lg:text-20 tb:text-24 md:text-24 text-light-400">Включен <span class="ad:text-20 lg:text-20 tb:text-24 md:text-24 text-brand-900">ночной режим</span></h3>
-    <p class="ad:w-full tb:w-[290px] ad:text-14 md:text-16 lg:mt-8 text-light-700 leading-tight">Ваши глаза под надежной защитой. Выбирайте наши курсы и изучайте информацию с комфортом для зрения</p>
+  <div class="darkmode__ntf fixed ad:bottom-16 ad:mx-16 tb:mx-0 tb:right-24 tb:bottom-24 lg:right-32 lg:bottom-32 ad:p-12 tb:p-16 md:p-20 dark:bg-dark-800 rounded-16 z-[12]">
+    <h3 class="ad:text-18 lg:text-20 tb:text-24 md:text-24 text-light-400">Включен <span class="ad:text-20 lg:text-20 tb:text-24 md:text-24 text-brand-900">ночной режим</span></h3>
+    <p class="ad:w-full tb:w-[290px] ad:text-14 md:text-16 ad:mt-4 tb:mt-8 text-light-700 leading-tight">Ваши глаза под надежной защитой. Выбирайте наши курсы и изучайте информацию с комфортом для зрения</p>
     <div class="flex items-center mt-16">
-      <button class="darkmode__ntf-accept lg:mr-16 py-[14px] px-[50px] text-14 text-light-400 font-bold bg-brand-900 rounded-8 lg:hover:shadow-btn">Спасибо</button>
-      <button class="darkmode__ntf-decline py-[14px] px-16 text-light-400 text-14 font-bold bg-dark-800">Отключить</button>
+      <button class="darkmode__ntf-accept ad:w-1/2 tb:w-fit lg:mr-16 py-[14px] px-[50px] text-14 text-light-400 font-bold bg-brand-900 rounded-8 lg:hover:shadow-btn">Спасибо</button>
+      <button class="darkmode__ntf-decline ad:w-1/2 tb:w-fit py-[14px] px-16 text-light-400 text-14 font-bold bg-dark-800">Отключить</button>
     </div>
   </div>
+  <div class="modal">
+    <div class="modal__filter"></div>
+    <form action="" class="modal__form relative shrink-1">
+      <svg class="modal__closer w-24 h-24 absolute p-4 top-4 right-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4.5 4.5L13.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="modal__default">
+        <h3 class="modal__header">Обратный звонок</h3>
+        <p class="modal__subhead">Оставьте заявку на обратный звонок. Мы свяжемся с вами в ближайшее время</p>
+        <ul class="modal__inputs">
+          <li>
+            <label for="customerName" class="modal__label">Ваше имя и фамилия</label>
+            <input type="text" name="customerName" id="customerName" class="modal__input border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="Иван Иванов" required>
+          </li>
+          <li class="modal__item">
+            <label for="customerPhone" class="modal__label">Ваш телефон</label>
+            <input type="tel" name="customerPhone" id="customerPhone" class="modal__input border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="+7 923 900 90 90" required>
+          </li>
+        </ul>
+        <div class="modal__checkbox">
+          <input type="checkbox" name="remember-me" id="remember-me" class="shrink-0 rounded-[5px] form-checkbox w-[18px] h-[18px] border-black-900 border-2" checked required>
+          <label for="remember-me" class="text-14 md:text-16 ml-8 md:ml-16 md:mt-8 text-black-900 shrink-1 leading-tight dark:text-light-400">Я согласен(а) на обработку моих личных данных</label>
+        </div>
+        <input class="modal__sender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendPhoneRequest" value="Позвоните мне">
+      </div>
+      <div class="modal__result-inject"></div>
+    </form>
+  </div>
   <script src="/src/js/common/jquery.min.js"></script>
+  <script src="/src/js/common/cookie.js"></script>
   <script src="/src/js/landing/burger.js"></script>
   <script src="/src/js/common/scriptSlick.js"></script>
   <script src="/src/js/landing/heightCorrection.js"></script>
   <script src="/src/js/common/slick.min.js"></script>
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/landing/darkmode.js"></script>
-  <script src="/src/js/ajax/courseOrdering.js"></script>
+  <script src="/src/js/ajax/landing/courseOrdering.js"></script>
+  <script src="/src/js/ajax/landing/mobileHelpRequest.js"></script>
 </body>
 </html>
