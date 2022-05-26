@@ -101,3 +101,17 @@
   }
 }
 
+.dataRestore {
+  &__filter {
+    display: none;
+    &-active {
+      display: block;
+    }
+  }
+  &__form {
+    display: none;
+    &-active {
+      display: block;
+    }
+  }
+}

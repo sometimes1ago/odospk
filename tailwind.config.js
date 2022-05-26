@@ -118,7 +118,7 @@ module.exports = {
       },
       'state': {
         'success': '#27AE60',
-        'error': '#FB7474',
+        'error': '#F34949',
       }
     },
     screens: {
