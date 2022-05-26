@@ -26,6 +26,16 @@
       stroke: #fefefe;
     }
   }
+  &__active {
+    .archive__text {
+      color: #fefefe;
+    }
+    border-color: #375de1;
+    background-color: #375de1;
+    svg path {
+      stroke: #fefefe;
+    }
+  }
 }
 
 .trash {

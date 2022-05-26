@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
-  <title>ODOSPK • Управление данными</title>
+  <title>ODOSPK • Заявки • Обучение</title>
 </head>
 <body class="w-full h-screen flex leading-none bg-light-600">
   <aside class="aside">
@@ -118,7 +118,7 @@
     </a>
   </aside>
   <section class="w-full px-24 py-24 font-medium text-black-900">
-    <h1 class="text-32 font-bold">Заявки</h1>
+    <h1 class="text-32 font-bold">Заявки • Обучение</h1>
     <div class="w-full h-[92%] flex items-center relative flex-col mt-16 p-16 rounded-16 bg-light-400 shadow-section">
       <ul class="w-full flex items-center justify-between z-20">
         <li>
@@ -223,24 +223,29 @@
             </div>
             <div class="notes__content">
               <h3 class="notes__header">Рабочие заметки</h3>
-              <p class="notes__subhead"></p>
-              <ul class="notes__list">
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
-                <li class="notes__item"></li>
+              <p class="notes__subhead">Ваши личные записи всегда под рукой</p>
+              <ul class="notes__list scrollbar">
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка</li>
+                <li class="notes__item">Заметка </li>
+                <li class="notes__item">Заметка </li>
+                <li class="notes__item">Заметка </li>
+                <li class="notes__item">Заметка </li>
+                <li class="notes__item">Заметка </li>
               </ul>
-              <button class="notes__new"></button>
-              <form action="" class="notes__add">
-                <textrea class="notes__add-input"></textrea>
-                <button class="notes__add"></button>
+              <form action="" class="notes__add flex flex-col" method="post">
+                <textarea class="notes__add-input w-full resize-none" placeholder="Текст заметки" rows="100" cols="50"></textarea>
+                <button class="notes__add-btn notes__add-control hover:shadow-btn" type="submit">Добавить</button>
+                <div class="notes__add-cancel notes__add-control">Отмена</div>
               </form>
+              <button class="notes__new hover:shadow-btn">Добавить заметку</button>
             </div>
           </div>
         </li>
@@ -720,6 +725,7 @@
   </section>
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
+  <script src="/src/js/admin/queries/addNote.js"></script>
   <script src="/src/js/admin/queries/education/queriesActions.js"></script>
   <script src="/src/js/admin/queries/education/dateControl.js"></script>
   <script src="/src/js/admin/queries/education/searchControl.js"></script>
