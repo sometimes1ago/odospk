@@ -6,11 +6,13 @@ cb.forEach((cb) =>
   })
 );
 
+
+
 function updateCb(cb) {
   cb.classList.toggle("query__checkbox-active");
   let cbActive = document.querySelectorAll(".query__checkbox-active");
   actionsContainer.classList.toggle('queries__actions-visible');
-  
+
   if (cbActive.length > 1) {
     cb.checked = false;
     actionsContainer.classList.toggle('queries__actions-visible');

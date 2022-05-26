@@ -1,3 +1,12 @@
+<?php
+
+require 'core.php';
+
+$data = new Data(Database::Instance());
+$courses = $data->getCourses('Курс');
+$programs = $data->getCourses('Профессиональная подготовка');
+
+?>
 <!DOCTYPE html>
 <html lang="ru" class="html scroll-smooth">
 <head>
@@ -247,30 +256,27 @@
           </div>
           <div class="filter__input ad:w-full lg:w-[200px] md:w-full ad:mt-16 tb:mt-0 flex flex-col items-start ">
             <label for="filterPrice" class="lg:text-18 mb-12 font-bold dark:text-light-400">Стоимость</label>
-            <input type="text" id="filterPrice" class="w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-600 placeholder:text-black-800 dark:placeholder:text-light-900 dark:text-light-400 dark:bg-dark-700 dark:border-dark-700" placeholder="1000">
+            <input type="text" id="filterPrice" class="w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 border-light-900 bg-light-400 placeholder:text-black-800 dark:placeholder:text-light-900 dark:text-light-400 dark:bg-dark-700 dark:border-dark-700" placeholder="1000">
           </div>
         </div>
       </div>
       <div class="w-full ad:flex ad:flex-col lg:flex-row lg:items-start lg:justify-between lg:mt-36">
-        <div class="courses__list ad:w-full ad:mt-24 lg:mt-0 ad:order-2 lg:order-1 lg:w-1/2 lg:mr-24 overflow-y-scroll">
+        <?php if (!empty($courses) || !empty($programs)) : ?>
+          <div class="courses__list ad:w-full ad:mt-24 lg:mt-0 ad:order-2 lg:order-1 lg:w-1/2 lg:mr-24 overflow-y-scroll">
           <h4 class="ad:text-20 tb:mt-0 md:text-24 font-bold dark:text-light-400 tracking-tight">Курсы</h4>
           <ul class="w-full ad:mt-12 md:mt-16">
-            <li class="courses__item">1С Предприятие 8.2, 8.3</li>
-            <li class="courses__item-active courses__item">Комбинированный маникюр и дизайн ногтей</li>
-            <li class="courses__item">Оформление и окрашивание бровей</li>
-            <li class="courses__item">Раскрой и пошив одежды</li>
-            <li class="courses__item">Художественная сварка</li>
-            <li class="courses__item">Цифровая фотография</li>
+            <?php for ($i = 0; $i < count($courses); $i++) : ?>
+              <li class="courses__item <?=$i == 0 ? 'courses__item-active' : ''?>" data-courseName="<?=$courses[$i]['name']?>"><?=$courses[$i]['name']?></li>
+            <?php endfor; ?>
           </ul>
           <h4 class="ad:mt-24 ad:text-20 md:text-24 font-bold dark:text-light-400 tracking-tight">Профессиональная подготовка</h4>
           <ul class="courses w-full ad:mt-12 md:mt-16">
-            <li class="courses__item">Помощник машиниста электропоезда</li>
-            <li class="courses__item">Проводник пассажирского вагона</li>
-            <li class="courses__item">Сварщик ручной дуговой сварки плавящимся электродом</li>
-            <li class="courses__item">Художественная сварка</li>
-            <li class="courses__item">Цифровая фотография</li>
+            <?php foreach ($programs as $program) : ?>
+              <li class="courses__item" data-courseName="<?=$program['name']?>"><?=$program['name']?></li>
+            <?php endforeach; ?>
           </ul>
         </div>
+        <?php endif; ?>
         <div class="courses__description ad:w-full ad:mt-24 tb:mt-36 lg:mt-0 lg:w-1/2 ad:order-1 lg:order-2 ad:p-12 tb:p-16 md:p-20 xl:p-24 bg-light-500 ad:rounded-12 lg:rounded-20 md:rounded-24 xl:rounded-28 border border-light-900 dark:bg-dark-700 dark:border-none">
           <h3 class="courses__name ad:text-28 ph:text-32 md:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400" data-courseName="Комбинированный маникюр и дизайн ногтей">Комбинированный маникюр и дизайн ногтей</h3>
           <div class="courses__initial courses__initial-visible lg:pr-36 md:pr-[84px] xl:pr-[120px]">
@@ -502,6 +508,7 @@
   <script src="/src/js/common/slick.min.js"></script>
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/landing/darkmode.js"></script>
+  <script src="/src/js/ajax/landing/courseGet.js"></script>
   <script src="/src/js/ajax/landing/courseOrdering.js"></script>
   <script src="/src/js/ajax/landing/mobileHelpRequest.js"></script>
 </body>

@@ -1,10 +1,10 @@
 module.exports = {
   darkMode: 'class',
   content: [
-    "./*.{html,js}",
-    "./src/**/*.{html,js}",
-    "./panel/**/*.{html,js}",
-    "./admin/**/*.{html,js}",
+    "./*.{html,php,js}",
+    "./src/**/*.{html,php,js}",
+    "./panel/**/*.{html,php,js}",
+    "./admin/**/*.{html,php,js}",
 
   ],
   theme: {

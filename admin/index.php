@@ -1,3 +1,34 @@
+<?php
+
+require $_SERVER['DOCUMENT_ROOT'] . '/core.php';
+
+if (isset($_POST['submit'])) {
+  $login = htmlspecialchars(trim($_POST['login']));
+  $password = htmlspecialchars(trim($_POST['password']));
+  $remember = htmlspecialchars(trim($_POST['remember']));
+  
+  $query = Database::Instance()->fetch(
+    'SELECT * FROM `getUsers` WHERE `login` = :login AND `password` = :password',
+    ['login' => $login, 'password' => hash('sha256', $password)]
+  );
+  
+  if (!empty($query)) {
+    $_SESSION['user'] = new User(
+      $query['id'], $query['login'], $query['name'], $query['access_level'], $query['photo']
+    );
+
+    if ($remember) {
+      setcookie('user_login', $query['login'], 3600 * 24 * 30);
+      setcookie('user_password', $query['password'], 3600 * 24 * 30);
+      var_dump($_COOKIE);
+      
+    }
+  } else {
+    $errors[] = 'Неправильный логин или пароль!';
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ru" class="html scroll-smooth">
 <head>
@@ -20,12 +51,16 @@
   <form class="w-[300px] md:w-[336px] flex flex-col items-center absolute p-12 md:p-16 rounded-12 md:rounded-16 bg-light-400" action="" method="post">
     <h1 class="text-22 md:text-24">Вход в систему</h1>
     <p class="text-16 mt-8 md:text-18 text-black-800 text-center leading-tight">Авторизуйтесь чтобы получить доступ к панели администратора</p>
-    <div class="hidden w-full mt-16 rounded-8 p-12 bg-state-error">
-      <p class="text-14 text-light-400 break-words">Неправильный логин или пароль</p>
-    </div>
-    <div class="hidden w-full mt-16 rounded-8 p-12 bg-state-success">
-      <p class="text-14 text-light-400 break-words">Данные для авторизации отправлены на ваш email</p>
-    </div>
+    <?php if (!empty($errors)) :?>
+      <div class="w-full mt-16 rounded-8 p-12 bg-state-error">
+        <p class="text-14 text-light-400 break-words"><?=array_shift($errors)?></p>
+      </div>
+    <?php endif; ?>
+    <?php if ($succeded) : ?>
+      <div class="w-full mt-16 rounded-8 p-12 bg-state-success">
+        <p class="text-14 text-light-400 break-words">Данные для авторизации отправлены на ваш email</p>
+      </div>
+    <?php endif; ?>
     <label for="login" class="mt-24 md:mt-32 text-18 md:text-20">Ваш логин</label>
     <input type="text" name="login" id="login" class="w-full p-[11px] md:p-[13px] border border-light-900 bg-light-600 rounded-8 md:rounded-12 mt-12 md:mt-16" placeholder="Userlogin" required>
     <label for="password" class="mt-16 md:mt-24 text-18 md:text-20">Ваш пароль</label>

@@ -679,16 +679,11 @@
         </ul>
       </form>
       <form class="queries__actions w-full font-bold shadow-lg mx-12 p-12 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
-        <div class="relative">
-          <svg class="absolute top-0 right-0 w-18 h-18 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M18 6L6 18" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <h3 class="text-18">Управление заявкой</h3>
+        <h3 class="text-18">Управление заявкой</h3>
           <p class="mt-8 text-14 text-black-800">Действия, доступные для выбранной заявки</p>
           <ul class="mt-16 flex items-center">
             <li class="mr-12 last:mr-0">
-              <button class="queries__action flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" type="submit">
+              <button class="queries__action flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" name="unarchive" type="submit">
                 <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M13.75 7.8333L6.25 3.5083" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M17.5 13.3333V6.66663C17.4997 6.37435 17.4225 6.0873 17.2763 5.83426C17.13 5.58122 16.9198 5.37109 16.6667 5.22496L10.8333 1.89163C10.58 1.74535 10.2926 1.66833 10 1.66833C9.70744 1.66833 9.42003 1.74535 9.16667 1.89163L3.33333 5.22496C3.08022 5.37109 2.86998 5.58122 2.72372 5.83426C2.57745 6.0873 2.5003 6.37435 2.5 6.66663V13.3333C2.5003 13.6256 2.57745 13.9126 2.72372 14.1657C2.86998 14.4187 3.08022 14.6288 3.33333 14.775L9.16667 18.1083C9.42003 18.2546 9.70744 18.3316 10 18.3316C10.2926 18.3316 10.58 18.2546 10.8333 18.1083L16.6667 14.775C16.9198 14.6288 17.13 14.4187 17.2763 14.1657C17.4225 13.9126 17.4997 13.6256 17.5 13.3333Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -699,7 +694,7 @@
               </button>
             </li>
             <li class="mr-12 last:mr-0">
-              <button class="queries__action flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" type="submit">
+              <button class="queries__action flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" name="remove" type="submit">
                 <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M6.6665 4.99996V3.33329C6.6665 2.89127 6.8421 2.46734 7.15466 2.15478C7.46722 1.84222 7.89114 1.66663 8.33317 1.66663H11.6665C12.1085 1.66663 12.5325 1.84222 12.845 2.15478C13.1576 2.46734 13.3332 2.89127 13.3332 3.33329V4.99996M15.8332 4.99996V16.6666C15.8332 17.1087 15.6576 17.5326 15.345 17.8451C15.0325 18.1577 14.6085 18.3333 14.1665 18.3333H5.83317C5.39114 18.3333 4.96722 18.1577 4.65466 17.8451C4.3421 17.5326 4.1665 17.1087 4.1665 16.6666V4.99996H15.8332Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -710,7 +705,6 @@
               </button>
             </li>
           </ul>
-        </div>
       </form>
     </div>
   </section>

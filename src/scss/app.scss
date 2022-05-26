@@ -55,6 +55,16 @@
       stroke: #fefefe;
     }
   }
+  &__active {
+    .trash__text {
+      color: #fefefe;
+    }
+    border-color: #375de1;
+    background-color: #375de1;
+    svg path {
+      stroke: #fefefe;
+    }
+  }
 }
 
 .theme {
@@ -107,6 +117,16 @@
     }
     p {
       color: #fefefe;
+    }
+  }
+  &__action {
+    &-trash, &-trash:hover {
+      color: #fefefe;
+      border-color: #F34949;
+      background-color: #F34949;
+      svg path {
+        stroke: #fefefe;
+      }
     }
   }
 }
