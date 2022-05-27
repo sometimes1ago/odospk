@@ -57,6 +57,12 @@ final class Database
       return [];
     }
   }
+
+  public final function query(string $sql, array $params = []): void
+  {
+    $this->pdo->prepare($sql)->execute($params);
+  }
+  
   /**
    * Private ctor so nobody else can instantiate it
    *

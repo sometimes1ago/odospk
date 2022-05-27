@@ -37,6 +37,7 @@
   }
   &__content {
     display: none;
+    width: 240px;
     top: 48px;
     padding: 12px;
     position: absolute;
@@ -65,7 +66,7 @@
   &__label {
     display: inline-block;
     margin-top: 16px;
-    font-size: 18px;
+    font-size: 16px;
   }
   &__list {
     display: flex;

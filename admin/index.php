@@ -2,29 +2,46 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/core.php';
 
+if (isset($_SESSION['user'])) {
+  header('Location: /admin/queries/education/');
+}
+
 if (isset($_POST['submit'])) {
   $login = htmlspecialchars(trim($_POST['login']));
   $password = htmlspecialchars(trim($_POST['password']));
-  $remember = htmlspecialchars(trim($_POST['remember']));
-  
+
   $query = Database::Instance()->fetch(
     'SELECT * FROM `getUsers` WHERE `login` = :login AND `password` = :password',
-    ['login' => $login, 'password' => hash('sha256', $password)]
+    ['login' => $login, 'password' => $password]
   );
   
   if (!empty($query)) {
-    $_SESSION['user'] = new User(
-      $query['id'], $query['login'], $query['name'], $query['access_level'], $query['photo']
-    );
+    $_SESSION['user']['id'] = $query['id'];
+    $_SESSION['user']['login'] = $query['login'];
+    $_SESSION['user']['name'] = $query['name'];
+    $_SESSION['user']['access'] = $query['access_level'];
+    $_SESSION['user']['access_code'] = $query['access_code'];
+    $_SESSION['user']['photo'] = $query['photo'];
 
-    if ($remember) {
-      setcookie('user_login', $query['login'], 3600 * 24 * 30);
-      setcookie('user_password', $query['password'], 3600 * 24 * 30);
-      var_dump($_COOKIE);
-      
-    }
+    header('Location: /admin/queries/education/');
   } else {
     $errors[] = 'Неправильный логин или пароль!';
+  }
+}
+
+if (isset($_POST['submitRestore'])) {
+  $email = htmlspecialchars(trim($_POST['email']));
+
+  $query = Database::Instance()->fetch(
+    'SELECT `login`, `password` FROM `users` WHERE `email` = :email',
+    ['email' => $email]
+  );
+
+  if (!empty($query)) {
+    $succeded[] = 'На данный email отправлены данные для входа';
+    mail($email, 'Данные для входа', 'Ваш логин: ' . $query['login'] . PHP_EOL . 'Ваш пароль: ' . $query['password']);
+  } else {
+    $errors[] = 'Пользователя с таким email не существует';
   }
 }
 
@@ -56,9 +73,9 @@ if (isset($_POST['submit'])) {
         <p class="text-14 text-light-400 break-words"><?=array_shift($errors)?></p>
       </div>
     <?php endif; ?>
-    <?php if ($succeded) : ?>
+    <?php if (!empty($succeded)) : ?>
       <div class="w-full mt-16 rounded-8 p-12 bg-state-success">
-        <p class="text-14 text-light-400 break-words">Данные для авторизации отправлены на ваш email</p>
+        <p class="text-14 text-light-400 break-words"><?=array_shift($succeded)?></p>
       </div>
     <?php endif; ?>
     <label for="login" class="mt-24 md:mt-32 text-18 md:text-20">Ваш логин</label>
@@ -70,10 +87,6 @@ if (isset($_POST['submit'])) {
         <path d="M0.833252 9.99992C0.833252 9.99992 4.16658 3.33325 9.99992 3.33325C15.8333 3.33325 19.1666 9.99992 19.1666 9.99992C19.1666 9.99992 15.8333 16.6666 9.99992 16.6666C4.16658 16.6666 0.833252 9.99992 0.833252 9.99992Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-    </div>
-    <div class="flex items-center mt-16 md:mt-24">
-      <input class="rounded-4 border-2 border-light-900" type="checkbox" name="remember" id="remember">
-      <label class="ml-8 md:text-18" for="remember">Запомнить меня</label>
     </div>
     <input class="w-full text-14 mt-20 md:mt-28 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="submit" value="Войти">
     <p class="dataRestore__init mt-24 text-14 md:text-16 text-black-800 cursor-pointer">Не можете войти?</p>
@@ -90,7 +103,7 @@ if (isset($_POST['submit'])) {
       <label class="inline-block mt-24 text-18 md:text-20" for="email">Введите Email</label>
       <div class="w-full mt-12 md:mt-16 flex items-center">
         <input class="w-full p-[11px] md:p-[13px] border border-light-900 rounded-8 font-medium" type="email" name="email" id="email" placeholder="User@mail.ru" required>
-        <input class="w-2/5 ml-16 text-14 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-18 rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="submit" value="Отправить">
+        <input class="w-2/5 ml-16 text-14 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-18 rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="submitRestore" value="Отправить">
       </div>
     </div>
   </form>

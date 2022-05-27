@@ -1,3 +1,20 @@
+<?php
+
+require $_SERVER['DOCUMENT_ROOT'] . '/core.php';
+
+if (!isset($_SESSION['user'])) {
+  header('Location: /admin/');
+}
+
+if (isset($_GET['logout']) && $_GET['logout'] == 'yes') {
+  unset($_SESSION['user']);
+  session_destroy();
+  header('Location: /admin/');
+}
+
+$user = $_SESSION['user'];
+
+?>
 <!DOCTYPE html>
 <html lang="ru" class="html scroll-smooth">
 <head>
@@ -16,107 +33,7 @@
   <title>ODOSPK • Управление данными</title>
 </head>
 <body class="w-full h-screen flex leading-none bg-light-600">
-  <aside class="aside">
-    <h6 class="aside__header"><span class="aside__accenter">ODOSPK • </span>Admin Panel</h6>
-    <p class="aside__greetings">Добро пожаловать</p>
-    <div class="aside__user">
-      <div class="aside__btn">
-        <img src="/src/img/avatars/admin.png" alt="authorized-user-avatar" class="aside__img">
-          <span class="aside__btn-container">
-            <h5 class="aside__user-name">Валерия</h5>
-            <button class="aside__btn-show">
-              <p class="aside__btn-show__text">Данные</p>
-              <svg class="aside__btn-show__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 8" fill="none">
-                <path d="M1.67139 1.66666L6.49996 6.33332L11.3285 1.66666" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </span>
-        </img>
-      </div>
-      <div class="aside__user-data">
-        <h3 class="aside__user-header">Пользователь</h3>
-        <p class="aside__user-subhead">Данные и действия с <br> вашей учетной записью</p>
-        <ul class="aside__user-items">
-          <li class="aside__user-item">
-            <h4 class="aside__user-item__header">Логин</h4>
-            <p class="aside__user-item__value">vergizova.val</p>
-          </li>
-          <li class="aside__user-item">
-            <h4 class="aside__user-item__header">Пароль</h4>
-            <div class="flex items-center justify-between">
-              <p class="aside__user-item__value">*****************</p>
-              <svg class="showUserPasswordBtn w-20 h-20 cursor-pointer" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.833336 9.99992C0.833336 9.99992 4.16667 3.33325 10 3.33325C15.8333 3.33325 19.1667 9.99992 19.1667 9.99992C19.1667 9.99992 15.8333 16.6666 10 16.6666C4.16667 16.6666 0.833336 9.99992 0.833336 9.99992Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-          </li>
-          <li class="aside__user-item">
-            <h4 class="aside__user-item__header">Уровень доступа</h4>
-            <p class="aside__user-item__value">Администратор</p>
-          </li>
-          <li class="aside__user-item">
-            <h4 class="aside__user-item__header">IP-адрес</h4>
-            <p class="aside__user-item__value">255.255.255.255</p>
-          </li>
-        </ul>
-        <button class="aside__change hover:shadow-btn">Изменить данные</button>
-      </div>
-    </div>
-    <ul class="aside__links">
-      <li class="aside__links-item">
-        <a href="/admin/queries/" class="aside__link">
-          <svg class="aside__link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-            <path d="M2.25 6.75L9 1.5L15.75 6.75V15C15.75 15.3978 15.592 15.7794 15.3107 16.0607C15.0294 16.342 14.6478 16.5 14.25 16.5H3.75C3.35218 16.5 2.97064 16.342 2.68934 16.0607C2.40804 15.7794 2.25 15.3978 2.25 15V6.75Z" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6.75 16.5V9H11.25V16.5" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <p class="aside__link-text">Заявки</p>
-        </a>
-      </li>
-      <li class="aside__links-item">
-        <a href="/admin/notes/" class="aside__link">
-          <svg class="aside__link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-            <path d="M6 4.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 9H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 13.5H15.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.25 4.5H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.25 9H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.25 13.5H2.2575" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <p class="aside__link-text">Заметки</p>
-        </a>
-      </li>
-      <li class="aside__links-item aside__links-item__active">
-        <a href="/admin/data/" class="aside__link">
-          <svg class="aside__link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-            <path d="M9 6C12.7279 6 15.75 4.99264 15.75 3.75C15.75 2.50736 12.7279 1.5 9 1.5C5.27208 1.5 2.25 2.50736 2.25 3.75C2.25 4.99264 5.27208 6 9 6Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15.75 9C15.75 10.245 12.75 11.25 9 11.25C5.25 11.25 2.25 10.245 2.25 9" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.25 3.75V14.25C2.25 15.495 5.25 16.5 9 16.5C12.75 16.5 15.75 15.495 15.75 14.25V3.75" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <p class="aside__link-text">Данные</p>
-        </a>
-      </li>
-      <li class="aside__links-item">
-        <a href="/admin/users/" class="aside__link">
-          <svg class="aside__link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-            <path d="M12.75 15.75V14.25C12.75 13.4544 12.4339 12.6913 11.8713 12.1287C11.3087 11.5661 10.5456 11.25 9.75 11.25H3.75C2.95435 11.25 2.19129 11.5661 1.62868 12.1287C1.06607 12.6913 0.75 13.4544 0.75 14.25V15.75" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6.75 8.25C8.40685 8.25 9.75 6.90685 9.75 5.25C9.75 3.59315 8.40685 2.25 6.75 2.25C5.09315 2.25 3.75 3.59315 3.75 5.25C3.75 6.90685 5.09315 8.25 6.75 8.25Z" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17.25 15.75V14.25C17.2495 13.5853 17.0283 12.9396 16.621 12.4143C16.2138 11.8889 15.6436 11.5137 15 11.3475" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 2.34753C12.6453 2.51276 13.2173 2.88806 13.6257 3.41427C14.0342 3.94047 14.2559 4.58766 14.2559 5.25378C14.2559 5.91991 14.0342 6.56709 13.6257 7.0933C13.2173 7.61951 12.6453 7.99481 12 8.16003" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <p class="aside__link-text">Пользователи</p>
-        </a>
-      </li>
-    </ul>
-    <a href="?logout=yes" class="aside__logout">
-      <svg class="aside__link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-        <path d="M6.75 15.75H3.75C3.35218 15.75 2.97064 15.592 2.68934 15.3107C2.40804 15.0294 2.25 14.6478 2.25 14.25V3.75C2.25 3.35218 2.40804 2.97064 2.68934 2.68934C2.97064 2.40804 3.35218 2.25 3.75 2.25H6.75" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12 12.75L15.75 9L12 5.25" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.75 9H6.75" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <p class="aside__logout-text">Выйти</p>
-    </a>
-  </aside>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/aside.php' ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
     <h1 class="text-32 font-bold">Управление данными</h1>
     <div class="h-[92%] mt-16 p-16 rounded-16 bg-light-400 shadow-section">
