@@ -86,13 +86,4 @@
       }
     }
   }
-  .tab {
-    @apply mr-12 md:mr-16 last:mr-0 px-12 md:px-16 py-[7px] md:py-[9px] text-16 bg-light-600 rounded-8 border border-light-900 cursor-pointer;
-    &:hover {
-      @apply bg-brand-800 border-brand-800 text-light-400;
-    }
-    &__active {
-      @apply bg-brand-900 border-brand-900 text-light-400;
-    }
-  }
 }

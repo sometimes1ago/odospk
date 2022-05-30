@@ -809,58 +809,16 @@ select {
   background-color: rgb(55 93 225 / var(--tw-bg-opacity));
 }
 
-.tab {
-  margin-right: 12px;
-  cursor: pointer;
-  border-radius: 8px;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(205 205 205 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 243 243 / var(--tw-bg-opacity));
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  font-size: 16px;
-}
-
-.tab:last-child {
-  margin-right: 0px;
-}
-
-@media (min-width: 1460px) {
-  .tab {
-    margin-right: 16px;
-  }
-
-  .tab {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .tab {
-    padding-top: 9px;
-    padding-bottom: 9px;
-  }
-}
-
-.tab:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(94 137 227 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(94 137 227 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(254 254 254 / var(--tw-text-opacity));
-}
-
-.tab__active {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 93 225 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 93 225 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(254 254 254 / var(--tw-text-opacity));
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .visible {
@@ -909,6 +867,34 @@ select {
 
 .top-full {
   top: 100%;
+}
+
+.left-4 {
+  left: 4px;
+}
+
+.top-8 {
+  top: 8px;
+}
+
+.left-8 {
+  left: 8px;
+}
+
+.bottom-12 {
+  bottom: 12px;
+}
+
+.top-\[90\%\] {
+  top: 90%;
+}
+
+.top-\[96\%\] {
+  top: 96%;
+}
+
+.top-\[92\%\] {
+  top: 92%;
 }
 
 .z-\[11\] {
@@ -1090,12 +1076,40 @@ select {
   height: fit-content;
 }
 
+.h-1\/3 {
+  height: 33.333333%;
+}
+
+.h-\[146px\] {
+  height: 146px;
+}
+
+.h-\[132px\] {
+  height: 132px;
+}
+
+.h-\[142px\] {
+  height: 142px;
+}
+
 .max-h-\[90\%\] {
   max-height: 90%;
 }
 
 .max-h-\[424px\] {
   max-height: 424px;
+}
+
+.max-h-\[470px\] {
+  max-height: 470px;
+}
+
+.max-h-\[146px\] {
+  max-height: 146px;
+}
+
+.max-h-\[460px\] {
+  max-height: 460px;
 }
 
 .w-full {
@@ -1152,6 +1166,26 @@ select {
   width: 20%;
 }
 
+.w-\[205px\] {
+  width: 205px;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[195px\] {
+  width: 195px;
+}
+
+.w-\[193px\] {
+  width: 193px;
+}
+
+.w-\[197px\] {
+  width: 197px;
+}
+
 .min-w-\[192px\] {
   min-width: 192px;
 }
@@ -1166,6 +1200,22 @@ select {
 
 .min-w-\[216px\] {
   min-width: 216px;
+}
+
+.min-w-\[197px\] {
+  min-width: 197px;
+}
+
+.min-w-\[195px\] {
+  min-width: 195px;
+}
+
+.min-w-\[196px\] {
+  min-width: 196px;
+}
+
+.min-w-\[200px\] {
+  min-width: 200px;
 }
 
 .max-w-\[192px\] {
@@ -1388,6 +1438,16 @@ select {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
 .p-8 {
   padding: 8px;
 }
@@ -1466,6 +1526,11 @@ select {
 .py-24 {
   padding-top: 24px;
   padding-bottom: 24px;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .pt-12 {

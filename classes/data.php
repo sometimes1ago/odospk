@@ -12,13 +12,13 @@ final class Data
 
   public function getCourses(string $type): ?array
   {
-    $result = $this->db->fecthAll('SELECT * FROM `getCourses` WHERE `courseType` = :type', ['type' => $type]);
+    $result = $this->db->fetchAll('SELECT * FROM `getCourses` WHERE `courseType` = :type', ['type' => $type]);
     return $result;
   }
 
   public function getUserNotes($userId): ?array
   {
-    return $this->db->fecthAll('CALL getUserNotes(:id)', ['id' => $userId]);
+    return array_reverse($this->db->fetchAll('CALL getUserNotes(:id)', ['id' => $userId]));
   }
 
   public function createUserNote($value, $userId): void
@@ -27,16 +27,20 @@ final class Data
     header("Location: " . $_SERVER['REQUEST_URI']);
   }
 
-  public function getQueries(string $sortBy, string $startDate, string $endDate, array $statuses = []): ?array
+  public function getQueries(string $queriesType, string $sortBy): ?array
   {
-    if (count($statuses) < 2) {
-      $result = $this->db->fecthAll(
-        "SELECT * FROM `getQueriesPreSort` WHERE `date` BETWEEN '$startDate' AND '$endDate' AND `status` = '$statuses[0]' ORDER BY $sortBy DESC"
-      );
-    } else {
-      $result = $this->db->fecthAll(
-        "SELECT * FROM `getQueriesPreSort` WHERE `date` BETWEEN '$startDate' AND '$endDate' AND `status` = '$statuses[0]' OR `status` = '$statuses[1]' ORDER BY $sortBy DESC"
-      );
+    $result = [];
+
+    switch ($queriesType) {
+      case 'Education':
+        $result = $this->db->fetchAll("SELECT * FROM `getQueriesPreSort` WHERE `status` = 'Не обработано' OR `status` = 'Обработано' ORDER BY $sortBy DESC");
+        break;
+      case 'Archived':
+        $result = $this->db->fetchAll("SELECT * FROM `getQueriesPreSort` WHERE `status` = 'Архивировано' ORDER BY $sortBy DESC");
+        break;
+      case 'Removed':
+        $result = $this->db->fetchAll("SELECT * FROM `getQueriesPreSort` WHERE `status` = 'Удалено' ORDER BY $sortBy DESC");
+        break;
     }
 
     return $result;

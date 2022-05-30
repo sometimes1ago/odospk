@@ -9,64 +9,6 @@
 @import "./controls";
 @import "./modal";
 
-.archive {
-  display: flex;
-  align-items: center;
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 1px solid #cdcdcd;
-  background-color: #f3f3f3;
-  &:hover {
-    border-color: #5e89e3;
-    background-color: #5e89e3;
-    .archive__text {
-      color: #fefefe;
-    }
-    svg path {
-      stroke: #fefefe;
-    }
-  }
-  &__active {
-    .archive__text {
-      color: #fefefe;
-    }
-    border-color: #375de1;
-    background-color: #375de1;
-    svg path {
-      stroke: #fefefe;
-    }
-  }
-}
-
-.trash {
-  display: flex;
-  align-items: center;
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 1px solid #cdcdcd;
-  background-color: #f3f3f3;
-  &:hover {
-    border-color: #5e89e3;
-    background-color: #5e89e3;
-    .trash__text {
-      color: #fefefe;
-    }
-    svg path {
-      stroke: #fefefe;
-    }
-  }
-  &__active {
-    .trash__text {
-      color: #fefefe;
-    }
-    border-color: #375de1;
-    background-color: #375de1;
-    svg path {
-      stroke: #fefefe;
-    }
-  }
-}
-
 .theme {
   &__switcher {
     z-index: 20;
@@ -128,6 +70,59 @@
         stroke: #fefefe;
       }
     }
+  }
+}
+
+.gallery__item {
+  &-active {
+    outline-width: 3px !important;
+    outline: #375de1;
+    outline-offset: -4px;
+  }
+}
+
+.tab {
+  margin-right: 12px;
+  border-radius: 8px;
+  border: 1px solid #cdcdcd;
+  background-color: #f3f3f3f3;
+  &__link {
+    display: flex;
+    padding: 6px 12px;
+  }
+  &__icon {
+    width: 18px;
+    height: 18px;
+  }
+  &__text {
+    margin-left: 8px;
+  }
+  &__active {
+    border-color: #375de1;
+    background-color: #375de1;
+    .tab__text {
+      color: #fefefe;
+    }
+    .tab__icon {
+      path {
+        stroke: #fefefe;
+      }
+    }
+  }
+  &:hover {
+    border-color: #5e89e3;
+    background-color: #5e89e3;
+    .tab__text {
+      color: #fefefe;
+    }
+    .tab__icon {
+      path {
+        stroke: #fefefe;
+      }
+    }
+  }
+  &:last-child {
+    margin-right: 0;
   }
 }
 

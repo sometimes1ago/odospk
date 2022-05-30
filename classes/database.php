@@ -33,7 +33,7 @@ final class Database
    * @param array $params Params for query statement
    * @return array Associative array as result of query execution
    */
-  public final function fecthAll(string $sql, array $params = []): ?array {
+  public final function fetchAll(string $sql, array $params = []): ?array {
     $result = $this->pdo->prepare($sql);
     $result->execute($params);
     $result = $result->fetchAll(\PDO::FETCH_ASSOC);

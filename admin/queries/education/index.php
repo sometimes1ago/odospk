@@ -21,7 +21,7 @@ if (isset($_POST['addNote'])) {
   $data->createUserNote($value, $user['id']);
 }
 
-$queries = $data->getQueries('id', '2021-05-01', date('Y-m-d'), ['Не обработано', 'Обработано']);
+$queries = $data->getQueries('Education', 'id');
 
 if (isset($_POST['processing']) && $_POST['processing'] === 'yes') {
   handleQuery($_POST['query__id'], 'Обработано');
@@ -54,11 +54,11 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
   <title>ODOSPK • Заявки • Обучение</title>
 </head>
 <body class="w-full h-screen flex leading-none bg-light-600">
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/aside.php' ?>
+  <?php includeTemplate('sections/aside.php', ['user' => $user, 'asideMenu' => $asideMenu]) ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
     <h1 class="text-32 font-bold">Заявки • Обучение</h1>
     <div class="w-full h-[92%] flex items-center relative flex-col mt-16 p-16 rounded-16 bg-light-400 shadow-section">
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/queries_header.php' ?>
+      <?php includeTemplate('sections/queries_header.php', ['userNotes' => $userNotes, 'queriesTabs' => $queriesTabs]) ?>
       <ul class="flex items-center lg:w-full mt-16 font-medium">
         <li class="headerSortBy lg:max-w-[151px] lg:min-w-[151px] flex items-center border-2 border-light-900 border-collapse px-12 py-8 rounded-tl-8 rounded-bl-8 cursor-pointer" data-sortByValue="id">
           <svg class="lg:w-20 lg:h-20 mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
@@ -105,38 +105,10 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
           <p class="break-words">Статус</p>
         </li>
       </ul>
-      <?php if (!empty($queries)) : ?>
+      <?php if (!empty($queries) && is_array($queries)) : ?>
         <form class="w-full max-h-[90%] mt-12 relative" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
           <ul class="overflow-y-scroll scrollbar max-h-[424px]">
-            <?php foreach ($queries as $query) : ?>
-            <li class="mr-8 mb-8 last:mb-0 p-12 bg-light-600 border border-light-900 rounded-8">
-              <label class="cursor-pointer" for="item-<?=$query['id']?>">
-                <ul class="flex items-center">
-                  <li>
-                    <input class="query__checkbox border-black-800 rounded-4 focus:outline-none focus:ring-2 focus:ring-brand-900" type="checkbox" value="item-<?=$query['id']?>" name="query__id" id="item-<?=$query['id']?>">
-                  </li>
-                  <li class="px-12 lg:max-w-[125px] lg:min-w-[125px] text-14 text-black-800">
-                    <?=$query['id']?>
-                  </li>
-                  <li class="px-12 lg:max-w-[260px] lg:min-w-[260px] text-14 text-black-800">
-                    <?=$query['course']?>
-                  </li>
-                  <li class="px-12 lg:max-w-[215px] lg:min-w-[215px] text-14 text-black-800">
-                    <?=$query['client']?>
-                  </li>
-                  <li class="px-12 lg:max-w-[170px] lg:min-w-[170px] text-14 text-black-800">
-                    <?=$query['phone']?>
-                  </li>
-                  <li class="px-12 lg:max-w-[134px] lg:min-w-[134px] text-14 text-black-800">
-                    <?=$query['date']?>
-                  </li>
-                  <li class="query__status px-12 lg:max-w-[122px] lg:min-w-[122px] text-14 text-black-800">
-                    <?=$query['status']?>
-                  </li>
-                </ul>
-              </label>
-            </li>
-            <?php endforeach; ?>
+            <?php includeTemplate('elements/queries/query_edu.php', ['queries' => $queries]) ?>
           </ul>
           <div class="queries__actions w-full font-bold shadow-lg p-12 bg-light-400 absolute bottom-0 border border-light-900 rounded-12">
           <h3 class="text-18">Управление заявкой</h3>
@@ -183,7 +155,6 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/admin/queries/addNote.js"></script>
   <script src="/src/js/admin/queries/education/queriesActions.js"></script>
-  <script src="/src/js/admin/queries/education/dateControl.js"></script>
   <script src="/src/js/admin/queries/education/searchControl.js"></script>
 </body>
 </html>
