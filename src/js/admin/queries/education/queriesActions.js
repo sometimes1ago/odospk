@@ -6,8 +6,6 @@ cb.forEach((cb) =>
   })
 );
 
-
-
 function updateCb(cb) {
   cb.classList.toggle("query__checkbox-active");
   let cbActive = document.querySelectorAll(".query__checkbox-active");

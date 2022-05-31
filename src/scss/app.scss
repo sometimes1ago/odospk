@@ -73,11 +73,12 @@
   }
 }
 
-.gallery__item {
-  &-active {
-    outline-width: 3px !important;
-    outline: #375de1;
-    outline-offset: -4px;
+.gallery {
+  &__actions {
+    display: none;
+    &-visible {
+      display: block;
+    }
   }
 }
 
