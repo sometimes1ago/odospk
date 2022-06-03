@@ -24,7 +24,6 @@ final class Data
   public function createUserNote($value, $userId): void
   {
     $this->db->query('call createNote(:value, :userId)', ['value' => $value, 'userId' => $userId]);
-    header("Location: " . $_SERVER['REQUEST_URI']);
   }
 
   public function getPhotos(): ?array 
@@ -70,6 +69,24 @@ final class Data
     $this->db->query(
       "DELETE FROM `calls` WHERE `id` = :id",
       ['id' => $preparedCallId]
+    );
+  }
+
+  public function dropNote(string $id) {
+    $preparedNoteId = htmlspecialchars(substr(trim($id), 5));
+    $this->db->query(
+      'DELETE FROM `notes` WHERE `id` = :id',
+      ['id' => $preparedNoteId]
+    );
+  }
+
+  public function editNote(string $id, string $newValue) {
+    $preparedNoteId = htmlspecialchars(substr(trim($id), 5));
+    $preparedValue = htmlspecialchars(trim($newValue));
+    
+    $this->db->query(
+      "UPDATE `notes` SET `value` = :newValue WHERE `id` = :id",
+      ['newValue' => $preparedValue, 'id' => $preparedNoteId]
     );
   }
 }

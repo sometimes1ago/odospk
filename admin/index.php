@@ -77,10 +77,6 @@ if (isset($_POST['submitRestore'])) {
         <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <div class="flex items-center">
-      <input type="checkbox" name="remember" id="remember">
-      <label for="remember" class="ml-8 text-14">Запомнить меня</label>
-    </div>
     <input class="w-full text-14 mt-20 md:mt-28 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="submit" value="Войти">
     <p class="dataRestore__init mt-24 text-14 md:text-16 text-black-800 cursor-pointer">Не можете войти?</p>
   </form>

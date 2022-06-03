@@ -217,51 +217,8 @@ $gallery = $data->getPhotos();
     <div class="w-full ad:mt-24 tb:mt-48 ad:p-12 tb:p-16 md:p-20 bg-light-700 ad:rounded-12 tb:rounded-16 lg:rounded-24 md:rounded-32 dark:bg-dark-800">
       <div class="w-full flex ad:flex-col lg:flex-row ad:flex-start lg:items-center justify-between">
         <div>
-          <h3 class="ad:block ad:text-20 tb:text-24 md:text-32 font-bold dark:text-light-400 tracking-tight">Отфильтровано с заботой</h3>
-          <p class="ad:mt-8 ad:text-16 md:text-20 leading-tight tracking-tight text-black-800 dark:text-light-800">Специально для Вас фильтры с быстрой <br> выборкой курсов и программ</p>
-        </div>
-        <div class="dropdowns ad:w-full lg:w-fit md:w-1/2 flex ad:flex-col ad:items-start ad:justify-start tb:flex-row tb:items-center tb:justify-between ad:mt-24 lg:mt-0">
-          <div class="dropdown__container ad:w-full lg:w-[200px] md:w-full flex flex-col items-start mr-24">
-            <label class="dropdown__label mb-12 ad:text-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="0">Срок обучения</label>
-            <div class="dropdown dropdown__light z-[11]" data-index="0">
-              <div class="dropdown__btn">
-                <p class="dropdown__btn-text" data-dropdownValue="Любой">Любой</p>
-                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
-                </svg>
-              </div>
-              <ul class="dropdown__options ">
-                <li class="dropdown__option">Любая</li>
-                <li class="dropdown__option">1 месяц</li>
-                <li class="dropdown__option">2 месяца</li>
-                <li class="dropdown__option">3 месяца</li>
-                <li class="dropdown__option">4 месяца</li>
-                <li class="dropdown__option">5 месяца</li>
-                <li class="dropdown__option">Полгода</li>
-                <li class="dropdown__option">Год</li>
-              </ul>
-            </div>
-          </div>
-          <div class="dropdown__container ad:w-full ad:mt-16 tb:mt-0 lg:w-[215px] md:w-full flex flex-col items-start mr-24">
-            <label class="dropdown__label mb-12 ad:text-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="1">Выдаваемый документ</label>
-            <div class="dropdown dropdown__light z-10" data-index="1">
-              <div class="dropdown__btn">
-                <p class="dropdown__btn-text" data-dropdownValue="Любой">Любой</p>
-                <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
-                </svg>
-              </div>
-              <ul class="dropdown__options">
-                <li class="dropdown__option">Любой</li>
-                <li class="dropdown__option">Сертификат</li>
-                <li class="dropdown__option">Свидетельство</li>
-              </ul>
-            </div>
-          </div>
-          <div class="filter__input ad:w-full lg:w-[200px] md:w-full ad:mt-16 tb:mt-0 flex flex-col items-start ">
-            <label for="filterPrice" class="lg:text-18 mb-12 font-bold dark:text-light-400">Стоимость</label>
-            <input type="text" id="filterPrice" class="w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 border-light-900 bg-light-400 placeholder:text-black-800 dark:placeholder:text-light-900 dark:text-light-400 dark:bg-dark-700 dark:border-dark-700" placeholder="1000">
-          </div>
+          <h3 class="ad:block ad:text-20 tb:text-24 md:text-32 font-bold dark:text-light-400 tracking-tight">Список курсов</h3>
+          <p class="ad:mt-8 ad:text-16 md:text-20 leading-tight tracking-tight text-black-800 dark:text-light-800">Выбирайте курс из списка для получения подробной информации</p>
         </div>
       </div>
       <div class="w-full ad:flex ad:flex-col lg:flex-row lg:items-start lg:justify-between lg:mt-36">

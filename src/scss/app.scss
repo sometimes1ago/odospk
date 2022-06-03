@@ -166,3 +166,24 @@
     }
   }
 }
+
+.notes {
+  &__actions {
+    display: none;
+    &-visible {
+      display: block;
+    }
+    &-container {
+      display: flex;
+      &__hidden {
+        display: none;
+      }
+    }
+  }
+  &__edit {
+    display: none;
+    &-visible {
+      display: flex;
+    }
+  }
+}
