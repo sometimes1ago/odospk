@@ -27,6 +27,11 @@ final class Data
     header("Location: " . $_SERVER['REQUEST_URI']);
   }
 
+  public function getPhotos(): ?array 
+  {
+    return $this->db->fetchAll('SELECT * FROM `gallery`');
+  }
+
   public function getQueries(string $queriesType, string $sortBy): ?array
   {
     $result = [];
@@ -46,4 +51,25 @@ final class Data
     return $result;
   } 
 
+  public function getCalls(string $sortBy) {
+    return $this->db->fetchAll(
+      "SELECT * FROM `getCalls` WHERE `status` = 'Не обзвонен' OR `status` = 'Обзвонен' ORDER BY $sortBy DESC"
+    );
+  }
+
+  public function handleCall(string $id) {
+    $preparedCallId = htmlspecialchars(substr(trim($id), 5));
+    $this->db->query(
+      "UPDATE `calls` SET `status` = 'Обзвонен' WHERE `id` = :id",
+      ['id' => $preparedCallId]
+    );
+  }
+
+  public function dropCall(string $id) {
+    $preparedCallId = htmlspecialchars(substr(trim($id), 5));
+    $this->db->query(
+      "DELETE FROM `calls` WHERE `id` = :id",
+      ['id' => $preparedCallId]
+    );
+  }
 }

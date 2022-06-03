@@ -23,6 +23,19 @@ if (isset($_POST['removePhoto']) && $_POST['removePhoto'] == 'yes') {
   header('Location: ' . $_SERVER['REQUEST_URI']);
 }
 
+if (isset($_POST['file-sender'])) {
+  $uploadPath = $_SERVER['DOCUMENT_ROOT'] . '/src/img/gallery/';
+
+  Database::Instance()->query(
+    'INSERT INTO gallery(name) VALUES (:name)',
+    ['name' => $_FILES['file-form']['name']]
+  );
+
+  Loader::UploadFile($uploadPath);
+
+  header('Location: ' . $_SERVER['REQUEST_URI']);
+}
+
 $user = $_SESSION['user'];
 $data = new Data(Database::Instance());
 $photos = Database::Instance()->fetchAll('SELECT * FROM `gallery`');
@@ -54,7 +67,7 @@ $photos = Database::Instance()->fetchAll('SELECT * FROM `gallery`');
       <p class="mt-8 text-16 text-black-800">Фотографии отображаемые на главной в слайдере</p>
       <form class="relative" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
         <ul class="w-full mt-16 max-h-[460px] flex flex-wrap scrollbar overflow-y-scroll">
-          <li class="gallery__item w-[196px] h-[142px] flex items-center justify-center bg-brand-900 mr-16 mb-16 last:mr-0 last:mb-0 rounded-8 cursor-pointer hover:shadow-btn">
+          <li class="upload__init gallery__item w-[196px] h-[142px] flex items-center justify-center bg-brand-900 mr-16 mb-16 last:mr-0 last:mb-0 rounded-8 cursor-pointer hover:shadow-btn">
             <svg class="w-18 h-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" fill="none">
               <path d="M19.183 3.61243H5.18298C4.07841 3.61243 3.18298 4.50786 3.18298 5.61243V19.6124C3.18298 20.717 4.07841 21.6124 5.18298 21.6124H19.183C20.2876 21.6124 21.183 20.717 21.183 19.6124V5.61243C21.183 4.50786 20.2876 3.61243 19.183 3.61243Z" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M12.183 8.61243V16.6124" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -84,22 +97,23 @@ $photos = Database::Instance()->fetchAll('SELECT * FROM `gallery`');
       </form>
     </div>
   </section>
-  <div class="gallery__filter w-screen h-screen absolute bg-[#000] opacity-50"></div>
-  <form class="p-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute bg-light-400 rounded-12">
+  <div class="upload__filter"></div>
+  <form class="upload__modal top-1/2 left-1/2 -trans" method="POST" enctype="multipart/form-data">
     <h2 class="text-24 font-bold">Загрузка фотографии</h2>
     <p class="text-16 mt-8 text-black-800">Для загрузки выберите фотографию в формате png, jpg, jpeg</p>
     <div class="mt-24 flex flex-col">
       <p class="inline-block text-18 font-bold">Выберите файл</p>
-      <label for="uploadable-photo" class="mt-12 p-12 bg-light-600 rounded-8 border border-light-900 hover:bg-brand-900 hover:border-brand-900 hover:text-light-400">Файл не выбран</label>
-      <input type="file" name="uploadable-photo" id="uploadable-photo" class="hidden">
+      <label for="file-form" class="mt-12 p-12 bg-light-600 rounded-8 border border-light-900 hover:bg-brand-900 hover:border-brand-900 hover:text-light-400 cursor-pointer">Файл не выбран</label>
+      <input type="file" name="file-form" id="file-form" class="hidden">
     </div>
     <div class="flex mt-16">
-      <input type="submit" value="Загрузить" class="file-sender w-1/2 mr-16">
-      <button class="w-1/2">отмена</button>
+      <input type="submit" name="file-sender" value="Загрузить" class="file-sender w-1/2 mr-16 p-12 font-bold text-14 bg-brand-900 rounded-8 text-light-400 hover:shadow-btn cursor-pointer">
+      <button class="upload__closer w-1/2 bg-light-700 p-12 font-bold rounded-8 border border-light-900 hover:shadow-xl">Отмена</button>
     </div>
   </form>
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/admin/gallery/actions.js"></script>
+  <script src="/src/js/admin/gallery/loaderModal.js"></script>
 </body>
 </html>

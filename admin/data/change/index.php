@@ -33,7 +33,7 @@ $user = $_SESSION['user'];
   <title>ODOSPK • Управление данными</title>
 </head>
 <body class="w-full h-screen flex leading-none bg-light-600">
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/aside.php' ?>
+  <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user]) ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
     <h1 class="text-32 font-bold">Управление данными</h1>
     <div class="h-[92%] mt-16 p-16 rounded-16 bg-light-400 shadow-section">

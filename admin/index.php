@@ -7,23 +7,12 @@ if (isset($_SESSION['user'])) {
 }
 
 if (isset($_POST['submit'])) {
-  $login = htmlspecialchars(trim($_POST['login']));
-  $password = htmlspecialchars(trim($_POST['password']));
-
-  $query = Database::Instance()->fetch(
-    'SELECT * FROM `getUsers` WHERE `login` = :login AND `password` = :password',
-    ['login' => $login, 'password' => $password]
-  );
-  
-  if (!empty($query)) {
-    $_SESSION['user']['id'] = $query['id'];
-    $_SESSION['user']['login'] = $query['login'];
-    $_SESSION['user']['name'] = $query['name'];
-    $_SESSION['user']['access'] = $query['access_level'];
-    $_SESSION['user']['access_code'] = $query['access_code'];
-    $_SESSION['user']['photo'] = $query['photo'];
-
-    header('Location: /admin/queries/education/');
+  if (authorize(
+    $_POST['login'], 
+    $_POST['password'], 
+    '/admin/queries/education/'
+  )) {
+    header('Location: ' . '/admin/queries/education/');
   } else {
     $errors[] = 'Неправильный логин или пароль!';
   }
@@ -82,11 +71,15 @@ if (isset($_POST['submitRestore'])) {
     <input type="text" name="login" id="login" class="w-full p-[11px] md:p-[13px] border border-light-900 bg-light-600 rounded-8 md:rounded-12 mt-12 md:mt-16" placeholder="Userlogin" required>
     <label for="password" class="mt-16 md:mt-24 text-18 md:text-20">Ваш пароль</label>
     <div class="w-full h-48 md:h-52 flex items-center border border-light-900 mt-12 md:mt-16 bg-light-600 rounded-8 md:rounded-12">
-      <input class="w-[85%] h-[46px] md:h-[50px] border-none bg-light-600 rounded-8 md:rounded-12 focus:ring-2" type="password" name="password" id="password" placeholder="Userpassword" required>
-      <svg class="w-20 h-20 ml-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+      <input class="password__input w-[85%] h-[46px] md:h-[50px] border-none bg-light-600 rounded-8 md:rounded-12 focus:ring-2" type="password" name="password" id="password" placeholder="Userpassword" required>
+      <svg class="show__password w-20 h-20 ml-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
         <path d="M0.833252 9.99992C0.833252 9.99992 4.16658 3.33325 9.99992 3.33325C15.8333 3.33325 19.1666 9.99992 19.1666 9.99992C19.1666 9.99992 15.8333 16.6666 9.99992 16.6666C4.16658 16.6666 0.833252 9.99992 0.833252 9.99992Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
+    </div>
+    <div class="flex items-center">
+      <input type="checkbox" name="remember" id="remember">
+      <label for="remember" class="ml-8 text-14">Запомнить меня</label>
     </div>
     <input class="w-full text-14 mt-20 md:mt-28 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="submit" value="Войти">
     <p class="dataRestore__init mt-24 text-14 md:text-16 text-black-800 cursor-pointer">Не можете войти?</p>
@@ -108,5 +101,6 @@ if (isset($_POST['submitRestore'])) {
     </div>
   </form>
   <script src="/src/js/admin/dataRestore.js"></script>
+  <script src="/src/js/admin/auth/showPass.js"></script>
 </body>
 </html>

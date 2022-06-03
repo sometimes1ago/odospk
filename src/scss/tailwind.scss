@@ -48,12 +48,12 @@
 @layer components {
   .courses {
     &__item {
-      @apply ad:mb-8 ad:mr-8 md:mb-12 ad:px-12 lg:px-16 ad:py-[15px] md:py-16 xl:py-20 ad:text-16 lg:text-18 md:text-20 bg-light-500 ad:rounded-8 tb:rounded-12 md:rounded-16 border border-light-900 dark:border-0 dark:bg-dark-700 dark:text-light-600 cursor-pointer;
+      @apply ad:mb-8 ad:mr-8 md:mb-12 ad:px-12 lg:px-16 ad:py-[15px] md:py-16 xl:py-20 ad:text-16 lg:text-18 md:text-20 bg-light-500 ad:rounded-8 tb:rounded-12 md:rounded-16 border border-light-900 dark:border-0 dark:bg-dark-700 dark:hover:border-light-900 dark:text-light-600 cursor-pointer;
       &-active {
-        @apply bg-light-700 border-2 border-brand-900 text-brand-900 dark:bg-dark-800 dark:text-brand-900 dark:border-brand-900 dark:border-2;
+        @apply bg-light-700 border-2 border-brand-900 text-brand-900 dark:bg-dark-800 dark:text-light-900 dark:border-light-900 dark:border-2;
       }
       &:hover {
-        @apply border-brand-900;
+        @apply border-brand-900 dark:hover:border-light-900;
       }
     }
     &__initial {

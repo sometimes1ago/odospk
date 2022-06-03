@@ -13,6 +13,7 @@
 
 .gallery-slider .slick-slide {
   width: 90%;
+  object-fit: contain !important;
   height: 660px !important;
   margin: 0 auto;
 }

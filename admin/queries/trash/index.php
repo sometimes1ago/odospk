@@ -21,7 +21,7 @@ if (isset($_POST['addNote'])) {
   $data->createUserNote($value, $user['id']);
 }
 
-$queries = $data->getQueries('id', '2021-05-01', date('Y-m-d'), ['Удалено']);
+$queries = $data->getQueries('Removed', 'id');
 
 if (isset($_POST['restore']) && $_POST['restore'] === 'yes') {
   handleQuery($_POST['query__id'], 'Не обработано');
@@ -54,11 +54,11 @@ if (isset($_POST['clear']) && $_POST['clear'] === 'yes') {
   <title>ODOSPK • Заявки • Корзина</title>
 </head>
 <body class="w-full h-screen flex leading-none bg-light-600">
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/aside.php' ?>
+  <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user])?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
     <h1 class="text-32 font-bold">Заявки • Корзина</h1>
     <div class="w-full h-[92%] flex items-center relative flex-col mt-16 p-16 rounded-16 bg-light-400 shadow-section">
-      <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/queries_header.php' ?>
+      <?php includeTemplate('sections/queries_header.php', ['queriesTabs' => $queriesTabs, 'userNotes' => $userNotes]) ?>
       <ul class="flex items-center lg:w-full mt-16 font-medium">
         <li class="headerSortBy lg:max-w-[151px] lg:min-w-[151px] flex items-center border-2 border-light-900 border-collapse px-12 py-8 rounded-tl-8 rounded-bl-8 cursor-pointer" data-sortByValue="number">
           <svg class="lg:w-20 lg:h-20 mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">

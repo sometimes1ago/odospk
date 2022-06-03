@@ -5,6 +5,7 @@ require 'core.php';
 $data = new Data(Database::Instance());
 $courses = $data->getCourses('Курс');
 $programs = $data->getCourses('Профессиональная подготовка');
+$gallery = $data->getPhotos();
 
 ?>
 <!DOCTYPE html>
@@ -165,10 +166,13 @@ $programs = $data->getCourses('Профессиональная подготов
   <section id="about" class="w-full ad:px-16 lg:px-32 ad:mt-36 ad:mb-36 tb:mt-[60px] tb:mb-[60px] lg:mt-48 lg:mb-48 md:mt-56 md:mb-56 xl:mb-[80px] flex flex-col items-center justify-center">
     <h2 class="ad:text-left ad:self-start tb:self-center tb:text-center ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Кто мы и чем занимаемся</h2>
     <p class="ad:text-left tb:text-center tb:w-[625px] lg:w-[730px] md:w-[812px] xl:w-[900px] ad:mt-12 md:mt-16 ad:text-16 tb:text-18 md:text-20 xl:text-22 text-black-800 text-center leading-tight dark:text-light-900">Мы распологаем большим выбором программ обучения, среди которых обязательно найдется нужная именно Вам! Все программы реализуются в нашем колледже под руководством наставников с многолетним опытом работы</p>
-    <div class="gallery-slider ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64 bg-light-500 shadow-slider">
-      <img class="gallery-slider__item dark:brightness-90" src="/src/img/landing/gallery/gallery-img.png" alt="Gallery Slider Item" loading="lazy">
-      <img class="gallery-slider__item dark:brightness-90" src="/src/img/landing/gallery/gallery-img.png" alt="Gallery Slider Item" loading="lazy">
+    <?php if (isset($gallery) && !empty($gallery)) : ?>
+      <div class="gallery-slider ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64 bg-light-500 shadow-slider">
+        <?php foreach ($gallery as $photo) : ?>
+          <img class="gallery-slider__item dark:brightness-90" src="/src/img/gallery/<?=$photo['name']?>" alt="Gallery Slider Item" loading="lazy">
+        <?php endforeach; ?>
     </div>
+    <?php endif; ?>
     <ul class="tb:w-5/6 lg:w-11/12 md:w-5/6 flex tb:justify-between ad:flex-col tb:flex-row ad:mt-[120px] tb:mt-[86px] lg:mt-64 md:mt-[76px]">
       <li class="tb:w-1/2 xl:w-5/12 tb:mr-48 flex flex-col">
         <div class="flex ad:flex-col ad:items-start lg:flex-row">
