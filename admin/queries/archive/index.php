@@ -106,11 +106,11 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
       </ul>
       <form class="w-full max-h-[90%] mt-12 relative" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
         <?php if (!empty($archived) && is_array($archived)) : ?>
-          <ul class="overflow-y-scroll scrollbar max-h-[424px]">
+          <ul class="overflow-y-scroll scrollbar h-[424px]">
             <?php includeTemplate('elements/queries/query_edu.php', ['queries' => $archived]) ?>
           </ul>
         <?php endif; ?>
-        <div class="queries__actions w-full font-bold shadow-lg  p-12 bg-light-400 absolute top- border border-light-900 rounded-12" method="POST">
+        <div class="queries__actions w-full font-bold shadow-lg  p-12 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
           <h3 class="text-18">Управление заявкой</h3>
           <p class="mt-8 text-14 text-black-800">Действия, доступные для выбранной заявки</p>
           <ul class="mt-16 flex items-center">
@@ -126,7 +126,7 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
               </button>
             </li>
             <li class="mr-12 last:mr-0">
-              <button class="queries__action flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" name="removing" value="yes" type="submit">
+              <button class="queries__action queries__action-trash flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" name="removing" value="yes" type="submit">
                 <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M6.6665 4.99996V3.33329C6.6665 2.89127 6.8421 2.46734 7.15466 2.15478C7.46722 1.84222 7.89114 1.66663 8.33317 1.66663H11.6665C12.1085 1.66663 12.5325 1.84222 12.845 2.15478C13.1576 2.46734 13.3332 2.89127 13.3332 3.33329V4.99996M15.8332 4.99996V16.6666C15.8332 17.1087 15.6576 17.5326 15.345 17.8451C15.0325 18.1577 14.6085 18.3333 14.1665 18.3333H5.83317C5.39114 18.3333 4.96722 18.1577 4.65466 17.8451C4.3421 17.5326 4.1665 17.1087 4.1665 16.6666V4.99996H15.8332Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

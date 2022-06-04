@@ -218,7 +218,7 @@ $gallery = $data->getPhotos();
       <div class="w-full flex ad:flex-col lg:flex-row ad:flex-start lg:items-center justify-between">
         <div>
           <h3 class="ad:block ad:text-20 tb:text-24 md:text-32 font-bold dark:text-light-400 tracking-tight">Список курсов</h3>
-          <p class="ad:mt-8 ad:text-16 md:text-20 leading-tight tracking-tight text-black-800 dark:text-light-800">Выбирайте курс из списка для получения подробной информации</p>
+          <p class="ad:mt-8 ad:text-16 md:text-20 lg:text-18 leading-tight tracking-tight text-black-800 dark:text-light-800">Выбирайте курс из списка для получения подробной информации</p>
         </div>
       </div>
       <div class="w-full ad:flex ad:flex-col lg:flex-row lg:items-start lg:justify-between lg:mt-36">

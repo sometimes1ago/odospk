@@ -89,4 +89,9 @@ final class Data
       ['newValue' => $preparedValue, 'id' => $preparedNoteId]
     );
   }
+
+  public function getUsersList(): ?array
+  {
+    return $this->db->fetchAll('SELECT * FROM `getUsersList`');
+  }
 }

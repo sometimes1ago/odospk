@@ -3,7 +3,13 @@
   <p class="aside__greetings">Добро пожаловать</p>
   <div class="aside__user">
     <div class="aside__btn">
-      <img src="/src/img/avatars/<?= $user['photo'] ?>" alt="authorized-user-avatar" class="aside__img">
+      <?php if ($user['photo']): ?>
+        <img src="/src/img/avatars/<?= $user['photo'] ?>" alt="authorized-user-avatar" class="aside__img">
+      <?php else : ?>
+        <div class="aside__img flex items-center justify-center bg-light-400 border border-light-900 rounded-full">
+          <p class="text-18 font-bold text-black-800"><?= mb_substr($user['name'], 0, 1) ?></p>
+        </div>
+      <?php endif; ?>
       <span class="aside__btn-container">
         <h5 class="aside__user-name"><?= $user['name'] ?></h5>
         <button class="aside__btn-show">
@@ -32,7 +38,9 @@
           <p class="aside__user-item__value"><?= $_SERVER['REMOTE_ADDR'] ?></p>
         </li>
       </ul>
-      <button class="aside__change hover:shadow-btn">Изменить данные</button>
+      <button class="aside__change hover:shadow-btn">
+        <a href="/admin/profile/">Изменить данные</a>
+      </button>
     </div>
   </div>
   <ul class="aside__links">

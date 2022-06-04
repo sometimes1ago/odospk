@@ -107,7 +107,7 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
       </ul>
       <?php if (!empty($queries) && is_array($queries)) : ?>
         <form class="w-full max-h-[90%] mt-12 relative" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
-          <ul class="overflow-y-scroll scrollbar max-h-[424px]">
+          <ul class="overflow-y-scroll scrollbar h-[424px]">
             <?php includeTemplate('elements/queries/query_edu.php', ['queries' => $queries]) ?>
           </ul>
           <div class="queries__actions w-full font-bold shadow-lg p-12 bg-light-400 absolute bottom-0 border border-light-900 rounded-12">

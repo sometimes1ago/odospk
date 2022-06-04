@@ -15,11 +15,6 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'yes') {
 $user = $_SESSION['user'];
 $data = new Data(Database::Instance());
 
-if (isset($_POST['addNoteSender'])) {
-  $value = htmlspecialchars(trim($_POST['addNoteValue']));
-  $data->createUserNote($value, $user['id']);
-}
-
 $notes = $data->getUserNotes($user['id']);
 
 if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
@@ -86,7 +81,7 @@ if (isset($_POST['addNoteSender'])) {
         </div>
       </form>
       <?php if (!empty($notes)) : ?>
-        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="w-full max-h-[360px] mt-16 relative">
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="w-full h-[360px] mt-16 relative">
           <ul class="overflow-y-scroll scrollbar max-h-[360px]">
             <?php includeTemplate('elements/notes/note_default.php', ['notes' => $notes]) ?>
           </ul>

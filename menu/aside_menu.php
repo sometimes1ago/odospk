@@ -25,7 +25,7 @@ return [
   ],
   [
     'name' => 'Данные',
-    'address' => '/admin/data/change',
+    'address' => '/admin/data/',
     'access' => 2,
     'icon' => '<svg class="aside__link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
                 <path d="M9 6C12.7279 6 15.75 4.99264 15.75 3.75C15.75 2.50736 12.7279 1.5 9 1.5C5.27208 1.5 2.25 2.50736 2.25 3.75C2.25 4.99264 5.27208 6 9 6Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
