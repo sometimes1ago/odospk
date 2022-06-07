@@ -5,6 +5,8 @@ require 'core.php';
 $data = new Data(Database::Instance());
 $courses = $data->getCourses('Курс');
 $programs = $data->getCourses('Профессиональная подготовка');
+$currentProgram = $data->getCourseData($courses[0]['name']);
+
 $gallery = $data->getPhotos();
 
 ?>
@@ -210,7 +212,7 @@ $gallery = $data->getPhotos();
       </li>
     </ul>
   </section>
-  <section id="courses" class="ad:px-16 ad:mt-36 ad:mb-36 lg:px-32 tb:mt-48 tb:mb-48 md:mt-56 lg:mb-48 md:mb-56 xl:mt-[80px] xl:mb-[80px] ad:flex ad:flex-col ad:items-start ad:justify-start tb:items-center tb:justify-center">
+  <section id="courses" class="w-full ad:px-16 ad:mt-36 ad:mb-36 lg:px-32 tb:mt-48 tb:mb-48 md:mt-56 lg:mb-48 md:mb-56 xl:mt-[80px] xl:mb-[80px] ad:flex ad:flex-col ad:items-start ad:justify-start tb:items-center tb:justify-center">
     <h2 class="ad:mt-36 tb:mt-48 ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Наши курсы и программы</h2>
     <p class="ad:w-11/12 tb:w-3/4 lg:w-[617px] md:w-[689px] xl:w-[755px] ad:mt-12 md:mt-16 text-18 md:text-20 xl:text-22 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Список наших программ обучения, по которым вы можете получить дополнительное образование, профессиональную подготовку 
       или повысить квалификацию</p>
@@ -239,60 +241,55 @@ $gallery = $data->getPhotos();
         </div>
         <?php endif; ?>
         <div class="courses__description ad:w-full ad:mt-24 tb:mt-36 lg:mt-0 lg:w-1/2 ad:order-1 lg:order-2 ad:p-12 tb:p-16 md:p-20 xl:p-24 bg-light-500 ad:rounded-12 lg:rounded-20 md:rounded-24 xl:rounded-28 border border-light-900 dark:bg-dark-700 dark:border-none">
-          <h3 class="courses__name ad:text-28 ph:text-32 md:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400" data-courseName="Комбинированный маникюр и дизайн ногтей">Комбинированный маникюр и дизайн ногтей</h3>
-          <div class="courses__initial courses__initial-visible lg:pr-36 md:pr-[84px] xl:pr-[120px]">
-            <ul class="text-content ad:mt-24 md:mt-32 xl:mt-36">
-              <li class="lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
-                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Срок обучения: </span>
-                32 академ. часа (1 месяц)
-              </li>
-              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
-                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Выдаваемый документ: </span>
-                Сертификат
-              </li>
-              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
-                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Чему научитесь: </span>
-                Выполнять комбинированный маникюр, техникам нанесения гель-лака, современным дизайнам ногтей
-              </li>
-              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
-                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Описание: </span>
-                Программа позволит вам освоить комбинированный маникюр, сочетающий техники обрезного и аппаратного маникюра, работу по нанесению гель-лака, создание разных видов дизайна ногтей, методикам укрепления натуральных ногтей, приобретете навык умело фотографировать свои работы и др
-              </li>
-              <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
-                <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Стоимость: </span>
-                5000 ₽
-              </li>
-            </ul>
-            <button class="courseOrderBtn ad:w-full lg:w-[206px] md:w-[255px] mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 ad:rounded-8 lg:rounded-12 xl:rounded-16 cursor-pointer lg:hover:shadow-btn">Записаться на курс</button>
+          <div class="courses__get-result">
+            <h3 class="courses__name ad:text-28 ph:text-32 md:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400" data-courseName="<?=$currentProgram['name']?>"><?=$currentProgram['name']?></h3>
+            <div class="courses__initial courses__initial-visible lg:pr-36 md:pr-[84px] xl:pr-[120px]">
+              <ul class="text-content ad:mt-24 md:mt-32 xl:mt-36">
+                <li class="lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                  <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Срок обучения: </span>
+                  <?=$currentProgram['name']?>
+                </li>
+                <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                  <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Выдаваемый документ: </span>
+                  <?=$currentProgram['diplomaType']?>
+                </li>
+                <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                  <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Чему научитесь: </span>
+                  <?=$currentProgram['skills']?>
+                </li>
+                <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                  <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Описание: </span>
+                  <?=$currentProgram['description']?>
+                </li>
+                <li class="ad:mt-12 tb:mt-16 md:mt-20 xl:mt-24 lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
+                  <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Стоимость: </span>
+                  <?=$currentProgram['price']?> ₽
+                </li>
+              </ul>
+              <button class="courseOrderBtn ad:w-full lg:w-[206px] md:w-[255px] mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 ad:rounded-8 lg:rounded-12 xl:rounded-16 cursor-pointer lg:hover:shadow-btn">Записаться на курс</button>
+            </div>
           </div>
           <div class="courses__requesting lg:w-2/3">
             <h3 class="ad:text-20 tb:text-24 ad:mt-16 lg:mt-20 font-bold dark:text-light-400">Запись на курс</h3>
             <p class="ad:text-14 lg:text-16 ad:mt-8 tb:mt-12 lg:mt-8 md:mt-12 leading-tight text-black-800 dark:text-light-900">Заполните все необходимые поля и отправьте заявку чтобы записаться на выбранный курс</p>
-            <form action="" class="w-full ad:mt-16 tb:mt-24 lg:mt-20">
+            <form action="<?=$_SERVER['PHP_SELF']?>" class="courseOrderSend w-full ad:mt-16 tb:mt-24 lg:mt-20">
+              <div class="courseErrorContainer"></div>
               <label for="clientName" class="ad:text-16 lg:text-18 font-bold dark:text-light-400">Ваше имя и фамилия</label>
-              <input type="text" id="clientName" class="w-full ad:text-16 md:text-18 px-12 py-[12.5px] font-medium leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 dark:text-light-900 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" placeholder="Иван Иванов" required>
+              <input type="text" id="clientName" class="courseClientName w-full ad:text-16 md:text-18 px-12 py-[12.5px] font-medium leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 dark:text-light-900 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" placeholder="Иван Иванов">
               <label for="clientPhone" class="ad:text-16 lg:text-18 ad:mt-16 tb:mt-24 block font-bold dark:text-light-400">Ваш телефон</label>
-              <input type="text" id="clientPhone" class="w-full ad:text-16 md:text-18 px-12 py-[12.5px] font-medium leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 dark:text-light-900 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" placeholder="+7 900 900 90 90" required>
+              <input type="tel" id="clientPhone" class="courseClientPhone w-full ad:text-16 md:text-18 px-12 py-[12.5px] font-medium leading-normal xl:py-16 xl:text-16 mt-12 xl:mt-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-700 dark:text-light-900 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" placeholder="+7 900 900 90 90">
               <div class="flex items-start ad:mt-16">
-                <input type="checkbox" name="agreement" id="agreement" class="form-checkbox lg:mt-[3px] lg:rounded-[4px] border-text-900 border-2" checked required>
+                <input type="checkbox" name="agreement" id="agreement" class="courseAgreement form-checkbox lg:mt-[3px] lg:rounded-[4px] border-text-900 border-2" checked>
                 <label for="agreement" class="ad:ml-8 lg:text-16 leading-tight text-black-900 accent-brand-900 dark:text-light-400">Я согласен на обработку моих личных данных</label>
               </div>
               <div class="flex ad:flex-col lg:flex-row ad:items-center mt-24 md:mt-32 xl:mt-36">
                 <button type="submit" class="sendOrderBtn ad:w-full text-16 font-medium md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 ad:rounded-8 lg:rounded-12 md:rounded-16 cursor-pointer hover:shadow-btn">Записаться</button>
-                <button class="cancelOrderBtn ad:w-full text-16 ad:ml-0 ad:mt-12 lg:mt-0 lg:ml-12 md:text-18 p-16 md:p-[23px] font-bold ad:rounded-8 lg:rounded-12 md:rounded-16 cursor-pointer dark:text-light-400 bg-light-700 dark:bg-dark-800">Отмена</button>
+                <button type="button" class="cancelOrderBtn ad:w-full text-16 ad:ml-0 ad:mt-12 lg:mt-0 lg:ml-12 md:text-18 p-16 md:p-[23px] font-bold ad:rounded-8 lg:rounded-12 md:rounded-16 cursor-pointer dark:text-light-400 bg-light-700 dark:bg-dark-800">Отмена</button>
               </div>
               <p class="ad:mt-16 lg:text-12 text-black-800 leading-tight dark:text-light-400">Все передаваемые вами данные защищены по ФЗ № 152</p>
             </form>
           </div>
-          <div class="courses__succeded">
-            <img class="ad:w-[180px] ad:h-[180px] tb:w-[265px] md:w-[290px] xl:w-[320px] tb:h-[265px] md:h-[290px] xl:h-[320px] ad:mt-32 lg:mt-48 md:mt-[56px] xl:mt-64 dark:brightness-90" src="/src/img/landing/illustrations/order-success.svg" alt="Order success">
-            <div class="ad:mt-24 lg:mt-32">
-              <h4 class="ad:text-20 tb:text-24 md:text-28 xl:text-32 font-bold text-black-900 dark:text-light-400">Вы успешно записались!</h4>
-              <p class="ad:mt-8 md:mt-12 ad:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Скоро мы свяжемся с вами по  указанному <br> телефону и обсудим детали</p>
-            </div>
-            <button class="ad:w-full lg:w-[206px] md:w-[255px] mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 p-16 md:p-[23px] bg-brand-900 text-light-400 ad:rounded-8 lg:rounded-12 xl:rounded-16 cursor-pointer lg:hover:shadow-btn">Спасибо!</button>
-          </div>
-          </div>
+          <div class="course__ordering-result block"></div>
         </div>
       </div>
     </div>

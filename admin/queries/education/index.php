@@ -19,6 +19,7 @@ $userNotes = $data->getUserNotes($user['id']);
 if (isset($_POST['addNote'])) {
   $value = htmlspecialchars(trim($_POST['addNoteValue']));
   $data->createUserNote($value, $user['id']);
+  header('Location: ' . $_SERVER['REQUEST_URI']);
 }
 
 $queries = $data->getQueries('Education', 'id');

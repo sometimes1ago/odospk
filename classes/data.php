@@ -16,6 +16,11 @@ final class Data
     return $result;
   }
 
+  public function getCourseData(string $name): ?array
+  {
+    return $this->db->fetch('SELECT * FROM `getCourses` WHERE `name` = :name', ['name' => $name]);
+  }
+
   public function getUserNotes($userId): ?array
   {
     return array_reverse($this->db->fetchAll('CALL getUserNotes(:id)', ['id' => $userId]));
