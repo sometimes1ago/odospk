@@ -44,6 +44,20 @@
   }
 }
 
+.burger__request-form {
+  display: block;
+  &__hidden {
+    display: none;
+  }
+}
+
+.burger__request-result {
+  display: none;
+  &__visible {
+    display: block;
+  }
+}
+
 .queries {
   &__actions {
     display: none;
@@ -186,4 +200,26 @@
       display: flex;
     }
   }
+}
+
+.course__ordering-result {
+  display: none;
+  &__visible {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1586px) {
+  .tab {
+    margin-right: 16px;
+    &__link {
+      display: flex;
+      align-items: center;
+      padding: 6px 16px;
+    }
+    &__icon {
+      width: 24px;
+      height: 24px;
+    }
+  }  
 }

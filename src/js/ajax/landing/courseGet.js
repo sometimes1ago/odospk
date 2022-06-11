@@ -1,7 +1,12 @@
 $(document).ready(function () {
   let result = $(".courses__get-result"),
     courses = $(".courses__item"),
-    activeCourse = $(".courses__item-active");
+    activeCourse = $(".courses__item-active"),
+    courseOrderBtn = $(".courseOrderBtn"),
+    cancelOrderBtn = $(".cancelOrderBtn"),
+    orderState = $(".courses__requesting"),
+    initialState = $(".courses__initial"),
+    orderResult = $('.course__ordering-result');
 
   setEventListeners();
 
@@ -16,6 +21,9 @@ $(document).ready(function () {
       url: "server_processing/landing/coursesResponse.php",
       data: { progName: selectedCourse },
     }).done(function (response) {
+      orderResult.removeClass('course__ordering-result__visible');
+      orderState.removeClass('courses__requesting-visible');
+      $('.courseErrorContainer').children().remove();
       result.html(response);
       setEventListeners();
     });
@@ -29,7 +37,7 @@ $(document).ready(function () {
   courseAgreement.on("change", () => {
     if (courseAgreement.is(':not(:checked)')) {
       courseOrderSender.prop('disabled', true);
-      courseOrderSender.css({backgroundColor: '#606060'});
+      courseOrderSender.css({backgroundColor: '#606060', boxShadow: 'none'});
     } else {
       courseOrderSender.prop('disabled', false);
       courseOrderSender.css({backgroundColor: '#375DE1'});
@@ -55,9 +63,28 @@ $(document).ready(function () {
               selectedCourse: $('.courses__name').data('coursename')
             },
           }).done(function(response) {
-            $('.courses__initial').removeClass("courses__initial-visible");
-            $('.courses__requesting').removeClass("courses__requesting-visible");
-            $('.course__ordering-result').html(response);
+            initialState.removeClass("courses__initial-visible");
+            orderState.removeClass("courses__requesting-visible");
+            orderResult.addClass("course__ordering-result__visible");
+            orderResult.html(response);
+
+            if ($('.courseOrderRollbacked')) {
+              let rollbackBtn = $('.courseOrderRollbacked');
+
+              rollbackBtn.click(() => {
+                orderResult.removeClass('course__ordering-result__visible');
+                initialState.addClass("courses__initial-visible");
+              });
+            }
+
+            if ($('.courseOrderSucceded')) {
+              let succededBtn = $('.courseOrderSucceded');
+
+              succededBtn.click(() => {
+                orderResult.removeClass('course__ordering-result__visible');
+                initialState.addClass("courses__initial-visible");
+              });
+            }
           });
         } else {
           createError('Некорректный номер телефона!');
@@ -65,42 +92,43 @@ $(document).ready(function () {
       }
     }
   });
-});
 
-function setEventListeners() {
-  let courseOrderBtn = $(".courseOrderBtn"),
+  function setEventListeners() {
+    courseOrderBtn = $(".courseOrderBtn"),
     cancelOrderBtn = $(".cancelOrderBtn"),
     orderState = $(".courses__requesting"),
     initialState = $(".courses__initial");
-
-  courseOrderBtn.click(() => {
-    initialState.removeClass("courses__initial-visible");
-    orderState.addClass("courses__requesting-visible");
-  });
-
-  cancelOrderBtn.click(() => {
-    orderState.removeClass("courses__requesting-visible");
-    initialState.addClass("courses__initial-visible");
-  });
-}
-
-function validateInput(input) {
-  processedInput = input.val().trim();
-
-  if (processedInput) {
-    return true;
-  } else {
-    return false;
+  
+    courseOrderBtn.click(() => {
+      initialState.removeClass("courses__initial-visible");
+      orderState.addClass("courses__requesting-visible");
+    });
+  
+    cancelOrderBtn.click(() => {
+      $('.courseErrorContainer').children().remove();
+      orderState.removeClass("courses__requesting-visible");
+      initialState.addClass("courses__initial-visible");
+    });
   }
-}
 
-function createError(message) {
-  $("<p class='text-14 text-light-400 break-words'>" + message + "</p>").
-    appendTo($("<div class='w-full mt-16 mb-16 rounded-8 p-12 bg-state-error'></div>").
-    appendTo($(".courseErrorContainer")));
-}
-
-function validatePhone(phoneInput) {
-  let regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-  return regex.test(phoneInput.val().trim());
-}
+  function validateInput(input) {
+    processedInput = input.val().trim();
+  
+    if (processedInput) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  function createError(message) {
+    $("<p class='text-14 lg:text-16 md:text-18 text-light-400 break-words'>" + message + "</p>").
+      appendTo($("<div class='w-full mt-16 mb-16 rounded-8 p-12 md:p-16 bg-state-error'></div>").
+      appendTo($(".courseErrorContainer")));
+  }
+  
+  function validatePhone(phoneInput) {
+    let regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+    return regex.test(phoneInput.val().trim());
+  }
+});

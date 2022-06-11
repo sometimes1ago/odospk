@@ -36,7 +36,7 @@ class Loader
    * события отправки файла
    * @param string $uploadPath Путь, по которому будет производиться загрузка файлов. Как правило является константой
    */
-  public static function UploadFile($uploadPath)
+  public final static function UploadFile($uploadPath)
   {
     try {
       if (isset($_POST['file-sender'])) {
@@ -65,6 +65,25 @@ class Loader
       }
     } catch (Exception $ex) {
       echo $ex->getMessage();
+    }
+  }
+
+  public final static function RemoveFile(string $filePath, string $fileName)
+  {
+    try {
+      if (is_string($filePath) && $filePath !== '') {
+        if (is_string($fileName) && $fileName !== '') {
+          if (file_exists($filePath . $fileName)) {
+            unlink($filePath . $fileName);
+          }
+        } else {
+          throw new Exception('Имя файла не может быть пустым!');
+        }
+      } else {
+        throw new Exception('Путь к файлу не может быть пустым!');
+      }
+    } catch (Exception $ex) {
+      return $ex->getMessage();
     }
   }
 }

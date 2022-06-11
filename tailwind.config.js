@@ -28,7 +28,7 @@ module.exports = {
         }
       },
       boxShadow: {
-        'btn': ' 0px 4px 16px rgba(51, 112, 202, 0.48)',
+        'btn': '0px 4px 16px rgba(51, 112, 202, 0.48)',
         'cta-btn': '0px 12px 32px rgba(79, 82, 255, 0.48)',
         'slider': '0px 16px 64px rgba(22, 20, 20, 0.12)',
         'map': '0px 0px 24px rgba(0, 0, 0, 0.06)',

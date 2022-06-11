@@ -1,6 +1,7 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/core.php';
+$uploadPath = $_SERVER['DOCUMENT_ROOT'] . '/src/img/gallery/';
 
 if (!isset($_SESSION['user'])) {
   header('Location: /admin/');
@@ -15,17 +16,22 @@ if (isset($_GET['logout']) && $_GET['logout'] == 'yes') {
 if (isset($_POST['removePhoto']) && $_POST['removePhoto'] == 'yes') {
   $preparedPhotoId = htmlspecialchars(substr(trim($_POST['photo-id']), 6));
 
+  $filename = Database::Instance()->fetch(
+    'SELECT `name` FROM `gallery` WHERE `id` = :id',
+    ['id' => $preparedPhotoId]
+  );
+
   Database::Instance()->query(
     'DELETE FROM `gallery` WHERE `id` = :id',
     ['id' => $preparedPhotoId]
   );
 
+  Loader::RemoveFile($uploadPath, $filename['name']);
+  
   header('Location: ' . $_SERVER['REQUEST_URI']);
 }
 
 if (isset($_POST['file-sender'])) {
-  $uploadPath = $_SERVER['DOCUMENT_ROOT'] . '/src/img/gallery/';
-
   Database::Instance()->query(
     'INSERT INTO gallery(name) VALUES (:name)',
     ['name' => $_FILES['file-form']['name']]

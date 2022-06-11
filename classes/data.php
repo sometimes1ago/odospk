@@ -99,4 +99,9 @@ final class Data
   {
     return $this->db->fetchAll('SELECT * FROM `getUsersList`');
   }
+
+  public function getFeedbacks(): ?array
+  {
+    return $this->db->fetchAll('SELECT `author`, `content` FROM `feedbacks`');
+  }
 }

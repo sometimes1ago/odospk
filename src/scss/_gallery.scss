@@ -5,6 +5,18 @@
   border-radius: 24px !important;
 }
 
+.dark {
+  .gallery-slider {
+    box-shadow: none;
+    background-color: #181717;
+  }
+
+  .gallery-slider .slick-track {
+    border: none;
+    background-color: #181717;
+  }
+}
+
 .gallery-slider .slick-track {
   height: 660px !important;
   display: flex;
@@ -15,7 +27,7 @@
   width: 90%;
   object-fit: contain !important;
   height: 660px !important;
-  margin: 0 auto;
+  margin: 0 16px;
 }
 
 .gallery-slider {
@@ -38,6 +50,7 @@
     box-shadow: 0px 4px 16px rgba(51, 112, 202, 0.48);
   }
 }
+
 .gallery-slider .slick-arrow.slick-next {
   top: 50%;
   right: -6%;

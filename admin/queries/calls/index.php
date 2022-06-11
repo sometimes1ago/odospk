@@ -51,13 +51,14 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
   <link rel="stylesheet" href="/src/css/app.css">
   <title>ODOSPK • Заявки • Обучение</title>
 </head>
+
 <body class="w-full h-screen text-black-900 flex leading-none bg-light-600">
   <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user]) ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
-    <h1 class="text-32 font-bold">Заявки • Звонки</h1>
-    <div class="w-full h-[92%] flex items-center relative flex-col mt-16 p-16 rounded-16 bg-light-400 shadow-section">
+    <h1 class="text-32 md:text-48 font-bold">Заявки • Звонки</h1>
+    <div class="w-full h-[92%] flex items-center md:items-start relative flex-col mt-16 md:mt-24 p-16 rounded-16 bg-light-400 shadow-section">
       <?php includeTemplate('sections/queries_header.php', ['userNotes' => $userNotes, 'queriesTabs' => $queriesTabs]) ?>
-      <ul class="w-full flex items-center mt-16 scrollbar">
+      <ul class="w-full md:w-[80%] flex items-center mt-16 scrollbar">
         <li class="headerSortBy w-1/5 flex items-center border-2 border-light-900 border-collapse px-12 py-8 rounded-tl-8 rounded-bl-8 cursor-pointer" data-sortByValue="number">
           <svg class="lg:w-20 lg:h-20 mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
             <path d="M3.33325 7.5H16.6666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -97,31 +98,31 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
         </li>
       </ul>
       <?php if ($calls) : ?>
-        <form class="w-full max-h-[90%] mt-12 relative" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
-          <ul class="overflow-y-scroll scrollbar max-h-[424px]">
+        <form class="w-full md:w-[80%] max-h-[90%] mt-12 md:mt-16 relative" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+          <ul class="overflow-y-scroll scrollbar h-[424px] md:h-[690px]">
             <?php includeTemplate('elements/queries/query_call.php', ['calls' => $calls]) ?>
           </ul>
-          <div class="queries__actions w-full font-bold shadow-lg p-12 bg-light-400 absolute top-full border border-light-900 rounded-12" method="POST">
-            <h3 class="text-18">Управление заявкой</h3>
-            <p class="mt-8 text-14 text-black-800">Действия, доступные для выбранной заявки</p>
+          <div class="queries__actions w-full font-bold shadow-lg p-12 md:p-16 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
+            <h3 class="text-18 md:text-24">Управление заявкой</h3>
+            <p class="mt-8 text-14 md:text-18 text-black-800">Действия, доступные для выбранной заявки</p>
             <ul class="mt-16 flex items-center">
-              <li class="mr-12 last:mr-0">
+              <li class="mr-12 md:mr-16 last:mr-0">
                 <button class="queries__action flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" name="processing" value="yes" type="submit">
-                  <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <svg class="mr-8 md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M19.0671 14.7226V17.2226C19.068 17.4547 19.0205 17.6844 18.9275 17.8971C18.8345 18.1097 18.6982 18.3006 18.5271 18.4575C18.3561 18.6144 18.1542 18.7338 17.9344 18.8082C17.7145 18.8825 17.4816 18.9102 17.2504 18.8893C14.6861 18.6106 12.2229 17.7344 10.0587 16.3309C8.04527 15.0515 6.3382 13.3444 5.05875 11.3309C3.6504 9.15694 2.77395 6.68176 2.50042 4.10593C2.47959 3.87549 2.50698 3.64323 2.58083 3.42395C2.65469 3.20467 2.77339 3.00317 2.92939 2.83228C3.08538 2.66139 3.27525 2.52486 3.48691 2.43137C3.69856 2.33788 3.92737 2.28948 4.15875 2.28927H6.65875C7.06317 2.28528 7.45524 2.4285 7.76188 2.69221C8.06853 2.95592 8.26881 3.32214 8.32542 3.7226C8.43094 4.52265 8.62662 5.3082 8.90875 6.06427C9.02087 6.36254 9.04513 6.68669 8.97867 6.99833C8.91221 7.30997 8.7578 7.59602 8.53375 7.8226L7.47542 8.88093C8.66171 10.9672 10.3891 12.6946 12.4754 13.8809L13.5337 12.8226C13.7603 12.5985 14.0464 12.4441 14.358 12.3777C14.6697 12.3112 14.9938 12.3355 15.2921 12.4476C16.0481 12.7297 16.8337 12.9254 17.6337 13.0309C18.0386 13.088 18.4083 13.2919 18.6725 13.6038C18.9368 13.9158 19.0772 14.3139 19.0671 14.7226Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <p class="text-14">Обработать</p>
+                  <p class="text-14 md:text-16">Обработать</p>
                 </button>
               </li>
-              <li class="mr-12 last:mr-0">
+              <li class="mr-12 md:mr-16 last:mr-0">
                 <button class="queries__action queries__action-trash flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" name="removing" value="yes" type="submit">
-                  <svg class="mr-8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <svg class="mr-8 md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M2.5 5H4.16667H17.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M6.6665 4.99996V3.33329C6.6665 2.89127 6.8421 2.46734 7.15466 2.15478C7.46722 1.84222 7.89114 1.66663 8.33317 1.66663H11.6665C12.1085 1.66663 12.5325 1.84222 12.845 2.15478C13.1576 2.46734 13.3332 2.89127 13.3332 3.33329V4.99996M15.8332 4.99996V16.6666C15.8332 17.1087 15.6576 17.5326 15.345 17.8451C15.0325 18.1577 14.6085 18.3333 14.1665 18.3333H5.83317C5.39114 18.3333 4.96722 18.1577 4.65466 17.8451C4.3421 17.5326 4.1665 17.1087 4.1665 16.6666V4.99996H15.8332Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M8.3335 9.16663V14.1666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M11.6665 9.16663V14.1666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <p class="text-14">Удалить</p>
+                  <p class="text-14 md:text-16">Удалить</p>
                 </button>
               </li>
             </ul>
@@ -136,4 +137,5 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
   <script src="/src/js/admin/queries/education/queriesActions.js"></script>
   <script src="/src/js/admin/queries/education/searchControl.js"></script>
 </body>
+
 </html>

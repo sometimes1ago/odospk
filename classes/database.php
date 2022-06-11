@@ -69,7 +69,7 @@ final class Database
    */
   private function __construct()
   {
-    $this->pdo = new \PDO('mysql:charset=utf8; port=3307; host=localhost; dbname=odospk', 'root', '');
+    $this->pdo = new \PDO('mysql:charset=utf8; port=3307; host=openserver; dbname=odospk', 'root', '');
     $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
   }
 }

@@ -1,7 +1,7 @@
 .feedbacks-slider .slick-list {
   width: 620px !important;
   overflow: hidden;
-  border-radius: 24px !important;
+  border-radius: 16px !important;
 }
 
 .feedbacks-slider .slick-track {
@@ -11,7 +11,7 @@
 
 .feedbacks-slider .slick-slide {
   width: 620px;
-  margin: 0 auto;
+  margin: 0 16px;
 }
 
 .feedbacks-slider {
@@ -53,7 +53,7 @@
   .feedbacks-slider .slick-list {
     width: 620px !important;
     overflow: hidden;
-    border-radius: 24px !important;
+    border-radius: 16px !important;
   }
   
   .feedbacks-slider .slick-track {
@@ -69,7 +69,7 @@
   .feedbacks-slider {
     width: 620px !important;
     position: relative;
-    border-radius: 24px !important;
+    border-radius: 16px !important;
   }
 }
 
@@ -185,7 +185,7 @@
   .feedbacks-slider .slick-list {
     width: 780px !important;
     overflow: hidden;
-    border-radius: 32px !important;
+    border-radius: 24px !important;
   }
   
   .feedbacks-slider .slick-track {
@@ -201,7 +201,7 @@
   .feedbacks-slider {
     width: 780px !important;
     position: relative;
-    border-radius: 32px !important;
+    border-radius: 24px !important;
   }
 
   .feedbacks-slider .slick-arrow.slick-prev {
