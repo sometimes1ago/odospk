@@ -237,3 +237,31 @@
     }
   }  
 }
+
+.courses__call-order-content {
+  display: block;
+  &__hidden {
+    display: none;
+  }
+}
+
+.courses__call-order-result {
+  display: none;
+  &__visible {
+    display: flex;
+  }
+}
+
+.modal__controls {
+  display: block;
+  &__hidden {
+    display: none;
+  }
+}
+
+.modal__result-inject {
+  display: none;
+  &__visible {
+    display: block;
+  }
+}

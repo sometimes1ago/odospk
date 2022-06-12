@@ -35,7 +35,7 @@ $data = new Data(Database::Instance());
   <title>ODOSPK • Управление данными</title>
 </head>
 
-<body class="w-full h-screen flex leading-none bg-light-600">
+<body class="w-full h-screen flex font-medium leading-none bg-light-600">
   <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user]) ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
     <h1 class="text-32 md:text-48 font-bold">Управление данными</h1>
@@ -102,13 +102,13 @@ $data = new Data(Database::Instance());
               <li class="flex md:mt-24">
                 <div class="w-full flex flex-col mr-16">
                   <label for="addProdSkills" class="text-16 md:text-20 font-bold">Чему научитесь</label>
-                  <textarea class="lg:h-[95px] md:h-[150px] lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdSkills" id="addProdSkills" placeholder="Навыки слушателя после прохождения обучения" required></textarea>
+                  <textarea class="lg:h-[95px] md:h-[150px] font-medium lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdSkills" id="addProdSkills" placeholder="Навыки слушателя после прохождения обучения" required></textarea>
                   <label for="addProdDescription" class="mt-16 md:mt-24 text-16 md:text-20 font-bold">Описание программы</label>
-                  <textarea class="lg:h-[95px] md:h-[150px] lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdDescription" id="addProdDescription" placeholder="Какое-то описание программы" required></textarea>
+                  <textarea class="lg:h-[95px] md:h-[150px] font-medium  lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdDescription" id="addProdDescription" placeholder="Какое-то описание программы" required></textarea>
                 </div>
                 <div class="w-1/4">
                   <label for="addProdPrice" class="block text-16 md:text-20 font-bold">Стоимость</label>
-                  <input type="text" id="addProdPrice" class="addProdPrice w-full mt-12 text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000 ₽" required>
+                  <input type="text" id="addProdPrice" class="addProdPrice w-full mt-12 text-14 md:text-16 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000 ₽" required>
                   <input class="w-full text-14 mt-16 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] md:mt-24 rounded-8 cursor-pointer hover:shadow-btn" name="addNewProd" type="submit" value="Добавить">
                 </div>
               </li>
@@ -122,7 +122,7 @@ $data = new Data(Database::Instance());
             <label for="addFeedbackName" class="block mt-24 text-16 md:text-20 font-bold">Автор отзыва</label>
             <input type="text" name="addFeedbackName" id="addFeedbackName" class="w-full mt-12 text-14 md:text-16 font-medium px-12 py-[11px] md:py-[17px] border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Фамилия Имя" required>
             <label for="addFeedbackContent" class="block mt-16 text-16 md:text-20 font-bold">Содержание отзыва</label>
-            <textarea class="w-full lg:h-[100px] md:h-[200px] lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addFeedbackContent" id="addFeedbackContent" placeholder="Впечатление слушателя" required></textarea>
+            <textarea class="w-full lg:h-[100px] font-medium  md:h-[200px] lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addFeedbackContent" id="addFeedbackContent" placeholder="Впечатление слушателя" required></textarea>
             <input class="w-full text-14 mt-16 md:text-16 font-medium text-light-400 bg-brand-900 py-[15px] md:py-[17px] rounded-8 cursor-pointer hover:shadow-btn" name="addNewFeedbackSender" type="submit" value="Добавить">
           </form>
           <?php if ($user['access_code'] > 2) : ?>

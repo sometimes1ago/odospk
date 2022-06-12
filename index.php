@@ -312,14 +312,14 @@ $feedbacks = $data->getFeedbacks();
           <ul class="courses__call-order-inputs flex ad:flex-col lg:flex-row ad:items-start lg:items-center">
             <li class="ad:w-full lg:mr-24 xl:mr-28 flex flex-col">
               <label class="ad:text-18 xl:text-22 dark:text-light-400" for="helperClientName">Ваше имя и фамилия</label>
-              <input class="ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-18 md:text-18 bg-light-600 border border-light-900 focus:border-brand-900 ad:rounded-8 md:rounded-12 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" type="text" name="helperClientName" id="helperClientName" placeholder="Иван Иванов" required>
+              <input class="coursesCallClientName ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-18 md:text-18 bg-light-600 border border-light-900 focus:border-brand-900 ad:rounded-8 md:rounded-12 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" type="text" name="helperClientName" id="helperClientName" placeholder="Иван Иванов">
             </li>
             <li class="ad:w-full ad:mt-16 lg:mt-0 lg:mr-24 xl:mr-28 flex flex-col">
               <label class="ad:text-18 xl:text-22 dark:text-light-400" for="helperClientPhone">Ваш телефон</label>
-              <input class="ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-18 md:text-18 bg-light-600 border border-light-900 focus:border-brand-900 ad:rounded-8 md:rounded-12 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" type="tel" name="helperClientPhone" id="helperClientPhone" placeholder="+7 900 900 90 90" required>
+              <input class="coursesCallClientPhone ad:mt-12 xl:mt-16 lg:px-12 md:px-16 ad:py-[10px] md:py-18 md:text-18 bg-light-600 border border-light-900 focus:border-brand-900 ad:rounded-8 md:rounded-12 placeholder:text-black-800 dark:border-dark-800 dark:bg-dark-800" type="tel" name="helperClientPhone" id="helperClientPhone" placeholder="+7 900 900 90 90">
             </li>
             <li class="ad:w-full ad:self-start lg:self-end ad:mt-24">
-              <button class="ad:w-full ad:px-16 lg:px-24 md:px-32 ad:py-16 md:py-[22px] md:text-18 bg-brand-900 text-light-400 ad:rounded-8 md:rounded-12 lg:hover:shadow-btn dark:bg-brand-900 dark:text-light-400 dark:hover:shadow-btn dark:hover:outline-none font-bold" type="submit">Позвоните мне</button>
+              <button class="coursesCallSender ad:w-full ad:px-16 lg:px-24 md:px-32 ad:py-16 md:py-[22px] md:text-18 bg-brand-900 text-light-400 ad:rounded-8 md:rounded-12 lg:hover:shadow-btn dark:bg-brand-900 dark:text-light-400 dark:hover:shadow-btn dark:hover:outline-none font-bold" type="submit">Позвоните мне</button>
             </li>
           </ul>
           <div class="courses__call-order-errors"></div>
@@ -332,7 +332,13 @@ $feedbacks = $data->getFeedbacks();
             <p class="shrink-1 ad:ml-8 md:ml-12 text-black-800 ad:text-12 lg:text-14 md:text-18 leading-tight tracking-wide dark:text-light-400">Отправляя данную форму вы автоматически согласны на обработку персональных данных</p>
           </div>
         </div>
-        <div class="courses__call-order-result"></div>
+        <div class="courses__call-order-result flex items-center ad:flex-col lg:flex-row lg:justify-between">
+          <div>
+            <h4 class="ad:text-18 tb:text-20 md:text-24 font-bold text-black-900 dark:text-light-400">Скоро услышимся!</h4>
+            <p class="ad:mt-8 md:mt-12 ad:text-16 xl:text-18 text-black-800 leading-tight dark:text-light-800">Мы свяжемся с вами по указанному телефону</p>
+          </div>
+          <button type="button" class="coursesCallOrderSucceded ad:w-full lg:w-2/5 lg:ml-16 ad:px-16 lg:px-24 md:px-32 ad:py-16 md:py-[22px] md:text-18 bg-brand-900 text-light-400 ad:rounded-8 md:rounded-12 lg:hover:shadow-btn dark:bg-brand-900 dark:text-light-400 dark:hover:shadow-btn dark:hover:outline-none font-bold">Буду ждать!</button>
+        </div>
       </form>
     </div>
   </section>
@@ -344,7 +350,7 @@ $feedbacks = $data->getFeedbacks();
         <?php foreach ($feedbacks as $feedback) : ?>
           <li class="feedbacks-slider__item flex ad:flex-col tb:flex-row ad:flex-start tb:items-center ad:p-24 lg:p-32 bg-light-700 rounded-16 dark:bg-dark-800">
             <div class="flex items-center justify-center h-[160px] bg-light-600 rounded-full border border-light-900 dark:border-dark-700 dark:bg-dark-700">
-              <p class="text-32 w-[160px] text-center dark:text-light-400"><?=mb_substr($feedback['author'], 0, 1)?></p>
+              <p class="text-32 w-[160px] text-center dark:text-light-400"><?= mb_substr($feedback['author'], 0, 1) ?></p>
             </div>
             <div class="tb:ml-24 md:ml-32">
               <h3 class="ad:text-24 md:text-28 ad:mt-36 tb:mt-0 font-bold dark:text-light-400"><?= $feedback['author'] ?></h3>
@@ -441,7 +447,7 @@ $feedbacks = $data->getFeedbacks();
   </div>
   <div class="modal">
     <div class="modal__filter"></div>
-    <form action="" class="modal__form relative shrink-1">
+    <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="modal__form relative shrink-1">
       <svg class="modal__closer w-24 md:w-32 h-24 md:h-32 absolute p-4 top-4 right-4 shrink-0 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M4.5 4.5L13.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -449,21 +455,24 @@ $feedbacks = $data->getFeedbacks();
       <div class="modal__default">
         <h3 class="modal__header">Обратный звонок</h3>
         <p class="modal__subhead">Оставьте заявку на обратный звонок. Мы свяжемся с вами в ближайшее время</p>
-        <ul class="modal__inputs">
-          <li>
-            <label for="customerName" class="modal__label">Ваше имя и фамилия</label>
-            <input type="text" name="customerName" id="customerName" class="modal__input border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="Иван Иванов" required>
-          </li>
-          <li class="modal__item">
-            <label for="customerPhone" class="modal__label">Ваш телефон</label>
-            <input type="tel" name="customerPhone" id="customerPhone" class="modal__input border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="+7 923 900 90 90" required>
-          </li>
-        </ul>
-        <div class="modal__checkbox">
-          <input type="checkbox" name="remember-me" id="remember-me" class="shrink-0 rounded-[5px] form-checkbox w-[18px] h-[18px] border-black-900 border-2" checked required>
-          <label for="remember-me" class="text-14 md:text-16 ml-8 md:ml-16 md:mt-8 text-black-900 shrink-1 leading-tight dark:text-light-400">Я согласен(а) на обработку моих личных данных</label>
+        <div class="modal__errors"></div>
+        <div class="modal__controls">
+          <ul class="modal__inputs">
+            <li>
+              <label for="customerName" class="modal__label">Ваше имя и фамилия</label>
+              <input type="text" name="customerName" id="customerName" class="modal__input modal__client-name border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="Иван Иванов">
+            </li>
+            <li class="modal__item">
+              <label for="customerPhone" class="modal__label">Ваш телефон</label>
+              <input type="tel" name="customerPhone" id="customerPhone" class="modal__input modal__client-phone border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="+7 923 900 90 90">
+            </li>
+          </ul>
+          <div class="modal__checkbox">
+            <input type="checkbox" name="remember-me" id="remember-me" class="modal__agreement shrink-0 rounded-[5px] form-checkbox w-[18px] h-[18px] border-black-900 border-2" checked>
+            <label for="remember-me" class="text-14 md:text-16 ml-8 md:ml-16 md:mt-8 text-black-900 shrink-1 leading-tight dark:text-light-400">Я согласен(а) на обработку моих личных данных</label>
+          </div>
+          <input class="modal__sender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendPhoneRequest" value="Позвоните мне">
         </div>
-        <input class="modal__sender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendPhoneRequest" value="Позвоните мне">
       </div>
       <div class="modal__result-inject"></div>
     </form>
@@ -476,6 +485,8 @@ $feedbacks = $data->getFeedbacks();
   <script src="/src/js/common/slick.min.js"></script>
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/landing/darkmode.js"></script>
+  <script src="/src/js/common/error.js"></script>
+  <script src="/src/js/common/validate.js"></script>
   <script src="/src/js/ajax/landing/courseGet.js"></script>
   <script src="/src/js/ajax/landing/getCallRequest.js"></script>
 </body>

@@ -50,12 +50,12 @@ $(document).ready(function () {
       if ($('.courseErrorContainer').children().length >= 1) {
         $('.courseErrorContainer').children().first().remove();
       }
-      if (!validateInput(courseClientName)) {
-        createError("Вы не ввели ваше имя!");
-      } else if (!validateInput(courseClientPhone)) {
-        createError("Вы не ввели ваш телефон!");
+      if (isEmpty(courseClientName)) {
+        createError("Вы не ввели ваше имя!", ".courseErrorContainer");
+      } else if (isEmpty(courseClientPhone)) {
+        createError("Вы не ввели ваш телефон!", ".courseErrorContainer");
       } else {
-        if (validateInput(courseClientPhone) && validatePhone(courseClientPhone)) {
+        if (!isEmpty(courseClientPhone) && validatePhone(courseClientPhone)) {
           $('.courseErrorContainer').children().remove();
           $.ajax({
             type: "POST",
@@ -90,7 +90,7 @@ $(document).ready(function () {
             }
           });
         } else {
-          createError('Некорректный номер телефона!');
+          createError('Некорректный номер телефона!', ".courseErrorContainer");
         }
       }
     }
@@ -112,26 +112,5 @@ $(document).ready(function () {
       orderState.removeClass("courses__requesting-visible");
       initialState.addClass("courses__initial-visible");
     });
-  }
-
-  function validateInput(input) {
-    processedInput = input.val().trim();
-  
-    if (processedInput) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  
-  function createError(message) {
-    $("<p class='text-14 lg:text-16 md:text-18 text-light-400 break-words'>" + message + "</p>").
-      appendTo($("<div class='w-full mt-16 mb-16 rounded-8 p-12 md:p-16 bg-state-error'></div>").
-      appendTo($(".courseErrorContainer")));
-  }
-  
-  function validatePhone(phoneInput) {
-    let regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-    return regex.test(phoneInput.val().trim());
   }
 });
