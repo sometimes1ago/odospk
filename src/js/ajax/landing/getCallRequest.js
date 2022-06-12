@@ -2,7 +2,8 @@ $(document).ready(function () {
   //Open modal on mobile devices
   let modalInitBtn = $(".menu__help-modal-start"),
     modal = $(".modal"),
-    modalCloser = $(".modal__closer");
+    modalCloser = $(".modal__closer"),
+    modalFooterInitializer = $('.call-order__modal-btn');
 
   modalInitBtn.click(() => {
     modal.toggleClass("modal__active");
@@ -10,6 +11,10 @@ $(document).ready(function () {
 
   modalCloser.click(() => {
     modal.toggleClass("modal__active");
+  });
+
+  modalFooterInitializer.click(() => {
+    modal.toggleClass('modal__active');
   });
 
   //Burger menu back call request handling

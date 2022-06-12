@@ -221,5 +221,19 @@
       width: 24px;
       height: 24px;
     }
+  }
+
+  .upload {
+    &__modal {
+      top: 40%;
+      left: 36%;
+    }
+  }
+
+  .data {
+    &__pill {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
   }  
 }

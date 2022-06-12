@@ -29,6 +29,7 @@
     box-shadow: 0px 4px 16px rgba(51, 112, 202, 0.48);
   }
 }
+
 .add__slider .slick-arrow.slick-next {
   top: 50%;
   right: -6%;
@@ -40,5 +41,19 @@
   background: url('/src/img/landing/icons/slider-next.svg') 0 0/100% no-repeat;
   &:hover {
     box-shadow: 0px 4px 16px rgba(51, 112, 202, 0.48);
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .add__slider {
+    width: 1482px;
+  }
+
+  .add__slider .slick-arrow.slick-next {
+    right: -4%;
+  }
+
+  .add__slider .slick-arrow.slick-prev {
+    left: -4%;
   }
 }

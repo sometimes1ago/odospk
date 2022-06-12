@@ -47,6 +47,9 @@ $(document).ready(function () {
   courseOrderSender.click((event) => {
     event.preventDefault();
     if (courseOrderSender.prop('disabled') == false) {
+      if ($('.courseErrorContainer').children().length >= 1) {
+        $('.courseErrorContainer').children().first().remove();
+      }
       if (!validateInput(courseClientName)) {
         createError("Вы не ввели ваше имя!");
       } else if (!validateInput(courseClientPhone)) {

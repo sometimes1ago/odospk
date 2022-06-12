@@ -114,7 +114,7 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
           <div class="queries__actions w-full font-bold shadow-lg p-12 md:p-16 bg-light-400 absolute bottom-0 border border-light-900 rounded-12">
           <h3 class="text-18 md:text-24">Управление заявкой</h3>
           <p class="mt-8 text-14 md:text-16 text-black-800">Действия, доступные для выбранной заявки</p>
-          <ul class="mt-16 flex items-center">
+          <ul class="mt-16 md:mt-24 flex items-center">
             <li class="mr-12 md:mr-16 last:mr-0">
               <button class="queries__action flex items-center px-12 py-8 md:py-[10px] md:px-16 font-medium bg-light-600 border border-light-900 rounded-8" name="processing" value="yes" type="submit">
                 <svg class="mr-8 md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

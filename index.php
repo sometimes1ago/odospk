@@ -343,7 +343,7 @@ $feedbacks = $data->getFeedbacks();
       <ul class="feedbacks-slider self-center block ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64">
         <?php foreach ($feedbacks as $feedback) : ?>
           <li class="feedbacks-slider__item flex ad:flex-col tb:flex-row ad:flex-start tb:items-center ad:p-24 lg:p-32 bg-light-700 rounded-16 dark:bg-dark-800">
-            <div class="flex items-center justify-center h-[160px] bg-light-600 rounded-full border border-light-900 dark:border-dark-700 dark:bg-light-700">
+            <div class="flex items-center justify-center h-[160px] bg-light-600 rounded-full border border-light-900 dark:border-dark-700 dark:bg-dark-700">
               <p class="text-32 w-[160px] text-center dark:text-light-400"><?=mb_substr($feedback['author'], 0, 1)?></p>
             </div>
             <div class="tb:ml-24 md:ml-32">
@@ -433,7 +433,7 @@ $feedbacks = $data->getFeedbacks();
   </a>
   <div class="darkmode__ntf fixed ad:bottom-16 ad:mx-16 tb:mx-0 tb:right-24 tb:bottom-24 lg:right-32 lg:bottom-32 ad:p-12 tb:p-16 md:p-20 dark:bg-dark-800 rounded-16 z-[12]">
     <h3 class="ad:text-18 lg:text-20 tb:text-24 md:text-24 text-light-400">Включен <span class="ad:text-20 lg:text-20 tb:text-24 md:text-24 text-brand-900">ночной режим</span></h3>
-    <p class="ad:w-full tb:w-[290px] ad:text-14 md:text-16 ad:mt-4 tb:mt-8 text-light-700 leading-tight">Ваши глаза под надежной защитой. Выбирайте наши курсы и изучайте информацию с комфортом для зрения</p>
+    <p class="ad:w-full tb:w-[290px] md:w-[310px] ad:text-14 md:text-16 ad:mt-4 tb:mt-8 text-light-700 leading-tight">Ваши глаза под надежной защитой. Выбирайте наши курсы и изучайте информацию с комфортом для зрения</p>
     <div class="flex items-center mt-16">
       <button class="darkmode__ntf-accept ad:w-1/2 tb:w-fit lg:mr-16 py-[14px] px-[50px] text-14 text-light-400 font-bold bg-brand-900 rounded-8 lg:hover:shadow-btn">Спасибо</button>
       <button class="darkmode__ntf-decline ad:w-1/2 tb:w-fit py-[14px] px-16 text-light-400 text-14 font-bold bg-dark-800">Отключить</button>
@@ -442,7 +442,7 @@ $feedbacks = $data->getFeedbacks();
   <div class="modal">
     <div class="modal__filter"></div>
     <form action="" class="modal__form relative shrink-1">
-      <svg class="modal__closer w-24 h-24 absolute p-4 top-4 right-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <svg class="modal__closer w-24 md:w-32 h-24 md:h-32 absolute p-4 top-4 right-4 shrink-0 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M4.5 4.5L13.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>

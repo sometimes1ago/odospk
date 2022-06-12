@@ -35,7 +35,7 @@ $user = $_SESSION['user'];
 <body class="w-full h-screen flex leading-none bg-light-600">
   <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user]) ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
-    <h1 class="text-32 font-bold">Управление данными</h1>
+    <h1 class="text-32 md:text-48 font-bold">Управление данными</h1>
     <div class="h-[92%] mt-16 p-16 rounded-16 bg-light-400 shadow-section">
       <ul class="flex items-center">
         <li class="mr-16 last:mr-0">
@@ -50,7 +50,7 @@ $user = $_SESSION['user'];
       </ul>
       <ul class="flex items-start mt-24">
         <li class="mr-24 last:mr-0">
-          <form action="" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
+          <form action="<?=$_SERVER['PHP_SELF']?>" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
             <h2 class="lg:text-20 md:text-24 font-bold">Изменение программы</h2>
             <p class="lg:mt-8 lg:text-16 md:text-18 leading-tight text-black-800">Выберите программу, что заменить <br> и введите новое значение</p>
             <label class="dropdown__label mb-12 mt-24 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="0">Выберите программу</label>
