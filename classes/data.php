@@ -16,6 +16,11 @@ final class Data
     return $result;
   }
 
+  public function getCoursesList(): ?array
+  {
+    return $this->db->fetchAll('SELECT `name` FROM `courses`');
+  }
+
   public function getCourseData(string $name): ?array
   {
     return $this->db->fetch('SELECT * FROM `getCourses` WHERE `name` = :name', ['name' => $name]);
@@ -23,12 +28,12 @@ final class Data
 
   public function getUserNotes($userId): ?array
   {
-    return array_reverse($this->db->fetchAll('CALL getUserNotes(:id)', ['id' => $userId]));
+    return array_reverse($this->db->fetchAll('CALL getusernotes(:id)', ['id' => $userId]));
   }
 
   public function createUserNote($value, $userId): void
   {
-    $this->db->query('call createNote(:value, :userId)', ['value' => $value, 'userId' => $userId]);
+    $this->db->query('call createnote(:value, :userId)', ['value' => $value, 'userId' => $userId]);
   }
 
   public function getPhotos(): ?array 
@@ -103,5 +108,9 @@ final class Data
   public function getFeedbacks(): ?array
   {
     return $this->db->fetchAll('SELECT `author`, `content` FROM `feedbacks`');
+  }
+
+  public function getFeedbacksAuthors(): ?array {
+    return $this->db->fetchAll('SELECT `author` FROM `feedbacks`');
   }
 }

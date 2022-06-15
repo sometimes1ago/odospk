@@ -17,8 +17,7 @@ $(document).ready(function () {
     modal.toggleClass("modal__active");
   });
 
-  //#region Burger menu back call request handling
-
+  
   let inpustContainer = $(".burger__request-form"),
     menuClientName = $(".menu__help-clientname"),
     menuClientPhone = $(".menu__help-clientphone"),
@@ -85,15 +84,11 @@ $(document).ready(function () {
             }
           });
         } else {
-          createError("Вы ввели некорректный номер телефона!");
+          createError("Вы ввели некорректный номер телефона!", ".burger__request-errors");
         }
       }
     }
   });
-
-  //#endregion
-
-  //#region Courses call request handling
 
   let coursesCallClientName = $(".coursesCallClientName"),
     coursesCallClientPhone = $(".coursesCallClientPhone"),
@@ -137,12 +132,10 @@ $(document).ready(function () {
           });
         }
       });
+    } else {
+      createError('Вы ввели некорректный номер телефона!', ".courses__call-order-errors")
     }
   });
-
-  //#endregion
-
-  //#region Modal call request handling
 
   let modalClientName = $(".modal__client-name"),
     modalClientPhone = $(".modal__client-phone"),
@@ -214,5 +207,4 @@ $(document).ready(function () {
     }
   });
 
-  //#endregion
 });

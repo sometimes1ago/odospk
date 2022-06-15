@@ -907,6 +907,14 @@ select {
   left: 50%;
 }
 
+.bottom-24 {
+  bottom: 24px;
+}
+
+.right-24 {
+  right: 24px;
+}
+
 .top-8 {
   top: 8px;
 }
@@ -1113,6 +1121,10 @@ select {
   height: fit-content;
 }
 
+.h-72 {
+  height: 18rem;
+}
+
 .h-\[424px\] {
   height: 424px;
 }
@@ -1203,6 +1215,10 @@ select {
   width: 120px;
 }
 
+.w-\[320px\] {
+  width: 320px;
+}
+
 .min-w-\[192px\] {
   min-width: 192px;
 }
@@ -1271,8 +1287,16 @@ select {
   align-items: flex-start;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
