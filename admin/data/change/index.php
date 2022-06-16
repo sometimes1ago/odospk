@@ -17,6 +17,7 @@ $data = new Data(Database::Instance());
 
 $courses = $data->getCoursesList();
 $feedbacks = $data->getFeedbacksAuthors();
+$users = $data->getUsersList();
 
 ?>
 <!DOCTYPE html>
@@ -92,7 +93,7 @@ $feedbacks = $data->getFeedbacksAuthors();
               </ul>
             </div>
             <label for="changeProgramValue" class="block mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
-            <input type="text" id="changeProgramValue" class="changeProgramValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000">
+            <input type="text" id="changeProgramValue" class="changeProgramValue w-full text-14 font-medium px-12 py-[11px] md:py-16 md:text-16 border outline-brand-900 outline-2 ad:rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="1000">
             <div class="dropdown dropdown__prog-diploma-type dropdown__light z-[9]" data-index="2">
               <div class="dropdown__btn">
                 <p class="dropdown__btn-text dropdown__program-diploma-type__value" data-dropdownValue="Сертификат">Сертификат</p>
@@ -117,11 +118,11 @@ $feedbacks = $data->getFeedbacksAuthors();
                 <li class="dropdown__option courseTypeOption">Профессиональная подготовка</li>
               </ul>
             </div>
-            <input class="changeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeProgSend" value="Изменить">
+            <input class="changeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeProgSend" value="Изменить">
           </form>
         </li>
         <li class="mr-24 last:mr-0">
-          <form autocomplete="off" action="<?=$_SERVER['PHP_SELF']?>" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
+          <form autocomplete="off" action="<?=$_SERVER['PHP_SELF']?>" method="post" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
             <h2 class="lg:text-20 md:text-24 font-bold">Изменение отзыва</h2>
             <p class="lg:mt-8 lg:text-16 md:text-18 leading-tight text-black-800">Выберите отзыв, что заменить <br> и введите новое значение</p>
             <label class="dropdown__label mb-12 mt-24 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="4">Автор отзыва</label>
@@ -148,37 +149,36 @@ $feedbacks = $data->getFeedbacksAuthors();
                   <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                 </svg>
               </div>
-              <ul class="dropdown__options">
+              <ul class="dropdown__options changeFeedbackPropOptions">
                 <li class="dropdown__option changeFeedbackPropOption">Автор отзыва</li>
                 <li class="dropdown__option changeFeedbackPropOption">Содержание отзыва</li>
               </ul>
             </div>
             <label for="changFeedbackValue" class="block mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
-            <input type="text" id="changFeedbackValue" class="changFeedbackValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
-            <input class="changeFeedbackSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeFeedbackSend" value="Изменить">
+            <input type="text" id="changFeedbackValue" class="changFeedbackValue w-full text-14 font-medium px-12 py-[11px] md:py-16 md:text-16 border outline-brand-900 outline-2 ad:rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
+            <input class="changeFeedbackSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeFeedbackSend" value="Изменить">
           </form>
         </li>
         <li class="mr-24 last:mr-0">
           <?php if ($user['access_code'] > 2) : ?>
-            <form autocomplete="off" action="" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
+            <form autocomplete="off" action="<?=$_SERVER['PHP_SELF']?>" class="w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
               <h2 class="lg:text-20 md:text-24 font-bold">Данные пользователя</h2>
               <p class="lg:mt-8 lg:text-16 md:text-18 leading-tight text-black-800">Выберите пользователя, что <br> заменить и введите новое значение</p>
               <label class="dropdown__label mb-12 mt-24 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="6">Выберите пользователя</label>
               <div class="dropdown dropdown__light z-[11]" data-index="6">
                 <div class="dropdown__btn">
-                  <p class="dropdown__btn-text dropdown__changeUserValue" data-dropdownValue="Пользователь 1">Пользователь 1</p>
+                  <p class="dropdown__btn-text dropdown__changeUserValue" data-dropdownValue="<?=$users[0]['name']?>"><?=$users[0]['name']?></p>
                   <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                     <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                   </svg>
                 </div>
-                <ul class="dropdown__options">
-                  <li class="dropdown__option changeUserOption">Пользователь 1</li>
-                  <li class="dropdown__option changeUserOption">Пользователь 2</li>
-                  <li class="dropdown__option changeUserOption">Пользователь 3</li>
-                  <li class="dropdown__option changeUserOption">Пользователь 4</li>
-                  <li class="dropdown__option changeUserOption">Пользователь 5</li>
-                  <li class="dropdown__option changeUserOption">Пользователь 6</li>
-                </ul>
+                <?php if (!empty($users)) : ?>
+                  <ul class="dropdown__options changeUserOptions">
+                    <?php foreach ($users as $user) : ?>
+                      <li class="dropdown__option changeUserOption"><?=$user['name']?></li>
+                    <?php endforeach; ?>
+                  </ul>
+                <?php endif; ?>
               </div>
               <label class="dropdown__label mb-12 mt-16 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="7">Свойство пользователя</label>
               <div class="dropdown dropdown__light z-10" data-index="7">
@@ -188,15 +188,16 @@ $feedbacks = $data->getFeedbacksAuthors();
                     <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                   </svg>
                 </div>
-                <ul class="dropdown__options">
+                <ul class="dropdown__options changeUserPropOptions">
                   <li class="dropdown__option changeUserPropOption">Имя</li>
                   <li class="dropdown__option changeUserPropOption">Логин</li>
                   <li class="dropdown__option changeUserPropOption">Пароль</li>
+                  <li class="dropdown__option changeUserPropOption">Эл. почту</li>
                   <li class="dropdown__option changeUserPropOption">Уровень доступа</li>
                 </ul>
               </div>
               <label for="changeUserValue" class="block mb-12 mt-16 lg:text-18 font-bold dark:text-light-400">Введите значение</label>
-              <input type="text" id="changeUserValue" class="changeUserValue w-full text-14 font-medium px-12 py-[11px] xl:py-16 xl:text-16 border outline-brand-900 outline-2 ad:rounded-8 lg:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
+              <input type="text" id="changeUserValue" class="changeUserValue w-full text-14 font-medium px-12 py-[11px] md:py-16 md:text-16 border outline-brand-900 outline-2 ad:rounded-8 md:rounded-12 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
               <div class="dropdown dropdown__changeUserAccess dropdown__light z-[9]" data-index="8">
                 <div class="dropdown__btn">
                   <p class="dropdown__btn-text dropdown__changeUserAccessValue" data-dropdownValue="Оператор">Оператор</p>
@@ -204,13 +205,13 @@ $feedbacks = $data->getFeedbacksAuthors();
                     <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525"/>
                   </svg>
                 </div>
-                <ul class="dropdown__options">
+                <ul class="dropdown__options accessLevelOptions">
                   <li class="dropdown__option accessLevelOption">Оператор</li>
                   <li class="dropdown__option accessLevelOption">Контент менеджер</li>
                   <li class="dropdown__option accessLevelOption">Администратор</li>
                 </ul>
               </div>
-              <input class="changeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeUserSend" value="Изменить">
+              <input class="changeUserSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="changeUserSend" value="Изменить">
             </form>
           <?php endif; ?>
         </li>

@@ -1,34 +1,56 @@
-let feedbackValue = document.querySelector('.dropdown__changeFeedbackValue').dataset.dropdownvalue,
-  feedbackProp = document.querySelector('.dropdown__changeFeedbackProp').dataset.dropdownvalue,
-  feedbackChangeValue = document.querySelector('.changFeedbackValue'),
-  feedbackChangeOptions = document.querySelectorAll('.changeFeedbackOption'),
-  feedbackChangePropOptions = document.querySelectorAll('.changeFeedbackPropOption');
+$(document).ready(() => {
+  let feedbackValue = $(".dropdown__changeFeedbackValue").data("dropdownvalue"),
+    feedbackProp = $(".dropdown__changeFeedbackProp").data("dropdownvalue"),
+    feedbackChangeValue = $(".changFeedbackValue"),
+    feedbackChangeOptions = $(".changeFeedbackOptions").children(),
+    feedbackChangePropOptions = $(".changeFeedbackPropOptions").children();
 
-let changeFeedbackDataToSend = [
-  feedbackValue,
-  feedbackProp,
-  feedbackChangeValue.value
-];
-
-feedbackChangeValue.onchange = () => {
-  changeFeedbackDataToSend = [
-    feedbackValue,
-    feedbackProp,
+  let changeFeedbackDataToSend = [
+    feedbackValue, 
+    feedbackProp, 
     feedbackChangeValue.value
   ];
 
-  console.log(changeFeedbackDataToSend);
-}
-
-feedbackChangeOptions.forEach((feedbackChangeOption) => {
-  feedbackChangeOption.addEventListener('click', () => {
-    feedbackValue = feedbackChangeOption.textContent;
+  feedbackChangeValue.on('input', () => {
+    changeFeedbackDataToSend = [
+      feedbackValue, 
+      feedbackProp, 
+      feedbackChangeValue.val().trim()
+    ];
   });
-});
 
-feedbackChangePropOptions.forEach((feedbackChangePropOption) => {
-  feedbackChangePropOption.addEventListener('click', () => {
-    feedbackProp = feedbackChangePropOption.textContent;
-    console.log(feedbackProp);
+  feedbackChangeOptions.click(function() {
+    feedbackValue = $(this).text();
+  });
+
+  feedbackChangePropOptions.click(function() {
+    feedbackProp = $(this).text();
+  });
+
+  $('.changeFeedbackSender').click(function(event) {
+    event.preventDefault();
+
+    if (isEmpty(feedbackChangeValue)) {
+      createError('Вы не ввели значение!', '.responseContainer');
+    } else {
+      $('.responseContainer').children().remove();
+
+      $.ajax({
+        type: "POST",
+        url: "/server_processing/admin/data/change/changeFeedbackHandler.php",
+        data: { 
+          insertedData: 
+          changeFeedbackDataToSend 
+        },
+      }).done(function (response) {
+        feedbackChangeValue.val('');
+        $('.responseContainer').html(response);
+      
+        //Reload page after successful feedback change response
+        setTimeout(function() {
+          location.reload();
+        }, 2000);
+      });
+    }
   });
 });

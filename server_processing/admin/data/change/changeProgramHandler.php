@@ -43,9 +43,9 @@ function checkProgProps(string $progProp) {
 function changeProgam($data) {
   if (!empty($data)) {
     
-    $progName = $data['progName'];
-    $checkedProp = checkProgProps($data['progProp']);
-    $checkedValue = $data['insetredValue'];
+    $progName = htmlspecialchars(trim($data['progName']));
+    $checkedProp = htmlspecialchars(trim(checkProgProps($data['progProp'])));
+    $checkedValue = htmlspecialchars(trim($data['insetredValue']));
 
     if ($checkedProp == 'courseType' && $checkedValue == 'Курс') {
       $checkedValue = '1';

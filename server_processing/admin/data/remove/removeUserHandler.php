@@ -2,7 +2,7 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/core.php';
 
-$userToRemove = $_POST['insertedData'];
+$userToRemove = htmlspecialchars(trim($_POST['insertedData']));
 
 $prechecking = Database::Instance()->fetch(
   'SELECT `access_level` FROM `users` WHERE `name` = :name',

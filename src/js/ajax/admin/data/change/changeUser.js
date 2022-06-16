@@ -1,79 +1,94 @@
-let changeUser = document.querySelector('.dropdown__changeUserValue').dataset.dropdownvalue,
-  changeUserProp = document.querySelector('.dropdown__changeUserProp').dataset.dropdownvalue,
-  changeUserAccessValue = document.querySelector('.dropdown__changeUserAccessValue').dataset.dropdownvalue,
-  changeUserPropOptions = document.querySelectorAll('.changeUserPropOption'),
-  changeUserAccessLevels = document.querySelectorAll('.accessLevelOption'),
-  changeUserOptions = document.querySelectorAll('.changeUserOption');
+$(document).ready(() => {
+  let changeUser = $(".dropdown__changeUserValue").data("dropdownvalue"),
+    changeUserProp = $(".dropdown__changeUserProp").data("dropdownvalue"),
+    changeUserAccessValue = $(".dropdown__changeUserAccessValue").data("dropdownvalue"),
+    changeUserPropOptions = $(".changeUserPropOptions").children(),
+    changeUserAccessLevels = $(".accessLevelOptions").children(),
+    changeUserOptions = $(".changeUserOptions").children();
 
-const changeUserAccess = document.querySelector('.dropdown__changeUserAccess'),
-  changeUserInput = document.querySelector('.changeUserValue');
+  const changeUserAccess = $(".dropdown__changeUserAccess"),
+    changeUserInput = $(".changeUserValue");
 
-let changeUserDataToSend = [
-  changeUser,
-  changeUserProp,
-  changeUserInput.value
-];
+  let changeUserDataToSend = [changeUser, changeUserProp, changeUserInput.val()];
 
-changeUserInput.onchange = () => {
-  changeUserDataToSend = [
-    changeUser,
-    changeUserProp,
-    changeUserInput.value
-  ];
-}
-
-changeUserOptions.forEach((changeUserOption) => {
-  changeUserOption.addEventListener('click', () => {
-    changeUser = changeUserOption.textContent;
-
-    changeUserDataToSend = [
-      changeUser,
-      changeUserProp,
-      changeUserInput.value
-    ];
-
+  changeUserInput.on("input", () => {
+    changeUserDataToSend = [changeUser, changeUserProp, changeUserInput.val()];
   });
-});
 
-changeUserPropOptions.forEach((changeUserPropOption) => {
-  changeUserPropOption.addEventListener('click', () => {
-    changeUserProp = changeUserPropOption.textContent;
+  changeUserOptions.click(function () {
+    changeUser = $(this).text();
 
-    if (changeUserProp == 'Уровень доступа') {
-      changeUserAccess.style.display = 'block';
-      changeUserInput.style.display = 'none';
+    changeUserDataToSend = [changeUser, changeUserProp, changeUserInput.val()];
+  });
 
-      changeUserDataToSend = [
-        changeUser,
-        changeUserProp,
-        changeUserAccessValue
-      ];
+  changeUserPropOptions.click(function () {
+    changeUserProp = $(this).text();
 
-      changeUserAccessLevels.forEach((userAccessLevel) => {
-        userAccessLevel.addEventListener('click', () => {
-          changeUserAccessValue = userAccessLevel.textContent;
+    if (changeUserProp == "Уровень доступа") {
+      changeUserAccess.css({ display: "block" });
+      changeUserInput.css({ display: "none" });
 
-          changeUserDataToSend = [
-            changeUser,
-            changeUserProp,
-            changeUserAccessValue
-          ];
+      changeUserDataToSend = [changeUser, changeUserProp, changeUserAccessValue];
 
-        });
+      changeUserAccessLevels.click(function () {
+        changeUserAccessValue = $(this).text();
+
+        changeUserDataToSend = [changeUser, changeUserProp, changeUserAccessValue];
       });
     } else {
-      changeUserAccess.style.display = 'none';
-      changeUserInput.style.display = 'block';
+      changeUserAccess.css({ display: "none" });
+      changeUserInput.css({ display: "block" });
+    }
+  });
+
+  if (changeUserProp != "Уровень доступа") {
+    changeUserAccess.css({ display: "none" });
+    changeUserInput.css({ display: "block" });
+  }
+
+  $(".changeUserSender").click(function (event) {
+    event.preventDefault();
+
+    if (changeUserInput.css("display") == "block") {
+      if (isEmpty(changeUserInput)) {
+        createError("Вы не ввели значение!", ".responseContainer");
+      } else {
+        $(".responseContainer").children().remove();
+
+        $.ajax({
+          type: "POST",
+          url: "/server_processing/admin/data/change/changeUserHandler.php",
+          data: {
+            insertedData: changeUserDataToSend,
+          },
+        }).done(function (response) {
+          changeUserInput.val("");
+          $(".responseContainer").html(response);
+
+          //Reload page after successful program change response
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
+        });
+      }
+    } else if (changeUserAccess.css("display") == "block") {
+      $(".responseContainer").children().remove();
+
+      $.ajax({
+        type: "POST",
+        url: "/server_processing/admin/data/change/changeUserHandler.php",
+        data: {
+          insertedData: changeUserDataToSend,
+        },
+      }).done(function (response) {
+        changeUserInput.val("");
+        $(".responseContainer").html(response);
+
+        //Reload page after successful program change response
+        setTimeout(function () {
+          location.reload();
+        }, 2000);
+      });
     }
   });
 });
-
-if (changeUserProp != 'Уровень доступа') {
-  changeUserInput.style.display = 'block';
-  changeUserAccess.style.display = 'none';
-}
-
-
-
-
-

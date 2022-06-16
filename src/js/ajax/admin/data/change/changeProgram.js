@@ -138,7 +138,12 @@ $(document).ready(() => {
           },
         }).done(function (response) {
           changeProgInputValue.val('');
-          $('.responseContainer').html(response); 
+          $('.responseContainer').html(response);
+          
+          //Reload page after successful program change response
+          setTimeout(function() {
+            location.reload();
+          }, 2000);
         });
       }
     }
@@ -154,7 +159,12 @@ $(document).ready(() => {
           changeProgDataToSend 
         },
       }).done(function (response) {
-        $('.responseContainer').html(response); 
+        $('.responseContainer').html(response);
+        
+        //Reload page after successful program change response
+        setTimeout(function() {
+          location.reload();
+        }, 2000);
       });
     }
   });

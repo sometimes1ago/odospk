@@ -2,7 +2,7 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/core.php';
 
-$progToRemove = $_POST['insertedData'];
+$progToRemove = htmlspecialchars(trim($_POST['insertedData']));
 
 Database::Instance()->query(
   "DELETE FROM `courses` WHERE `name` = '$progToRemove';",
