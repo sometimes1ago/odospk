@@ -19,6 +19,11 @@ $(document).ready(() => {
       },
     }).done(function (response) {
       $('.responseContainer').html(response);
+
+      //Reload page after successful program remove response
+      setTimeout(function () {
+        location.reload();
+      }, 2000);
     });
   });
 });

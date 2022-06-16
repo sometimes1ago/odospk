@@ -217,7 +217,7 @@ $users = $data->getUsersList();
         </li>
       </ul>
     </div>
-    <div class="responseContainer absolute flex flex-col justify-end items-end w-[320px] h-72 bottom-24 right-24"></div>
+    <div class="responseContainer absolute flex flex-col justify-end items-end w-[320px] h-48 bottom-24 right-24"></div>
   </section>
   <script src="/src/js/common/jquery.min.js"></script>
   <script src="/src/js/common/validate.js"></script>

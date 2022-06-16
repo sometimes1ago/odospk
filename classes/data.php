@@ -12,7 +12,7 @@ final class Data
 
   public function getCourses(string $type): ?array
   {
-    $result = $this->db->fetchAll('SELECT * FROM `getCourses` WHERE `courseType` = :type', ['type' => $type]);
+    $result = $this->db->fetchAll('SELECT * FROM `getCourses` WHERE `courseType` = :type ORDER BY `name` ASC', ['type' => $type]);
     return $result;
   }
 
