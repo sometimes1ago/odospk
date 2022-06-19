@@ -49,6 +49,7 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>ODOSPK • Заявки • Обучение</title>
 </head>
 
@@ -102,7 +103,7 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
           <ul class="overflow-y-scroll scrollbar h-[424px] md:h-[690px]">
             <?php includeTemplate('elements/queries/query_call.php', ['calls' => $calls]) ?>
           </ul>
-          <div class="queries__actions w-full font-bold shadow-lg p-12 md:p-16 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
+          <div class="animate__animated animate__fadeInUp animate__fast queries__actions w-full font-bold shadow-lg p-12 md:p-16 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
             <h3 class="text-18 md:text-24">Управление заявкой</h3>
             <p class="mt-8 text-14 md:text-18 text-black-800">Действия, доступные для выбранной заявки</p>
             <ul class="mt-16 md:mt-24 flex items-center">

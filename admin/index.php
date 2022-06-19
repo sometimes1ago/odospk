@@ -50,6 +50,7 @@ if (isset($_POST['submitRestore'])) {
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>ODOSPK • Вход</title>
 </head>
 <body class="flex items-center justify-center flex-col relative font-medium text-black-900 leading-none">
@@ -58,12 +59,12 @@ if (isset($_POST['submitRestore'])) {
     <h1 class="text-22 md:text-24">Вход в систему</h1>
     <p class="text-16 mt-8 md:text-18 text-black-800 text-center leading-tight">Авторизуйтесь чтобы получить доступ к панели администратора</p>
     <?php if (!empty($errors)) :?>
-      <div class="w-full mt-16 rounded-8 p-12 bg-state-error">
+      <div class="animate__animated animate__fadeInDown w-full mt-16 rounded-8 p-12 bg-state-error">
         <p class="text-14 text-light-400 break-words"><?=array_shift($errors)?></p>
       </div>
     <?php endif; ?>
     <?php if (!empty($succeded)) : ?>
-      <div class="w-full mt-16 rounded-8 p-12 bg-state-success">
+      <div class="animate__animated animate__fadeInDown w-full mt-16 rounded-8 p-12 bg-state-success">
         <p class="text-14 text-light-400 break-words"><?=array_shift($succeded)?></p>
       </div>
     <?php endif; ?>
@@ -81,7 +82,7 @@ if (isset($_POST['submitRestore'])) {
     <p class="dataRestore__init mt-24 text-14 md:text-16 text-black-800 cursor-pointer">Не можете войти?</p>
   </form>
   <div class="dataRestore__filter absolute w-screen h-screen bg-[#000] opacity-50"></div>
-  <form class="dataRestore__form absolute w-[420px] md:w-[460px] bg-light-400 rounded-12 md:rounded-16" action="" method="post">
+  <form class="animate__animated animate__fadeIn dataRestore__form absolute w-[420px] md:w-[460px] bg-light-400 rounded-12 md:rounded-16" action="" method="post">
     <div class="relative p-12 md:p-16">
       <svg class="dataRestore__closer w-18 h-18 top-12 right-8 absolute shrink-0 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

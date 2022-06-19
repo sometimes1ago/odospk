@@ -5,7 +5,7 @@
     </svg>
     <p class="notes__btn-text">Показать заметки</p>
   </div>
-  <div class="notes__content">
+  <div class="animate__animated animate__fadeIn animate__fast notes__content">
     <h3 class="notes__header">Рабочие заметки</h3>
     <p class="notes__subhead">Ваши личные записи всегда под рукой</p>
     <ul class="notes__list scrollbar">

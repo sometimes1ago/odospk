@@ -1121,10 +1121,6 @@ select {
   height: fit-content;
 }
 
-.h-72 {
-  height: 18rem;
-}
-
 .h-\[424px\] {
   height: 424px;
 }
@@ -1203,6 +1199,10 @@ select {
   width: 25%;
 }
 
+.w-\[320px\] {
+  width: 320px;
+}
+
 .w-10\/12 {
   width: 83.333333%;
 }
@@ -1213,10 +1213,6 @@ select {
 
 .w-\[120px\] {
   width: 120px;
-}
-
-.w-\[320px\] {
-  width: 320px;
 }
 
 .min-w-\[192px\] {
@@ -1313,6 +1309,10 @@ select {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-y-scroll {
@@ -3226,6 +3226,11 @@ select {
   .md\:py-\[17px\] {
     padding-top: 17px;
     padding-bottom: 17px;
+  }
+
+  .md\:py-16 {
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .md\:pr-\[84px\] {

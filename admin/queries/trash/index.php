@@ -51,15 +51,16 @@ if (isset($_POST['clear']) && $_POST['clear'] === 'yes') {
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>ODOSPK • Заявки • Корзина</title>
 </head>
-<body class="w-full h-screen flex leading-none bg-light-600">
+<body class="w-full h-screen flex leading-none bg-light-600 overflow-hidden">
   <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user])?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
   <h1 class="text-32 md:text-48 font-bold">Заявки • Корзина</h1>
     <div class="w-full h-[92%] flex items-center md:items-start relative flex-col mt-16 md:mt-24 p-16 rounded-16 bg-light-400 shadow-section">
       <?php includeTemplate('sections/queries_header.php', ['queriesTabs' => $queriesTabs, 'userNotes' => $userNotes]) ?>
-      <ul class="flex items-center lg:w-full mt-16 font-medium">
+      <ul class="flex items-center lg:w-full mt-16 font-medium headerSortBy__parent">
         <li class="headerSortBy lg:max-w-[151px] xl:max-w-[160px] lg:min-w-[151px] xl:min-w-[160px] flex items-center border-2 border-light-900 border-collapse px-12 py-8 rounded-tl-8 rounded-bl-8 cursor-pointer" data-sortByValue="id">
           <svg class="lg:w-20 lg:h-20 mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
             <path d="M3.33325 7.5H16.6666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -107,10 +108,10 @@ if (isset($_POST['clear']) && $_POST['clear'] === 'yes') {
       </ul>
       <?php if (!empty($queries)) : ?>
         <form class="w-full md:w-[80%] max-h-[90%] mt-12 md:mt-16 relative" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
-          <ul class="overflow-y-scroll scrollbar h-[424px] md:h-[690px]">
+          <ul class="sortEduQueriesResult overflow-y-scroll scrollbar h-[424px] md:h-[690px]">
             <?php includeTemplate('elements/queries/query_edu.php', ['queries' => $queries]) ?>
           </ul>
-          <div class="queries__actions w-full font-bold shadow-lg p-12 md:p-16 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
+          <div class="animate__animated animate__fadeInUp animate__fast queries__actions w-full font-bold shadow-lg p-12 md:p-16 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
             <h3 class="text-18 md:text-24">Управление заявкой</h3>
             <p class="mt-8 text-14 md:text-18 text-black-800">Действия, доступные для выбранной заявки</p>
             <ul class="mt-16 md:mt-24 flex items-center">
@@ -151,6 +152,8 @@ if (isset($_POST['clear']) && $_POST['clear'] === 'yes') {
       <?php endif; ?>
     </div>
   </section>
+  <script src="/src/js/common/jquery.min.js"></script>
+  <script src="/src/js/ajax/admin/sortEduQueries.js"></script>
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/admin/queries/addNote.js"></script>

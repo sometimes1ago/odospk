@@ -61,6 +61,8 @@ $(document).ready(function () {
             },
           }).done(function (response) {
             menuRequestErrors.children().remove();
+            menuClientName.val("");
+            menuClientPhone.val("");
             inpustContainer.addClass("burger__request-form__hidden");
             menuRequestResult.addClass("burger__request-result__visible");
             menuRequestResult.html(response);
@@ -69,7 +71,7 @@ $(document).ready(function () {
               let succededCallBtn = $(".callOrderSucceded");
 
               succededCallBtn.click(() => {
-                inpustContainer.removeClass("burger__request-form__hidden");
+                inpustContainer.removeClass("burger__request-form__hidden").addClass("animate__animatd", "animate__fadeIn");
                 menuRequestResult.removeClass("burger__request-result__visible");
               });
             }
@@ -78,7 +80,7 @@ $(document).ready(function () {
               let rollbackCallBtn = $(".callOrderRollbacked");
 
               rollbackCallBtn.click(() => {
-                inpustContainer.removeClass("burger__request-form__hidden");
+                inpustContainer.removeClass("burger__request-form__hidden").addClass("animate__animatd", "animate__fadeIn");
                 menuRequestResult.removeClass("burger__request-result__visible");
               });
             }
@@ -119,6 +121,8 @@ $(document).ready(function () {
           insertedPhone: coursesCallClientPhone.val().trim(),
         },
       }).done(function () {
+        coursesCallClientName.val("");
+        coursesCallClientPhone.val("");
         coursesCallErrors.children().remove();
         coursesCallContent.addClass("courses__call-order-content__hidden");
         coursesCallResult.addClass("courses__call-order-result__visible");
@@ -206,5 +210,4 @@ $(document).ready(function () {
       }
     }
   });
-
 });

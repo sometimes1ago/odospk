@@ -28,10 +28,15 @@ $feedbacks = $data->getFeedbacks();
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
   <link rel="stylesheet" href="/src/css/toggle-switchy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>Отделение дополнительного образования</title>
 </head>
 
 <body class="w-full flex flex-col items-center relative bg-light-500 text-black-900 font-medium leading-none dark:bg-dark-900 dark:text-light-900">
+  <script src="/src/js/common/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
   <header id="head" class="w-full relative ad:mb-36 tb:mb-[60px] lg:mb-48 md:mb-56 xl:mb-[80px]">
     <div class="menu__button">
       <span class="menu__lines"></span>
@@ -50,7 +55,7 @@ $feedbacks = $data->getFeedbacks();
       </label>
     </div>
     <div id="menu" class="menu">
-      <ul class="menu__content">
+      <ul class="menu__content wow animate__animated animate__zoomIn">
         <li class="menu__content-col menu__nav">
           <h2 class="menu__content-header menu__nav-header">Навигация</h3>
             <ul class="menu__list-links">
@@ -155,7 +160,7 @@ $feedbacks = $data->getFeedbacks();
                 <label for="burger__request-agreement" class="text-14 md:text-16 ml-8 md:ml-16 md:mt-8 text-black-900 shrink-1 leading-tight dark:text-light-400">Я согласен(а) на обработку моих личных данных</label>
               </div>
               <input class="menu__help-sender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="sendHelpRequest" value="Позвоните мне">
-              <button class="menu__help-modal-start w-full ad:mt-24 text-14 font-bold text-light-400 bg-brand-900 py-[17px] rounded-8 cursor-pointer hover:shadow-btn">Заказать звонок</button>
+              <button type="button" class="menu__help-modal-start w-full ad:mt-24 text-14 font-bold text-light-400 bg-brand-900 py-[17px] rounded-8 cursor-pointer hover:shadow-btn">Заказать звонок</button>
             </div>
             <div class="burger__request-result"></div>
           </form>
@@ -165,33 +170,33 @@ $feedbacks = $data->getFeedbacks();
     <div class="menu__overlay"></div>
     <div class="w-full ad:flex ad:flex-col lg:flex-row tb:items-center lg:justify-between ad:mt-[80px] md:mt-[100px] xl:mt-[128px]">
       <div class="ad:mt-12 ph:w-[390px] tb:w-[470px] lg:w-[498px] md:w-[592px] xl:w-[750px] flex flex-col tb:items-center lg:items-start ad:order-2 lg:order-1 ad:px-16 tb:px-0 lg:pl-32 xl:pl-48">
-        <h1 class="ad:text-32 ph:text-36 tb:text-52 tb:text-center lg:text-left md:text-64 xl:text-82 leading-none font-bold -tracking-wide dark:text-light-400">Отделение <br> дополнительного <br> образования</h1>
-        <p class="ad:mt-16 tb:mt-24 md:mt-32 ad:text-16 ph:text-18 tb:text-center lg:text-left md:text-20 xl:text-22 xl:w-[573px] text-black-800 leading-tight dark:text-light-800">Мы приглашаем всех желающих пройти обучение на наших курсах и программах профессиональной подготовки, по окончании которых вы получите подтверждающий сертификат</p>
-        <a href="#courses" class="block w-fit px-24 py-20 ad:mt-24 ph:mt-36 tb:text-18 lg:text-16 md:text-18 md:mt-48 md:px-32 md:py-24 ad:rounded-8 md:rounded-12 bg-brand-900 text-light-400 hover:shadow-btn font-bold">Смотреть курсы и программы</a>
+        <h1 class="wow animate__animated animate__fadeInDown ad:text-32 ph:text-36 tb:text-52 tb:text-center lg:text-left md:text-64 xl:text-82 leading-none font-bold -tracking-wide dark:text-light-400">Отделение <br> дополнительного <br> образования</h1>
+        <p data-wow-delay="0.5s" class="wow animate__animated animate__fadeInDown ad:mt-16 tb:mt-24 md:mt-32 ad:text-16 ph:text-18 tb:text-center lg:text-left md:text-20 xl:text-22 xl:w-[573px] text-black-800 leading-tight dark:text-light-800">Мы приглашаем всех желающих пройти обучение на наших курсах и программах профессиональной подготовки, по окончании которых вы получите подтверждающий сертификат</p>
+        <a data-wow-delay="1s" href="#courses" class="wow animate__animated animate__fadeIn block w-fit px-24 py-20 ad:mt-24 ph:mt-36 tb:text-18 lg:text-16 md:text-18 md:mt-48 md:px-32 md:py-24 ad:rounded-8 md:rounded-12 bg-brand-900 text-light-400 hover:shadow-btn font-bold">Смотреть курсы и программы</a>
       </div>
-      <img src="/src/img/landing/illustrations/offer-img.png" class="ad:order-1 lg:order-2 ad:w-full ad:h-[280px] ph:w-[380px] ph:h-[310px] tb:w-[700px] tb:h-[500px] lg:w-3/5 lg:h-2/5 md:w-[890px] md:h-[600px] xl:w-[1040px] xl:h-[710px] dark:brightness-90" alt="Offer img">
+      <img src="/src/img/landing/illustrations/offer-img.png" class="animate__animated animate__fadeInRight ad:order-1 lg:order-2 ad:w-full ad:h-[280px] ph:w-[380px] ph:h-[310px] tb:w-[700px] tb:h-[500px] lg:w-3/5 lg:h-2/5 md:w-[890px] md:h-[600px] xl:w-[1040px] xl:h-[710px] dark:brightness-90" alt="Offer img">
     </div>
   </header>
   <section id="about" class="w-full ad:px-16 lg:px-32 ad:mt-36 ad:mb-36 tb:mt-[60px] tb:mb-[60px] lg:mt-48 lg:mb-48 md:mt-56 md:mb-56 xl:mb-[80px] flex flex-col items-center justify-center">
     <h2 class="ad:text-left ad:self-start tb:self-center tb:text-center ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Кто мы и чем занимаемся</h2>
     <p class="ad:text-left tb:text-center tb:w-[625px] lg:w-[730px] md:w-[812px] xl:w-[900px] ad:mt-12 md:mt-16 ad:text-16 tb:text-18 md:text-20 xl:text-22 text-black-800 text-center leading-tight dark:text-light-900">Мы распологаем большим выбором программ обучения, среди которых обязательно найдется нужная именно Вам! Все программы реализуются в нашем колледже под руководством наставников с многолетним опытом работы</p>
     <?php if (isset($gallery) && !empty($gallery)) : ?>
-      <div class="gallery-slider ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64 bg-light-500 shadow-slider">
+      <div class="wow animate__animated animate__fadeIn gallery-slider ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64 bg-light-500 shadow-slider">
         <?php foreach ($gallery as $photo) : ?>
           <img class="gallery-slider__item dark:brightness-90" src="/src/img/gallery/<?= $photo['name'] ?>" alt="Gallery Slider Item" loading="lazy">
         <?php endforeach; ?>
       </div>
     <?php endif; ?>
     <ul class="tb:w-5/6 lg:w-11/12 md:w-5/6 flex tb:justify-between ad:flex-col tb:flex-row ad:mt-[120px] tb:mt-[86px] lg:mt-64 md:mt-[120px]">
-      <li class="tb:w-1/2 xl:w-5/12 tb:mr-48 flex flex-col">
-        <div class="flex ad:flex-col ad:items-start lg:flex-row">
+      <li class=" tb:w-1/2 xl:w-5/12 tb:mr-48 flex flex-col">
+        <div class="wow animate__animated animate__fadeInUp flex ad:flex-col ad:items-start lg:flex-row">
           <img src="/src/img/landing/illustrations/simple.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Simplicity" loading="lazy">
           <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 xl:w-[425px] lg:ml-32 ad:mt-24">
             <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Простота</h3>
             <p class="ad:mt-8 xl:mt-12 lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-900">Наши программы созданы таким образом, чтобы не вызывать затруднений у ученикови быть им интересными</p>
           </div>
         </div>
-        <div class="ad:mt-48 tb:mt-64 lg:mt-[84px] md:mt-[96px] flex ad:flex-col ad:items-start lg:flex-row">
+        <div class="wow animate__animated animate__fadeInUp ad:mt-48 tb:mt-64 lg:mt-[84px] md:mt-[96px] flex ad:flex-col ad:items-start lg:flex-row">
           <img src="/src/img/landing/illustrations/quality.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Quality" loading="lazy">
           <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 xl:w-[400px] lg:ml-32 ad:mt-24">
             <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Качество</h3>
@@ -202,14 +207,14 @@ $feedbacks = $data->getFeedbacks();
         </div>
       </li>
       <li class="tb:w-1/2 xl:w-5/12 flex flex-col ad:mt-48 tb:mt-0">
-        <div class="flex ad:flex-col ad:items-start lg:flex-row">
+        <div class="wow animate__animated animate__fadeInUp flex ad:flex-col ad:items-start lg:flex-row">
           <img src="/src/img/landing/illustrations/price.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Cost" loading="lazy">
           <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 lg:ml-32 ad:mt-24">
             <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Стоимость</h3>
             <p class="ad:mt-8 xl:mt-12 xl:w-[366px] lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-800">Для вашего удобства, реализуемые нами программы отличаются возможностью оплаты обучения в рассрочку</p>
           </div>
         </div>
-        <div class="ad:mt-48 tb:mt-64 lg:mt-[84px] flex ad:flex-col ad:items-start lg:flex-row">
+        <div class="wow animate__animated animate__fadeInUp ad:mt-48 tb:mt-64 lg:mt-[84px] flex ad:flex-col ad:items-start lg:flex-row">
           <img src="/src/img/landing/illustrations/proff.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Professionality" loading="lazy">
           <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 lg:ml-32 ad:mt-24">
             <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Профессионализм</h3>
@@ -223,7 +228,7 @@ $feedbacks = $data->getFeedbacks();
     <h2 class="ad:mt-36 tb:mt-48 ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Наши курсы и программы</h2>
     <p class="ad:w-11/12 tb:w-3/4 lg:w-[617px] md:w-[689px] xl:w-[755px] ad:mt-12 md:mt-16 text-18 md:text-20 xl:text-22 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Список наших программ обучения, по которым вы можете получить дополнительное образование, профессиональную подготовку
       или повысить квалификацию</p>
-    <div class="w-full ad:mt-24 tb:mt-48 ad:p-12 tb:p-16 md:p-20 bg-light-700 ad:rounded-12 tb:rounded-16 lg:rounded-24 md:rounded-28 dark:bg-dark-800">
+    <div class="courses__mobile-begin w-full ad:mt-24 tb:mt-48 ad:p-12 tb:p-16 md:p-20 bg-light-700 ad:rounded-12 tb:rounded-16 lg:rounded-24 md:rounded-28 dark:bg-dark-800">
       <div class="w-full flex ad:flex-col lg:flex-row ad:flex-start lg:items-center justify-between">
         <div>
           <h3 class="ad:block ad:text-24 md:text-32 font-bold dark:text-light-400 tracking-tight">Список курсов</h3>
@@ -276,7 +281,7 @@ $feedbacks = $data->getFeedbacks();
               <button class="courseOrderBtn ad:w-full lg:w-1/2 mt-24 md:mt-32 xl:mt-36 text-16 font-bold md:text-18 xl:text-20 p-16 md:p-[22px] bg-brand-900 text-light-400 ad:rounded-8 xl:rounded-12 cursor-pointer lg:hover:shadow-btn">Записаться на курс</button>
             </div>
           </div>
-          <div class="courses__requesting lg:w-2/3">
+          <div class="animate__animated animate__fadeIn animate__fast courses__requesting lg:w-2/3">
             <h3 class="ad:text-20 tb:text-24 md:text-32 ad:mt-16 lg:mt-20 font-bold dark:text-light-400">Запись на курс</h3>
             <p class="ad:text-14 lg:text-16 md:text-20 ad:mt-8 tb:mt-12 lg:mt-8 md:mt-12 leading-tight text-black-800 dark:text-light-900">Заполните все необходимые поля и отправьте заявку чтобы записаться на выбранный курс</p>
             <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" class="courseOrderSend w-full ad:mt-16 tb:mt-24 lg:mt-20 md:mt-28">
@@ -300,7 +305,7 @@ $feedbacks = $data->getFeedbacks();
         </div>
       </div>
     </div>
-    <div class="w-full flex ad:flex-col lg:flex-row lg:items-center lg:justify-between ad:mt-36 md:mt-48 ad:p-16 md:p-24 ad:rounded-12 lg:rounded-16 md:rounded-24 bg-brand-900 dark:bg-dark-800">
+    <div class="wow animate__animated animate__fadeInUp w-full flex ad:flex-col lg:flex-row lg:items-center lg:justify-between ad:mt-36 md:mt-48 ad:p-16 md:p-24 ad:rounded-12 lg:rounded-16 md:rounded-24 bg-brand-900 dark:bg-dark-800">
       <div class="lg:w-[350px] md:w-[390px] xl:w-[436px]">
         <h4 class="ad:text-20 tb:text-24 xl:text-32 text-light-400 font-bold dark:text-light-400">Не можете выбрать курс?</h4>
         <p class="ad:mt-8 lg:mt-8 lg:text-16 md:text-18 xl:text-20 ad:font-medium lg:font-light lg:leading-tight md:leading-8 text-light-400 dark:text-light-800">Оставьте заявку на обратный звонок. <br class="ad:hidden lg:inline">
@@ -333,7 +338,7 @@ $feedbacks = $data->getFeedbacks();
           </div>
         </div>
         <div class="courses__call-order-result flex items-center ad:flex-col lg:flex-row lg:justify-between">
-          <div>
+          <div class="animate__animated animate__fadeIn">
             <h4 class="ad:text-18 tb:text-20 md:text-24 font-bold text-black-900 dark:text-light-400">Скоро услышимся!</h4>
             <p class="ad:mt-8 md:mt-12 ad:text-16 xl:text-18 text-black-800 leading-tight dark:text-light-800">Мы свяжемся с вами по указанному телефону</p>
           </div>
@@ -349,8 +354,8 @@ $feedbacks = $data->getFeedbacks();
       <ul class="feedbacks-slider self-center block ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64">
         <?php foreach ($feedbacks as $feedback) : ?>
           <li class="feedbacks-slider__item flex ad:flex-col tb:flex-row ad:flex-start tb:items-center ad:p-24 lg:p-32 bg-light-700 rounded-16 dark:bg-dark-800">
-            <div class="flex items-center justify-center h-[160px] bg-light-600 rounded-full border border-light-900 dark:border-dark-700 dark:bg-dark-700">
-              <p class="text-32 w-[160px] text-center dark:text-light-400"><?= mb_substr($feedback['author'], 0, 1) ?></p>
+            <div class="flex items-center justify-center h-[160px] w-[160px] bg-light-600 rounded-full border border-light-900 dark:border-dark-700 dark:bg-dark-700">
+              <p class="block text-32 w-[160px] text-center dark:text-light-400"><?= mb_substr($feedback['author'], 0, 1) ?></p>
             </div>
             <div class="tb:ml-24 md:ml-32">
               <h3 class="ad:text-24 md:text-28 ad:mt-36 tb:mt-0 font-bold dark:text-light-400"><?= $feedback['author'] ?></h3>
@@ -437,7 +442,7 @@ $feedbacks = $data->getFeedbacks();
       <path d="M17 24L24 17L31 24" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </a>
-  <div class="darkmode__ntf fixed ad:bottom-16 ad:mx-16 tb:mx-0 tb:right-24 tb:bottom-24 lg:right-32 lg:bottom-32 ad:p-12 tb:p-16 md:p-20 dark:bg-dark-800 rounded-16 z-[12]">
+  <div class="wow animate__animated animate__fadeInUp darkmode__ntf fixed ad:bottom-16 ad:mx-16 tb:mx-0 tb:right-24 tb:bottom-24 lg:right-32 lg:bottom-32 ad:p-12 tb:p-16 md:p-20 dark:bg-dark-800 rounded-16 z-[12]">
     <h3 class="ad:text-18 lg:text-20 tb:text-24 md:text-24 text-light-400">Включен <span class="ad:text-20 lg:text-20 tb:text-24 md:text-24 text-brand-900">ночной режим</span></h3>
     <p class="ad:w-full tb:w-[290px] md:w-[310px] ad:text-14 md:text-16 ad:mt-4 tb:mt-8 text-light-700 leading-tight">Ваши глаза под надежной защитой. Выбирайте наши курсы и изучайте информацию с комфортом для зрения</p>
     <div class="flex items-center mt-16">
@@ -447,7 +452,7 @@ $feedbacks = $data->getFeedbacks();
   </div>
   <div class="modal">
     <div class="modal__filter"></div>
-    <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="modal__form relative shrink-1">
+    <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="animate__animated animate__fadeIn modal__form relative shrink-1">
       <svg class="modal__closer w-24 md:w-32 h-24 md:h-32 absolute p-4 top-4 right-4 shrink-0 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path d="M13.5 4.5L4.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M4.5 4.5L13.5 13.5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

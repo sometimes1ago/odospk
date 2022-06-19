@@ -1,3 +1,3 @@
-<div class="w-full mt-16 rounded-8 md:rounded-12 p-12 md:p-16 bg-state-error">
+<div class="animate__animated animate__fadeInUp animate__fast w-full mt-16 rounded-8 md:rounded-12 p-12 md:p-16 bg-state-error">
   <p class="text-14 md:text-18 text-light-400 break-words"><?= $errorText ?></p>
 </div>

@@ -1,5 +1,5 @@
-<img class="ad:w-[100px] ad:h-[100px] lg:w-[160px] lg:h-[160px] md:w-[160px] md:h-[160px] ad:mt-16 lg:mt-24 md:mt-[36px] dark:brightness-90" src="/src/img/landing/illustrations/order-success.svg" alt="Order success">
-<div class="ad:mt-16 lg:mt-24">
+<img class="animate__animated animate__fadeIn ad:w-[100px] ad:h-[100px] lg:w-[160px] lg:h-[160px] md:w-[160px] md:h-[160px] ad:mt-16 lg:mt-24 md:mt-[36px] dark:brightness-90" src="/src/img/landing/illustrations/order-success.svg" alt="Order success">
+<div class="animate__animated animate__fadeInUp ad:mt-16 lg:mt-24">
   <h4 class="ad:text-18 tb:text-20 md:text-24 font-bold text-black-900 dark:text-light-400">Скоро услышимся!</h4>
   <p class="ad:mt-8 md:mt-12 ad:text-16 xl:text-18 text-black-800 leading-tight dark:text-light-800">Мы свяжемся с вами по указанному телефону</p>
 </div>

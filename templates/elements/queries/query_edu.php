@@ -1,5 +1,5 @@
 <?php foreach ($queries as $query) : ?>
-  <li class="mr-8 md:mr-12 mb-8 md:mb-12 last:mb-0 p-12 md:p-16 bg-light-600 border border-light-900 rounded-8 md:rounded-12">
+  <li class="animate__animated animate__fadeInUp animate__fast mr-8 md:mr-12 mb-8 md:mb-12 last:mb-0 p-12 md:p-16 bg-light-600 border border-light-900 rounded-8 md:rounded-12">
     <label class="cursor-pointer" for="item-<?= $query['id'] ?>">
       <ul class="flex items-center">
         <li>

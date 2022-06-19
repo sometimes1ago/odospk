@@ -50,6 +50,7 @@ if (isset($_POST['addNoteSender'])) {
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>ODOSPK • Заметки</title>
 </head>
 
@@ -72,7 +73,7 @@ if (isset($_POST['addNoteSender'])) {
           <ul class="overflow-y-scroll scrollbar h-[360px] md:h-[610px]">
             <?php includeTemplate('elements/notes/note_default.php', ['notes' => $notes]) ?>
           </ul>
-          <div class="notes__actions w-full absolute bottom-0 bg-light-400 border border-light-900 p-12 md:p-16 rounded-12 shadow-xl">
+          <div class="animate__animated animate__fadeInUp animate__fast notes__actions w-full absolute bottom-0 bg-light-400 border border-light-900 p-12 md:p-16 rounded-12 shadow-xl">
             <h3 class="text-18 md:text-24 font-bold">Управление заметкой</h3>
             <p class="mt-8 text-14 md:text-18 text-black-800">Действия, доступные для выбранной заметки</p>
             <ul class="notes__actions-container mt-16 md:mt-20 items-center">
@@ -96,7 +97,7 @@ if (isset($_POST['addNoteSender'])) {
                 </button>
               </li>
             </ul>
-            <div class="notes__edit w-full mt-16 flex items-center">
+            <div class="animate__animated animate__fadeIn notes__edit w-full mt-16 flex items-center">
               <input type="text" name="notes__new-value" class="w-full px-12 py-8 text-14 md:text-16 md:py-[10px] text-black-800 font-medium bg-light-600 border border-light-900 rounded-8" placeholder="Новое значение для заметки">
               <input type="submit" name="edit__note" value="Изменить" class="w-1/5 ml-12 md:ml-16 p-12 text-light-400 border border-brand-900 bg-brand-900 text-14 md:text-16 font-bold rounded-8 cursor-pointer hover:shadow-btn">
               <div class="notes__edit-cancel w-1/5 ml-12 md:ml-16 p-12 bg-light-600 text-center font-bold text-14 md:text-16 border border-light-900 rounded-8 cursor-pointer hover:shadow-md">Отмена</div>

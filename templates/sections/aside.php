@@ -21,7 +21,7 @@
       </span>
       </img>
     </div>
-    <div class="aside__user-data">
+    <div class="animate__animated animate__fadeIn animate__faster aside__user-data">
       <h3 class="aside__user-header">Пользователь</h3>
       <p class="aside__user-subhead">Данные и действия с <br> вашей учетной записью</p>
       <ul class="aside__user-items">

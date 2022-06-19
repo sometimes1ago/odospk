@@ -52,7 +52,7 @@ $(document).ready(() => {
       createError('Вы не ввели Email пользователя', '.responseContainer');
     } else {
       $(".responseContainer").children().remove();
-      console.log(addUserDataToSend);
+
       $.ajax({
         type: "POST",
         url: "/server_processing/admin/data/add/addUserHandler.php",

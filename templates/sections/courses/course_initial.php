@@ -1,5 +1,5 @@
-<h3 class="courses__name ad:text-28 ph:text-32 md:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400" data-courseName="<?=$returnedCourse['name']?>"><?=$returnedCourse['name']?></h3>
-<div class="courses__initial courses__initial-visible lg:pr-36 md:pr-[84px] xl:pr-[120px]">
+<h3 class="wow animate__animated animate__fadeIn courses__name ad:text-28 ph:text-32 md:text-36 xl:text-48 font-bold tracking-tight dark:text-light-400" data-courseName="<?=$returnedCourse['name']?>"><?=$returnedCourse['name']?></h3>
+<div class="wow animate__animated animate__fadeIn courses__initial courses__initial-visible lg:pr-36 md:pr-[84px] xl:pr-[120px]">
   <ul class="text-content ad:mt-24 md:mt-32 xl:mt-36">
     <li class="lg:text-18 md:text-20 xl:text-22 text-black-800 leading-tight dark:text-light-800">
       <span class="lg:text-20 md:text-24 xl:text-28 text-black-900 font-bold leading-none dark:text-light-400">Срок обучения: </span>
