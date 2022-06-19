@@ -125,7 +125,7 @@ $users = $data->getUsersList();
           </form>
         </li>
         <li class="mr-24 last:mr-0">
-          <form data-wow-delay="0.4s" autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="wow animate__animated animate__fadeInLeft w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
+          <form data-wow-delay="0.3s" autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="wow animate__animated animate__fadeInLeft w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
             <h2 class="lg:text-20 md:text-24 font-bold">Изменение отзыва</h2>
             <p class="lg:mt-8 lg:text-16 md:text-18 leading-tight text-black-800">Выберите отзыв, что заменить <br> и введите новое значение</p>
             <label class="dropdown__label mb-12 mt-24 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="4">Автор отзыва</label>
@@ -164,7 +164,7 @@ $users = $data->getUsersList();
         </li>
         <li class="mr-24 last:mr-0">
           <?php if ($user['access_code'] > 2) : ?>
-            <form data-wow-delay="0.8s" autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" class="wow animate__animated animate__fadeInLeft w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
+            <form data-wow-delay="0.6s" autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" class="wow animate__animated animate__fadeInLeft w-fit px-12 pt-12 pb-16 bg-light-600 rounded-12 border border-light-900">
               <h2 class="lg:text-20 md:text-24 font-bold">Данные пользователя</h2>
               <p class="lg:mt-8 lg:text-16 md:text-18 leading-tight text-black-800">Выберите пользователя, что <br> заменить и введите новое значение</p>
               <label class="dropdown__label mb-12 mt-24 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="6">Выберите пользователя</label>

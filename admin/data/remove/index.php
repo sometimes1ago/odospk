@@ -56,7 +56,7 @@ $users = $data->getUsersList();
         </li>
       </ul>
       <ul class="mt-16 flex flex-wrap">
-        <li class="mr-16 last:mr-0">
+        <li class="wow animate__animated animate__fadeInLeft animate__fast mr-16 last:mr-0">
           <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="p-12 md:p-16 bg-light-600 border border-light-900 rounded-8 md:rounded-12">
             <h2 class="text-20 md:text-24 font-bold">Удаление программы</h2>
             <p class="mt-8 md:mt-12 text-16 md:text-18 leading-tight text-black-800">Выберите программу и нажмите <br> на кнопку удалить</p>
@@ -69,7 +69,7 @@ $users = $data->getUsersList();
                 </svg>
               </div>
               <?php if (!empty($courses)) : ?>
-                <ul class="dropdown__options removeProgOptions">
+                <ul class="animate__animated animate__fadeIn animate__fast dropdown__options removeProgOptions">
                   <?php foreach ($courses as $course) : ?>
                     <li class="dropdown__option removeProgOption"><?=$course['name']?></li>
                   <?php endforeach; ?>
@@ -79,7 +79,7 @@ $users = $data->getUsersList();
             <input class="removeProgramSender w-full text-14 tb:mt-24 lg:mt-28 md:mt-36 md:text-16 xl:text-18 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] rounded-8 cursor-pointer hover:shadow-btn" type="submit" name="removeProgramSender" value="Удалить">
           </form>
         </li>
-        <li class="mr-16 last:mr-0">
+        <li data-wow-delay="0.3s" class="wow animate__animated animate__fadeInLeft animate__fast mr-16 last:mr-0">
           <form autocomplete="off" action="<?=$_SERVER['PHP_SELF']?>" method="post" class="p-12 md:p-16 bg-light-600 border border-light-900 rounded-12">
             <h2 class="text-20 md:text-24 font-bold">Удаление отзыва</h2>
             <p class="mt-8 md:mt-12 text-16 md:text-18 leading-tight text-black-800">Выберите отзыв и нажмите <br> на кнопку удалить</p>
@@ -92,7 +92,7 @@ $users = $data->getUsersList();
                 </svg>
               </div>
               <?php if (!empty($feedbacks)) : ?>
-                <ul class="dropdown__options removeFeedbackOptions">
+                <ul class="animate__animated animate__fadeIn animate__fast dropdown__options removeFeedbackOptions">
                   <?php foreach ($feedbacks as $feedback) : ?>
                     <li class="dropdown__option removeFeedbackOption"><?=$feedback['author']?></li>
                   <?php endforeach; ?>
@@ -103,7 +103,7 @@ $users = $data->getUsersList();
           </form>
         </li>
         <?php if ($user['access_code'] > 2) : ?>
-          <li class="mr-16 last:mr-0">
+          <li data-wow-delay="0.3s" class="wow animate__animated animate__fadeInLeft animate__fast mr-16 last:mr-0">
             <form autocomplete="off" action="<?=$_SERVER['PHP_SELF']?>" method="post" class="p-12 md:p-16 bg-light-600 border border-light-900 rounded-12">
               <h2 class="text-20 md:text-24 font-bold">Удаление пользователя</h2>
               <p class="mt-8 md:mt-12 text-16 md:text-18 leading-tight text-black-800">Выберите пользователя и нажмите <br> на кнопку удалить</p>
@@ -116,7 +116,7 @@ $users = $data->getUsersList();
                   </svg>
                 </div>
                 <?php if (!empty($users)) : ?>
-                  <ul class="dropdown__options removeUserOptions">
+                  <ul class="animate__animated animate__fadeIn animate__fast dropdown__options removeUserOptions">
                     <?php foreach ($users as $user) : ?>
                       <li class="dropdown__option removeUserOption"><?=$user['name']?></li>
                     <?php endforeach; ?>
@@ -131,6 +131,10 @@ $users = $data->getUsersList();
     </div>
     <div class="responseContainer absolute flex flex-col justify-end items-end w-[320px] h-48 bottom-24 right-24"></div>
   </section>
+  <script src="/src/js/common/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
   <script src="/src/js/common/jquery.min.js"></script>
   <script src="/src/js/ajax/admin/data/remove/removeProgram.js"></script>
   <script src="/src/js/ajax/admin/data/remove/removeFeedback.js"></script>

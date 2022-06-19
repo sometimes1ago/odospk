@@ -23,8 +23,12 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
 }
 
 if (isset($_POST['edit__note'])) {
-  $data->editNote($_POST['note__id'], $_POST['notes__new-value']);
-  header('Location: ' . $_SERVER['REQUEST_URI']);
+  if (!empty($_POST['notes__new-value'])) {
+    $data->editNote($_POST['note__id'], $_POST['notes__new-value']);
+    header('Location: ' . $_SERVER['REQUEST_URI']);
+  } else {
+    $errors[] = 'Вы не ввели текст для изменения заметки!';
+  }
 }
 
 if (isset($_POST['addNoteSender'])) {
@@ -32,6 +36,7 @@ if (isset($_POST['addNoteSender'])) {
   $data->createUserNote($preparedValue, $user['id']);
   header("Location: " . $_SERVER['REQUEST_URI']);
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -61,16 +66,21 @@ if (isset($_POST['addNoteSender'])) {
     <div class="w-full h-[92%] flex relative flex-col mt-16 p-16 rounded-16 bg-light-400 shadow-section">
       <h2 class="text-20 md:text-28 font-bold">Список заметок</h2>
       <p class="text-16 md:text-18 text-black-800 mt-4 md:mt-8">Нужные записи всегда под рукой</p>
-      <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" class="w-full mt-16 p-12 bg-light-600 rounded-8 border border-light-900">
+      <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" class="animate__animated animate__fadeIn w-full mt-16 p-12 bg-light-600 rounded-8 border border-light-900">
         <label for="addNoteInput" class="text-16 md:text-20 font-bold">Добавить заметку</label>
         <div class="w-full mt-8 md:mt-12 flex items-center">
           <input type="text" name="addNoteValue" id="addNoteInput" class="w-full font-medium text-black-800 text-14 md:text-16 p-8 md:p-12 bg-light-400 border border-light-900 rounded-8 mr-16" placeholder="Введите текст заметки" required>
           <button type="submit" name="addNoteSender" class="w-1/5 p-[13px] md:p-[15px] bg-brand-900 text-light-400 font-bold text-14 md:text-16 rounded-8 hover:shadow-btn">Добавить</button>
         </div>
       </form>
+      <?php if (!empty($errors)) : ?>
+        <div class="errors__container w-full">
+          <?php includeTemplate('messages/error.php', ['errorText' => array_shift($errors)]) ?>
+        </div>
+      <?php endif; ?>
       <?php if (!empty($notes)) : ?>
-        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="w-full h-[360px] md:h-[610px] mt-16 md:mt-20 relative">
-          <ul class="overflow-y-scroll scrollbar h-[360px] md:h-[610px]">
+        <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="w-full h-[360px] md:h-[610px] mt-16 md:mt-20 relative">
+          <ul class="notes__container overflow-y-scroll scrollbar md:h-[610px]">
             <?php includeTemplate('elements/notes/note_default.php', ['notes' => $notes]) ?>
           </ul>
           <div class="animate__animated animate__fadeInUp animate__fast notes__actions w-full absolute bottom-0 bg-light-400 border border-light-900 p-12 md:p-16 rounded-12 shadow-xl">
@@ -109,6 +119,16 @@ if (isset($_POST['addNoteSender'])) {
   </section>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/admin/notes/actions.js"></script>
+  <script>
+    let errorsContainer = document.querySelector('.errors__container'),
+      notesContainer = document.querySelector('.notes__container');
+
+    if (errorsContainer.childNodes.length > 0) {
+      notesContainer.classList.add('h-[306px]');
+    } else {
+      notesContainer.classList.add('h-[360px]');
+    }
+  </script>
 </body>
 
 </html>

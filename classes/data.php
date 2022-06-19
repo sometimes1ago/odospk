@@ -58,7 +58,7 @@ final class Data
     }
 
     return $result;
-  } 
+  }
 
   public function getCalls(string $sortBy) {
     return $this->db->fetchAll(

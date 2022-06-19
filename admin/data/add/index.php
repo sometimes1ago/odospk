@@ -52,7 +52,7 @@ $data = new Data(Database::Instance());
           <a class="data__pill" href="/admin/data/remove/">Удалить</a>
         </li>
       </ul>
-      <ul class="add__slider mt-16 md:mt-24">
+      <ul class="wow animate__animated animate__fadeIn add__slider mt-16 md:mt-24">
         <li class="add__slider-item w-full h-full">
           <form autocomplete="off" action="<?=$_SERVER['PHP_SELF']?>" method="post" class="w-full h-full p-12 md:p-16 bg-light-600 border border-light-900 rounded-12" method="POST">
             <h2 class="text-20 md:text-24 font-bold">Добавление программы</h2>
@@ -77,7 +77,7 @@ $data = new Data(Database::Instance());
                           <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525" />
                         </svg>
                       </div>
-                      <ul class="dropdown__options addProgCourseTypeOptions">
+                      <ul class="animate__animated animate__fadeIn animate__fast dropdown__options addProgCourseTypeOptions">
                         <li class="dropdown__option addProgCourseTypeOption">Курс</li>
                         <li class="dropdown__option addProgCourseTypeOption">Профессиональная подготовка</li>
                       </ul>
@@ -92,7 +92,7 @@ $data = new Data(Database::Instance());
                           <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525" />
                         </svg>
                       </div>
-                      <ul class="dropdown__options addProgDiplomaTypeOptions">
+                      <ul class="animate__animated animate__fadeIn animate__fast dropdown__options addProgDiplomaTypeOptions">
                         <li class="dropdown__option addProgDiplomaTypeOption">Сертификат</li>
                         <li class="dropdown__option addProgDiplomaTypeOption">Свидетельство</li>
                       </ul>
@@ -148,7 +148,7 @@ $data = new Data(Database::Instance());
                         <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669873 3.5C-0.0999277 2.16667 0.862323 0.5 2.40192 0.5L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#252525" />
                       </svg>
                     </div>
-                    <ul class="dropdown__options addUserAccessOptions">
+                    <ul class="animate__animated animate__fadeIn animate__fast dropdown__options addUserAccessOptions">
                       <li class="dropdown__option addUserAccessOption">Оператор</li>
                       <li class="dropdown__option addUserAccessOption">Контент менеджер</li>
                       <li class="dropdown__option addUserAccessOption">Администратор</li>

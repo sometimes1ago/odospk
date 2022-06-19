@@ -14,8 +14,8 @@ $(document).ready(() => {
     }).done(function (response) {
       $(".sortEduQueriesResult").html(response);
 
-      let checkboxes = $(".query__checkbox");
-      let actionsContainer = $(".queries__actions");
+      let checkboxes = $(".query__checkbox"),
+        actionsContainer = $(".queries__actions");
 
       checkboxes.on('change', function() {
         updateCheckbox($(this));

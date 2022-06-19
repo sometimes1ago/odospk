@@ -148,6 +148,7 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/admin/queries/addNote.js"></script>
+  <script src="/src/js/ajax/admin/directSearch.js"></script>
   <script src="/src/js/admin/queries/education/queriesActions.js"></script>
   <script src="/src/js/admin/queries/education/dateControl.js"></script>
   <script src="/src/js/admin/queries/education/searchControl.js"></script>
