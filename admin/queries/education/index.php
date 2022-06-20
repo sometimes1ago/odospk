@@ -28,6 +28,10 @@ if (isset($_POST['processing']) && $_POST['processing'] === 'yes') {
   handleQuery($_POST['query__id'], 'Обработано');
 }
 
+if (isset($_POST['undoProcessing']) && $_POST['undoProcessing'] == 'yes') {
+  handleQuery($_POST['query__id'], 'Не обработано');
+}
+
 if (isset($_POST['archiving']) && $_POST['archiving'] === 'yes') {
   handleQuery($_POST['query__id'], 'Архивировано');
 }
@@ -106,7 +110,7 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
           <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
             <path d="M11.2508 1.66666L2.91748 11.6667H10.4175L9.58415 18.3333L17.9175 8.33332H10.4175L11.2508 1.66666Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <p class="break-words">Статус</p>
+          <p class="break-words ml-8">Статус</p>
         </li>
       </ul>
       <?php if (!empty($queries) && is_array($queries)) : ?>
@@ -118,6 +122,15 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
             <h3 class="text-18 md:text-24">Управление заявкой</h3>
             <p class="mt-8 text-14 md:text-16 text-black-800">Действия, доступные для выбранной заявки</p>
             <ul class="mt-16 md:mt-24 flex items-center">
+              <li class="mr-12 md:mr-16 last:mr-0">
+                <button class="queries__action flex items-center px-12 py-8 md:py-[10px] md:px-16 font-medium bg-light-600 border border-light-900 rounded-8" name="undoProcessing" value="yes" type="submit">
+                  <svg class="mr-8 md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 25" fill="none">
+                    <path d="M1.25214 4.46509V10.4651H7.25214" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.76214 15.465C4.41053 17.3054 5.63947 18.8852 7.26379 19.9664C8.88811 21.0476 10.8198 21.5716 12.7679 21.4595C14.7159 21.3474 16.5747 20.6052 18.0643 19.3448C19.5538 18.0844 20.5934 16.374 21.0264 14.4714C21.4593 12.5688 21.2622 10.577 20.4648 8.79614C19.6673 7.01528 18.3127 5.54183 16.605 4.5978C14.8973 3.65377 12.929 3.2903 10.9968 3.56215C9.06459 3.83401 7.27305 4.72646 5.89214 6.10504L1.25214 10.465" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <p class="text-14 md:text-16">Отменить обработку</p>
+                </button>
+              </li>
               <li class="mr-12 md:mr-16 last:mr-0">
                 <button class="queries__action flex items-center px-12 py-8 md:py-[10px] md:px-16 font-medium bg-light-600 border border-light-900 rounded-8" name="processing" value="yes" type="submit">
                   <svg class="mr-8 md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -154,7 +167,7 @@ if (isset($_POST['removing']) && $_POST['removing'] === 'yes') {
         </form>
       <?php else : ?>
         <div class="flex items-center animate__animated animate__fadeIn mt-12">
-          <div class="flex flex-col">
+          <div class="flex flex-col items-center">
             <img class="w-[360px] h-[360px]" src="/src/img/landing/illustrations/order-error.svg" alt="error-image">
             <h3 class="text-24 font-bold">Ой, кажется здесь ничего нет :(</h3>
             <p class="mt-8 text-16 text-black-800">Попробуйте перезагрузить страницу или повторить поиск</p>

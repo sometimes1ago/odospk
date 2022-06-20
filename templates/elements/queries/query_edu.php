@@ -29,8 +29,8 @@
     </li>
   <?php endforeach; ?>
 <?php else : ?>
-  <div class="flex items-center animate__animated animate__fadeIn mt-12">
-    <div class="flex flex-col">
+  <div class="flex items-center justify-center animate__animated animate__fadeIn h-full">
+    <div class="flex flex-col items-center self-center">
       <img class="w-[360px] h-[360px]" src="/src/img/landing/illustrations/order-error.svg" alt="error-image">
       <h3 class="text-24 font-bold">Ой, кажется здесь ничего нет :(</h3>
       <p class="mt-8 text-16 text-black-800">Попробуйте перезагрузить страницу или повторить поиск</p>

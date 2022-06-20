@@ -7,8 +7,8 @@ $clientPhone = $_POST['clientPhone'];
 $selectedCourse = $_POST['selectedCourse'];
 
 $prechecking = Database::Instance()->fetchAll(
-  'SELECT `id` FROM `getQueriesPreSort` WHERE `client` = :client AND `course` = :selectedCourse AND `status` = :status',
-  ['client' => $clientName, 'selectedCourse' => $selectedCourse, 'status' => 'Не обработано']
+  'SELECT `id` FROM `getQueriesPreSort` WHERE `client` = :client AND `course` = :selectedCourse',
+  ['client' => $clientName, 'selectedCourse' => $selectedCourse]
 );
 
 if (!empty($prechecking)) {

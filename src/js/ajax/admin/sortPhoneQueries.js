@@ -6,13 +6,12 @@ $(document).ready(() => {
 
     $.ajax({
       type: "POST",
-      url: "/server_processing/admin/queries/sortEduQueriesHandler.php",
+      url: "/server_processing/admin/queries/sortPhoneQueriesHandler.php",
       data: {
-        sortBy: selectedHeader,
-        requestUri: location.pathname,
+        sortBy: selectedHeader
       },
     }).done(function (response) {
-      $(".sortEduQueriesResult").html(response);
+      $(".sortCallsQueriesResult").html(response);
 
       let checkboxes = $(".query__checkbox");
       let actionsContainer = $(".queries__actions");

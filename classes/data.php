@@ -62,7 +62,16 @@ final class Data
 
   public function getCalls(string $sortBy) {
     return $this->db->fetchAll(
-      "SELECT * FROM `getCalls` WHERE `status` = 'Не обзвонен' OR `status` = 'Обзвонен' ORDER BY $sortBy DESC"
+      "SELECT * FROM `getCalls` WHERE (`status` = 'Не обзвонен') OR (`status` = 'Обзвонен') ORDER BY $sortBy DESC"
+    );
+  }
+
+  public function unHandleCall(string $id) {
+    $preparedCallId = htmlspecialchars(substr(trim($id), 5));
+    
+    $this->db->query(
+      "UPDATE `calls` SET `status` = 'Не обзвонен' WHERE `id` = :id",
+      ['id' => $preparedCallId]
     );
   }
 

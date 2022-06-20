@@ -62,6 +62,7 @@ $photos = Database::Instance()->fetchAll('SELECT * FROM `gallery`');
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>ODOSPK • Галерея</title>
 </head>
 <body class="w-full h-screen relative text-black-900 font-medium flex leading-none bg-light-600">
@@ -83,7 +84,7 @@ $photos = Database::Instance()->fetchAll('SELECT * FROM `gallery`');
           </li>
           <?php includeTemplate('elements/gallery/gallery_item.php', ['photos' => $photos]) ?>
         </ul>
-        <div class="gallery__actions w-full absolute mt-auto bottom-0 p-12 md:p-16 bg-light-400 border border-light-900 rounded-8 shadow-xl">
+        <div class="animate__animated animate__fadeInUp animate__fast gallery__actions w-full absolute mt-auto bottom-0 p-12 md:p-16 bg-light-400 border border-light-900 rounded-8 shadow-xl">
           <h3 class="text-20 md:text-24 font-bold">Управление фотографией</h3>
           <p class="mt-8 text-14 md:text-18 text-black-800">Действия доступные с фотографией</p>
           <ul class="flex mt-16 md:mt-24">
@@ -104,7 +105,7 @@ $photos = Database::Instance()->fetchAll('SELECT * FROM `gallery`');
     </div>
   </section>
   <div class="upload__filter"></div>
-  <form class="upload__modal top-1/2 left-1/2 -trans" method="POST" enctype="multipart/form-data">
+  <form class="animate__animated animate__fadeIn animate__fast upload__modal top-1/2 left-1/2 -trans" method="POST" enctype="multipart/form-data">
     <h2 class="text-24 font-bold">Загрузка фотографии</h2>
     <p class="text-16 md:text-18 mt-8 text-black-800">Для загрузки выберите фотографию в формате png, jpg, jpeg</p>
     <div class="mt-24 flex flex-col">

@@ -65,4 +65,9 @@ function searchBy(array $data): ?array
 
 $searched = searchBy($array);
 
-echo includeTemplate('elements/queries/query_edu.php', ['queries' => $searched]);
+if (str_contains($array['requestUri'], 'calls')) {
+  echo includeTemplate('elements/queries/query_call.php', ['calls' => $searched]);
+} else {
+  echo includeTemplate('elements/queries/query_edu.php', ['queries' => $searched]);
+}
+

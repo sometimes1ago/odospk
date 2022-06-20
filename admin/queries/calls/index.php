@@ -22,6 +22,11 @@ if (isset($_POST['addNote'])) {
   $data->createUserNote($value, $user['id']);
 }
 
+if (isset($_POST['undoProcessing']) && $_POST['undoProcessing'] == 'yes') {
+  $data->unHandleCall($_POST['query__call'], 'Не обработано');
+  header('Location: ' . $_SERVER['REQUEST_URI']);
+}
+
 if (isset($_POST['processing']) && $_POST['processing'] == 'yes') {
   $data->handleCall($_POST['query__call']);
   header('Location: ' . $_SERVER['REQUEST_URI']);
@@ -53,14 +58,14 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
   <title>ODOSPK • Заявки • Обучение</title>
 </head>
 
-<body class="w-full h-screen text-black-900 flex leading-none bg-light-600">
+<body class="w-full h-screen text-black-900 flex leading-none bg-light-600 overflow-hidden">
   <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user]) ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
     <h1 class="text-32 md:text-48 font-bold">Заявки • Звонки</h1>
     <div class="w-full h-[92%] flex items-center md:items-start relative flex-col mt-16 md:mt-24 p-16 rounded-16 bg-light-400 shadow-section">
       <?php includeTemplate('sections/queries_header.php', ['userNotes' => $userNotes, 'queriesTabs' => $queriesTabs]) ?>
-      <ul class="w-full md:w-[80%] flex items-center mt-16 scrollbar">
-        <li class="headerSortBy w-1/5 flex items-center border-2 border-light-900 border-collapse px-12 py-8 rounded-tl-8 rounded-bl-8 cursor-pointer" data-sortByValue="number">
+      <ul class="w-full md:w-[80%] flex items-center mt-16 scrollbar headerSortBy__parent">
+        <li class="headerSortBy w-1/5 flex items-center border-2 border-light-900 border-collapse px-12 py-8 rounded-tl-8 rounded-bl-8 cursor-pointer" data-sortByValue="id">
           <svg class="lg:w-20 lg:h-20 mr-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
             <path d="M3.33325 7.5H16.6666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M3.33325 12.5H16.6666" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -100,13 +105,22 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
       </ul>
       <?php if ($calls) : ?>
         <form class="w-full md:w-[80%] max-h-[90%] mt-12 md:mt-16 relative" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
-          <ul class="overflow-y-scroll scrollbar h-[424px] md:h-[690px]">
+          <ul class="sortCallsQueriesResult overflow-y-scroll scrollbar h-[424px] md:h-[690px]">
             <?php includeTemplate('elements/queries/query_call.php', ['calls' => $calls]) ?>
           </ul>
           <div class="animate__animated animate__fadeInUp animate__fast queries__actions w-full font-bold shadow-lg p-12 md:p-16 bg-light-400 absolute bottom-0 border border-light-900 rounded-12" method="POST">
             <h3 class="text-18 md:text-24">Управление заявкой</h3>
             <p class="mt-8 text-14 md:text-18 text-black-800">Действия, доступные для выбранной заявки</p>
             <ul class="mt-16 md:mt-24 flex items-center">
+              <li class="mr-12 md:mr-16 last:mr-0">
+                <button class="queries__action flex items-center px-12 py-8 md:py-[10px] md:px-16 font-medium bg-light-600 border border-light-900 rounded-8" name="undoProcessing" value="yes" type="submit">
+                  <svg class="mr-8 md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 25" fill="none">
+                    <path d="M1.25214 4.46509V10.4651H7.25214" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.76214 15.465C4.41053 17.3054 5.63947 18.8852 7.26379 19.9664C8.88811 21.0476 10.8198 21.5716 12.7679 21.4595C14.7159 21.3474 16.5747 20.6052 18.0643 19.3448C19.5538 18.0844 20.5934 16.374 21.0264 14.4714C21.4593 12.5688 21.2622 10.577 20.4648 8.79614C19.6673 7.01528 18.3127 5.54183 16.605 4.5978C14.8973 3.65377 12.929 3.2903 10.9968 3.56215C9.06459 3.83401 7.27305 4.72646 5.89214 6.10504L1.25214 10.465" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <p class="text-14 md:text-16">Отменить обработку</p>
+                </button>
+              </li>
               <li class="mr-12 md:mr-16 last:mr-0">
                 <button class="queries__action flex items-center px-12 py-8 font-medium bg-light-600 border border-light-900 rounded-8" name="processing" value="yes" type="submit">
                   <svg class="mr-8 md:w-24 md:h-24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -132,10 +146,12 @@ if (isset($_POST['removing']) && $_POST['removing'] == 'yes') {
       <?php endif; ?>
     </div>
   </section>
+  <script src="/src/js/common/jquery.min.js"></script>
   <script src="/src/js/common/dropdown.js"></script>
   <script src="/src/js/admin/changeUserdataInit.js"></script>
   <script src="/src/js/admin/queries/addNote.js"></script>
   <script src="/src/js/ajax/admin/directSearch.js"></script>
+  <script src="/src/js/ajax/admin/sortPhoneQueries.js"></script>
   <script src="/src/js/admin/queries/education/queriesActions.js"></script>
   <script src="/src/js/admin/queries/education/searchControl.js"></script>
 </body>
