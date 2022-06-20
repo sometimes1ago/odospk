@@ -408,6 +408,10 @@
       &-label {
         font-size: 24px;
       }
+      &__input {
+        padding: 16px;
+        font-size: 16px;
+      }
       &-sender {
         margin-top: 36px;
       }
@@ -487,7 +491,7 @@
       }
       &-input {
         margin-top: 16px;
-        padding: 14px 16px;
+        padding: 16px 16px;
         border-radius: 8px;
       }
       &-sender {

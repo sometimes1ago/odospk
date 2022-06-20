@@ -39,24 +39,24 @@ $data = new Data(Database::Instance());
 <body class="w-full h-screen text-black-900 flex leading-none bg-light-600">
   <?php includeTemplate('sections/aside.php', ['asideMenu' => $asideMenu, 'user' => $user]) ?>
   <section class="w-full px-24 py-24 font-medium text-black-900">
-    <h1 class="text-32 font-bold">Ваш профиль</h1>
-    <div class="w-full h-[92%] flex relative flex-col mt-16 p-16 rounded-16 bg-light-400 shadow-section">
+    <h1 class="text-32 md:text-48 font-bold">Ваш профиль</h1>
+    <div class="w-full h-[90%] flex relative flex-col mt-16 md:mt-24 p-16 rounded-16 bg-light-400 shadow-section">
       <div class="flex items-center">
         <div class="w-[136px] h-[136px] flex items-center justify-center bg-light-600 rounded-full">
-          <p class="block text-32 font-bold text-black-800"><?= mb_substr($user['name'], 0, 1) ?></p>
+          <p class="block text-32 md:text-48 font-bold md:font-normal text-black-800"><?= mb_substr($user['name'], 0, 1) ?></p>
         </div>
         <div class="ml-24">
-          <h2 class="text-28 font-bold"><?= $user['name'] ?></h2>
-          <p class="mt-8 text-black-800 text-18"><?= $user['access'] ?></p>
+          <h2 class="text-28 md:text-32 font-bold"><?= $user['name'] ?></h2>
+          <p class="mt-8 text-black-800 text-18 md:text-22"><?= $user['access'] ?></p>
         </div>
       </div>
       <div class="w-full changeUserResult"></div>
-      <form autocomplete="off" class="animate__animated animate__fadeInUp w-full mt-24 p-12 md:p-16 bg-light-600 rounded-8 md:rounded-12" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
-        <h3 class="text-22 font-bold">Изменение данных</h3>
-        <p class="mt-8 text-16 text-black-800">Выберите что изменить, введите значение и нажмите на кнопку "Подтвердить"</p>
-        <div class="w-full mt-24 flex items-end justify-between">
+      <form autocomplete="off" class="animate__animated animate__fadeInUp w-full mt-24 md:mt-32 p-12 md:p-16 bg-light-600 rounded-8 md:rounded-12" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+        <h3 class="text-22 md:text-28 font-bold">Изменение данных</h3>
+        <p class="mt-8 text-16 md:text-18 text-black-800">Выберите что изменить, введите значение и нажмите на кнопку "Подтвердить"</p>
+        <div class="w-full mt-24 md:mt-32 flex items-end justify-between">
           <div class="w-full mr-16">
-            <label class="dropdown__label mb-12 lg:text-18 font-bold dark:text-light-400" data-dropdownIndex="0">Что изменить</label>
+            <label class="dropdown__label mb-12 md:mb-16 lg:text-18 md:text-20 font-bold dark:text-light-400" data-dropdownIndex="0">Что изменить</label>
             <div class="dropdown dropdown__light z-10" data-index="0">
               <div class="dropdown__btn">
                 <p class="dropdown__btn-text dropdown__changeUserProp" data-dropdownValue="Имя">Имя</p>
@@ -74,7 +74,7 @@ $data = new Data(Database::Instance());
           </div>
           <div class="w-full mr-16">
             <label for="changeUserValue" class="text-18 md:text-20 font-bold">Введите значение</label>
-            <input type="text" id="changeUserValue" class="changeUserValue w-full mt-12 text-14 md:text-16 font-medium px-12 py-[11px] md:py-[13px] border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
+            <input type="text" id="changeUserValue" class="changeUserValue w-full mt-12 md:mt-16 text-14 md:text-16 font-medium px-12 py-[11px] md:py-[13px] border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Новое значение">
           </div>
           <div class="w-full">
             <input class="changeUserConfirm w-full text-14 md:text-16 font-medium text-light-400 bg-brand-900 py-[17px] md:py-[19px] md:mt-24 rounded-8 cursor-pointer hover:shadow-btn" name="changeUserConfirm" type="submit" value="Подтвердить">

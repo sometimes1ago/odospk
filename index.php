@@ -55,7 +55,7 @@ $feedbacks = $data->getFeedbacks();
       </label>
     </div>
     <div id="menu" class="menu">
-      <ul class="menu__content wow animate__animated animate__zoomIn">
+      <ul class="menu__content animate__animated animate__fadeIn">
         <li class="menu__content-col menu__nav">
           <h2 class="menu__content-header menu__nav-header">Навигация</h3>
             <ul class="menu__list-links">
@@ -148,11 +148,11 @@ $feedbacks = $data->getFeedbacks();
               <ul class="menu__help-inputs">
                 <li>
                   <label for="customerName" class="menu__help-label">Ваше имя и фамилия</label>
-                  <input type="text" name="customerName" id="customerName" class="menu__help-input menu__help-clientname border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="Иван Иванов">
+                  <input type="text" name="customerName" id="customerName" class="menu__help-input menu__help-clientname md:text-16 border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="Иван Иванов">
                 </li>
                 <li class="menu__help-item">
                   <label for="customerPhone" class="menu__help-label">Ваш телефон</label>
-                  <input type="tel" name="customerPhone" id="customerPhone" class="menu__help-input menu__help-clientphone border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="+7 923 900 90 90">
+                  <input type="tel" name="customerPhone" id="customerPhone" class="menu__help-input menu__help-clientphone md:text-16 border border-light-900 focus:ring-1 focus:ring-brand-900" placeholder="+7 923 900 90 90">
                 </li>
               </ul>
               <div class="menu__help-checkbox">
@@ -193,7 +193,7 @@ $feedbacks = $data->getFeedbacks();
           <img src="/src/img/landing/illustrations/simple.svg" class="ad:w-[136px] ad:h-[136px] lg:w-[148px] lg:h-[148px] xl:w-[164px] xl:h-[164px] dark:brightness-90" alt="Simplicity" loading="lazy">
           <div class="ad:w-11/12 tb:w-10/12 lg:w-3/5 xl:w-[425px] lg:ml-32 ad:mt-24">
             <h3 class="ad:text-24 md:text-28 font-bold tracking-tight dark:text-light-400">Простота</h3>
-            <p class="ad:mt-8 xl:mt-12 lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-900">Наши программы созданы таким образом, чтобы не вызывать затруднений у ученикови быть им интересными</p>
+            <p class="ad:mt-8 xl:mt-12 lg:text-16 md:text-18 xl:text-20 text-black-800 leading-tight dark:text-light-900">Наши программы созданы таким образом, чтобы не вызывать затруднений у слушателей и быть им интересными</p>
           </div>
         </div>
         <div class="wow animate__animated animate__fadeInUp ad:mt-48 tb:mt-64 lg:mt-[84px] md:mt-[96px] flex ad:flex-col ad:items-start lg:flex-row">
@@ -350,7 +350,7 @@ $feedbacks = $data->getFeedbacks();
   <?php if (isset($feedbacks) && !empty($feedbacks)) : ?>
     <section id="feedbacks" class="ad:px-16 ad:mt-36 ad:mb-[80px] tb:mb-[60px] lg:mb-0 lg:px-32 tb:mt-48 md:mt-48 md:mb-56 xl:mt-[80px] xl:mb-[80px] ad:flex ad:flex-col ad:items-start ad:justify-start tb:items-center tb:justify-center">
       <h2 class="ad:mt-36 tb:mt-48 ad:text-28 tb:text-36 md:text-48 xl:text-52 font-bold tracking-tight dark:text-light-400">Что говорят о нас ученики</h2>
-      <p class="ad:w-11/12 tb:w-3/4 lg:w-[520px] md:w-[625px] xl:w-[630px] ad:mt-12 md:mt-16 text-18 md:text-20 xl:text-22 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Прочтите отзывы тех, кто прошел обучение и поделился своими впечатлениями о наших курсах и программах</p>
+      <p class="ad:w-11/12 tb:w-3/4 lg:w-[570px] md:w-[625px] xl:w-[630px] ad:mt-12 md:mt-16 text-18 md:text-20 xl:text-22 text-black-800 ad:text-start tb:text-center leading-tight dark:text-light-800">Прочтите отзывы тех слушателей, которые уже прошли обучение и поделились своими впечатлениями о программах</p>
       <ul class="feedbacks-slider self-center block ad:mt-36 tb:mt-48 md:mt-56 xl:mt-64">
         <?php foreach ($feedbacks as $feedback) : ?>
           <li class="feedbacks-slider__item flex ad:flex-col tb:flex-row ad:flex-start tb:items-center ad:p-24 lg:p-32 bg-light-700 rounded-16 dark:bg-dark-800">

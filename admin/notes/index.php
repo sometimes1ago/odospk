@@ -79,8 +79,8 @@ if (isset($_POST['addNoteSender'])) {
         </div>
       <?php endif; ?>
       <?php if (!empty($notes)) : ?>
-        <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="w-full h-[360px] md:h-[610px] mt-16 md:mt-20 relative">
-          <ul class="notes__container overflow-y-scroll scrollbar md:h-[610px]">
+        <form autocomplete="off" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="w-full h-[360px] md:h-[456px] xl:h-[610px] mt-16 md:mt-20 relative">
+          <ul class="notes__container overflow-y-scroll scrollbar md:h-[456px] xl:h-[610px]">
             <?php includeTemplate('elements/notes/note_default.php', ['notes' => $notes]) ?>
           </ul>
           <div class="animate__animated animate__fadeInUp animate__fast notes__actions w-full absolute bottom-0 bg-light-400 border border-light-900 p-12 md:p-16 rounded-12 shadow-xl">

@@ -57,3 +57,17 @@
     left: -4%;
   }
 }
+
+@media screen and (min-width: 1580px) {
+  .add__slider {
+    width: 1200px;
+  }
+
+  .add__slider .slick-arrow.slick-next {
+    right: -4%;
+  }
+
+  .add__slider .slick-arrow.slick-prev {
+    left: -4%;
+  }
+}

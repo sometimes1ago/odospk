@@ -56,7 +56,7 @@ $data = new Data(Database::Instance());
         <li class="add__slider-item w-full h-full">
           <form autocomplete="off" action="<?=$_SERVER['PHP_SELF']?>" method="post" class="w-full h-full p-12 md:p-16 bg-light-600 border border-light-900 rounded-12" method="POST">
             <h2 class="text-20 md:text-24 font-bold">Добавление программы</h2>
-            <p class="mt-8 md:mt-12 text-16 md:text-18 text-black-800 leading-tight">Заполните все поля, чтобы добавить <br> новую программу на сайт</p>
+            <p class="mt-8 md:mt-12 text-16 md:text-18 text-black-800 leading-tight">Заполните все поля, чтобы добавить <br class="md:hidden"> новую программу на сайт</p>
             <ul class="w-full mt-24 md:mt-32">
               <li class="mb-16 md:mb-24">
                 <ul class="flex justify-between">
@@ -103,9 +103,9 @@ $data = new Data(Database::Instance());
               <li class="flex md:mt-24">
                 <div class="w-full flex flex-col mr-16">
                   <label for="addProdSkills" class="text-16 md:text-20 font-bold">Чему научитесь</label>
-                  <textarea class="addProgSkills lg:h-[95px] md:h-[150px] font-medium lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdSkills" id="addProdSkills" placeholder="Навыки слушателя после прохождения обучения" required></textarea>
+                  <textarea class="addProgSkills lg:h-[95px] md:h-[125px] xl:h-[150px] font-medium lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdSkills" id="addProdSkills" placeholder="Навыки слушателя после прохождения обучения" required></textarea>
                   <label for="addProdDescription" class="mt-16 md:mt-24 text-16 md:text-20 font-bold">Описание программы</label>
-                  <textarea class="addProgDescription lg:h-[95px] md:h-[150px] font-medium  lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdDescription" id="addProdDescription" placeholder="Какое-то описание программы" required></textarea>
+                  <textarea class="addProgDescription lg:h-[95px] md:h-[125px] xl:h-[150px] font-medium  lg:mt-12 md:mt-16 text-14 md:text-16 rounded-8 resize-none border border-light-900" name="addProdDescription" id="addProdDescription" placeholder="Какое-то описание программы" required></textarea>
                 </div>
                 <div class="w-1/4">
                   <label for="addProdPrice" class="block text-16 md:text-20 font-bold">Стоимость</label>
@@ -140,8 +140,8 @@ $data = new Data(Database::Instance());
                   <input type="text" name="addUserPassword" id="addUserPassword" class="addUserPassword w-full mt-12 text-14 font-medium md:px-16 px-12 py-[11px] md:py-[13px] md:text-16 border outline-brand-900 outline-2 rounded-8 border-light-900 bg-light-400 placeholder:text-black-800" placeholder="Userpassword">
                 </li>
                 <li class="w-full">
-                  <label class="dropdown__label mb-12 lg:text-16 font-bold dark:text-light-400" data-dropdownIndex="3">Уровень доступа</label>
-                  <div class="dropdown dropdown__light z-10" data-index="3">
+                  <label class="dropdown__label mb-12 lg:text-16 font-bold dark:text-light-400" data-dropdownIndex="2">Уровень доступа</label>
+                  <div class="dropdown dropdown__light z-10" data-index="2">
                     <div class="dropdown__btn">
                       <p class="dropdown__btn-text dropdown__addUserAccess" data-dropdownValue="Оператор">Оператор</p>
                       <svg class="dropdown__btn-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">

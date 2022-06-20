@@ -47,7 +47,7 @@ final class Data
 
     switch ($queriesType) {
       case 'Education':
-        $result = $this->db->fetchAll("SELECT * FROM `getQueriesPreSort` WHERE `status` = 'Не обработано' OR `status` = 'Обработано' ORDER BY $sortBy DESC");
+        $result = $this->db->fetchAll("SELECT * FROM `getQueriesPreSort` WHERE (`status` = 'Не обработано') OR (`status` = 'Обработано') ORDER BY $sortBy DESC");
         break;
       case 'Archived':
         $result = $this->db->fetchAll("SELECT * FROM `getQueriesPreSort` WHERE `status` = 'Архивировано' ORDER BY $sortBy DESC");
@@ -68,7 +68,7 @@ final class Data
 
   public function unHandleCall(string $id) {
     $preparedCallId = htmlspecialchars(substr(trim($id), 5));
-    
+
     $this->db->query(
       "UPDATE `calls` SET `status` = 'Не обзвонен' WHERE `id` = :id",
       ['id' => $preparedCallId]
